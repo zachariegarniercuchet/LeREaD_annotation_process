@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Mismatches Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .stats {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            z-index: 1000;
+        }
+
+        .nav-menu h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        .mismatch-count {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #1a252f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .span-text {
+            max-width: 400px;
+            word-wrap: break-word;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+
+        .value {
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+
+        .empty-value {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Attribute Mismatches Report</h1>
+            <div class="stats">
+                Generated for 5 attributes
+            </div>
+        </header>
+
+        <nav class="nav-menu" id="nav-menu">
+            <h2>Quick Navigation</h2>
+            <div class="nav-links">
+                <a href="#docid" class="nav-link">Docid (149 mismatches)</a>
+                <a href="#uri" class="nav-link">Uri (229 mismatches)</a>
+                <a href="#fragmentid" class="nav-link">Fragmentid (8 mismatches)</a>
+                <a href="#non_standard" class="nav-link">Non_Standard (7 mismatches)</a>
+                <a href="#titletype" class="nav-link">Titletype (4 mismatches)</a>
+            </div>
+        </nav>
+
+        <main>
+            <section class="section" id="docid">
+                <div class="section-header">
+                    <h2 class="section-title">Docid Mismatches</h2>
+                    <span class="mismatch-count">149 mismatches</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Span Text</th>
+                            <th style="width: 35%">Annotator 1 Value</th>
+                            <th style="width: 35%">Annotator 2 Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value">Bell Canada</div></td>
+                            <td><div class="value">Bell Canada (AG)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Delta Air Lines Inc. v. Lukács, 2018 SCC 2, [2018] 1 S.C.R. 6</div></td>
+                            <td><div class="value">Delta Air Lines</div></td>
+                            <td><div class="value">Delta Airlines</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value">Bell Canada</div></td>
+                            <td><div class="value">Bell Canada (AG)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3</div></td>
+                            <td><div class="value">Mouvement Laïque QC</div></td>
+                            <td><div class="value">Saguenay</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian National Railway Co. v. Canada (Attorney General), 2014 SCC 40, [2014] 2 S.C.R. 135</div></td>
+                            <td><div class="value">CNR Co.</div></td>
+                            <td><div class="value">CN</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Artists’ Representation v. National Gallery of Canada, 2014 SCC 42, [2014] 2 S.C.R. 197</div></td>
+                            <td><div class="value">Canadian Artists</div></td>
+                            <td><div class="value">Can. Artists</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC 2018</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. B. (K.G.), [1993] 1 S.C.R. 740</div></td>
+                            <td><div class="value">B. (K.G.)</div></td>
+                            <td><div class="value">B (K.G.)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Crevier v. Attorney General of Quebec, [1981] 2 S.C.R. 220</div></td>
+                            <td><div class="value">Crevier v AGQ</div></td>
+                            <td><div class="value">Crevier</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">U.E.S., Local 298 v. Bibeault, [1988] 2 S.C.R. 1048</div></td>
+                            <td><div class="value">UES v Bibeault</div></td>
+                            <td><div class="value">Bibeault</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227</div></td>
+                            <td><div class="value">NB Liquor Corp.</div></td>
+                            <td><div class="value">C.U.P.E.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dr. Q v. College of Physicians and Surgeons of British Columbia, 2003 SCC 19, [2003] 1 S.C.R. 226</div></td>
+                            <td><div class="value">Dr. Q</div></td>
+                            <td><div class="value">Dr. Q.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Deputy Minister of National Revenue) v. Mattel Canada Inc., 2001 SCC 36, [2001] 2 S.C.R. 100</div></td>
+                            <td><div class="value">Mattel Canada</div></td>
+                            <td><div class="value">Mattel</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Moreau‑Bérubé v. New Brunswick (Judicial Council), 2002 SCC 11, [2002] 1 S.C.R. 249</div></td>
+                            <td><div class="value">Moreau-Bérubé</div></td>
+                            <td><div class="value">Moreau=Bérubé</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">C.U.P.E. v. Ontario (Minister of Labour), 2003 SCC 29, [2003] 1 S.C.R. 539</div></td>
+                            <td><div class="value">CUPE</div></td>
+                            <td><div class="value">Ontario Labour</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">British Columbia (Workers’ Compensation Appeal Tribunal) v. Fraser Health Authority, 2016 SCC 25, [2016] 1 S.C.R. 587</div></td>
+                            <td><div class="value">Fraser Health Authority</div></td>
+                            <td><div class="value">Fraser Health</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Seneca College of Applied Arts and Technology v. Bhadauria, [1981] 2 S.C.R. 181</div></td>
+                            <td><div class="value">Seneca College</div></td>
+                            <td><div class="value">Seneca</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. 7262591 Canada Ltd., 2018 FCA 174, 428 D.L.R. (4th) 311</div></td>
+                            <td><div class="value">7262591 Canada Ltd</div></td>
+                            <td><div class="value">7262591</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Garneau Community League v. Edmonton (City), 2017 ABCA 374, 60 Alta. L.R. (6th) 1</div></td>
+                            <td><div class="value">Garneau Community League</div></td>
+                            <td><div class="value">Garneau</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nova Scotia (Attorney General) v. S&amp;D Smith Central Supplies Limited, 2019 NSCA 22</div></td>
+                            <td><div class="value">S&amp;D Smith Central Supplies</div></td>
+                            <td><div class="value">S &amp; D Smith</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Tervita Corp. v. Canada (Commissioner of Competition), 2015 SCC 3, [2015] 1 S.C.R. 161</div></td>
+                            <td><div class="value">Tervita Corp.</div></td>
+                            <td><div class="value">Tervita</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of New Brunswick v. Ryan, 2003 SCC 20, [2003] 1 S.C.R. 247</div></td>
+                            <td><div class="value">LSNB</div></td>
+                            <td><div class="value">Law Society NB</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Barrie Public Utilities v. Canadian Cable Television Assn., 2003 SCC 28, [2003] 1 S.C.R. 476</div></td>
+                            <td><div class="value">Barrie Public Utilities</div></td>
+                            <td><div class="value">Barrie</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Monsanto Canada Inc. v. Ontario (Superintendent of Financial Services), 2004 SCC 54, [2004] 3 S.C.R. 152</div></td>
+                            <td><div class="value">Mosanto Canada Inc.</div></td>
+                            <td><div class="value">Monsanto</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Attorney General of Quebec v. Carrières Ste‑Thérèse Ltée, [1985] 1 S.C.R. 831</div></td>
+                            <td><div class="value">Carrières Ste-Thérèse Ltée</div></td>
+                            <td><div class="value">Carrières</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Rogers Communications Inc. v. Society of Composers, Authors and Music Publishers of Canada, 2012 SCC 35, [2012] 2 S.C.R. 283</div></td>
+                            <td><div class="value">Rogers Communications</div></td>
+                            <td><div class="value">Rogers Comm</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Westcoast Energy Inc. v. Canada (National Energy Board), [1998] 1 S.C.R. 322</div></td>
+                            <td><div class="value">Westcoast Energy</div></td>
+                            <td><div class="value">Westcoast</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nova Scotia (Workers’ Compensation Board) v. Martin, 2003 SCC 54, [2003] 2 S.C.R. 504</div></td>
+                            <td><div class="value">NSWCB</div></td>
+                            <td><div class="value">Martin</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta (Information and Privacy Commissioner) v. University of Calgary, 2016 SCC 53, [2016] 2 S.C.R. 555</div></td>
+                            <td><div class="value">UCalgary</div></td>
+                            <td><div class="value">Alberta v. Calgary</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2011 SCC 53, [2011] 3 S.C.R. 471</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC 2011</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Commission scolaire de Laval v. Syndicat de l’enseignement de la région de Laval, 2016 SCC 8, [2016] 1 S.C.R. 29</div></td>
+                            <td><div class="value">Com Sco Laval</div></td>
+                            <td><div class="value">CS Laval</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Communications, Energy and Paperworkers Union of Canada, Local 30 v. Irving Pulp &amp; Paper, Ltd., 2013 SCC 34, [2013] 2 S.C.R. 458</div></td>
+                            <td><div class="value">Irving Pulp paper</div></td>
+                            <td><div class="value">Paperworkers Union</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Barreau du Québec v. Quebec (Attorney General), 2017 SCC 56, [2017] 2 S.C.R. 488</div></td>
+                            <td><div class="value">Barreau QC</div></td>
+                            <td><div class="value">Barreau du Québec</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nor‑Man Regional Health Authority Inc. v. Manitoba Association of Health Care Professionals, 2011 SCC 59, [2011] 3 S.C.R. 616</div></td>
+                            <td><div class="value">Nor-Man Regional Health Authority</div></td>
+                            <td><div class="value">Nor-Man</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Regina Police Assn. Inc. v. Regina (City) Board of Police Commissioners, 2000 SCC 14, [2000] 1 S.C.R. 360</div></td>
+                            <td><div class="value">Regina Police Assn</div></td>
+                            <td><div class="value">Regina Police</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Quebec (Commission des droits de la personne et des droits de la jeunesse) v. Quebec (Attorney General), 2004 SCC 39, [2004] 2 S.C.R. 185</div></td>
+                            <td><div class="value">Quebec (CDPDJ)</div></td>
+                            <td><div class="value">Jeunesse</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">City of Arlington, Texas v. Federal Communications Commission, 569 U.S. 290 (2013)</div></td>
+                            <td><div class="value">Arlington US</div></td>
+                            <td><div class="value">Arlington</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Congrégation des témoins de Jéhovah de St‑Jérôme‑Lafontaine v. Lafontaine (Village), 2004 SCC 48, [2004] 2 S.C.R. 650</div></td>
+                            <td><div class="value">Congrégation des témoins de Jéhovah</div></td>
+                            <td><div class="value">Jéhova</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Catalyst Paper Corp. v. North Cowichan (District), 2012 SCC 2, [2012] 1 S.C.R. 5</div></td>
+                            <td><div class="value">Catalyst Paper</div></td>
+                            <td><div class="value">Catalyst</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Reference re Remuneration of Judges of the Provincial Court of Prince Edward Island, [1997] 3 S.C.R. 3</div></td>
+                            <td><div class="value">Judges PEIPC Remuneration</div></td>
+                            <td><div class="value">Remuneration judges</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Halifax (Regional Municipality) v. Nova Scotia (Human Rights Commission), 2012 SCC 10, [2012] 1 S.C.R. 364</div></td>
+                            <td><div class="value">Nova Scotia (HRC)</div></td>
+                            <td><div class="value">Halifax</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Igloo Vikski Inc., 2016 SCC 38, [2016] 2 S.C.R. 80</div></td>
+                            <td><div class="value">Igloo Vikski</div></td>
+                            <td><div class="value">Igloo</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of British Columbia v. Trinity Western University, 2018 SCC 32, [2018] 2 S.C.R. 293</div></td>
+                            <td><div class="value">Trinity Western University</div></td>
+                            <td><div class="value">Trinity Western</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Montréal (City) v. Montreal Port Authority, 2010 SCC 14, [2010] 1 S.C.R. 427</div></td>
+                            <td><div class="value">Mtl Port Authority</div></td>
+                            <td><div class="value">Montréal Port</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Almon Equipment Limited, 2010 FCA 193, [2011] 4 F.C.R. 203</div></td>
+                            <td><div class="value">Almon Equipment Ltee</div></td>
+                            <td><div class="value">Almon</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Katz Group Canada Inc. v. Ontario (Health and Long‑Term Care), 2013 SCC 64, [2013] 3 S.C.R. 810</div></td>
+                            <td><div class="value">Katz Group</div></td>
+                            <td><div class="value">Katz</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell ExpressVu Limited Partnership v. Rex, 2002 SCC 42, [2002] 2 S.C.R. 559</div></td>
+                            <td><div class="value">Bell ExpressVu</div></td>
+                            <td><div class="value">ExpressVu</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada Trustco Mortgage Co. v. Canada, 2005 SCC 54, [2005] 2 S.C.R. 601</div></td>
+                            <td><div class="value">Canada Trustco Mortgage</div></td>
+                            <td><div class="value">Trustco</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Construction Labour Relations v. Driver Iron Inc., 2012 SCC 65, [2012] 3 S.C.R. 405</div></td>
+                            <td><div class="value">Driver Iron Inc</div></td>
+                            <td><div class="value">Construction Labor</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mobil Oil Canada Ltd. v. Canada‑Newfoundland Offshore Petroleum Board, [1994] 1 S.C.R. 202</div></td>
+                            <td><div class="value">Mobil Oil Canada</div></td>
+                            <td><div class="value">Mobil</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Maple Lodge Farms Ltd. v. Canadian Food Inspection Agency, 2017 FCA 45, 411 D.L.R. (4th) 175</div></td>
+                            <td><div class="value">Maple Lodge Farms</div></td>
+                            <td><div class="value">Maple Lodge</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">GreCon Dimter inc. v. J.R. Normand inc., 2005 SCC 46, [2005] 2 S.C.R. 401</div></td>
+                            <td><div class="value">GreCon Dimter</div></td>
+                            <td><div class="value">GreCon</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">India v. Badesha, 2017 SCC 44, [2017] 2 S.C.R. 127</div></td>
+                            <td><div class="value">Badesha</div></td>
+                            <td><div class="value">India</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Brossard (Town) v. Quebec (Commission des droits de la personne), [1988] 2 S.C.R. 279</div></td>
+                            <td><div class="value">Brossard Town</div></td>
+                            <td><div class="value">Brossard</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227</div></td>
+                            <td><div class="value">NB Liquor Corp.</div></td>
+                            <td><div class="value">C.U.P.E.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Igloo Vikski Inc., 2016 SCC 38, [2016] 2 S.C.R. 80</div></td>
+                            <td><div class="value">Igloo Vikski</div></td>
+                            <td><div class="value">Igloo</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Kisor v. Wilkie, 139 S. Ct. 2400 (2019)</div></td>
+                            <td><div class="value">kisor</div></td>
+                            <td><div class="value">Kisor</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Metropolitan Life Insurance Co. v. International Union of Operating Engineers, Local 796, [1970] S.C.R. 425</div></td>
+                            <td><div class="value">Metropolitan Life Insurance</div></td>
+                            <td><div class="value">Metropolitan</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell v. Ontario Human Rights Commission, [1971] S.C.R. 756</div></td>
+                            <td><div class="value">Bell1971</div></td>
+                            <td><div class="value">Ont. Hum. Rights</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Public Service Alliance of Canada, [1991] 1 S.C.R. 614</div></td>
+                            <td><div class="value">Public Service Alliance of Canada</div></td>
+                            <td><div class="value">Public Service</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">National Corn Growers Assn. v. Canada (Import Tribunal), [1990] 2 S.C.R. 1324</div></td>
+                            <td><div class="value">National Corn Growers</div></td>
+                            <td><div class="value">Corn</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">U.E.S., Local 298 v. Bibeault, [1988] 2 S.C.R. 1048</div></td>
+                            <td><div class="value">UES v Bibeault</div></td>
+                            <td><div class="value">Bibeault</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">United Brotherhood of Carpenters and Joiners of America, Local 579 v. Bradco Construction Ltd., [1993] 2 S.C.R. 316</div></td>
+                            <td><div class="value">United Brotherhood</div></td>
+                            <td><div class="value">Brotherhood</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Canadian Radio‑Television and Telecommunications Commission), [1989] 1 S.C.R. 1722</div></td>
+                            <td><div class="value">Bell1989</div></td>
+                            <td><div class="value">Can Radio-Television</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of New Brunswick v. Ryan, 2003 SCC 20, [2003] 1 S.C.R. 247</div></td>
+                            <td><div class="value">LSNB</div></td>
+                            <td><div class="value">Ryan</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Cartaway Resources Corp. (Re), 2004 SCC 26, [2004] 1 S.C.R. 672</div></td>
+                            <td><div class="value">Cartaway Resources</div></td>
+                            <td><div class="value">Cartaway</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Council of Canadians with Disabilities v. VIA Rail Canada Inc., 2007 SCC 15, [2007] 1 S.C.R. 650</div></td>
+                            <td><div class="value">VIA Rail Canada</div></td>
+                            <td><div class="value">Disabilities</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3</div></td>
+                            <td><div class="value">Mouvement Laïque QC</div></td>
+                            <td><div class="value">Saguenay</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Bell Aliant Regional Communications, 2009 SCC 40, [2009] 2 S.C.R. 764</div></td>
+                            <td><div class="value">Bell Aliant</div></td>
+                            <td><div class="value">Bell Alliant</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">ATCO Gas and Pipelines Ltd. v. Alberta (Utilities Commission), 2015 SCC 45, [2015] 3 S.C.R. 219</div></td>
+                            <td><div class="value">ATCO Gas and Pipelines</div></td>
+                            <td><div class="value">ATCO</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2011 SCC 53, [2011] 3 S.C.R. 471</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC 2011</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dr. Q v. College of Physicians and Surgeons of British Columbia, 2003 SCC 19, [2003] 1 S.C.R. 226</div></td>
+                            <td><div class="value">Dr. Q</div></td>
+                            <td><div class="value">Dr. Q.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nor‑Man Regional Health Authority Inc. v. Manitoba Association of Health Care Professionals, 2011 SCC 59, [2011] 3 S.C.R. 616</div></td>
+                            <td><div class="value">Nor-Man Regional Health Authority</div></td>
+                            <td><div class="value">Nor-Man</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Crevier v. Attorney General of Quebec, [1981] 2 S.C.R. 220</div></td>
+                            <td><div class="value">Crevier v AGQ</div></td>
+                            <td><div class="value">Crevier</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value">Bell Canada</div></td>
+                            <td><div class="value">(no ID)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Fitzleet Estates Ltd. v. Cherry (1977), 51 T.C. 708</div></td>
+                            <td><div class="value">Fitzleet Estates</div></td>
+                            <td><div class="value">Fizzleet</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Lee v. New South Wales Crime Commission (2013), 302 A.L.R. 363</div></td>
+                            <td><div class="value">New South Wales</div></td>
+                            <td><div class="value">Soutj Wales Crime</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Florida Department of Health and Rehabilitative Services v. Florida Nursing Home Association, 450 U.S. 147 (1981)</div></td>
+                            <td><div class="value">Florida Nursing Home</div></td>
+                            <td><div class="value">Florida</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Deputy Minister of National Revenue) v. Mattel Canada Inc., 2001 SCC 36, [2001] 2 S.C.R. 100</div></td>
+                            <td><div class="value">Mattel Canada</div></td>
+                            <td><div class="value">Mattel</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Communications, Energy and Paperworkers Union of Canada, Local 30 v. Irving Pulp &amp; Paper, Ltd., 2013 SCC 34, [2013] 2 S.C.R. 458</div></td>
+                            <td><div class="value">Irving Pulp paper</div></td>
+                            <td><div class="value">Paperworkers Union</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Volvo Canada Ltd. v. U.A.W., Local 720, [1980] 1 S.C.R. 178</div></td>
+                            <td><div class="value">Volvo Canada</div></td>
+                            <td><div class="value">Volvo</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Williams Lake Indian Band v. Canada (Aboriginal Affairs and Northern Development), 2018 SCC 4, [2018] 1 S.C.R. 83</div></td>
+                            <td><div class="value">Williams Lake</div></td>
+                            <td><div class="value">Williams</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Catalyst Paper Corp. v. North Cowichan (District), 2012 SCC 2, [2012] 1 S.C.R. 5</div></td>
+                            <td><div class="value">Catalyst Paper</div></td>
+                            <td><div class="value">Catalyst</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Construction Labour Relations v. Driver Iron Inc., 2012 SCC 65, [2012] 3 S.C.R. 405</div></td>
+                            <td><div class="value">Driver Iron Inc</div></td>
+                            <td><div class="value">Construction Labor</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Service Employees’ International Union, Local No. 333 v. Nipawin District Staff Nurses Association, [1975] 1 S.C.R. 382</div></td>
+                            <td><div class="value">Nipawin District</div></td>
+                            <td><div class="value">Nipawin</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Delta Air Lines Inc. v. Lukács, 2018 SCC 2, [2018] 1 S.C.R. 6</div></td>
+                            <td><div class="value">Delta Air Lines</div></td>
+                            <td><div class="value">Delta Airlines</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Halifax (Regional Municipality) v. Canada (Public Works and Government Services), 2012 SCC 29, [2012] 2 S.C.R. 108</div></td>
+                            <td><div class="value">Halifax</div></td>
+                            <td><div class="value">Halifax v. Canada</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of British Columbia v. Trinity Western University, 2018 SCC 32, [2018] 2 S.C.R. 293</div></td>
+                            <td><div class="value">Trinity Western University</div></td>
+                            <td><div class="value">Trinity Western</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Brossard (Town) v. Quebec (Commission des droits de la personne), [1988] 2 S.C.R. 279</div></td>
+                            <td><div class="value">Brossard Town</div></td>
+                            <td><div class="value">Brossard</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">An Act mainly to promote the efficiency of penal justice and to establish the terms governing the intervention of the Court of Québec with respect to applications for appeal, Bill 32, 1st Sess., 42nd Leg., Quebec, 2019.</div></td>
+                            <td><div class="value">Court Qc Appeal</div></td>
+                            <td><div class="value">Act Penal Justice</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Citizenship Act, R.S.C. 1970, c. C‑19, s. 5(3).</div></td>
+                            <td><div class="value">Canadian Citizenship Act</div></td>
+                            <td><div class="value">Can Citizenship Act</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Citizenship Regulations, SOR/93‑246, s. 26.</div></td>
+                            <td><div class="value">Citizenship Regulations</div></td>
+                            <td><div class="value">Citizenship Reg</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Constitution Act, 1867, s. 96.</div></td>
+                            <td><div class="value">LC1867</div></td>
+                            <td><div class="value">Constitution Act 1867</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Constitution Act, 1982, s. 35.</div></td>
+                            <td><div class="value">LC1982</div></td>
+                            <td><div class="value">Constitution Act 1982</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Federal Courts Act, R.S.C. 1985, c. F‑7, ss. 18 to 18.2, 18.4, 27, 28.</div></td>
+                            <td><div class="value">Federal Court Act</div></td>
+                            <td><div class="value">Fed Courts Act</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Immigration and Refugee Protection Act, S.C. 2001, c. 27, ss. 35 to 37.</div></td>
+                            <td><div class="value">Immigration and Refugee</div></td>
+                            <td><div class="value">Immigration Act</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Municipal Government Act, R.S.A. 2000, c. M‑26, s. 470.</div></td>
+                            <td><div class="value">Municipal Government</div></td>
+                            <td><div class="value">Municipal Gov Act</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Ontario Human Rights Code, 1961‑62, S.O. 1961‑62, c. 93, s. 3.</div></td>
+                            <td><div class="value">Ontario Human Rights</div></td>
+                            <td><div class="value">Ont Human Rights Code</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Arthurs, H. W. “Protection against Judicial Review” (1983), 43 R. du B. 277</div></td>
+                            <td><div class="value">Protection against Judicial Review</div></td>
+                            <td><div class="value">Protection</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Barak, Aharon. “Overruling Precedent” (1986), 21 Is.L.R. 269.</div></td>
+                            <td><div class="value">Overruling Precedent</div></td>
+                            <td><div class="value">Overruling</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Biddulph, Michelle. “Rethinking the Ramifications of Reasonableness Review: Stare Decisis and Reasonableness Review on Questions of Law” (2018), 56 Alta. L.R. 119.</div></td>
+                            <td><div class="value">Ramifications of Reasonableness Review</div></td>
+                            <td><div class="value">Ramifications</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Brown, Donald J. M., and John M. Evans, with the assistance of David Fairlie. Judicial Review of Administrative Action in Canada, vol. 3. Toronto: Thomson Reuters, 2013 (loose‑leaf updated December 2018, release 4)</div></td>
+                            <td><div class="value">Administrative Action in Canada</div></td>
+                            <td><div class="value">Action in Canada</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada. House of Commons. Minutes of Proceedings and Evidence of the Standing Committee on Broadcasting, Films and Assistance to the Arts, Respecting Bill C‑20, An Act respecting citizenship, No. 34, 1st Sess., 30th Parl., February 24, 1976, 34:23</div></td>
+                            <td><div class="value">Assistance to the Arts</div></td>
+                            <td><div class="value">Minutes</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Cohen‑Eliya, Moshe, and Iddo Porat. “Proportionality and Justification” (2014), 64 U.T.L.J. 458</div></td>
+                            <td><div class="value">Proportionality and Justification</div></td>
+                            <td><div class="value">Proportionality</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Evans, John M. “Standards of Review in Administrative Law” (2013), 26 C.J.A.L.P. 67</div></td>
+                            <td><div class="value">Standards of Review</div></td>
+                            <td><div class="value">Standards Rev.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Garner, Bryan A., et al. The Law of Judicial Precedent. St. Paul, Minn.: Thomson Reuters, 2016.</div></td>
+                            <td><div class="value">Law of Judicial Precedent</div></td>
+                            <td><div class="value">Judicial Precedent</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Gerhardt, Michael J. The Power of Precedent. New York: Oxford University Press, 2008</div></td>
+                            <td><div class="value">The Power of Precedent</div></td>
+                            <td><div class="value">Power</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Iacobucci, Frank. “Articulating a Rational Standard of Review Doctrine: A Tribute to John Willis” (2002), 27 Queen’s L.J. 859</div></td>
+                            <td><div class="value">A Tribute to John Willis</div></td>
+                            <td><div class="value">Articulating</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Lewans, Matthew. Administrative Law and Judicial Deference. Portland, Or.: Hart Publishing, 2016</div></td>
+                            <td><div class="value">Administrative Law and Judicial Deference</div></td>
+                            <td><div class="value">Judicial Deference</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLachlin, Beverley. Administrative Tribunals and the Courts: An Evolutionary Relationship, May 27, 2013 (online: https://www.scc-csc.ca/judges-juges/spe-dis/bm-2013-05-27-eng.aspx; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_2_eng.pdf)</div></td>
+                            <td><div class="value">An Evolutionary Relaltionship</div></td>
+                            <td><div class="value">Evolutionary Rel.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Perell, Paul M. “The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen” (2004), 28 Adv. Q. 40.</div></td>
+                            <td><div class="value">The Ironies of Housen v. Nikolaisen</div></td>
+                            <td><div class="value">Standard Appellate Rev.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Stratas, David. “The Canadian Law of Judicial Review: A Plea for Doctrinal Coherence and Consistency” (2016), 42 Queen’s L.J. 27</div></td>
+                            <td><div class="value">Doctrinal Coherence and Consistency</div></td>
+                            <td><div class="value">Judicial Rev. Coherence</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 26(3) of the Citizenship Regulations, SOR/93-246</div></td>
+                            <td><div class="value">Citizenship Regulations</div></td>
+                            <td><div class="value">Citizenship Reg</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3, at para. 46</div></td>
+                            <td><div class="value">Mouvement Laïque QC</div></td>
+                            <td><div class="value">Saguenay</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian National Railway Co. v. Canada (Attorney General), 2014 SCC 40, [2014] 2 S.C.R. 135, at para. 55</div></td>
+                            <td><div class="value">CNR Co.</div></td>
+                            <td><div class="value">CN</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Artists’ Representation v. National Gallery of Canada, 2014 SCC 42, [2014] 2 S.C.R. 197, at para. 13</div></td>
+                            <td><div class="value">Canadian Artists</div></td>
+                            <td><div class="value">Can. Artists</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293, at para. 32</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230 (“CHRC”), at paras. 45-46</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">P. Daly, “Struggling Towards Coherence in Canadian Administrative Law? Recent Cases on Standard of Review and Reasonableness” (2016), 62 McGill L.J. 527</div></td>
+                            <td><div class="value">Struggling Toward Coherence</div></td>
+                            <td><div class="value">Struggling</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">M. Cohen-Eliya and I. Porat, “Proportionality and Justification” (2014), 64 U.T.L.J. 458, at pp. 467-70</div></td>
+                            <td><div class="value">Proportionality and Justification</div></td>
+                            <td><div class="value">Proportionality</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC, at paras. 45-47</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. B. (K.G.), [1993] 1 S.C.R. 740, at p. 778</div></td>
+                            <td><div class="value">B. (K.G.)</div></td>
+                            <td><div class="value">B (K.G.)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 35</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 27</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 96 of the Constitution Act, 1867</div></td>
+                            <td><div class="value">LC1867</div></td>
+                            <td><div class="value">Constitution Act 1867</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Crevier v. Attorney General of Quebec, [1981] 2 S.C.R. 220, at pp. 236-37</div></td>
+                            <td><div class="value">Crevier v AGQ</div></td>
+                            <td><div class="value">Crevier</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">U.E.S., Local 298 v. Bibeault, [1988] 2 S.C.R. 1048, at p. 1090</div></td>
+                            <td><div class="value">UES v Bibeault</div></td>
+                            <td><div class="value">Bibeault</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Saguenay, at para. 46</div></td>
+                            <td><div class="value">Mouvement Laïque QC</div></td>
+                            <td><div class="value">Saguenay</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 22</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227 (“C.U.P.E.”)</div></td>
+                            <td><div class="value">NB Liquor Corp.</div></td>
+                            <td><div class="value">C.U.P.E.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">C.U.P.E., at pp. 235-36</div></td>
+                            <td><div class="value">NB Liquor Corp.</div></td>
+                            <td><div class="value">C.U.P.E.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">C.U.P.E., at p. 236</div></td>
+                            <td><div class="value">NB Liquor Corp.</div></td>
+                            <td><div class="value">C.U.P.E.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Director of Investigation and Research) v. Southam Inc., [1997] 1 S.C.R. 748, at paras. 50-53</div></td>
+                            <td><div class="value">Southam</div></td>
+                            <td><div class="value">(no ID)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">D. J. Mullan, “Establishing the Standard of Review: The Struggle for Complexity?” (2004), 17 C.J.A.L.P. 59, at p. 93</div></td>
+                            <td><div class="value">Establishing the Standard of Review</div></td>
+                            <td><div class="value">Complexity</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 33</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">paras. 81-86</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton East</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bibeault</div></td>
+                            <td><div class="value">UES v Bibeault</div></td>
+                            <td><div class="value">Bibeault</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dr. Q v. College of Physicians and Surgeons of British Columbia, 2003 SCC 19, [2003] 1 S.C.R. 226, at paras. 28-29</div></td>
+                            <td><div class="value">Dr. Q</div></td>
+                            <td><div class="value">Dr. Q.</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Deputy Minister of National Revenue) v. Mattel Canada Inc., 2001 SCC 36, [2001] 2 S.C.R. 100, at paras. 28-32</div></td>
+                            <td><div class="value">Mattel Canada</div></td>
+                            <td><div class="value">Mattel</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Moreau‑Bérubé v. New Brunswick (Judicial Council), 2002 SCC 11, [2002] 1 S.C.R. 249, at para. 50</div></td>
+                            <td><div class="value">Moreau-Bérubé</div></td>
+                            <td><div class="value">Moreau=Bérubé</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 33</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 22</div></td>
+                            <td><div class="value">Edmonton City</div></td>
+                            <td><div class="value">Edmonton</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 50</div></td>
+                            <td><div class="value">Canada CHRC</div></td>
+                            <td><div class="value">CHRC</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="uri">
+                <div class="section-header">
+                    <h2 class="section-title">Uri Mismatches</h2>
+                    <span class="mismatch-count">229 mismatches</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Span Text</th>
+                            <th style="width: 35%">Annotator 1 Value</th>
+                            <th style="width: 35%">Annotator 2 Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="span-text">Canada (Minister of Citizenship and Immigration) v. Vavilov</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">2019 SCC 65</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc66/2019scc66.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2019/2019csc66/2019csc66.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir v. New Brunswick, 2008 SCC 9, [2008] 1 S.C.R. 190</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2008/2008scc42/2008scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2008/2008csc9/2008csc9.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2008/2008scc42/2008scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2008/2008csc9/2008csc9.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2008/2008scc42/2008scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(c)</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 3</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-c-29/222394/rsc-1985-c-c-29.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Baker v. Canada (Minister of Citizenship and Immigration), [1999] 2 S.C.R. 817</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1999/1999canlii699/1999canlii699.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/1999/1999canlii699/1999canlii699.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Delta Air Lines Inc. v. Lukács, 2018 SCC 2, [2018] 1 S.C.R. 6</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2018/2018scc2/2018scc2.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc2/2018csc2.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd., 2019 FCA 52</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fca/doc/2019/2019fca52/2019fca52.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/caf/doc/2019/2019caf52/2019caf52.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Al‑Ghamdi v. Canada (Minister of Foreign Affairs and International Trade), 2007 FC 559, 64 Imm. L.R. (3d) 67</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fct/doc/2007/2007fc559/2007fc559.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/cfpi/doc/2007/2007cf559/2007cf559.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Lee v. Canada (Minister of Citizenship and Immigration), 2008 FC 614, [2009] 1 F.C.R. 204</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fct/doc/2008/2008fc764/2008fc764.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Hitti v. Canada (Minister of Citizenship and Immigration), 2007 FC 294, 310 F.T.R. 168</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fct/doc/2007/2007fc294/2007fc294.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/cfpi/doc/2007/2007cf294/2007cf294.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta (Information and Privacy Commissioner) v. Alberta Teachers’ Association, 2011 SCC 61, [2011] 3 S.C.R. 654</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc61/2011scc61.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2011/2011csc61/2011csc61.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Newfoundland and Labrador Nurses’ Union v. Newfoundland and Labrador (Treasury Board), 2011 SCC 62, [2011] 3 S.C.R. 708</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc62/2011scc62.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2011/2011csc62/2011csc62.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir v. New Brunswick, 2008 SCC 9, [2008] 1 S.C.R. 190</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2008/2008scc42/2008scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc66/2019scc66.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2015/2015scc16/2015scc16.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2015/2015csc16/2015csc16.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian National Railway Co. v. Canada (Attorney General), 2014 SCC 40, [2014] 2 S.C.R. 135</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2014/2014scc40/2014scc40.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2014/2014csc40/2014csc40.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Artists’ Representation v. National Gallery of Canada, 2014 SCC 42, [2014] 2 S.C.R. 197</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2014/2014scc42/2014scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2014/2014csc42/2014csc42.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Smith v. Alliance Pipeline Ltd., 2011 SCC 7, [2011] 1 S.C.R. 160</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc7/2011scc7.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2011/2011csc7/2011csc7.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Citizenship and Immigration) v. Khosa, 2009 SCC 12, [2009] 1 S.C.R. 339</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2009/2009scc12/2009scc12.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2009/2009csc12/2009csc12.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLean v. British Columbia (Securities Commission), 2013 SCC 67, [2013] 3 S.C.R. 895</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2013/2013scc67/2013scc67.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2013/2013csc67/2013csc67.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2016/2016scc47/2016scc47.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2016/2016csc47/2016csc47.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2018/2018scc31/2018scc31.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Wilson v. Atomic Energy of Canada Ltd., 2016 SCC 29, [2016] 1 S.C.R. 770</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2016/2016scc29/2016scc29.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Queensland v. Commonwealth (1977), 139 C.L.R. 585</div></td>
+                            <td><div class="value">NONE</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. Owen, 2003 SCC 33, [2003] 1 S.C.R. 779</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2003/2003scc20/2003scc20.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2003/2003scc33/2003scc33.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Moore v. British Columbia (Education), 2012 SCC 61, [2012] 3 S.C.R. 360</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc61/2011scc61.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2012/2012scc61/2012scc61.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McCormick v. Fasken Martineau DuMoulin LLP, 2014 SCC 39, [2014] 2 S.C.R. 108</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2014/2014scc9/2014scc9.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2014/2014scc39/2014scc39.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">British Columbia (Workers’ Compensation Appeal Tribunal) v. Fraser Health Authority, 2016 SCC 25, [2016] 1 S.C.R. 587</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2016/2016scc6/2016scc6.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2016/2016scc25/2016scc25.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">British Columbia Human Rights Tribunal v. Schrenk, 2017 SCC 62, [2017] 2 S.C.R. 795</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2017/2017scc30/2017scc30.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2017/2017scc62/2017scc62.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Housen v. Nikolaisen, 2002 SCC 33, [2002] 2 S.C.R. 235</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2002/2002scc33/2002scc33.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2002/2002csc33/2002csc33.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">City of Arlington, Texas v. Federal Communications Commission, 569 U.S. 290 (2013)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Green v. Law Society of Manitoba, 2017 SCC 20, [2017] 1 S.C.R. 360</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2017/2017scc20/2017scc20.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2017/2017csc20/2017csc20.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Reference re Remuneration of Judges of the Provincial Court of Prince Edward Island, [1997] 3 S.C.R. 3</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1997/1997canlii317/1997canlii317.html</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of British Columbia v. Trinity Western University, 2018 SCC 32, [2018] 2 S.C.R. 293</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2018/2018scc32/2018scc32.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc32/2018csc32.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Sharif v. Canada (Attorney General), 2018 FCA 205, 50 C.R. (7th) 1</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fca/doc/2018/2018fca205/2018fca205.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fca/doc/2017/2017fca45/2017fca45.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Maple Lodge Farms Ltd. v. Canadian Food Inspection Agency, 2017 FCA 45, 411 D.L.R. (4th) 175</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/fca/doc/2017/2017fca45/2017fca45.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1979/1979canlii23/1979canlii23.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Anisminic Ltd. v. Foreign Compensation Commission, [1969] 2 A.C. 147</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Pushpanathan v. Canada (Minister of Citizenship and Immigration), [1998] 1 S.C.R. 982</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1998/1998canlii778/1998canlii778.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Igloo Vikski Inc., 2016 SCC 38, [2016] 2 S.C.R. 80</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2016/2016scc38/2016scc38.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Kisor v. Wilkie, 139 S. Ct. 2400 (2019)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir v. New Brunswick, 2008 SCC 9, [2008] 1 S.C.R. 190</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta (Information and Privacy Commissioner) v. Alberta Teachers’ Association, 2011 SCC 61, [2011] 3 S.C.R. 654</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Domtar Inc. v. Quebec (Commission d’appel en matière de lésions professionnelles), [1993] 2 S.C.R. 756</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1993/1993canlii106/1993canlii106.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">U.E.S., Local 298 v. Bibeault, [1988] 2 S.C.R. 1048</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1988/1988canlii30/1988canlii30.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">United Brotherhood of Carpenters and Joiners of America, Local 579 v. Bradco Construction Ltd., [1993] 2 S.C.R. 316</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1993/1993canlii88/1993canlii88.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Director of Investigation and Research) v. Southam Inc., [1997] 1 S.C.R. 748</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1997/1997canlii385/1997canlii385.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Pezim v. British Columbia (Superintendent of Brokers), [1994] 2 S.C.R. 557</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1994/1994canlii103/1994canlii103.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLean v. British Columbia (Securities Commission), 2013 SCC 67, [2013] 3 S.C.R. 895</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Smith v. Alliance Pipeline Ltd., 2011 SCC 7, [2011] 1 S.C.R. 160</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2011 SCC 53, [2011] 3 S.C.R. 471</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc53/2011scc53.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dr. Q v. College of Physicians and Surgeons of British Columbia, 2003 SCC 19, [2003] 1 S.C.R. 226</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2003/2003scc19/2003scc19.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Parry Sound (District) Social Services Administration Board v. O.P.S.E.U., Local 324, 2003 SCC 42, [2003] 2 S.C.R. 157</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2003/2003scc42/2003scc42.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Newfoundland and Labrador Nurses’ Union v. Newfoundland and Labrador (Treasury Board), 2011 SCC 62, [2011] 3 S.C.R. 708</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Doré v. Barreau du Québec, 2012 SCC 12, [2012] 1 S.C.R. 395</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2012/2012scc12/2012scc12.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Nor‑Man Regional Health Authority Inc. v. Manitoba Association of Health Care Professionals, 2011 SCC 59, [2011] 3 S.C.R. 616</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2011/2011scc59/2011scc59.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Wilson v. Atomic Energy of Canada Ltd., 2016 SCC 29, [2016] 1 S.C.R. 770</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Hryniak v. Mauldin, 2014 SCC 7, [2014] 1 S.C.R. 87</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2014/2014scc7/2014scc7.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Housen v. Nikolaisen, 2002 SCC 33, [2002] 2 S.C.R. 235</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2002/2002scc33/2002scc33.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Crevier v. Attorney General of Quebec, [1981] 2 S.C.R. 220</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1981/1981canlii30/1981canlii30.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada v. Craig, 2012 SCC 43, [2012] 2 S.C.R. 489</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Kimble v. Marvel Entertainment, LLC, 135 S. Ct. 2401 (2015)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Halliburton Co. v. Erica P. John Fund, Inc., 573 U.S. 258 (2014)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Fitzleet Estates Ltd. v. Cherry (1977), 51 T.C. 708</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. Taylor, [2016] UKSC 5, [2016] 4 All E.R. 617</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Willers v. Joyce (No. 2), [2016] UKSC 44, [2017] 2 All E.R. 383</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Knauer v. Ministry of Justice, [2016] UKSC 9, [2016] 4 All E.R. 897</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Couch v. Attorney‑General (No. 2), [2010] NZSC 27, [2010] 3 N.Z.L.R. 149</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Lee v. New South Wales Crime Commission (2013), 302 A.L.R. 363</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Camps Bay Ratepayers’ and Residents’ Association v. Harrison, [2010] ZACC 19, 2011 (4) S.A. 42</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Buffalo City Metropolitan Municipality v. Asla Construction (Pty) Ltd., [2019] ZACC 15, 2019 (4) S.A. 331</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Payne v. Tennessee, 501 U.S. 808 (1991)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Bedford, 2013 SCC 72, [2013] 3 S.C.R. 1101</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Michigan v. Bay Mills Indian Community, 572 U.S. 782 (2014)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Planned Parenthood of Southeastern Pennsylvania v. Casey, Governor of Pennsylvania, 505 U.S. 833 (1992)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Florida Department of Health and Rehabilitative Services v. Florida Nursing Home Association, 450 U.S. 147 (1981)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Knick v. Township of Scott, Pennsylvania, 139 S. Ct. 2162 (2019)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Ontario (Attorney General) v. Fraser, 2011 SCC 20, [2011] 2 S.C.R. 3</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. Henry, 2005 SCC 76, [2005] 3 S.C.R. 609</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bilski v. Kappos, Under Secretary of Commerce for Intellectual Property and Director, Patent and Trademark Office, 561 U.S. 593 (2010)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bowles, Price Administrator v. Seminole Rock &amp; Sand Co., 325 U.S. 410 (1945)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Auer v. Robbins, 519 U.S. 452 (1997)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Baker v. Campbell, [1983] HCA 39, 153 C.L.R. 52</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Deputy Minister of National Revenue) v. Mattel Canada Inc., 2001 SCC 36, [2001] 2 S.C.R. 100</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Chieu v. Canada (Minister of Citizenship and Immigration), 2002 SCC 3, [2002] 1 S.C.R. 84</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Harvard College v. Canada (Commissioner of Patents), 2002 SCC 76, [2002] 4 S.C.R. 45</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2002/2002scc76/2002scc76.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/1991/1991canlii17/1991canlii17.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Communications, Energy and Paperworkers Union of Canada, Local 30 v. Irving Pulp &amp; Paper, Ltd., 2013 SCC 34, [2013] 2 S.C.R. 458</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Toronto (City) v. C.U.P.E., Local 79, 2003 SCC 63, [2003] 3 S.C.R. 77</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2003/2003scc63/2003scc63.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Williams Lake Indian Band v. Canada (Aboriginal Affairs and Northern Development), 2018 SCC 4, [2018] 1 S.C.R. 83</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2018/2018scc4/2018scc4.html</div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc4/2018csc4.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Catalyst Paper Corp. v. North Cowichan (District), 2012 SCC 2, [2012] 1 S.C.R. 5</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Suresh v. Canada (Minister of Citizenship and Immigration), 2002 SCC 1, [2002] 1 S.C.R. 3</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Baker v. Canada (Minister of Citizenship and Immigration), [1999] 2 S.C.R. 817</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Construction Labour Relations v. Driver Iron Inc., 2012 SCC 65, [2012] 3 S.C.R. 405</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Delta Air Lines Inc. v. Lukács, 2018 SCC 2, [2018] 1 S.C.R. 6</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Law Society of British Columbia v. Trinity Western University, 2018 SCC 32, [2018] 2 S.C.R. 293</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2018/2018scc32/2018scc32.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Brossard (Town) v. Quebec (Commission des droits de la personne), [1988] 2 S.C.R. 279</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Greco v. Holy See (State of the Vatican City), [1999] O.J. No. 2467 (QL)</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Al‑Ghamdi v. Canada (Minister of Foreign Affairs and International Trade), 2007 FC 559, 64 Imm. L.R. (3d) 67</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Charter of Rights and Freedoms, s. 1.</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/schedule-b-to-the-canada-act-1982-uk-1982-c-11/97548/schedule-b-to-the-canada-act-1982-uk-1982-c-11.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Citizenship Act, R.S.C. 1970, c. C‑19, s. 5(3).</div></td>
+                            <td><div class="value">NONE</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Constitution Act, 1982, s. 35.</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/schedule-b-to-the-canada-act-1982-uk-1982-c-11/97548/schedule-b-to-the-canada-act-1982-uk-1982-c-11.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Human Rights Code, R.S.B.C. 1996, c. 210, s. 32.</div></td>
+                            <td><div class="value">https://www.canlii.org/en/bc/laws/stat/rsbc-1996-c-210/215130/rsbc-1996-c-210.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/on/laws/stat/rso-1990-c-h19/227109/rso-1990-c-h19.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Immigration and Refugee Protection Act, S.C. 2001, c. 27, ss. 35 to 37.</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/sc-2001-c-27/latest/sc-2001-c-27.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/sc-2001-c-27/222404/sc-2001-c-27.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Interpretation Act, R.S.C. 1985, c. I‑21, s. 35(1).</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-i-21/latest/rsc-1985-c-i-21.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/stat/rsc-1985-c-i-21/224068/rsc-1985-c-i-21.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Municipal Government Act, R.S.A. 2000, c. M‑26, s. 470.</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ab/laws/stat/rsa-2000-c-m-26/latest/rsa-2000-c-m-26.html</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ab/laws/stat/rsa-2000-c-m-26/229513/rsa-2000-c-m-26.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Ontario Human Rights Code, 1961‑62, S.O. 1961‑62, c. 93, s. 3.</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Arthurs, H. W. “Protection against Judicial Review” (1983), 43 R. du B. 277</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Barak, Aharon. “Overruling Precedent” (1986), 21 Is.L.R. 269.</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Biddulph, Michelle. “Rethinking the Ramifications of Reasonableness Review: Stare Decisis and Reasonableness Review on Questions of Law” (2018), 56 Alta. L.R. 119.</div></td>
+                            <td><div class="value">canlii.org/en/commentary/doc/2018CanLIIDocs169</div></td>
+                            <td><div class="value">https://www.canlii.org/en/commentary/doc/2018CanLIIDocs169?searchId=2026-01-23T18:25:47:643/6f0750ac4088419baf5ba5d4b7ad975a&amp;resultId=a270f45e0b43454e984f0f83165d274d&amp;zoupio-debug#!fragment//(hash:(chunk:(anchorText:&#x27;&#x27;),notesQuery:&#x27;&#x27;,scrollChunk:!n,searchQuery:&#x27;&#x27;,searchSortBy:RELEVANCE,tab:search))</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Brown, Donald J. M., and John M. Evans, with the assistance of David Fairlie. Judicial Review of Administrative Action in Canada, vol. 3. Toronto: Thomson Reuters, 2013 (loose‑leaf updated December 2018, release 4)</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada. House of Commons. Minutes of Proceedings and Evidence of the Standing Committee on Broadcasting, Films and Assistance to the Arts, Respecting Bill C‑20, An Act respecting citizenship, No. 34, 1st Sess., 30th Parl., February 24, 1976, 34:23</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Cohen‑Eliya, Moshe, and Iddo Porat. “Proportionality and Justification” (2014), 64 U.T.L.J. 458</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Evans, John M. “Standards of Review in Administrative Law” (2013), 26 C.J.A.L.P. 67</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Garner, Bryan A., et al. The Law of Judicial Precedent. St. Paul, Minn.: Thomson Reuters, 2016.</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Gerhardt, Michael J. The Power of Precedent. New York: Oxford University Press, 2008</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Iacobucci, Frank. “Articulating a Rational Standard of Review Doctrine: A Tribute to John Willis” (2002), 27 Queen’s L.J. 859</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Lewans, Matthew. Administrative Law and Judicial Deference. Portland, Or.: Hart Publishing, 2016</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLachlin, Beverley. Administrative Tribunals and the Courts: An Evolutionary Relationship, May 27, 2013 (online: https://www.scc-csc.ca/judges-juges/spe-dis/bm-2013-05-27-eng.aspx; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_2_eng.pdf)</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Perell, Paul M. “The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen” (2004), 28 Adv. Q. 40.</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Stratas, David. “The Canadian Law of Judicial Review: A Plea for Doctrinal Coherence and Consistency” (2016), 42 Queen’s L.J. 27</div></td>
+                            <td><div class="value">https://www.canlii.org/en/commentary/doc/2016CanLIIDocs4539</div></td>
+                            <td><div class="value">https://www.canlii.org/en/commentary/doc/2016CanLIIDocs4539?searchId=2026-01-23T17:58:01:433/8cdf74f3630940869af0b88d82e688b0&amp;resultId=6c1da85175434730baf432944adbf7ba&amp;zoupio-debug#!fragment//(hash:(chunk:(anchorText:&#x27;&#x27;),notesQuery:&#x27;&#x27;,scrollChunk:!n,searchQuery:&#x27;&#x27;,searchSortBy:RELEVANCE,tab:search))</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir v. New Brunswick, 2008 SCC 9, [2008] 1 S.C.R. 190</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">s. 26(3) of the Citizenship Regulations, SOR/93-246</div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/laws/regu/sor-93-246/145142/sor-93-246.html</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">paras. 34-50</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">paras. 51-64</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta (Information and Privacy Commissioner) v. Alberta Teachers’ Association, 2011 SCC 61, [2011] 3 S.C.R. 654</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Mouvement laïque québécois v. Saguenay (City), 2015 SCC 16, [2015] 2 S.C.R. 3, at para. 46</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian National Railway Co. v. Canada (Attorney General), 2014 SCC 40, [2014] 2 S.C.R. 135, at para. 55</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Artists’ Representation v. National Gallery of Canada, 2014 SCC 42, [2014] 2 S.C.R. 197, at para. 13</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Smith v. Alliance Pipeline Ltd., 2011 SCC 7, [2011] 1 S.C.R. 160, at paras. 26 and 28</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Citizenship and Immigration) v. Khosa, 2009 SCC 12, [2009] 1 S.C.R. 339, at para. 25</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 54</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLean v. British Columbia (Securities Commission), 2013 SCC 67, [2013] 3 S.C.R. 895, at para. 22</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLean, at para. 22</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293, at para. 32</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230 (“CHRC”), at paras. 45-46</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">P. Daly, “Struggling Towards Coherence in Canadian Administrative Law? Recent Cases on Standard of Review and Reasonableness” (2016), 62 McGill L.J. 527</div></td>
+                            <td><div class="value">https://www.canlii.org/en/commentary/doc/2017CanLIIDocs346</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 27</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Wilson v. Atomic Energy of Canada Ltd., 2016 SCC 29, [2016] 1 S.C.R. 770, at para. 19</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 28</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC, at paras. 45-47</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at paras. 62-64</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">McLean, at para. 22</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Attorney General) v. Bedford, 2013 SCC 72, [2013] 3 S.C.R. 1101, at para. 47</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada v. Craig, 2012 SCC 43, [2012] 2 S.C.R. 489, at paras. 24-27</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Ontario (Attorney General) v. Fraser, 2011 SCC 20, [2011] 2 S.C.R. 3, at paras. 56-57, 129-31 and 139</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. Henry, 2005 SCC 76, [2005] 3 S.C.R. 609, at paras. 43-44</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. Bernard, [1988] 2 S.C.R. 833, at pp. 849-50</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Queensland v. Commonwealth (1977), 139 C.L.R. 585 (H.C.A.)</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Craig, at paras. 28-30</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Henry, at paras. 45-47</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Fraser, at para. 135</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bernard, at pp. 858-59</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Minister of Indian Affairs and Northern Development v. Ranville, [1982] 2 S.C.R. 518, at p. 528</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bernard, at p. 858</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">R. v. B. (K.G.), [1993] 1 S.C.R. 740, at p. 778</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bernard, at p. 858</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 133</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 35</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Wilson, at para. 25</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 27</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta Teachers, at para. 36</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 145</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 27</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 31</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Crevier v. Attorney General of Quebec, [1981] 2 S.C.R. 220, at pp. 236-37</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">U.E.S., Local 298 v. Bibeault, [1988] 2 S.C.R. 1048, at p. 1090</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Alberta Teachers, at para. 30</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Saguenay, at para. 46</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 22</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227 (“C.U.P.E.”)</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">C.U.P.E., at pp. 235-36</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">C.U.P.E., at p. 236</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Pushpanathan v. Canada (Minister of Citizenship and Immigration), [1998] 1 S.C.R. 982, at paras. 32-35</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Pezim v. British Columbia (Superintendent of Brokers), [1994] 2 S.C.R. 557, at pp. 591-92</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Director of Investigation and Research) v. Southam Inc., [1997] 1 S.C.R. 748, at paras. 50-53</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 49</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">D. J. Mullan, “Establishing the Standard of Review: The Struggle for Complexity?” (2004), 17 C.J.A.L.P. 59, at p. 93</div></td>
+                            <td><div class="value">None</div></td>
+                            <td><div class="value">none</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 68</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Khosa, at paras. 23-25</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">paras. 93-96</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 33</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">paras. 81-86</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Bibeault</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Pezim, at pp. 591-92</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Southam, at paras. 50-53</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dr. Q v. College of Physicians and Surgeons of British Columbia, 2003 SCC 19, [2003] 1 S.C.R. 226, at paras. 28-29</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Canada (Deputy Minister of National Revenue) v. Mattel Canada Inc., 2001 SCC 36, [2001] 2 S.C.R. 100, at paras. 28-32</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Moreau‑Bérubé v. New Brunswick (Judicial Council), 2002 SCC 11, [2002] 1 S.C.R. 249, at para. 50</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East, at para. 33</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Khosa</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 25</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 22</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">CHRC</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">para. 50</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/fr/ca/csc/doc/2018/2018csc31/2018csc31.html</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Dunsmuir, at para. 27</div></td>
+                            <td><div class="value"><span class='empty-value'>∅</span></div></td>
+                            <td><div class="value">https://www.canlii.org/en/ca/scc/doc/2019/2019scc65/2019scc65.html</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="fragmentid">
+                <div class="section-header">
+                    <h2 class="section-title">Fragmentid Mismatches</h2>
+                    <span class="mismatch-count">8 mismatches</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Span Text</th>
+                            <th style="width: 35%">Annotator 1 Value</th>
+                            <th style="width: 35%">Annotator 2 Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="span-text">s. 3(2)(a)</div></td>
+                            <td><div class="value">clause 3(2)(a)</div></td>
+                            <td><div class="value">para 3(2)(a)</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">arts. 1</div></td>
+                            <td><div class="value">schedules I, II, s 1</div></td>
+                            <td><div class="value">sec 1</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">41</div></td>
+                            <td><div class="value">schedules I, II, s 41</div></td>
+                            <td><div class="value">sec 41</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">43</div></td>
+                            <td><div class="value">schedules I, II, s 43</div></td>
+                            <td><div class="value">sec 43</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">49</div></td>
+                            <td><div class="value">schedules I, II, s 49</div></td>
+                            <td><div class="value">sec 49</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">53</div></td>
+                            <td><div class="value">schedules I, II, s 53</div></td>
+                            <td><div class="value">sec 53</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">art. II</div></td>
+                            <td><div class="value">sec II</div></td>
+                            <td><div class="value">art. II</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">34:23</div></td>
+                            <td><div class="value">no 34:23</div></td>
+                            <td><div class="value">par 34:23</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="non_standard">
+                <div class="section-header">
+                    <h2 class="section-title">Non_Standard Mismatches</h2>
+                    <span class="mismatch-count">7 mismatches</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Span Text</th>
+                            <th style="width: 35%">Annotator 1 Value</th>
+                            <th style="width: 35%">Annotator 2 Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="span-text">arts. 1</div></td>
+                            <td><div class="value">true</div></td>
+                            <td><div class="value">false</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">41</div></td>
+                            <td><div class="value">true</div></td>
+                            <td><div class="value">false</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">43</div></td>
+                            <td><div class="value">true</div></td>
+                            <td><div class="value">false</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">49</div></td>
+                            <td><div class="value">true</div></td>
+                            <td><div class="value">false</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">53</div></td>
+                            <td><div class="value">true</div></td>
+                            <td><div class="value">false</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">art. II</div></td>
+                            <td><div class="value">false</div></td>
+                            <td><div class="value">true</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">34:23</div></td>
+                            <td><div class="value">false</div></td>
+                            <td><div class="value">true</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="titletype">
+                <div class="section-header">
+                    <h2 class="section-title">Titletype Mismatches</h2>
+                    <span class="mismatch-count">4 mismatches</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Span Text</th>
+                            <th style="width: 35%">Annotator 1 Value</th>
+                            <th style="width: 35%">Annotator 2 Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="span-text">McLean</div></td>
+                            <td><div class="value">alias</div></td>
+                            <td><div class="value">official</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East</div></td>
+                            <td><div class="value">alias</div></td>
+                            <td><div class="value">official</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East</div></td>
+                            <td><div class="value">alias</div></td>
+                            <td><div class="value">official</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="span-text">Edmonton East</div></td>
+                            <td><div class="value">alias</div></td>
+                            <td><div class="value">official</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Report generated on 2026-02-02 15:03:18</p>
+            <p>Total attributes analyzed: 5</p>
+        </footer>
+    </div>
+
+    <script>
+        // Make navigation menu sticky
+        window.addEventListener('scroll', function() {
+            const navMenu = document.getElementById('nav-menu');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 100) {
+                navMenu.style.top = '0px';
+                navMenu.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navMenu.style.top = '20px';
+                navMenu.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

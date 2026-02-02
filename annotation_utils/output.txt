@@ -1,0 +1,430 @@
+#################    decision   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Dunsmuir’s                                                   | Dunsmuir’                                                    | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+R. v. Bernard, [1988] 2 S.C.R. 833; Minister of Indian       |                                                              | ✗ no match
+Affairs and Northern Development v. Ranville, [1982] 2       |                                                              | ✗ no match
+S.C.R. 518                                                   |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Mills v. Workplace Safety and Insurance Appeals Tribunal     | Mills v. Workplace Safety and Insurance Appeals Tribunal     | ≈ lenient
+(Ont.), 2008 ONCA 436, 237 O.A.C. 71                         | (Ont.), 2008 ONCA 436, 237 O.A.C. 71; Celgene Corp. v.       | ≈ lenient
+                                                             | Canada (Attorney General), 2011 SCC 1, [2011] 1 S.C.R. 3     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Celgene Corp. v. Canada (Attorney General), 2011 SCC 1,      |                                                              | ✗ no match
+[2011] 1 S.C.R. 3                                            |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+2017 FCA 132, [2018] 3 F.C.R. 75, 52 Imm. L.R. (4th) 1, 30   | Stratas, Webb and Gleason JJ.A.), 2017 FCA 132, [2018] 3     | ≈ lenient
+Admin. L.R. (6th) 1, [2017] F.C.J. No. 638 (QL), 2017        | F.C.R. 75, 52 Imm. L.R. (4th) 1, 30 Admin. L.R. (6th) 1,     | ≈ lenient
+CarswellNat 2791 (WL Can.)                                   | [2017] F.C.J. No. 638 (QL), 2017 CarswellNat 2791 (WL Can.)  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+2015 FC 960, [2016] 2 F.C.R. 39, 38 Imm. L.R. (4th) 110,     | Bell J., 2015 FC 960, [2016] 2 F.C.R. 39, 38 Imm. L.R. (4th) | ≈ lenient
+[2015] F.C.J. No. 981 (QL), 2015 CarswellNat 3740 (WL Can.)  | 110, [2015] F.C.J. No. 981 (QL), 2015 CarswellNat 3740 (WL   | ≈ lenient
+                                                             | Can.)                                                        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | R. v. Bernard, [1988] 2 S.C.R. 833                           | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Minister of Indian Affairs and Northern Development v.       | ✗ no match
+                                                             | Ranville, [1982] 2 S.C.R. 518                                | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    legislation   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Citizenship Act                                              |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Citizenship Act                                              |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+s. 35                                                        | s. 35 of the Constitution Act, 1982                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Constitution Act, 1982                                       | Constitution                                                 | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Citizenship Act                                              |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+s. 3(2)(a)                                                   |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+s. 3(2)(a)                                                   |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+s. 3(2)(a)                                                   |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Administrative Tribunals Act, S.B.C. 2004, c. 45, ss. 58, 59 | Administrative Tribunals Act, S.B.C. 2004, c. 45, ss. 58,    | ≈ lenient
+                                                             | 59.                                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Foreign Missions and International Organizations Act, S.C.   | Foreign Missions and International Organizations Act, S.C.   | ≈ lenient
+1991, c. 41, ss. 3, 4, Schs. I, II, arts. 1, 41, 43, 49, 53. | 1991, c. 41, ss. 3, 4                                        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Optional Protocol to the Vienna Convention on Diplomatic     |                                                              | ✗ no match
+Relations, concerning Acquisition of Nationality, 500        |                                                              | ✗ no match
+U.N.T.S. 223, art. II                                        |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Vienna Convention on Consular Relations, Can. T.S. 1974 No.  |                                                              | ✗ no match
+25.                                                          |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Vienna Convention on Diplomatic Relations, Can. T.S. 1966    |                                                              | ✗ no match
+No. 29.                                                      |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | s. 3(2)(a) of the Citizenship Act                            | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | s. 3(2)(a) of the Citizenship Act                            | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | s. 3(2)(a) of the Citizenship Act                            | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    secondary sources   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Bingham, Tom. The Rule of Law. London: Allen Lane, 2010      | Bingham, Tom. The Rule of Law. London: Allen Lane, 2010.     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Brouwer, Andrew. Statelessness in Canadian Context: A        | Brouwer, Andrew. Statelessness in Canadian Context: A        | ≈ lenient
+Discussion Paper, July 2003 (online: https://www.unhcr.org/p | Discussion Paper, July 2003 (online: https://www.unhcr.org/p | ≈ lenient
+rotection/statelessness/40629ffc7/statelessness-canadian-    | rotection/statelessness/40629ffc7/statelessness-canadian-    | ≈ lenient
+context-discussion-paper.html; archived version:             | context-discussion-paper.html; archived version:             | ≈ lenient
+https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_1_eng.pdf)      | https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_1_eng.pdf).     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Brownlie, Ian. Principles of Public International Law, 5th   | Brownlie, Ian. Principles of Public International Law, 5th   | ≈ lenient
+ed. Oxford: Clarendon Press, 1998                            | ed. Oxford: Clarendon Press, 1998.                           | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Coady, Jonathan M. “The Time Has Come: Standard of Review in | Coady, Jonathan M. “The Time Has Come: Standard of Review in | ≈ lenient
+Canadian Administrative Law” (2017), 68 U.N.B.L.J. 87        | Canadian Administrative Law” (2017), 68 U.N.B.L.J. 87.       | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Cromwell, Thomas A. “What I Think I’ve Learned About         | Cromwell, Thomas A. “What I Think I’ve Learned About         | ≈ lenient
+Administrative Law” (2017), 30 C.J.A.L.P. 307                | Administrative Law” (2017), 30 C.J.A.L.P. 307.               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Daly, Paul. “Deference on Questions of Law” (2011), 74 Mod.  | Daly, Paul. “Deference on Questions of Law” (2011), 74 Mod.  | ≈ lenient
+L. Rev. 694                                                  | L. Rev. 694.                                                 | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Daly, Paul. “Unreasonable Interpretations of Law” (2014), 66 | Daly, Paul. “Unreasonable Interpretations of Law” (2014), 66 | ≈ lenient
+S.C.L.R. (2d) 233                                            | S.C.L.R. (2d) 233.                                           | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Daly, Paul. “Struggling Towards Coherence in Canadian        | Daly, Paul. “Struggling Towards Coherence in Canadian        | ≈ lenient
+Administrative Law? Recent Cases on Standard of Review and   | Administrative Law? Recent Cases on Standard of Review and   | ≈ lenient
+Reasonableness” (2016), 62 McGill L.J. 527                   | Reasonableness” (2016), 62 McGill L.J. 527.                  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Daly, Paul. “The Signal and the Noise in Administrative Law” | Daly, Paul. “The Signal and the Noise in Administrative Law” | ≈ lenient
+(2017), 68 U.N.B.L.J. 67                                     | (2017), 68 U.N.B.L.J. 67.                                    | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+DeMarco, Jerry V. “Seeking Simplicity in Canada’s Complex    | DeMarco, Jerry V. “Seeking Simplicity in Canada’s Complex    | ≈ lenient
+World of Judicial Review” (2019), 32 C.J.A.L.P. 67           | World of Judicial Review” (2019), 32 C.J.A.L.P. 67.          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Dicey, Albert Venn. Introduction to the Study of the Law of  | Dicey, Albert Venn. Introduction to the Study of the Law of  | ≈ lenient
+the Constitution, 10th ed. London: Macmillan, 1959           | the Constitution, 10th ed. London: Macmillan, 1959.          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Duxbury, Neil. The Nature and Authority of Precedent.        | Duxbury, Neil. The Nature and Authority of Precedent.        | ≈ lenient
+Cambridge: Cambridge University Press, 2008                  | Cambridge: Cambridge University Press, 2008.                 | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Dyzenhaus, David. “The Politics of Deference: Judicial       | Dyzenhaus, David. “The Politics of Deference: Judicial       | ≈ lenient
+Review and Democracy”, in Michael Taggart, ed., The Province | Review and Democracy”, in Michael Taggart, ed., The Province | ≈ lenient
+of Administrative Law. Oxford: Hart, 1997, 279               | of Administrative Law. Oxford: Hart, 1997, 279.              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Dyzenhaus, David. “Dignity in Administrative Law: Judicial   | Dyzenhaus, David. “Dignity in Administrative Law: Judicial   | ≈ lenient
+Deference in a Culture of Justification” (2012), 17 Rev.     | Deference in a Culture of Justification” (2012), 17 Rev.     | ≈ lenient
+Const. Stud. 87                                              | Const. Stud. 87.                                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Evans, John M. “Triumph of Reasonableness: But How Much Does | Evans, John M. “Triumph of Reasonableness: But How Much Does | ≈ lenient
+It Really Matter?” (2014), 27 C.J.A.L.P. 101                 | It Really Matter?” (2014), 27 C.J.A.L.P. 101.                | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Frankfurter, Felix. “Some Reflections on the Reading of      | Frankfurter, Felix. “Some Reflections on the Reading of      | ≈ lenient
+Statutes” (1947), 47 Colum. L. Rev. 527                      | Statutes” (1947), 47 Colum. L. Rev. 527.                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Grant, Angus, and Lorne Sossin. “Fairness in Context:        | Grant, Angus, and Lorne Sossin. “Fairness in Context:        | ≈ lenient
+Achieving Fairness Through Access to Administrative          | Achieving Fairness Through Access to Administrative          | ≈ lenient
+Justice”, in Colleen M. Flood and Lorne Sossin, eds.,        | Justice”, in Colleen M. Flood and Lorne Sossin, eds.,        | ≈ lenient
+Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, | Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, | ≈ lenient
+341                                                          | 341.                                                         | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Green, Andrew. “Can There Be Too Much Context in             | Green, Andrew. “Can There Be Too Much Context in             | ≈ lenient
+Administrative Law? Setting the Standard of Review in        | Administrative Law? Setting the Standard of Review in        | ≈ lenient
+Canadian Administrative Law” (2014), 47 U.B.C. L. Rev. 443   | Canadian Administrative Law” (2014), 47 U.B.C. L. Rev. 443.  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Hall, Geoff R. “Two Unsettled Questions in the Law of        | Hall, Geoff R. “Two Unsettled Questions in the Law of        | ≈ lenient
+Contractual Interpretation: A Call to the Supreme Court of   | Contractual Interpretation: A Call to the Supreme Court of   | ≈ lenient
+Canada” (2011), 50 Can. Bus. L.J. 434                        | Canada” (2011), 50 Can. Bus. L.J. 434.                       | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Laskin, Bora. “Collective Bargaining in Ontario: A New       | Laskin, Bora. “Collective Bargaining in Ontario: A New       | ≈ lenient
+Legislative Approach” (1943), 21 Can. Bar Rev. 684           | Legislative Approach” (1943), 21 Can. Bar Rev. 684.          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Lewans, Matthew. “Renovating Judicial Review” (2017), 68     | Lewans, Matthew. “Renovating Judicial Review” (2017), 68     | ≈ lenient
+U.N.B.L.J. 109                                               | U.N.B.L.J. 109.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Macdonald, R. A. “Absence of Jurisdiction: A Perspective”    | Macdonald, R. A. “Absence of Jurisdiction: A Perspective”    | ≈ lenient
+(1983), 43 R. du B. 307                                      | (1983), 43 R. du B. 307.                                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Macdonald, Roderick A., and David Lametti. “Reasons for      | Macdonald, Roderick A., and David Lametti. “Reasons for      | ≈ lenient
+Decision in Administrative Law” (1990), 3 C.J.A.L.P. 123     | Decision in Administrative Law” (1990), 3 C.J.A.L.P. 123.    | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Macklin, Audrey. “Citizenship Revocation, the Privilege to   | Macklin, Audrey. “Citizenship Revocation, the Privilege to   | ≈ lenient
+Have Rights and the Production of the Alien” (2014), 40      | Have Rights and the Production of the Alien” (2014), 40      | ≈ lenient
+Queen’s L.J. 1                                               | Queen’s L.J. 1.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Macklin, Audrey. “Standard of Review: Back to the Future?”,  | Macklin, Audrey. “Standard of Review: Back to the Future?”,  | ≈ lenient
+in Colleen M. Flood and Lorne Sossin, eds., Administrative   | in Colleen M. Flood and Lorne Sossin, eds., Administrative   | ≈ lenient
+Law in Context, 3rd ed. Toronto: Emond, 2018, 381            | Law in Context, 3rd ed. Toronto: Emond, 2018, 381.           | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Madden, Mike. “Conquering the Common Law Hydra: A Probably   | Madden, Mike. “Conquering the Common Law Hydra: A Probably   | ≈ lenient
+Correct and Reasonable Overview of Current Standards of      | Correct and Reasonable Overview of Current Standards of      | ≈ lenient
+Appellate and Judicial Review” (2010), 36 Adv. Q. 269        | Appellate and Judicial Review” (2010), 36 Adv. Q. 269.       | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Makela, Finn. “Acquired Expertise of Administrative          | Makela, Finn. “Acquired Expertise of Administrative          | ≈ lenient
+Tribunals and the Standard of Judicial Review: The Case of   | Tribunals and the Standard of Judicial Review: The Case of   | ≈ lenient
+Grievance Arbitrators and Human Rights Law” (2013), 17       | Grievance Arbitrators and Human Rights Law” (2013), 17       | ≈ lenient
+C.L.E.L.J. 345                                               | C.L.E.L.J. 345.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+McLachlin, Beverley. “The Roles of Administrative Tribunals  | McLachlin, Beverley. “The Roles of Administrative Tribunals  | ≈ lenient
+and Courts in Maintaining the Rule of Law” (1998), 12        | and Courts in Maintaining the Rule of Law” (1998), 12        | ≈ lenient
+C.J.A.L.P. 171                                               | C.J.A.L.P. 171.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+McLachlin, Beverley. “‘Administrative Law is Not for         | McLachlin, Beverley. “‘Administrative Law is Not for         | ≈ lenient
+Sissies’: Finding a Path Through the Thicket” (2016), 29     | Sissies’: Finding a Path Through the Thicket” (2016), 29     | ≈ lenient
+C.J.A.L.P. 127                                               | C.J.A.L.P. 127.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+McLachlin, Beverley. “The Role of the Supreme Court of       | McLachlin, Beverley. “The Role of the Supreme Court of       | ≈ lenient
+Canada in Shaping the Common Law”, in Paul Daly, ed., Apex   | Canada in Shaping the Common Law”, in Paul Daly, ed., Apex   | ≈ lenient
+Courts and the Common Law. Toronto: University of Toronto    | Courts and the Common Law. Toronto: University of Toronto    | ≈ lenient
+Press, 2019, 25                                              | Press, 2019, 25.                                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Morissette, Yves‑Marie. “What is a ‘reasonable decision’?”   | Morissette, Yves‑Marie. “What is a ‘reasonable decision’?”   | ≈ lenient
+(2018), 31 C.J.A.L.P. 225                                    | (2018), 31 C.J.A.L.P. 225.                                   | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Mullan, David. “Unresolved Issues on Standard of Review in   | Mullan, David. “Unresolved Issues on Standard of Review in   | ≈ lenient
+Canadian Judicial Review of Administrative Action — The Top  | Canadian Judicial Review of Administrative Action — The Top  | ≈ lenient
+Fifteen!” (2013), 42 Adv. Q. 1                               | Fifteen!” (2013), 42 Adv. Q. 1.                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Munro, Katherine. “A ‘Unique Experiment’: The Ontario Labour | Munro, Katherine. “A ‘Unique Experiment’: The Ontario Labour | ≈ lenient
+Court, 1943‑1944” (2014), 74 Labour 199                      | Court, 1943‑1944” (2014), 74 Labour 199.                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Pape, Paul J., and John J. Adair. “Unreasonable review: The  | Pape, Paul J., and John J. Adair. “Unreasonable review: The  | ≈ lenient
+losing party and the palpable and overriding error standard” | losing party and the palpable and overriding error standard” | ≈ lenient
+(2008), 27 Adv. J. 6                                         | (2008), 27 Adv. J. 6.                                        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Powell, Lewis F., Jr. “Stare Decisis and Judicial Restraint” | Powell, Lewis F., Jr. “Stare Decisis and Judicial Restraint” | ≈ lenient
+(1990), 47 Wash. & Lee L. Rev. 281                           | (1990), 47 Wash. & Lee L. Rev. 281.                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Régimbald, Guy. Canadian Administrative Law, 2nd ed.         | Régimbald, Guy. Canadian Administrative Law, 2nd ed.         | ≈ lenient
+Markham, Ont.: LexisNexis, 2015                              | Markham, Ont.: LexisNexis, 2015.                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Robertson, Joseph T. “Judicial Deference to Administrative   | Robertson, Joseph T. “Judicial Deference to Administrative   | ≈ lenient
+Tribunals: A Guide to 60 Years of Supreme Court              | Tribunals: A Guide to 60 Years of Supreme Court              | ≈ lenient
+Jurisprudence” (2014), 66 S.C.L.R. (2d) 1                    | Jurisprudence” (2014), 66 S.C.L.R. (2d) 1.                   | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Robertson, Joseph T. “Identifying the Review Standard:       | Robertson, Joseph T. “Identifying the Review Standard:       | ≈ lenient
+Administrative Deference in a Nutshell” (2017), 68           | Administrative Deference in a Nutshell” (2017), 68           | ≈ lenient
+U.N.B.L.J. 145                                               | U.N.B.L.J. 145.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Robertson, Joseph T. Administrative Deference: The Canadian  | Robertson, Joseph T. Administrative Deference: The Canadian  | ≈ lenient
+Doctrine that Continues to Disappoint, April 18, 2018        | Doctrine that Continues to Disappoint, April 18, 2018        | ≈ lenient
+(online: https://poseidon01.ssrn.com/delivery.php?ID=0250781 | (online: https://poseidon01.ssrn.com/delivery.php?ID=0250781 | ≈ lenient
+211210770730881000690231080091160080310850560441261011040091 | 211210770730881000690231080091160080310850560441261011040091 | ≈ lenient
+010770750911240650330200491021180330180880231221260690870981 | 010770750911240650330200491021180330180880231221260690870981 | ≈ lenient
+050410600220131120861230731021030090660060500710701020110061 | 050410600220131120861230731021030090660060500710701020110061 | ≈ lenient
+270901241160800890641200811251001271041000260941250151010891 | 270901241160800890641200811251001271041000260941250151010891 | ≈ lenient
+05111&EXT=pdf; archived version: https://www.scc-csc.ca/cso- | 05111&EXT=pdf; archived version: https://www.scc-csc.ca/cso- | ≈ lenient
+dce/2019SCC-CSC65_3_eng.pdf)                                 | dce/2019SCC-CSC65_3_eng.pdf).                                | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Sharpe, Robert J. Good Judgment: Making Judicial Decisions.  | Sharpe, Robert J. Good Judgment: Making Judicial Decisions.  | ≈ lenient
+Toronto: University of Toronto Press, 2018                   | Toronto: University of Toronto Press, 2018.                  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Stacey, Jocelyn, and Alice Woolley. “Can Pragmatism Function | Stacey, Jocelyn, and Alice Woolley. “Can Pragmatism Function | ≈ lenient
+in Administrative Law?” (2016), 74 S.C.L.R. (2d) 211         | in Administrative Law?” (2016), 74 S.C.L.R. (2d) 211.        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Stack, Kevin M. “Overcoming Dicey in Administrative Law”     | Stack, Kevin M. “Overcoming Dicey in Administrative Law”     | ≈ lenient
+(2018), 68 U.T.L.J. 293                                      | (2018), 68 U.T.L.J. 293.                                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Sullivan, Ruth. Sullivan on the Construction of Statutes,    | Sullivan, Ruth. Sullivan on the Construction of Statutes,    | ≈ lenient
+6th ed. Markham, Ont.: LexisNexis, 2014                      | 6th ed. Markham, Ont.: LexisNexis, 2014.                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Sullivan, Ruth. Statutory Interpretation, 3rd ed. Toronto:   | Sullivan, Ruth. Statutory Interpretation, 3rd ed. Toronto:   | ≈ lenient
+Irwin Law, 2016                                              | Irwin Law, 2016.                                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Van Harten, Gus, et al. Administrative Law: Cases, Text, and | Van Harten, Gus, et al. Administrative Law: Cases, Text, and | ≈ lenient
+Materials, 7th ed. Toronto: Emond, 2015                      | Materials, 7th ed. Toronto: Emond, 2015.                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Waldron, Jeremy. “Stare Decisis and the Rule of Law: A       | Waldron, Jeremy. “Stare Decisis and the Rule of Law: A       | ≈ lenient
+Layered Approach” (2012), 111 Mich. L. Rev. 1                | Layered Approach” (2012), 111 Mich. L. Rev. 1.               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Willes, John A. The Ontario Labour Court: 1943‑1944.         | Willes, John A. The Ontario Labour Court: 1943‑1944.         | ≈ lenient
+Kingston, Ont.: Industrial Relations Centre, Queen’s         | Kingston, Ont.: Industrial Relations Centre, Queen’s         | ≈ lenient
+University, 1979                                             | University, 1979.                                            | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+B. McLachlin, “The Roles of Administrative Tribunals and     | Rt. Hon. B. McLachlin, “The Roles of Administrative          | ≈ lenient
+Courts in Maintaining the Rule of Law” (1998), 12 C.J.A.L.P. | Tribunals and Courts in Maintaining the Rule of Law” (1998), | ≈ lenient
+171, at p. 174                                               | 12 C.J.A.L.P. 171, at p. 174                                 | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Schs. I                                                      | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | II, arts. 1, 41, 43, 49, 53                                  | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Optional Protocol to the Vienna Convention on Diplomatic     | ✗ no match
+                                                             | Relations, concerning Acquisition of Nationality, 500        | ✗ no match
+                                                             | U.N.T.S. 223, art. II.                                       | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Vienna Convention on Consular Relations, Can. T.S. 1974 No.  | ✗ no match
+                                                             | 25.                                                          | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Vienna Convention on Diplomatic Relations, Can. T.S. 1966    | ✗ no match
+                                                             | No. 29.                                                      | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    title   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Dunsmuir’s                                                   |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd   | Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd.  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Moore v. British Columbia (Education), 2012 SCC 61           | Moore v. British Columbia (Education)                        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Kimble v. Marvel Entertainment, LLC                          | Kimble v. Marvel Entertainment                               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Plourde v. Wal‑Mart Canada Corp.                             |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Association des courtiers et agents immobiliers du Québec v. |                                                              | ✗ no match
+Proprio Direct inc.                                          |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Ontario Human Rights Code, 1961‑62                           | Ontario Human Rights Code                                    | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Administrative Law is Not for Sissies’: Finding a Path       | ‘Administrative Law is Not for Sissies’: Finding a Path      | ≈ lenient
+Through the Thicket                                          | Through the Thicket                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Administrative Law: Cases, Text, and Materials               | Administrative Law: Cases, Text, and Materials,              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Citizenship Act                                              | Citizenship Act,                                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Constitution                                                 | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Schs. I                                                      | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | II                                                           | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Dunsmuir                                                     | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    fragment   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Schs. I                                                      |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+II                                                           |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | s. 3(2)(a)                                                   | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    reference   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+2019 SCC 65, [2019]                                          | 2019 SCC 65                                                  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+R.S.C. 1985, c. C-29, s. 3(2)(a)                             | R.S.C. 1985, c. C-29                                         | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+2003] 1 S.C.R. 779                                           | [2003] 1 S.C.R. 779                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+2002] 2 S.C.R. 235                                           | [2002] 2 S.C.R. 235                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+2017 FCA 1,                                                  | 2017 FCA 1                                                   | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+, [1994] 1 S.C.R. 202                                        | [1994] 1 S.C.R. 202                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+135 S. Ct. 2401 (2015)                                       | LLC, 135 S. Ct. 2401 (2015)                                  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Bill 32, 1st Sess., 42nd Leg., Quebec, 2019.                 | Bill 32, 1st Sess., 42nd Leg., Quebec, 2019                  | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+S.O. 1961‑62, c. 93                                          | 1961‑62, S.O. 1961‑62, c. 93                                 | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+500 U.N.T.S. 223                                             |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Can. T.S. 1974 No. 25                                        |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Can. T.S. 1966 No. 29                                        |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+2008 SCC 9                                                   | 2008 SCC 9, [2008] 1 S.C.R. 190                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+[2008] 1 S.C.R. 190                                          |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+139 C.L.R. 585 (H.C.A.)                                      |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | 2012 SCC 61                                                  | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Plourde v. Wal‑Mart Canada Corp.                             | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Association des courtiers et agents immobiliers du Québec v. | ✗ no match
+                                                             | Proprio Direct inc.                                          | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | 139 C.L.R. 585                                               | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    source   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Colleen M. Flood and Lorne Sossin, eds., Administrative Law  | in Colleen M. Flood and Lorne Sossin, eds., Administrative   | ≈ lenient
+in Context, 3rd ed. Toronto: Emond, 2018, 381                | Law in Context, 3rd ed. Toronto: Emond, 2018, 381            | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+(2014), 74 Labour 199                                        | (2014), 74 Labour 199.                                       | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | 500 U.N.T.S. 223                                             | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Can. T.S. 1974 No. 25                                        | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Can. T.S. 1966 No. 29                                        | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             | Laskin, Bora                                                 | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#################    authors   ###############
+
+Annotator 1                                                  | Annotator 2                                                  | Match
+===================================================================================================================================
+Brouwer, Andrew                                              | Brouwer, Andrew.                                             | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Coady, Jonathan M                                            | Coady, Jonathan M.                                           | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Cromwell, Thomas A                                           | Cromwell, Thomas A.                                          | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+DeMarco, Jerry V                                             | DeMarco, Jerry V.                                            | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Duxbury, Neil                                                | Duxbury, Neil.                                               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Dyzenhaus, David                                             | Dyzenhaus, David.                                            | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Evans, John M                                                | Evans, John M.                                               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Evans, John M                                                | Evans, John M.                                               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Garner, Bryan A.                                             | Garner, Bryan A., et al.                                     | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Laskin, Bora                                                 |                                                              | ✗ no match
+-----------------------------------------------------------------------------------------------------------------------------------
+Macklin, Audrey.                                             | Macklin, Audrey                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Pape, Paul J., and John J. Adair                             | Pape, Paul J., and John J. Adair.                            | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Stratas, David.                                              | Stratas, David                                               | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Van Harten, Gus,                                             | Van Harten, Gus, et al.                                      | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+Willes, John A                                               | Willes, John A.                                              | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+B. McLachlin                                                 | Rt. Hon. B. McLachlin                                        | ≈ lenient
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+

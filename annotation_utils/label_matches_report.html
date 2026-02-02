@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Matches Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .stats {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .summary-item {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .summary-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .summary-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .nav-menu {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            z-index: 1000;
+        }
+
+        .nav-menu h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-link:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link .label-name {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .nav-link .label-stats {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        .label-stats-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .match-stat {
+            background: #27ae60;
+            color: white;
+        }
+
+        .mismatch-stat {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .only-a1-stat {
+            background: #3498db;
+            color: white;
+        }
+
+        .only-a2-stat {
+            background: #9b59b6;
+            color: white;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #1a252f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .annotator-text {
+            max-width: 600px;
+            word-wrap: break-word;
+        }
+
+        .a1-text {
+            background: #e8f4fc;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+
+        .a2-text {
+            background: #f4e8fc;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #9b59b6;
+        }
+
+        .match-cell {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            width: 80px;
+        }
+
+        .match-check {
+            color: #27ae60;
+        }
+
+        .match-cross {
+            color: #e74c3c;
+        }
+
+        .match-only {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .empty-cell {
+            color: #bdc3c7;
+            font-style: italic;
+            background: #f8f9fa;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .annotator-text {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Label Matches Report</h1>
+            <div class="stats">
+                Comparing 8 labels between Annotator 1 and Annotator 2
+            </div>
+        </header>
+
+        <div class="summary">
+            <div class="summary-item">
+                <div class="summary-value">8</div>
+                <div class="summary-label">Labels</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value">1568</div>
+                <div class="summary-label">Total A1 Spans</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value">1569</div>
+                <div class="summary-label">Total A2 Spans</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value">0</div>
+                <div class="summary-label">Perfect Matches</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value">0</div>
+                <div class="summary-label">Mismatches</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+            <h2>Quick Navigation</h2>
+            <div class="nav-links">
+                <a href="#decision" class="nav-link">
+                    <span class="label-name">Decision</span>
+                    <span class="label-stats">323 vs 323 spans</span>
+                </a>
+                <a href="#legislation" class="nav-link">
+                    <span class="label-name">Legislation</span>
+                    <span class="label-stats">49 vs 43 spans</span>
+                </a>
+                <a href="#secondary sources" class="nav-link">
+                    <span class="label-name">Secondary Sources</span>
+                    <span class="label-stats">65 vs 70 spans</span>
+                </a>
+                <a href="#title" class="nav-link">
+                    <span class="label-name">Title</span>
+                    <span class="label-stats">405 vs 406 spans</span>
+                </a>
+                <a href="#fragment" class="nav-link">
+                    <span class="label-name">Fragment</span>
+                    <span class="label-stats">128 vs 127 spans</span>
+                </a>
+                <a href="#reference" class="nav-link">
+                    <span class="label-name">Reference</span>
+                    <span class="label-stats">468 vs 467 spans</span>
+                </a>
+                <a href="#source" class="nav-link">
+                    <span class="label-name">Source</span>
+                    <span class="label-stats">65 vs 69 spans</span>
+                </a>
+                <a href="#authors" class="nav-link">
+                    <span class="label-name">Authors</span>
+                    <span class="label-stats">65 vs 64 spans</span>
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <section class="section" id="decision">
+                <div class="section-header">
+                    <h2 class="section-title">Decision</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dunsmuir’s
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dunsmuir’
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        R. v. Bernard, [1988] 2 S.C.R. 833; Minister of Indian Affairs and Northern Development v. Ranville, [1982] 2 S.C.R. 518
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Mills v. Workplace Safety and Insurance Appeals Tribunal (Ont.), 2008 ONCA 436, 237 O.A.C. 71
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Mills v. Workplace Safety and Insurance Appeals Tribunal (Ont.), 2008 ONCA 436, 237 O.A.C. 71; Celgene Corp. v. Canada (Attorney General), 2011 SCC 1, [2011] 1 S.C.R. 3
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Celgene Corp. v. Canada (Attorney General), 2011 SCC 1, [2011] 1 S.C.R. 3
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2017 FCA 132, [2018] 3 F.C.R. 75, 52 Imm. L.R. (4th) 1, 30 Admin. L.R. (6th) 1, [2017] F.C.J. No. 638 (QL), 2017 CarswellNat 2791 (WL Can.)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Stratas, Webb and Gleason JJ.A.), 2017 FCA 132, [2018] 3 F.C.R. 75, 52 Imm. L.R. (4th) 1, 30 Admin. L.R. (6th) 1, [2017] F.C.J. No. 638 (QL), 2017 CarswellNat 2791 (WL Can.)
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2015 FC 960, [2016] 2 F.C.R. 39, 38 Imm. L.R. (4th) 110, [2015] F.C.J. No. 981 (QL), 2015 CarswellNat 3740 (WL Can.)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Bell J., 2015 FC 960, [2016] 2 F.C.R. 39, 38 Imm. L.R. (4th) 110, [2015] F.C.J. No. 981 (QL), 2015 CarswellNat 3740 (WL Can.)
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        R. v. Bernard, [1988] 2 S.C.R. 833
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Minister of Indian Affairs and Northern Development v. Ranville, [1982] 2 S.C.R. 518
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="legislation">
+                <div class="section-header">
+                    <h2 class="section-title">Legislation</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        s. 35
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        s. 35 of the Constitution Act, 1982
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Constitution Act, 1982
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Constitution
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        s. 3(2)(a)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        s. 3(2)(a)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        s. 3(2)(a)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Administrative Tribunals Act, S.B.C. 2004, c. 45, ss. 58, 59
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Administrative Tribunals Act, S.B.C. 2004, c. 45, ss. 58, 59.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Foreign Missions and International Organizations Act, S.C. 1991, c. 41, ss. 3, 4, Schs. I, II, arts. 1, 41, 43, 49, 53.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Foreign Missions and International Organizations Act, S.C. 1991, c. 41, ss. 3, 4
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Optional Protocol to the Vienna Convention on Diplomatic Relations, concerning Acquisition of Nationality, 500 U.N.T.S. 223, art. II
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Vienna Convention on Consular Relations, Can. T.S. 1974 No. 25.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Vienna Convention on Diplomatic Relations, Can. T.S. 1966 No. 29.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        s. 3(2)(a) of the Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        s. 3(2)(a) of the Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        s. 3(2)(a) of the Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="secondary sources">
+                <div class="section-header">
+                    <h2 class="section-title">Secondary Sources</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Bingham, Tom. The Rule of Law. London: Allen Lane, 2010
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Bingham, Tom. The Rule of Law. London: Allen Lane, 2010.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Brouwer, Andrew. Statelessness in Canadian Context: A Discussion Paper, July 2003 (online: https://www.unhcr.org/protection/statelessness/40629ffc7/statelessness-canadian-context-discussion-paper.html; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_1_eng.pdf)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Brouwer, Andrew. Statelessness in Canadian Context: A Discussion Paper, July 2003 (online: https://www.unhcr.org/protection/statelessness/40629ffc7/statelessness-canadian-context-discussion-paper.html; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_1_eng.pdf).
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Brownlie, Ian. Principles of Public International Law, 5th ed. Oxford: Clarendon Press, 1998
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Brownlie, Ian. Principles of Public International Law, 5th ed. Oxford: Clarendon Press, 1998.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Coady, Jonathan M. “The Time Has Come: Standard of Review in Canadian Administrative Law” (2017), 68 U.N.B.L.J. 87
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Coady, Jonathan M. “The Time Has Come: Standard of Review in Canadian Administrative Law” (2017), 68 U.N.B.L.J. 87.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Cromwell, Thomas A. “What I Think I’ve Learned About Administrative Law” (2017), 30 C.J.A.L.P. 307
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Cromwell, Thomas A. “What I Think I’ve Learned About Administrative Law” (2017), 30 C.J.A.L.P. 307.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Daly, Paul. “Deference on Questions of Law” (2011), 74 Mod. L. Rev. 694
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Daly, Paul. “Deference on Questions of Law” (2011), 74 Mod. L. Rev. 694.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Daly, Paul. “Unreasonable Interpretations of Law” (2014), 66 S.C.L.R. (2d) 233
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Daly, Paul. “Unreasonable Interpretations of Law” (2014), 66 S.C.L.R. (2d) 233.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Daly, Paul. “Struggling Towards Coherence in Canadian Administrative Law? Recent Cases on Standard of Review and Reasonableness” (2016), 62 McGill L.J. 527
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Daly, Paul. “Struggling Towards Coherence in Canadian Administrative Law? Recent Cases on Standard of Review and Reasonableness” (2016), 62 McGill L.J. 527.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Daly, Paul. “The Signal and the Noise in Administrative Law” (2017), 68 U.N.B.L.J. 67
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Daly, Paul. “The Signal and the Noise in Administrative Law” (2017), 68 U.N.B.L.J. 67.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        DeMarco, Jerry V. “Seeking Simplicity in Canada’s Complex World of Judicial Review” (2019), 32 C.J.A.L.P. 67
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        DeMarco, Jerry V. “Seeking Simplicity in Canada’s Complex World of Judicial Review” (2019), 32 C.J.A.L.P. 67.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dicey, Albert Venn. Introduction to the Study of the Law of the Constitution, 10th ed. London: Macmillan, 1959
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dicey, Albert Venn. Introduction to the Study of the Law of the Constitution, 10th ed. London: Macmillan, 1959.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Duxbury, Neil. The Nature and Authority of Precedent. Cambridge: Cambridge University Press, 2008
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Duxbury, Neil. The Nature and Authority of Precedent. Cambridge: Cambridge University Press, 2008.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dyzenhaus, David. “The Politics of Deference: Judicial Review and Democracy”, in Michael Taggart, ed., The Province of Administrative Law. Oxford: Hart, 1997, 279
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dyzenhaus, David. “The Politics of Deference: Judicial Review and Democracy”, in Michael Taggart, ed., The Province of Administrative Law. Oxford: Hart, 1997, 279.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dyzenhaus, David. “Dignity in Administrative Law: Judicial Deference in a Culture of Justification” (2012), 17 Rev. Const. Stud. 87
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dyzenhaus, David. “Dignity in Administrative Law: Judicial Deference in a Culture of Justification” (2012), 17 Rev. Const. Stud. 87.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Evans, John M. “Triumph of Reasonableness: But How Much Does It Really Matter?” (2014), 27 C.J.A.L.P. 101
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Evans, John M. “Triumph of Reasonableness: But How Much Does It Really Matter?” (2014), 27 C.J.A.L.P. 101.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Frankfurter, Felix. “Some Reflections on the Reading of Statutes” (1947), 47 Colum. L. Rev. 527
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Frankfurter, Felix. “Some Reflections on the Reading of Statutes” (1947), 47 Colum. L. Rev. 527.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Grant, Angus, and Lorne Sossin. “Fairness in Context: Achieving Fairness Through Access to Administrative Justice”, in Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 341
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Grant, Angus, and Lorne Sossin. “Fairness in Context: Achieving Fairness Through Access to Administrative Justice”, in Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 341.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Green, Andrew. “Can There Be Too Much Context in Administrative Law? Setting the Standard of Review in Canadian Administrative Law” (2014), 47 U.B.C. L. Rev. 443
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Green, Andrew. “Can There Be Too Much Context in Administrative Law? Setting the Standard of Review in Canadian Administrative Law” (2014), 47 U.B.C. L. Rev. 443.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Hall, Geoff R. “Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada” (2011), 50 Can. Bus. L.J. 434
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Hall, Geoff R. “Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada” (2011), 50 Can. Bus. L.J. 434.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Laskin, Bora. “Collective Bargaining in Ontario: A New Legislative Approach” (1943), 21 Can. Bar Rev. 684
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Laskin, Bora. “Collective Bargaining in Ontario: A New Legislative Approach” (1943), 21 Can. Bar Rev. 684.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Lewans, Matthew. “Renovating Judicial Review” (2017), 68 U.N.B.L.J. 109
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Lewans, Matthew. “Renovating Judicial Review” (2017), 68 U.N.B.L.J. 109.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Macdonald, R. A. “Absence of Jurisdiction: A Perspective” (1983), 43 R. du B. 307
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Macdonald, R. A. “Absence of Jurisdiction: A Perspective” (1983), 43 R. du B. 307.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Macdonald, Roderick A., and David Lametti. “Reasons for Decision in Administrative Law” (1990), 3 C.J.A.L.P. 123
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Macdonald, Roderick A., and David Lametti. “Reasons for Decision in Administrative Law” (1990), 3 C.J.A.L.P. 123.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Macklin, Audrey. “Citizenship Revocation, the Privilege to Have Rights and the Production of the Alien” (2014), 40 Queen’s L.J. 1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Macklin, Audrey. “Citizenship Revocation, the Privilege to Have Rights and the Production of the Alien” (2014), 40 Queen’s L.J. 1.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Macklin, Audrey. “Standard of Review: Back to the Future?”, in Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 381
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Macklin, Audrey. “Standard of Review: Back to the Future?”, in Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 381.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Madden, Mike. “Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review” (2010), 36 Adv. Q. 269
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Madden, Mike. “Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review” (2010), 36 Adv. Q. 269.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Makela, Finn. “Acquired Expertise of Administrative Tribunals and the Standard of Judicial Review: The Case of Grievance Arbitrators and Human Rights Law” (2013), 17 C.L.E.L.J. 345
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Makela, Finn. “Acquired Expertise of Administrative Tribunals and the Standard of Judicial Review: The Case of Grievance Arbitrators and Human Rights Law” (2013), 17 C.L.E.L.J. 345.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        McLachlin, Beverley. “The Roles of Administrative Tribunals and Courts in Maintaining the Rule of Law” (1998), 12 C.J.A.L.P. 171
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        McLachlin, Beverley. “The Roles of Administrative Tribunals and Courts in Maintaining the Rule of Law” (1998), 12 C.J.A.L.P. 171.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        McLachlin, Beverley. “‘Administrative Law is Not for Sissies’: Finding a Path Through the Thicket” (2016), 29 C.J.A.L.P. 127
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        McLachlin, Beverley. “‘Administrative Law is Not for Sissies’: Finding a Path Through the Thicket” (2016), 29 C.J.A.L.P. 127.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        McLachlin, Beverley. “The Role of the Supreme Court of Canada in Shaping the Common Law”, in Paul Daly, ed., Apex Courts and the Common Law. Toronto: University of Toronto Press, 2019, 25
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        McLachlin, Beverley. “The Role of the Supreme Court of Canada in Shaping the Common Law”, in Paul Daly, ed., Apex Courts and the Common Law. Toronto: University of Toronto Press, 2019, 25.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Morissette, Yves‑Marie. “What is a ‘reasonable decision’?” (2018), 31 C.J.A.L.P. 225
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Morissette, Yves‑Marie. “What is a ‘reasonable decision’?” (2018), 31 C.J.A.L.P. 225.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Mullan, David. “Unresolved Issues on Standard of Review in Canadian Judicial Review of Administrative Action — The Top Fifteen!” (2013), 42 Adv. Q. 1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Mullan, David. “Unresolved Issues on Standard of Review in Canadian Judicial Review of Administrative Action — The Top Fifteen!” (2013), 42 Adv. Q. 1.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Munro, Katherine. “A ‘Unique Experiment’: The Ontario Labour Court, 1943‑1944” (2014), 74 Labour 199
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Munro, Katherine. “A ‘Unique Experiment’: The Ontario Labour Court, 1943‑1944” (2014), 74 Labour 199.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Pape, Paul J., and John J. Adair. “Unreasonable review: The losing party and the palpable and overriding error standard” (2008), 27 Adv. J. 6
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Pape, Paul J., and John J. Adair. “Unreasonable review: The losing party and the palpable and overriding error standard” (2008), 27 Adv. J. 6.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Powell, Lewis F., Jr. “Stare Decisis and Judicial Restraint” (1990), 47 Wash. &amp; Lee L. Rev. 281
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Powell, Lewis F., Jr. “Stare Decisis and Judicial Restraint” (1990), 47 Wash. &amp; Lee L. Rev. 281.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Régimbald, Guy. Canadian Administrative Law, 2nd ed. Markham, Ont.: LexisNexis, 2015
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Régimbald, Guy. Canadian Administrative Law, 2nd ed. Markham, Ont.: LexisNexis, 2015.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Robertson, Joseph T. “Judicial Deference to Administrative Tribunals: A Guide to 60 Years of Supreme Court Jurisprudence” (2014), 66 S.C.L.R. (2d) 1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Robertson, Joseph T. “Judicial Deference to Administrative Tribunals: A Guide to 60 Years of Supreme Court Jurisprudence” (2014), 66 S.C.L.R. (2d) 1.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Robertson, Joseph T. “Identifying the Review Standard: Administrative Deference in a Nutshell” (2017), 68 U.N.B.L.J. 145
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Robertson, Joseph T. “Identifying the Review Standard: Administrative Deference in a Nutshell” (2017), 68 U.N.B.L.J. 145.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Robertson, Joseph T. Administrative Deference: The Canadian Doctrine that Continues to Disappoint, April 18, 2018 (online: https://poseidon01.ssrn.com/delivery.php?ID=025078121121077073088100069023108009116008031085056044126101104009101077075091124065033020049102118033018088023122126069087098105041060022013112086123073102103009066006050071070102011006127090124116080089064120081125100127104100026094125015101089105111&amp;EXT=pdf; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_3_eng.pdf)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Robertson, Joseph T. Administrative Deference: The Canadian Doctrine that Continues to Disappoint, April 18, 2018 (online: https://poseidon01.ssrn.com/delivery.php?ID=025078121121077073088100069023108009116008031085056044126101104009101077075091124065033020049102118033018088023122126069087098105041060022013112086123073102103009066006050071070102011006127090124116080089064120081125100127104100026094125015101089105111&amp;EXT=pdf; archived version: https://www.scc-csc.ca/cso-dce/2019SCC-CSC65_3_eng.pdf).
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Sharpe, Robert J. Good Judgment: Making Judicial Decisions. Toronto: University of Toronto Press, 2018
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Sharpe, Robert J. Good Judgment: Making Judicial Decisions. Toronto: University of Toronto Press, 2018.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Stacey, Jocelyn, and Alice Woolley. “Can Pragmatism Function in Administrative Law?” (2016), 74 S.C.L.R. (2d) 211
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Stacey, Jocelyn, and Alice Woolley. “Can Pragmatism Function in Administrative Law?” (2016), 74 S.C.L.R. (2d) 211.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Stack, Kevin M. “Overcoming Dicey in Administrative Law” (2018), 68 U.T.L.J. 293
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Stack, Kevin M. “Overcoming Dicey in Administrative Law” (2018), 68 U.T.L.J. 293.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Sullivan, Ruth. Sullivan on the Construction of Statutes, 6th ed. Markham, Ont.: LexisNexis, 2014
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Sullivan, Ruth. Sullivan on the Construction of Statutes, 6th ed. Markham, Ont.: LexisNexis, 2014.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Sullivan, Ruth. Statutory Interpretation, 3rd ed. Toronto: Irwin Law, 2016
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Sullivan, Ruth. Statutory Interpretation, 3rd ed. Toronto: Irwin Law, 2016.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Van Harten, Gus, et al. Administrative Law: Cases, Text, and Materials, 7th ed. Toronto: Emond, 2015
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Van Harten, Gus, et al. Administrative Law: Cases, Text, and Materials, 7th ed. Toronto: Emond, 2015.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Waldron, Jeremy. “Stare Decisis and the Rule of Law: A Layered Approach” (2012), 111 Mich. L. Rev. 1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Waldron, Jeremy. “Stare Decisis and the Rule of Law: A Layered Approach” (2012), 111 Mich. L. Rev. 1.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Willes, John A. The Ontario Labour Court: 1943‑1944. Kingston, Ont.: Industrial Relations Centre, Queen’s University, 1979
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Willes, John A. The Ontario Labour Court: 1943‑1944. Kingston, Ont.: Industrial Relations Centre, Queen’s University, 1979.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        B. McLachlin, “The Roles of Administrative Tribunals and Courts in Maintaining the Rule of Law” (1998), 12 C.J.A.L.P. 171, at p. 174
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Rt. Hon. B. McLachlin, “The Roles of Administrative Tribunals and Courts in Maintaining the Rule of Law” (1998), 12 C.J.A.L.P. 171, at p. 174
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Schs. I
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        II, arts. 1, 41, 43, 49, 53
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Optional Protocol to the Vienna Convention on Diplomatic Relations, concerning Acquisition of Nationality, 500 U.N.T.S. 223, art. II.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Vienna Convention on Consular Relations, Can. T.S. 1974 No. 25.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Vienna Convention on Diplomatic Relations, Can. T.S. 1966 No. 29.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="title">
+                <div class="section-header">
+                    <h2 class="section-title">Title</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dunsmuir’s
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Moore v. British Columbia (Education), 2012 SCC 61
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Moore v. British Columbia (Education)
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Kimble v. Marvel Entertainment, LLC
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Kimble v. Marvel Entertainment
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Plourde v. Wal‑Mart Canada Corp.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Association des courtiers et agents immobiliers du Québec v. Proprio Direct inc.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Ontario Human Rights Code, 1961‑62
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Ontario Human Rights Code
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Administrative Law is Not for Sissies’: Finding a Path Through the Thicket
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        ‘Administrative Law is Not for Sissies’: Finding a Path Through the Thicket
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Administrative Law: Cases, Text, and Materials
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Administrative Law: Cases, Text, and Materials,
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Citizenship Act
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Citizenship Act,
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Constitution
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Schs. I
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        II
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dunsmuir
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="fragment">
+                <div class="section-header">
+                    <h2 class="section-title">Fragment</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Schs. I
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        II
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        s. 3(2)(a)
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="reference">
+                <div class="section-header">
+                    <h2 class="section-title">Reference</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2019 SCC 65, [2019]
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        2019 SCC 65
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        R.S.C. 1985, c. C-29, s. 3(2)(a)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        R.S.C. 1985, c. C-29
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2003] 1 S.C.R. 779
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        [2003] 1 S.C.R. 779
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2002] 2 S.C.R. 235
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        [2002] 2 S.C.R. 235
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2017 FCA 1,
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        2017 FCA 1
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        , [1994] 1 S.C.R. 202
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        [1994] 1 S.C.R. 202
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        135 S. Ct. 2401 (2015)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        LLC, 135 S. Ct. 2401 (2015)
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Bill 32, 1st Sess., 42nd Leg., Quebec, 2019.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Bill 32, 1st Sess., 42nd Leg., Quebec, 2019
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        S.O. 1961‑62, c. 93
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        1961‑62, S.O. 1961‑62, c. 93
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        500 U.N.T.S. 223
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Can. T.S. 1974 No. 25
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Can. T.S. 1966 No. 29
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        2008 SCC 9
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        2008 SCC 9, [2008] 1 S.C.R. 190
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        [2008] 1 S.C.R. 190
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        139 C.L.R. 585 (H.C.A.)
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        2012 SCC 61
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Plourde v. Wal‑Mart Canada Corp.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Association des courtiers et agents immobiliers du Québec v. Proprio Direct inc.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        139 C.L.R. 585
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="source">
+                <div class="section-header">
+                    <h2 class="section-title">Source</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 381
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        in Colleen M. Flood and Lorne Sossin, eds., Administrative Law in Context, 3rd ed. Toronto: Emond, 2018, 381
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        (2014), 74 Labour 199
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        (2014), 74 Labour 199.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        500 U.N.T.S. 223
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Can. T.S. 1974 No. 25
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Can. T.S. 1966 No. 29
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Laskin, Bora
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+            <section class="section" id="authors">
+                <div class="section-header">
+                    <h2 class="section-title">Authors</h2>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 45%">Annotator 1</th>
+                            <th style="width: 45%">Annotator 2</th>
+                            <th style="width: 10%">Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Brouwer, Andrew
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Brouwer, Andrew.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Coady, Jonathan M
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Coady, Jonathan M.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Cromwell, Thomas A
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Cromwell, Thomas A.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        DeMarco, Jerry V
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        DeMarco, Jerry V.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Duxbury, Neil
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Duxbury, Neil.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Dyzenhaus, David
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Dyzenhaus, David.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Evans, John M
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Evans, John M.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Evans, John M
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Evans, John M.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Garner, Bryan A.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Garner, Bryan A., et al.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Laskin, Bora
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="empty-cell">
+                                        ∅
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">✗ no match</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Macklin, Audrey.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Macklin, Audrey
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Pape, Paul J., and John J. Adair
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Pape, Paul J., and John J. Adair.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Stratas, David.
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Stratas, David
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Van Harten, Gus,
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Van Harten, Gus, et al.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        Willes, John A
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Willes, John A.
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a1-text">
+                                        B. McLachlin
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="annotator-text">
+                                    <div class="a2-text">
+                                        Rt. Hon. B. McLachlin
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="match-cell ">≈ lenient</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#nav-menu" class="back-to-top">Back to Navigation Menu ↑</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Report generated on 2026-01-30 17:08:21</p>
+            <p>Total labels analyzed: 8 | Annotator 1 total spans: 1568 | Annotator 2 total spans: 1569</p>
+        </footer>
+    </div>
+
+    <script>
+        // Make navigation menu sticky
+        window.addEventListener('scroll', function() {
+            const navMenu = document.getElementById('nav-menu');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 100) {
+                navMenu.style.top = '0px';
+                navMenu.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navMenu.style.top = '20px';
+                navMenu.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight rows on hover
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f0f7ff';
+            });
+            row.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
