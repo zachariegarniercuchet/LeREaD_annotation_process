@@ -11,7 +11,7 @@ from tqdm import tqdm
 from typing import List, Tuple, Optional
 
 from utils.tokenizer_utils import tokenize, decode
-from utils.post_processing_utils import apply_post_processing_transforms
+from llm_based_annotation.utils.document_level_post_processing_utils import apply_post_processing_transforms
 from utils.verification_utils import verify_processed_chunk, VerificationResult
 from utils.processing_utils import distance_lists_auto_label, apply_operations_safe
 from utils.prompt_utils import get_prompt_processing, get_prompt_fallback_hallucination, get_prompt_fallback_consistency

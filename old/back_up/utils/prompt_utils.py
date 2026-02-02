@@ -164,7 +164,7 @@ def get_meta_prompt(annotation_guidelines, model_name="gpt-4o", temperature=0.7)
     
     return generated_prompt
 
-def get_prompt_processing(prompt_path,few_shot_examples=None):
+def get_prompt_processing(few_shot_examples=None):
     """
     Create system and user prompts for the AI model to process legal text.
     
@@ -174,21 +174,44 @@ def get_prompt_processing(prompt_path,few_shot_examples=None):
     Returns:
         tuple: (system_prompt, user_prompt_template)
     """
-    with open(prompt_path, 'r', encoding='utf-8') as f:
-        system_prompt = f.read()
-        
+    system_prompt = f"""
+        You are an advanced Language Model designed to annotate legal texts by identifying and marking mentions of legal authorities in Canadian legal decisions. Follow these detailed instructions to ensure accurate and consistent annotations:
+
+        ---
+
+        ### Task Objective:
+
+        Identify and annotate every mention of legal authorities, including both complete and partial references, in the text using the specified XML schema.
+
+        ### Authority Types:
+
+        Each mention must be categorized into one of the following authority types:
+        - `<auto_label labelname="legislation">`: Statutes, codes, constitutional texts
+        - `<auto_label labelname="decision">`: Judicial or administrative decisions
+        - `<auto_label labelname="secondary_sources">`: Doctrine, books, articles, reports, dictionaries
+        - `<auto_label labelname="unable_to_classify">`: Ambiguous sources that may be borderline law vs. fact
+
+        ### Core Annotation Principles:
+
+        {guidelines}
+
+        ---
+
+        Follow these guidelines meticulously to ensure accurate and consistent legal text annotations.
+
+        """
     
     # Add few-shot examples if provided
     if few_shot_examples:
         system_prompt += "\n\nHere are some examples:\n"
         for i, (input_text, expected_output) in enumerate(few_shot_examples, 1):
             system_prompt += f"\nExample {i}:\n"
-            system_prompt += f"<ORIGINAL_TEXT>{input_text}<END_ORIGINAL_TEXT>\n"
-            system_prompt += f"<EXPECTED_OUTPUT>{expected_output}<END_EXPECTED_OUTPUT>\n"
+            system_prompt += f"<<<ORIGINAL_TEXT>>>{input_text}<<<END_ORIGINAL_TEXT>>>\n"
+            system_prompt += f"<<<EXPECTED_OUTPUT>>>{expected_output}<<<END_EXPECTED_OUTPUT>>>\n"
     
     user_prompt_template = """Please annotate the following legal text with the appropriate auto_label tags:
 
-    <ORIGINAL_TEXT>{text}<END_ORIGINAL_TEXT>
+    <<<ORIGINAL_TEXT>>>{text}<<<END_ORIGINAL_TEXT>>>
     
     OUTPUT:"""
     
@@ -206,15 +229,22 @@ def get_prompt_fallback_consistency():
 
         You will receive :
         1. The Original text.
-        2. A version of the text annotated with <tag> tags that contains at least one error of consistency. 
+        2. A version of the text annotated with <auto_label> tags that contains at least one error of consistency. 
         
-        A consistency error means that some oppening <tag> tags or closing </tag> tags are missing. 
+        A consistency error means that some oppening <auto_label> tags or closing </auto_label> tags are missing. 
         The oppening tag count doesn't match the closing tag count.
 
 
 
-        You must carefully detect where the missing <tag> is missing and correct the issue while respecting the annotation schema below.
+        You must carefully detect where the missing <auto_label> is missing and correct the issue while respecting the annotation schema below.
 
+        ### Core Annotation Principles:
+
+        {guidelines}
+
+        ---
+
+        Follow these guidelines meticulously to ensure accurate and consistent legal text annotations.
     """
     
     
@@ -238,9 +268,9 @@ def get_prompt_fallback_hallucination():
 
         You will receive:
         1. The original text.
-        2. A version of the text annotated with <tag> tags that contains at least one error.
+        2. A version of the text annotated with <auto_label> tags that contains at least one error.
 
-        The upstream error-detection system compares the original text and the annotated text token by token. After removing all <tag> tags, both token lists must match exactly. When they do not, the text pair is sent to you for correction.
+        The upstream error-detection system compares the original text and the annotated text token by token. After removing all <auto_label> tags, both token lists must match exactly. When they do not, the text pair is sent to you for correction.
 
         Typical error patterns include:
         - Incorrect annotation boundaries at the beginning or end of a labeled span.
@@ -249,6 +279,11 @@ def get_prompt_fallback_hallucination():
 
         You must carefully correct these issues while respecting the annotation schema below.
 
+        ### Core Annotation Principles:
+
+        {guidelines}
+
+        ---
 
         Follow these guidelines meticulously to ensure accurate and consistent legal text annotations.
     """

@@ -3,9 +3,6 @@ Verification utilities for validating LLM-generated annotated text.
 These functions check the validity of processed chunks without modifying them.
 """
 
-from utils.html_utils import is_auto_label_tag
-from utils.htmlLabel import HTMLLabel
-
 import json
 from typing import Dict, List, Tuple, Optional
 from bs4 import BeautifulSoup
@@ -14,35 +11,19 @@ from bs4 import BeautifulSoup
 # Label scheme definition based on label schemes.html
 LABEL_SCHEME = {
     "legislation": {
-        "attributes": ["docid", "uri"],  
+        "attributes": ["titletype", "fragmentid"],  # title, citation, fragment
         "required": False
     },
     "decision": {
-        "attributes": ["docid", "uri"],  
+        "attributes": ["titletype", "fragmentid"],  # title, citation, fragment
         "required": False
     },
     "secondary sources": {  # SECONDARY_SRC in HTML
-        "attributes": ["docid", "uri"],
+        "attributes": ["titletype", "fragmentid"],  # title, source, fragment, authors
         "required": False
     },
-    "title": {
-        "attributes": ["title_type"], 
-        "required": False
-    },
-    "reference": {
-        "attributes": [],
-        "required": False
-    },
-    "source": {
-        "attributes": [],
-        "required": False
-    },
-    "authors": {
-        "attributes": [],   
-        "required": False
-    },
-    "fragment": {
-        "attributes": ["fragmentid", 'non_standard'],
+    "unclassified": {
+        "attributes": [],  # No specific attributes
         "required": False
     }
 }
@@ -181,8 +162,12 @@ def check_label_scheme(tokens: list, allowed_labels: Optional[List[str]] = None)
     Returns:
         VerificationResult with passed=True if all labels conform to scheme
     """
+    # Import inside function to avoid circular imports
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     
-    
+    from utils.html_utils import is_auto_label_tag, HTMLLabel
     
     # Determine allowed label names
     if allowed_labels is None:

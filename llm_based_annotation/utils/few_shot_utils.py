@@ -1,128 +1,176 @@
-import re
 from utils.html_cleaner import clean_tokens
 from utils.tokenizer_utils import decode
+from utils.htmlLabel import HTMLLabel
 
-def clean_token_manual_label(token, auto_transformation=False):
+def prepare_label_tokens(chunk, label_config):
     """
-    Clean and simplify manual_label HTML tokens by extracting only relevant attributes.
+    Transform label tokens according to specified parameters.
     
-    This function processes HTML tokens containing manual_label tags and simplifies them
-    by keeping only the attributes that are relevant for each specific label type. It can
-    also optionally transform manual_label tags to auto_label tags.
+    Handles both opening and closing tags, using a stack to track label names
+    for proper closing tag generation in simplified mode.
     
     Args:
-        token (str): An HTML token string, potentially containing a manual_label tag.
-        auto_transformation (bool, optional): If True, converts manual_label tags to 
-            auto_label tags. Defaults to False.
+        chunk: List of tokens to process
+        remove_attributes: List of attribute names to remove from labels
+        keep_attributes: List of attribute names to keep in labels
+        switch_type: If True, switch between manual_label and auto_label types
+        use_simplified: If True, output simplified form (e.g., <title> instead of <manual_label labelname="title">)
+        keep_labels: List of label names to keep (all others removed). If None, keep all labels.
+        remove_labels: List of label names to remove. If None, no removal filtering.
     
     Returns:
-        str: The cleaned/simplified token with only relevant attributes, or the original
-            token if it's not a manual_label tag.
-    
-    Behavior by labelname:
-        - 'mention': Keeps labelname and docid attributes
-        - 'title': Keeps labelname and titletype attributes
-        - 'fragment': Keeps labelname, fragmentid, and fragmenttype attributes
-        - 'reference': Keeps only labelname (no other attributes)
-    
-    Examples:
-        >>> token = '<manual_label labelname="mention" docid="123" extra="ignore">'
-        >>> clean_token_manual_label(token)
-        '<manual_label labelname="mention" docid="123">'
-        
-        >>> token = '<manual_label labelname="title" titletype="main" extra="ignore">'
-        >>> clean_token_manual_label(token, auto_transformation=True)
-        '<auto_label labelname="title" titletype="main">'
-        
-        >>> token = '</manual_label>'
-        >>> clean_token_manual_label(token, auto_transformation=True)
-        '</auto_label>'
+        List of transformed tokens
     """
 
-    if token.startswith('<manual_label') and not token.startswith('</manual_label'):
-        # Extract only relevant attributes based on labelname
-        labelname_match = re.search(r'labelname="([^"]*)"', token)
-        
-        if labelname_match:
-            labelname = labelname_match.group(1)
+    # Get config parameters
+    remove_attributes = label_config.get('remove_attributes', None)
+    keep_attributes = label_config.get('keep_attributes', None)
+    switch_type = label_config.get('switch_type', False)
+    use_simplified = label_config.get('use_simplified', False)
+    keep_labels = label_config.get('keep_labels', None)
+    remove_labels = label_config.get('remove_labels', None)
 
-            if auto_transformation:
-                # Change tag to auto_label
-                simplified_tag = '<auto_label'
+
+    transformed_chunk = []
+    label_name_stack = []  # Stack to track opened label names for closing tags
+    skip_stack = []  # Stack to track which labels are being skipped (removed)
+    
+    for token in chunk:
+        # Check if token is a label opening tag
+        is_manual_open = token.lower().startswith('<manual_label') and token.endswith('>')
+        is_auto_open = token.lower().startswith('<auto_label') and token.endswith('>')
+        
+        # Check if token is a label closing tag
+        is_manual_close = token.lower().startswith('</manual_label') and token.endswith('>')
+        is_auto_close = token.lower().startswith('</auto_label') and token.endswith('>')
+        
+        if is_manual_open or is_auto_open:
+            # Process opening tag
+            try:
+                label = HTMLLabel(token)
+                
+                # Check if this label should be kept based on keep_labels/remove_labels
+                should_keep = True
+                if keep_labels is not None:
+                    should_keep = label.name in keep_labels
+                elif remove_labels is not None:
+                    should_keep = label.name not in remove_labels
+                
+                if not should_keep:
+                    # Skip this label tag, but track it for closing tag
+                    skip_stack.append(True)
+                    # Don't add to transformed_chunk (removes the tag but keeps content)
+                    continue
+                
+                skip_stack.append(False)
+                
+                # Apply attribute filtering if specified
+                if keep_attributes is not None or remove_attributes is not None:
+                    label.to_string(remove_attributes=remove_attributes, keep_attributes=keep_attributes)
+                
+                # Switch type if requested
+                if switch_type:
+                    label.switch_type()
+                
+                # Output simplified or full form
+                if use_simplified:
+                    transformed_token = label.to_simplified()
+                    # Push label name to stack for closing tag
+                    label_name_stack.append(label.name)
+                else:
+                    transformed_token = str(label)
+                
+                transformed_chunk.append(transformed_token)
+            except ValueError:
+                # If token can't be parsed, keep as-is
+                transformed_chunk.append(token)
+                
+        elif is_manual_close or is_auto_close:
+            # Process closing tag
+            # Check if we skipped the corresponding opening tag
+            if skip_stack:
+                was_skipped = skip_stack.pop()
+                if was_skipped:
+                    # Skip this closing tag too (removes the tag but keeps content)
+                    continue
+            
+            if use_simplified:
+                # Pop label name from stack
+                if label_name_stack:
+                    label_name = label_name_stack.pop()
+                    transformed_token = f'</{label_name}>'
+                else:
+                    # Stack empty, keep as-is (shouldn't happen with valid HTML)
+                    transformed_token = token
             else:
-                # Keep tag as manual_label
-                simplified_tag = '<manual_label'
+                # Not simplified: handle type switching if needed
+                if switch_type:
+                    # Switch closing tag type
+                    if is_manual_close:
+                        transformed_token = '</auto_label>'
+                    else:
+                        transformed_token = '</manual_label>'
+                else:
+                    transformed_token = token
             
-            # Always keep labelname
-            simplified_tag += f' labelname="{labelname}"'
-            
-            # Keep specific attributes based on labelname
-            if labelname == 'mention':
-                # For mention: keep docid and doctype
-                docid_match = re.search(r'docid="([^"]*)"', token)
-                
-                if docid_match:
-                    simplified_tag += f' docid="{docid_match.group(1)}"'
-            
-            elif labelname == 'title':
-                # For title: keep titletype
-                titletype_match = re.search(r'titletype="([^"]*)"', token)
-                if titletype_match:
-                    simplified_tag += f' titletype="{titletype_match.group(1)}"'
-            
-            elif labelname == 'fragment':
-                # For fragment: keep fragmentid and fragmenttype
-                fragmentid_match = re.search(r'fragmentid="([^"]*)"', token)
-                fragmenttype_match = re.search(r'fragmenttype="([^"]*)"', token)
-                
-                if fragmentid_match:
-                    simplified_tag += f' fragmentid="{fragmentid_match.group(1)}"'
-                if fragmenttype_match:
-                    simplified_tag += f' fragmenttype="{fragmenttype_match.group(1)}"'
-            
-            # For reference: only keep labelname (no other attributes)
-            
-            simplified_tag += '>'
-            return simplified_tag
+            transformed_chunk.append(transformed_token)
         else:
-            # If no labelname found, keep original token
-            return token
-    elif token.startswith('</manual_label') and auto_transformation:
-        # Replace closing tag with auto_label closing tag
-        return '</auto_label>'
-    else:
-        # Not a manual_label tag, keep as-is
-        return token
+            # Not a label tag, keep as-is
+            transformed_chunk.append(token)
     
+    return transformed_chunk
 
 
-def extract_few_shot_examples(token_chunks):
+def extract_few_shot_examples(token_chunks, label_config):
     """
-    Extract few-shot examples from the chunks.
+    Extract few-shot examples from the chunks with flexible label transformation.
     
     Args:
         token_chunks: List of token chunks to process
+        remove_attributes: List of attribute names to remove from labels. If None, no removal filtering.
+        keep_attributes: List of attribute names to keep in labels (all others removed). If None, no keep filtering.
+        switch_type: If True, switch between manual_label and auto_label types
+        use_simplified: If True, output simplified form (e.g., <title> instead of <manual_label labelname="title">)
+        keep_labels: List of label names to keep (all others removed). If None, keep all labels.
+        remove_labels: List of label names to remove. If None, no removal filtering.
     
     Returns:
         list: List of tuples (input_tokens, output_tokens)
-              - input_tokens: cleaned tokens without manual_label tags
-              - output_tokens: tokens with simplified manual_label tags (only keeping relevant attributes)
+              - input_tokens: cleaned tokens without any label tags
+              - output_tokens: tokens with transformed label tags according to parameters
+    
+    Examples:
+        >>> # Remove specific attributes and switch to auto_label
+        >>> examples = extract_few_shot_examples(chunks, remove_attributes=['style', 'parent'], switch_type=True)
+        
+        >>> # Keep only labelname and docid attributes
+        >>> examples = extract_few_shot_examples(chunks, keep_attributes=['labelname', 'docid'])
+        
+        >>> # Output simplified form with proper closing tags
+        >>> examples = extract_few_shot_examples(chunks, use_simplified=True)
+        >>> # <manual_label labelname="title">Text</manual_label> → <title>Text</title>
+        
+        >>> # Keep only decision labels (removes title tags but keeps text)
+        >>> examples = extract_few_shot_examples(chunks, keep_labels=['decision'], use_simplified=True)
+        >>> # <decision><title>John Campbell Law Corporation v.</title></decision>
+        >>> # → <decision>John Campbell Law Corporation v.</decision>
+        
+        >>> # Remove title labels (keeps all other labels)
+        >>> examples = extract_few_shot_examples(chunks, remove_labels=['title'], use_simplified=True)
+        >>> # Same result as above
     """
     examples = []
     
     for chunk in token_chunks:
-        # Input: tokens cleaned from all manual_label tags
-        input_chunk = clean_tokens(chunk, normalize=True, keep_manual_label=False, keep_bookmarks=False)
+        # Input: tokens cleaned from all label tags
+        input_chunk = clean_tokens(chunk, normalize=True, keep_manual_label=False, 
+                                   keep_auto_label=False, keep_bookmarks=False)
         
-        # Output: tokens with simplified manual_label tags
-        # Remove irrelevant attributes like style, parent, url from manual_label tags
-        output_chunk = []
-        
-        for token in chunk:
-            # Check if token is a manual_label opening tag
-            cleaned_token = clean_token_manual_label(token, auto_transformation=True)
-
-            output_chunk.append(cleaned_token)
+        # Output: tokens with transformed label tags
+        output_chunk = prepare_label_tokens(
+            chunk, 
+            label_config
+        )
         
         examples.append((decode(input_chunk), decode(output_chunk)))
     
