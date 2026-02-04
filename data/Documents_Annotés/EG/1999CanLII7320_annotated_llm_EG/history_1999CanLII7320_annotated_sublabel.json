@@ -1,0 +1,746 @@
+[
+    {
+        "status": "Success",
+        "chunk_idx": 1,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">rules as to discovery of evidence and \nwitnesses</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 3,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">discovery rules</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 5,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">United States v. American Telephone</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 7,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Buttes</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 9,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Gruenke</auto_label>, \n<auto_label labelname=\"reference\">[1991] 3 S.C.R. 263</auto_label> at <auto_label labelname=\"fragment\">p. 289</auto_label>, <auto_label labelname=\"reference\">67 C.C.C. (3d) 289</auto_label> at <auto_label labelname=\"fragment\">p. 305</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 11,
+        "raw_output": "<auto_label labelname=\"decision\">statement of claim</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 13,
+        "raw_output": "<auto_label labelname=\"decision\">statement of defence</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 15,
+        "raw_output": "<auto_label labelname=\"secondary sources\">Schedule \"B\" to the affidavits of documents of Mr. \nBourret and Mr. Cook</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 17,
+        "raw_output": "<auto_label labelname=\"secondary sources\">Schedule \"B\" of Mr. Bourret's affidavit</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 19,
+        "raw_output": "<auto_label labelname=\"secondary sources\">Mr. Bourret's affidavit</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 21,
+        "raw_output": "<auto_label labelname=\"secondary sources\">Schedule \"B\" to Mr. Cook's \naffidavit</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 23,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">(1997), 34 O.R. \n(3d) 354</auto_label>, <auto_label labelname=\"reference\">17 C.P.C. (4th) 284</auto_label>, <auto_label labelname=\"reference\">48 C.C.L.I. (2d) 207</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 25,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">(1998), 37 O.R. \n(3d) 790</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 27,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">General Accident</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 29,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Baker v. Campbell (1983)</auto_label>, 153 C</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 31,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">N. Williams</auto_label> \"<auto_label labelname=\"title\">Civil Litigation Trial \nPreparation in Canada</auto_label>\" <auto_label labelname=\"source\">(1980), 58 Can. Bar Rev. 1</auto_label> at <auto_label labelname=\"fragment\">pp. 37-38</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 33,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Gruenke</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 287-89 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">pp. 304-06 C.C.C.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 35,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Descteaux v. Mierzwinski</auto_label>, <auto_label labelname=\"reference\">[1982] 1 \nS.C.R. 860</auto_label> at<auto_label labelname=\"fragment\"> pp. 872-73</auto_label>, <auto_label labelname=\"reference\">70 C.C.C. (2d) 385</auto_label> at <auto_label labelname=\"fragment\">p. 398</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 37,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Shirose</auto_label>, <auto_label labelname=\"reference\">[1999] 1 S.C.R. 565</auto_label> at <auto_label labelname=\"fragment\">p. \n601</auto_label>, <auto_label labelname=\"reference\">133 C.C.C. (3d) 257</auto_label> at <auto_label labelname=\"fragment\">p. 288</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 39,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Wigmore</auto_label> (<auto_label labelname=\"source\">8 Wigmore</auto_label>, <auto_label labelname=\"title\">Evidence</auto_label>,  <auto_label labelname=\"fragment\">2292</auto_label>, <auto_label labelname=\"source\">McNaughton Rev. 1961</auto_label>)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 41,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery Ltd. v. M.N.R.</auto_label>, <auto_label labelname=\"reference\">[1969] 2 Ex. C.R. 27</auto_label> at <auto_label labelname=\"fragment\">p. 34</auto_label>, <auto_label labelname=\"reference\">69 \nD.T.C. 5278</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 43,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Grant v. Downs (1976)</auto_label>, <auto_label labelname=\"reference\">135 C.L.R. 674</auto_label> at <auto_label labelname=\"fragment\">p. 686</auto_label> \n(Ont. H.C.J.)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 45,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">R. Manes and M. Silver</auto_label>, <auto_label labelname=\"title\">Solicitor-Client \nPrivilege in Canadian Law</auto_label> <auto_label labelname=\"source\">(Toronto: Butterworths, 1993)</auto_label>, at <auto_label labelname=\"fragment\">pp. \n127-33</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 47,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Anderson v. Bank of British Columbia (1876)</auto_label>, <auto_label labelname=\"reference\">2 Ch. D. \n644</auto_label> at <auto_label labelname=\"fragment\">p. 649</auto_label>, <auto_label labelname=\"reference\">[1874-80] All E.R. Rep. 396</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 49,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label>, \n<auto_label labelname=\"reference\">[1999] 1 S.C.R. 455</auto_label> at <auto_label labelname=\"fragment\">p. 474</auto_label>, <auto_label labelname=\"reference\">22 C.R. (5th) 203</auto_label> at <auto_label labelname=\"fragment\">p. 217</auto_label>, \nper Cory J.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 51,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">J.W. Strong, ed.</auto_label>, <auto_label labelname=\"title\">McCormick on Evidence, 4th ed.</auto_label> \n(<auto_label labelname=\"source\">St. Paul, Minn.: West Publishing Co., 1992), vol. 1</auto_label>, at <auto_label labelname=\"fragment\">p. \n353</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 53,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Goodman Estate v. Geffen</auto_label>, <auto_label labelname=\"reference\">[1991] 2 \nS.C.R. 353</auto_label> at<auto_label labelname=\"fragment\"> pp. 382-83</auto_label>, <auto_label labelname=\"reference\">81 D.L.R. (4th) 211</auto_label> at<auto_label labelname=\"fragment\"> pp. 231-32</auto_label>, \nper Wilson J.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 55,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Solosky v. R.</auto_label>, <auto_label labelname=\"reference\">[1980] 1 S.C.R. 821</auto_label> at <auto_label labelname=\"fragment\">p. 839</auto_label>, <auto_label labelname=\"reference\">50 \nC.C.C. (2d) 495</auto_label> at <auto_label labelname=\"fragment\">p. 510</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 57,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Descteaux v. Mierzwinski</auto_label>, supra, at \n<auto_label labelname=\"fragment\">pp. 892-93 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">pp. 413-14 C.C.C.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 59,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">A. (L.L.) v . B. (A.)</auto_label>, \n<auto_label labelname=\"reference\">[1995] 4 S.C.R. 536</auto_label> at<auto_label labelname=\"fragment\"> pp. 559-60</auto_label>, <auto_label labelname=\"reference\">103 C.C.C. (3d) 92</auto_label> at<auto_label labelname=\"fragment\"> pp. \n107-08</auto_label>, per L'Heureux-Dubé J. (concurring)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 61,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Shirose</auto_label>, \nsupra, at <auto_label labelname=\"fragment\">p. 601 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 288 C.C.C.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 63,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Baker v. Campbell</auto_label>, \nsupra, at <auto_label labelname=\"fragment\">pp. 118-20</auto_label>, per Deane J.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 65,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">McCormick</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 67,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">code of professional conduct</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 69,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Shaughnessy Golf &amp; Country Club \nv. Drake International Inc. (1986)</auto_label>, <auto_label labelname=\"reference\">26 D.L.R. (4th) 298</auto_label> at <auto_label labelname=\"fragment\">pp. \n302-04</auto_label> and <auto_label labelname=\"fragment\">307-08</auto_label>, <auto_label labelname=\"reference\">1 B.C.L.R. (2d) 309 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 71,
+        "raw_output": "<auto_label labelname=\"secondary sources\">McCormick, supra, at <auto_label labelname=\"fragment\">p. 333</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 73,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian \nIndemnity Co. v. Canadian Johns-Manville Co.</auto_label>, <auto_label labelname=\"reference\">[1990] 2 S.C.R. \n549</auto_label> at<auto_label labelname=\"fragment\"> pp. 620-21</auto_label>, <auto_label labelname=\"reference\">72 D.L.R. (4th) 478</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 75,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Coronation Insurance \nCo. v. Taku Air Transport Ltd.</auto_label>, <auto_label labelname=\"reference\">[1991] 3 S.C.R. 622</auto_label> at <auto_label labelname=\"fragment\">p. 636</auto_label>, \n<auto_label labelname=\"reference\">85 D.L.R. (4th) 609</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 77,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Somerville Belkin Industries Ltd. \nv. Brocklesby Transport</auto_label>, <auto_label labelname=\"reference\">[1985] 6 W.W.R. 85</auto_label> at<auto_label labelname=\"fragment\"> pp. 88</auto_label>, <auto_label labelname=\"reference\">5 C.P.C. \n(2d) 239 (B.C.S.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 79,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Blackstone v. Mutual Life Insurance Co. \nof New York</auto_label>, <auto_label labelname=\"reference\">[1944] O.R. 328</auto_label> at <auto_label labelname=\"fragment\">p. 334</auto_label>, <auto_label labelname=\"reference\">[1944] 3 D.L.R. 147 \n(C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 81,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Walters v. Toronto Transit \nCommission (1985)</auto_label>, <auto_label labelname=\"reference\">50 O.R. (2d) 635</auto_label> at<auto_label labelname=\"fragment\"> pp. 637-38</auto_label>, <auto_label labelname=\"reference\">4 C.P.C. \n(2d) 66 (H.C.J.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 83,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Bunbury v. Bunbury \n(1839)</auto_label>, <auto_label labelname=\"reference\">48 E.R. 1146</auto_label>, <auto_label labelname=\"reference\">9 L.J. Ch. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 85,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Russell v. Jackson (1851)</auto_label>, \n<auto_label labelname=\"reference\">68 E.R. 558</auto_label>, <auto_label labelname=\"reference\">21 L.J. Ch. 146</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 87,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Hooper v. Gumm (1862)</auto_label>, <auto_label labelname=\"reference\">70 E.R. \n1199</auto_label>, <auto_label labelname=\"reference\">6 L.T. 891</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 89,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Wheeler v. Le Marchant (1881)</auto_label>, <auto_label labelname=\"reference\">17 Ch. D. 675 \nat <auto_label labelname=\"fragment\">p. 682</auto_label></auto_label>, <auto_label labelname=\"reference\">50 L.J. Ch. 793</auto_label>, per Jessel M.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 91,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Jones v. Great \nCentral Railway Co.</auto_label>, <auto_label labelname=\"reference\">[1910] A.C. 4</auto_label>, <auto_label labelname=\"reference\">79 L.J.K.B. 191 (H.L.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 93,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery Ltd. v. M.N.R.</auto_label>, supra, at <auto_label labelname=\"fragment\">p. 36</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 95,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Goodman and Carr \nv. M.N.R.</auto_label>, <auto_label labelname=\"reference\">[1968] 2 O.R. 814</auto_label> at <auto_label labelname=\"fragment\">p. 818</auto_label>, <auto_label labelname=\"reference\">70 D.L.R. (2d) 670 \n(H.C.J.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 97,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Alcan-Colony Contracting Ltd. v. Minister of National \nRevenue</auto_label>, <auto_label labelname=\"reference\">[1971] 2 O.R. 365</auto_label> at <auto_label labelname=\"fragment\">p. 368</auto_label>, <auto_label labelname=\"reference\">18 D.L.R. (3d) 32 \n(H.C.J.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 99,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">ional Minerals &amp; Chemical Corp. v. \nCommonwealth Insurance Co. (1991)</auto_label>, <auto_label labelname=\"reference\">89 Sask. R. 1</auto_label> at <auto_label labelname=\"fragment\">pp. 7-8</auto_label> \n(Q.B.)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 101,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label>, supra, at</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 103,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"title\">Attorney-Client Privilege</auto_label>, <auto_label labelname=\"source\">139 \nA.L.R. 1250</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 105,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Manes and Silver</auto_label>, <auto_label labelname=\"title\">Solicitor-Client Privilege in \nCanadian Law</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 73-79</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 107,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">G. Watson and F. Au</auto_label>, \n\"<auto_label labelname=\"title\">Solicitor-Client Privilege and Litigation Privilege in \nCivil Litigation</auto_label>\" <auto_label labelname=\"source\">(1998), 77 Can. Bar Rev. 315</auto_label> at <auto_label labelname=\"fragment\">pp. 346-49</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 109,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Wheeler v. Le Marchant</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 111,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">J.D. Wilson</auto_label>, \n\"<auto_label labelname=\"title\">Privilege in Experts' Working Papers</auto_label>\" <auto_label labelname=\"source\">(1997), 76 Can. Bar \nRev. 346</auto_label> at <auto_label labelname=\"fragment\">pp. 361-65</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 113,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Learoyd v. Halifax Joint Stock Banking Co.</auto_label>, <auto_label labelname=\"reference\">[1893] 1 Ch. D. 686 \n</auto_label>at<auto_label labelname=\"fragment\"> pp. 690-91</auto_label>, <auto_label labelname=\"reference\">62 L.J. Ch. 509</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 115,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Calcraft v. Guest</auto_label>, <auto_label labelname=\"reference\">[1898] 1 \nQ.B. 759</auto_label> at<auto_label labelname=\"fragment\"> pp. 762-63</auto_label>, [1895</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 117,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery Ltd. v. M.N.R.</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 31-32</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 119,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. \nLittlechild (1979)</auto_label>, <auto_label labelname=\"reference\">51 C.C.C. (2d) 406</auto_label> at<auto_label labelname=\"fragment\"> pp. 411-12</auto_label>, <auto_label labelname=\"reference\">[1980] 1 \nW.W.R. 742 (Alta. C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Verification Failed",
+        "chunk_idx": 121,
+        "raw_output": "<auto_label labelname=\"decision\" parent=\"\" style=\"background-color: rgb(106, 163, 255); color: black;\"><auto_label labelname=\"title\" parent=\"secondary sources\" style=\"background-color: rgb(147, 196, 125); color: black;\">C-C Bottlers Ltd. v. Lion Nathan Ltd.</auto_label>, \n<auto_label labelname=\"reference\" parent=\"decision\" style=\"background-color: rgb(255, 87, 51); color: black;\">[1993] 2 N.Z.L.R. 445 at pp. 447-48 (H.C.)</auto_label></auto_label>",
+        "error_details": "Closing tag at position 60 without matching opening tag: </auto_label>"
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 123,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery \nLtd. v. M.N.R.</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 125,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith \nv. Jones</auto_label>, <auto_label labelname=\"fragment\">supra</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 127,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">San \nFrancisco (City) v. Superior Court</auto_label>, <auto_label labelname=\"reference\">281 P.2d 26 </auto_label>at <auto_label labelname=\"fragment\">p. 31</auto_label> (1951 \nCal. S.C.)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 129,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 131,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Perron (1990)</auto_label>, <auto_label labelname=\"reference\">54 C.C.C. (3d) 108</auto_label>, <auto_label labelname=\"reference\">75 C.R. \n(3d) 382 (Que. C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 133,
+        "raw_output": "<auto_label labelname=\"secondary sources\">\"<auto_label labelname=\"title\">Solicitor-Client Privilege and Litigation \nPrivilege in Civil Litigation</auto_label>\", supra, at <auto_label labelname=\"fragment\">pp. 333-35</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 135,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Susan Hosiery \nLtd.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 137,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Wheeler</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 139,
+        "raw_output": "<auto_label labelname=\"decision\">Divisional Court</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 141,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Wheeler v. La Marchant, supra</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 143,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Rule 502</auto_label> of the <auto_label labelname=\"title\">American \nRevised Uniform Evidence Rules (1986 amendment)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 145,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Rule 502(2)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 147,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Wilson</auto_label>, \"<auto_label labelname=\"title\">Privilege in Experts' Working Papers</auto_label>\", supra, at <auto_label labelname=\"fragment\">p. \n371</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 149,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Hamalainen (Committee of) v. \nSippola (1991)</auto_label>, <auto_label labelname=\"reference\">62 B.C.L.R. (2d) 254</auto_label> at <auto_label labelname=\"fragment\">p. 259</auto_label>, <auto_label labelname=\"reference\">3 C.P.C. (3d) \n297 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 151,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Rules of Civil Procedure</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 153,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Rules of Civil Procedure</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 155,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Hodgkinson v. Simms \n(1988)</auto_label>, <auto_label labelname=\"reference\">55 D.L.R. (4th) 577</auto_label> at <auto_label labelname=\"fragment\">p. 594</auto_label>, <auto_label labelname=\"reference\">33 B.C.L.R. (2d) 129</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 157,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Nickmar Pty Ltd. v. Preservatrice Skandia \nInsurance Ltd. (1985)</auto_label>, <auto_label labelname=\"reference\">3 N.S.W.L</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 159,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Lyell \n  v. Kennedy (No. 3) (1884)</auto_label>, <auto_label labelname=\"reference\">27 Ch. D. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 161,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Manes and Silver</auto_label>, \n<auto_label labelname=\"title\">Solicitor-Client Privilege in Canadian Law</auto_label>, <auto_label labelname=\"source\">supra</auto_label>, at <auto_label labelname=\"fragment\">pp. \n170-73</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 163,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Commissioner Australian Federal \nPolice v. Propend Finance Pty Ltd. (1997)</auto_label>, <auto_label labelname=\"reference\">141 A.L.R. 545 \n(H.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 165,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Yri-York Ltd. v. \nCommercial Union Assurance Co. of Canada (1987)</auto_label>, <auto_label labelname=\"reference\">17 C.P.C. (2d) \n181 (Ont. H.C.J.)</auto_label> at <auto_label labelname=\"fragment\">p. 186</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 167,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Catherwood (Guardian ad litem of) \nv. Heinrichs (1995)</auto_label>, <auto_label labelname=\"reference\">17 B.C.L.R. (3d) 326 (S.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 169,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">R. Manes</auto_label>, \"<auto_label labelname=\"title\">Judging the \nPrivilege</auto_label>\", a paper presented at the <auto_label labelname=\"source\">Superior Court Judges \nEducation Seminar (Ontario), Spring 1999</auto_label>, at <auto_label labelname=\"fragment\">pp. 14-19</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 171,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Manes and Silver</auto_label>, <auto_label labelname=\"title\">Solicitor-Client Privilege in Canadian \nLaw</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 100-03</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 173,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">S. Lederman</auto_label>, \"<auto_label labelname=\"title\">Commentary: Discovery \n-- Production of Documents -- Claim of Privilege to Prevent \nDisclosure</auto_label>\" <auto_label labelname=\"source\">(1976), 54 Can. Bar Rev. 422</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 175,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Strauss v. Goldsack \n(1976)</auto_label>, <auto_label labelname=\"reference\">58 D.L.R. (3d) 397</auto_label> at<auto_label labelname=\"fragment\"> pp. 402-03</auto_label>, per McGillivray \nC.J.A. (dissenting)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 177,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label>, supra, at <auto_label labelname=\"fragment\">p. 477 \nS.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 219 C.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 179,
+        "raw_output": "<auto_label labelname=\"decision\">Supreme Court of Canada</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 181,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Slavutych v. \nBaker</auto_label>, <auto_label labelname=\"reference\">[1976] 1 S.C.R. 254</auto_label>, <auto_label labelname=\"reference\">55 D.L.R. (3d) 224</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 183,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Seaboyer; \nR. v. Gayme</auto_label>, <auto_label labelname=\"reference\">[1991] 2 S.C.R. 577</auto_label>, <auto_label labelname=\"reference\">66 C.C.C. (3d) 321</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 185,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. \nStinchcombe</auto_label>, <auto_label labelname=\"reference\">[1991] 3 S.C.R. 326</auto_label>, <auto_label labelname=\"reference\">68 C.C.C. (3d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 187,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. \nGruenke</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 189,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Metropolitan Life Insurance Co. v. Frenette</auto_label>, \n<auto_label labelname=\"reference\">[1992] 1 S.C.R. 647</auto_label>, <auto_label labelname=\"reference\">89 D.L.R. (4th) 653</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 191,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. O'Connor</auto_label>, \n<auto_label labelname=\"reference\">[1995] 4 S.C.R. 411</auto_label>, <auto_label labelname=\"reference\">103 C.C.C. (3d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 193,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">A. (L.L.) v. B. \n(A.)</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 195,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones, supra</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 197,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Cook v. Ip \n(1985)</auto_label>, <auto_label labelname=\"reference\">52 O.R. (2d) 289</auto_label>, <auto_label labelname=\"reference\">22 D.L.R. (4th) 1 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 199,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. S. \n(R.) (1985)</auto_label>, <auto_label labelname=\"reference\">19 C.C.C. (3d) 115 (Ont. C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 201,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Manes and Silver</auto_label>, <auto_label labelname=\"title\">Solicitor-Client Privelega in \nCanadian Law</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 20-23</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 203,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Flack v. Pacific \nPress Ltd. (1970)</auto_label>, <auto_label labelname=\"reference\">14 D.L.R. (3d) 334</auto_label> at<auto_label labelname=\"fragment\"> pp. 341</auto_label> and <auto_label labelname=\"fragment\">350</auto_label>, <auto_label labelname=\"reference\">74 \nW.W.R. 275</auto_label>, per Robertson J.A., and at<auto_label labelname=\"fragment\"> pp. 357-58</auto_label>, per Nemetz \nJ.A.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 205,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Strauss v. Goldsack</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 415-16</auto_label>, per Clement \nJ.A., and at <auto_label labelname=\"fragment\">pp. 420-21</auto_label>, per Moir J.A.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 207,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Butterfield v. Dickson (1994)</auto_label>, <auto_label labelname=\"reference\">28 C.P.C. \n(3d) 242</auto_label>, <auto_label labelname=\"reference\">[1994] N.W.T.R. 228</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 209,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Manes and Silver</auto_label>, <auto_label labelname=\"title\">Solicitor-Client Privilege in \nCanadian Law</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 21-22</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 211,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Watson and Au</auto_label>, \"<auto_label labelname=\"title\">Solicitor- \nClient Privilege and Litigation Privilege in Civil \nLitigation</auto_label>\", supra, at <auto_label labelname=\"fragment\">pp. 344-45</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 213,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">R. Sharpe</auto_label>, \"<auto_label labelname=\"title\">Claiming</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Verification Failed",
+        "chunk_idx": 214,
+        "raw_output": "<auto_label labelname=\"secondary sources\" parent=\"\" style=\"background-color: rgb(39, 143, 227); color: white;\"> \nPrivilege in the Discovery Process\", in Law in Transition:<br/>Evidence, Law Society of Upper Canada Special Lectures \n(Toronto: DeBoo, 1984), at pp. 164-65</auto_label>",
+        "error_details": "Unclosed tags: <auto_label labelname=\"secondary sources\"> at position 0"
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 216,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Hickman v. Taylor</auto_label>, <auto_label labelname=\"reference\">329 U.S. 495 (1947)</auto_label> at <auto_label labelname=\"fragment\">p. 511</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 218,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Rule 26(b)(iii)</auto_label> \nof the <auto_label labelname=\"title\">U.S. Rules of Federal Procedure</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 220,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">rule 30.04(6)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 222,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. \nGarofoli</auto_label>, <auto_label labelname=\"reference\">[1990] 2 S.C.R. 1421</auto_label> at <auto_label labelname=\"fragment\">pp. 1460-61</auto_label>, <auto_label labelname=\"reference\">60 C.C.C. (3d) \n161</auto_label> at <auto_label labelname=\"fragment\">p. 194</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 224,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">Wigram</auto_label>, <auto_label labelname=\"title\">Points in the Law of Discovery, 2nd ed. \n</auto_label>(<auto_label labelname=\"source\">1840</auto_label>), at <auto_label labelname=\"fragment\">pp. 265-66</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 226,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Strauss v. Goldsack</auto_label>, supra, at <auto_label labelname=\"fragment\">p. 409</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 228,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. B. (K.G.)</auto_label>, <auto_label labelname=\"reference\">[1993] 1 S.C.R. 740</auto_label>, <auto_label labelname=\"reference\">79 \nC.C.C. (3d) 257</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 230,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Rules of Civil Procedure</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 232,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Slavutych v. Baker</auto_label>, <auto_label labelname=\"reference\">[1976] 1 S.C.R. 254</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 234,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Gruenke</auto_label>, <auto_label labelname=\"reference\">[1991] 3 S.C.R. 263</auto_label>, <auto_label labelname=\"reference\">67 C.C.C. (3d) 289</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 236,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label>, <auto_label labelname=\"reference\">[1999] 1 S.C.R. 455</auto_label> at <auto_label labelname=\"fragment\">p. 474</auto_label>, <auto_label labelname=\"reference\">132 \nC.C.C. (3d) 225</auto_label> at <auto_label labelname=\"fragment\">p. 239</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 238,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label>, at <auto_label labelname=\"fragment\">p. 477 \nS.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 242 C.C.C.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 240,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Smith v. Jones</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 242,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Nickmar Pty Ltd. v. Preservatrice Skandia \nInsurance Ltd. (1985)</auto_label>, <auto_label labelname=\"reference\">3 N.S.W.L.R. 44 (S.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 244,
+        "raw_output": "<auto_label labelname=\"secondary sources\"><auto_label labelname=\"authors\">McCormick</auto_label>, supra, at <auto_label labelname=\"fragment\">pp. 317-18</auto_label>, <auto_label labelname=\"fragment\">fn. 18</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 246,
+        "raw_output": "<auto_label labelname=\"secondary sources\">Law Reform Commission of Canada recommended a \nsimilar qualification of the litigation privilege in its <auto_label labelname=\"title\">Report \non Evidence</auto_label>, <auto_label labelname=\"source\">1977</auto_label> at <auto_label labelname=\"fragment\">p. 31</auto_label></auto_label>",
+        "error_details": null
+    }
+]

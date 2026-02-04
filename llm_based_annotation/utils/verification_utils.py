@@ -129,12 +129,8 @@ def check_consistency(tokens: list) -> VerificationResult:
     Returns:
         VerificationResult with passed=True if tags are balanced
     """
-    # Import inside function to avoid circular imports
-    import sys
-    import os
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     
-    from utils.html_utils import is_auto_label_tag
+    
     
     stack = []
     

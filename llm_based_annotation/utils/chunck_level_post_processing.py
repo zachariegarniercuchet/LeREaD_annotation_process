@@ -34,7 +34,7 @@ def extract_start_end_tokens(tokens: list) -> list:
         raise ValueError("<end> marker appears before <start> marker")
     
     extracted = tokens[start_index + 1 : end_index]
-    print(f"   ✓ Extracted {len(extracted)} tokens between <start> and <end>")
+    #print(f"   ✓ Extracted {len(extracted)} tokens between <start> and <end>")
     return extracted
 
 
@@ -78,7 +78,7 @@ def simplified_to_normal_form(tokens: list, label_type: str = 'auto_label') -> l
             # Keep token as-is
             normalized_tokens.append(token)
     
-    print(f"   ✓ Converted {len(tokens)} tokens from simplified to {label_type} format")
+    #print(f"   ✓ Converted {len(tokens)} tokens from simplified to {label_type} format")
     return normalized_tokens
 
 
@@ -101,18 +101,18 @@ def apply_post_processing_transforms(raw_output: str, use_simplified: bool = Fal
     """
     # Step 1: Tokenize
     tokens = tokenize(raw_output)
-    print(f"   → Step 1: Tokenized into {len(tokens)} tokens")
+    #print(f"   → Step 1: Tokenized into {len(tokens)} tokens")
     
     # Step 2: Extract between <start> and <end>
     try:
         tokens = extract_start_end_tokens(tokens)
-        print(f"   → Step 2: Extracted {len(tokens)} tokens between markers")
+        #print(f"   → Step 2: Extracted {len(tokens)} tokens between markers")
     except ValueError as e:
         print(f"   ⚠ Warning: {str(e)}")
     
     # Step 3: Convert simplified to normal form if needed
     if use_simplified:
         tokens = simplified_to_normal_form(tokens, label_type=label_type)
-        print(f"   → Step 3: Converted to {label_type} format")
+        #print(f"   → Step 3: Converted to {label_type} format")
     
     return tokens

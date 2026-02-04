@@ -1,4 +1,4 @@
-from utils.html_utils import extract_body
+from utils.html_utils import extract_body, is_manual_label_tag, is_auto_label_tag
 from utils.processing_utils import distance_lists_auto_label,  check_auto_label_consistency, apply_operations_safe
 from utils.tokenizer_utils import tokenize, decode
 from utils.html_cleaner import clean_tokens
