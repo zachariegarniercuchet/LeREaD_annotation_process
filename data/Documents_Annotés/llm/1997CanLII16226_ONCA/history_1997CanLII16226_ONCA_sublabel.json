@@ -1,0 +1,3506 @@
+[
+    {
+        "status": "Success",
+        "chunk_idx": 1,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Regina v. Church of Scientology et al.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 3,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Indexed as: R. v. Church of Scientology</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 5,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">33 O.R. (3d) 65</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 7,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">[1997] O.J. No. 1548</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 9,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 11,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of\nRights and Freedoms</auto_label>, <auto_label labelname=\"fragment\">ss. 8</auto_label>, <auto_label labelname=\"fragment\">24(2)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 13,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 15,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights and Freedoms</auto_label>, <auto_label labelname=\"fragment\">ss. 1</auto_label>, <auto_label labelname=\"fragment\">2(b)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 17,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian\nCharter of Rights and Freedoms</auto_label>, <auto_label labelname=\"fragment\">ss. 7</auto_label>, <auto_label labelname=\"fragment\">11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 19,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights\nand Freedoms</auto_label>, <auto_label labelname=\"fragment\">s. 15(1)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 21,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights\nand Freedoms</auto_label>, <auto_label labelname=\"fragment\">s. 11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 23,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights and Freedoms</auto_label>, <auto_label labelname=\"fragment\">ss. 1</auto_label>, <auto_label labelname=\"fragment\">2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 25,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian\nCharter of Rights and Freedoms</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 27,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 29,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 31,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 33,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label>, <auto_label labelname=\"fragment\">11\nand 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 35,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 37,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss.\n2(a)</auto_label>, <auto_label labelname=\"fragment\">(d)</auto_label>, <auto_label labelname=\"fragment\">7</auto_label> and <auto_label labelname=\"fragment\">11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 39,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 8</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 41,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 8</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 43,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">warrant</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 45,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">search warrant</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 47,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">equality\nrights</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 49,
+        "raw_output": "<auto_label labelname=\"legislation\">law</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 51,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 11(d)</auto_label> and <auto_label labelname=\"fragment\">(f)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 53,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 55,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 57,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 59,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 61,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 63,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 65,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 67,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label>, <auto_label labelname=\"reference\">R.S.O.\n1990, c. J.3</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 69,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> and <auto_label labelname=\"fragment\">11(f)</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 71,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 73,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 75,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 77,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 79,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 81,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7 of the Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 83,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 85,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 87,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 89,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label> of\nthe <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 91,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label> analysis</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 93,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 95,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 97,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock Co. v. R.</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R. 662</auto_label>,\n<auto_label labelname=\"reference\">19 C.C.C. (3d) 1</auto_label>, <auto_label labelname=\"reference\">45 C.R. (3d) 289</auto_label>, <auto_label labelname=\"reference\">19 D.L.R. (4th) 314</auto_label>, affg <auto_label labelname=\"reference\">(1981), 56 C.C.C.\n(2d) 193 (Ont. C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 99,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Collins</auto_label>, <auto_label labelname=\"reference\">[1987] 1 S.C.R. 265</auto_label>, <auto_label labelname=\"reference\">28 C.R.R. 122</auto_label>, <auto_label labelname=\"reference\">13\nB.C.L.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">33 C.C.C. (3d) 1</auto_label>, <auto_label labelname=\"reference\">56 C.R. (3d) 193</auto_label>, <auto_label labelname=\"reference\">38 D.L.R. (4th) 508</auto_label>, <auto_label labelname=\"reference\">74\nN.R. 276</auto_label>, <auto_label labelname=\"reference\">[1987] 3 W.W.R. 699</auto_label>, apld <auto_label labelname=\"title\">R. v. Carosella (1997)</auto_label>, <auto_label labelname=\"reference\">41 C.R.R. (2d) 189</auto_label>,\n<auto_label labelname=\"reference\">112 C.C.C. (3d) 289</auto_label>, <auto_label labelname=\"reference\">142 D.L.R. (4th) 595</auto_label>, <auto_label labelname=\"reference\">207 N.R. 321 (S.C.C.)</auto_label>, distd <auto_label labelname=\"title\">Andrews\nv. Law Society of British Columbia</auto_label>, <auto_label labelname=\"reference\">[1989] 1 S.C.R. 143</auto_label>, <auto_label labelname=\"reference\">36 C.R.R. 193</auto_label>, <auto_label labelname=\"reference\">34\nB.C.L.R. (2d) 273</auto_label>, <auto_label labelname=\"reference\">25 C.C.E.L. 255, 10</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 101,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">C.H.R.R. D/5719</auto_label>, <auto_label labelname=\"reference\">56 D.L.R. (4th) 1</auto_label>, <auto_label labelname=\"reference\">91\nN.R. 255</auto_label>, <auto_label labelname=\"reference\">[1989] 2 W.W.R. 289</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 103,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy Ltd. v. Quebec (Attorney General)</auto_label>, <auto_label labelname=\"reference\">[1989]\n1 S.C.R. 927</auto_label>, <auto_label labelname=\"reference\">39 C.R.R. 193</auto_label>, <auto_label labelname=\"reference\">25 C.P.R. (3d) 417</auto_label>, <auto_label labelname=\"reference\">58 D.L.R. (4th) 577</auto_label>, <auto_label labelname=\"reference\">94 N.R.\n167</auto_label>, <auto_label labelname=\"reference\">24 Q.A.C. 2</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 105,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Philippines (Republic) v. Pacificador (1993)</auto_label>, <auto_label labelname=\"reference\">14 O.R. (3d)\n321</auto_label>, <auto_label labelname=\"reference\">16 C.R.R. (2d) 299</auto_label>, <auto_label labelname=\"reference\">83 C.C.C. (3d) 210</auto_label>, <auto_label labelname=\"reference\">23 C.R. (4th) 171 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 107,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nBig M Drug Mart Ltd.</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R. 295</auto_label>, <auto_label labelname=\"reference\">13 C.R.R. 64</auto_label>, <auto_label labelname=\"reference\">37 Alta. L.R. (2d) 97</auto_label>,\n<auto_label labelname=\"reference\">60 A.R. 161</auto_label>, <auto_label labelname=\"reference\">18 C.C.C. (3d) 385</auto_label>, <auto_label labelname=\"reference\">85 C.L.L.C. 14,023</auto_label>, <auto_label labelname=\"reference\">18 D.L.R. (4th) 321</auto_label>, <auto_label labelname=\"reference\">58\nN.R. 81</auto_label>, <auto_label labelname=\"reference\">[1985] 3 W.W.R. 481</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 109,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology (1992)</auto_label>, <auto_label labelname=\"reference\">9 C.R.R. (2d)\n196 (Ont. Gen. Div.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 111,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology (1992)</auto_label>, <auto_label labelname=\"reference\">9 C.R.R. (2d) 220\n(Ont. Gen. Div.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 113,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology (1992)</auto_label>, <auto_label labelname=\"reference\">9 C.R.R</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 115,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 117,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Zaharia (1987)</auto_label>, <auto_label labelname=\"reference\">30 C.R.R. 238</auto_label>,\n<auto_label labelname=\"reference\">31 C.C.C. (3d) 449</auto_label>, <auto_label labelname=\"reference\">18 O.A.C. 321 (C.A.)</auto_label>, leave to appeal to S.C.C. refused\n<auto_label labelname=\"reference\">(1987), 33 C.R.R. 384n</auto_label>, <auto_label labelname=\"reference\">82 N.R. 392n</auto_label>, <auto_label labelname=\"reference\">23 O.A.C. 320n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 119,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Edwards Books &amp;\nArt Ltd.</auto_label>, <auto_label labelname=\"reference\">[1986] 2 S.C.R. 713</auto_label>, <auto_label labelname=\"reference\">28 C.R.R. 1</auto_label>, <auto_label labelname=\"reference\">30 C.C.C. (3d) 385</auto_label>, <auto_label labelname=\"reference\">87 C.L.L.C.\n14,001</auto_label>, <auto_label labelname=\"reference\">55 C.R. (3d) 193</auto_label>, <auto_label labelname=\"reference\">35 D.L.R. (4th) 1</auto_label>, <auto_label labelname=\"reference\">71 N.R. 161</auto_label>, <auto_label labelname=\"reference\">19 O.A.C. 239</auto_label>, <auto_label labelname=\"reference\">58\nO.R. (2d) 442</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 121,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Goldhart</auto_label>, <auto_label labelname=\"reference\">[1996] 2 S.C.R. 463</auto_label>, <auto_label labelname=\"reference\">37 C.R.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">28 O.R.\n(3d) 480n</auto_label>, <auto_label labelname=\"reference\">107 C.C.C. (3d) 481</auto_label>, <auto_label labelname=\"reference\">48 C.R. (4th) 297</auto_label>, <auto_label labelname=\"reference\">136 D.L.R. (4th) 502</auto_label>, <auto_label labelname=\"reference\">198\nN.R. 321</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 123,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Morgentaler</auto_label>, <auto_label labelname=\"reference\">[1988] 1 S.C.R. 30</auto_label>, <auto_label labelname=\"reference\">31 C.R.R. 1</auto_label>, <auto_label labelname=\"reference\">37 C.C.C. (3d)\n449</auto_label>, <auto_label labelname=\"reference\">62 C.R. (3d) 1</auto_label>, <auto_label labelname=\"reference\">44 D.L.R. (4th) 385</auto_label>, <auto_label labelname=\"reference\">82 N.R. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 125,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">O.A.C. 1</auto_label>, <auto_label labelname=\"reference\">63 O.R. (2d)\n281n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 127,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. S. (R.J.)</auto_label>, <auto_label labelname=\"reference\">[1995] 1 S.C.R. 451</auto_label>, <auto_label labelname=\"reference\">26 C.R.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">96 C.C.C. (3d) 1</auto_label>,\n<auto_label labelname=\"reference\">36 C.R. (4th) 1</auto_label>, <auto_label labelname=\"reference\">121 D.L.R. (4th) 589</auto_label>, <auto_label labelname=\"reference\">177 N.R. 81</auto_label>, <auto_label labelname=\"reference\">21 O.R. (3d) 797n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 129,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nSherratt</auto_label>, <auto_label labelname=\"reference\">[1991] 1 S.C.R. 509</auto_label>, <auto_label labelname=\"reference\">63 C.C.C. (3d) 193</auto_label>, <auto_label labelname=\"reference\">3 C.R. (4th) 129</auto_label>, <auto_label labelname=\"reference\">73 Man. R.\n(2d) 161</auto_label>, <auto_label labelname=\"reference\">122 N.R. 241</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 131,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Rhône (The) v. Peter A.B. Widener (The)</auto_label>, <auto_label labelname=\"reference\">[1993] 1\nS.C.R. 497</auto_label>, <auto_label labelname=\"reference\">101 D.L.R. (4th) 188</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 133,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Baron v.\nCanada</auto_label>, <auto_label labelname=\"reference\">[1993] 1 S.C.R. 416</auto_label>, <auto_label labelname=\"reference\">13 C.R.R. (2d) 65</auto_label>, <auto_label labelname=\"reference\">78 C.C.C. (3d) 510</auto_label>, <auto_label labelname=\"reference\">18 C.R.\n(4th) 374</auto_label>, <auto_label labelname=\"reference\">99 D.L.R. (4th) 350</auto_label>, <auto_label labelname=\"reference\">93 D.T.C. 5018</auto_label>, <auto_label labelname=\"reference\">146 N.R. 270</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 135,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Benner v. Canada\n(Secretary of State) (1997)</auto_label>, <auto_label labelname=\"reference\">42 C.R.R. (2d) 1 (S.C.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 137,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Dagenais v. Canadian\nBroadcasting Corp.</auto_label>, <auto_label labelname=\"reference\">[1994] 3 S.C.R. 835</auto_label>, <auto_label labelname=\"reference\">25 C.R.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">94 C.C.C. (3d) 289</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 139,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">34 C.R. (4th) 269</auto_label>, <auto_label labelname=\"reference\">175 N.R. 1</auto_label>, <auto_label labelname=\"reference\">76 O.A.C. 81</auto_label>, <auto_label labelname=\"reference\">20 O.R. (3d) 816n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 141,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Duren v.\nMissouri</auto_label>, <auto_label labelname=\"reference\">99 S.Ct. 664 (1979)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 143,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Eaton v. Brant County Board of Education</auto_label>, <auto_label labelname=\"reference\">[1997]\n1 S.C.R. 241</auto_label>, <auto_label labelname=\"reference\">41 C.R.R. (2d) 240</auto_label>, <auto_label labelname=\"reference\">142 D.L.R. (4th) 385</auto_label>, <auto_label labelname=\"reference\">207 N.R. 171 (S.C.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 145,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Egan v. Canada</auto_label>, <auto_label labelname=\"reference\">[1995] 2 S.C.R. 513</auto_label>, <auto_label labelname=\"reference\">29 C.R.R. (2d) 79</auto_label>, <auto_label labelname=\"reference\">95 C.L.L.C. 210-025</auto_label>,\n<auto_label labelname=\"reference\">124 D.L.R. (4th) 609</auto_label>, <auto_label labelname=\"reference\">182 N.R. 161</auto_label>, <auto_label labelname=\"reference\">12 R.F.L. (4th) 201</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 147,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Lockhart v. McCree</auto_label>,\n<auto_label labelname=\"reference\">106 S.Ct. 1758 (1986)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 149,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Miron v. Trudel</auto_label>, <auto_label labelname=\"reference\">[1995] 2 S.C.R. 418</auto_label>, <auto_label labelname=\"reference\">29 C.R.R. (2d)\n189</auto_label>, <auto_label labelname=\"reference\">124 D.L.R. (4th) 693</auto_label>, <auto_label labelname=\"reference\">[1995] I.L.R. 1-3185</auto_label>, <auto_label labelname=\"reference\">10 M.V.R. (2d) 151</auto_label>, <auto_label labelname=\"reference\">181 N.R.\n253</auto_label>, <auto_label labelname=\"reference\">13 R.F.L. (4th) 1</auto_label>, <auto_label labelname=\"reference\">23 O.R. (3d) 160n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 151,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Ontario Home Builders' Assn. v. York\nRegion Board of Education</auto_label>, <auto_label labelname=\"reference\">[1996] 2 S.C.R. 929</auto_label>, <auto_label labelname=\"reference\">137 D.L.R. (4th) 449</auto_label>, <auto_label labelname=\"reference\">35\nM.P.L.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">201 N.R. 81</auto_label>, <auto_label labelname=\"reference\">4 R.P.R. (3d</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 153,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">29 O.R. (3d) 320n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 155,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">PPG\nIndustries Canada Ltd. v Canada (Attorney General) (1983)</auto_label>, <auto_label labelname=\"reference\">4 C.R.R. 193</auto_label>, <auto_label labelname=\"reference\">42\nB.C.L.R. 334</auto_label>, <auto_label labelname=\"reference\">3 C.C.C. (3d) 97</auto_label>, <auto_label labelname=\"reference\">71 C.P.C. (2d) 56</auto_label>, <auto_label labelname=\"reference\">146 D.L.R. (3d) 261 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 157,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Bain</auto_label>, <auto_label labelname=\"reference\">[1992] 1 S.C.R. 91</auto_label>, <auto_label labelname=\"reference\">7 C.R.R. (2d) 193</auto_label>, <auto_label labelname=\"reference\">69 C.C.C. (3d) 481</auto_label>, <auto_label labelname=\"reference\">10 C.R.\n(4th) 257</auto_label>, <auto_label labelname=\"reference\">87 D.L.R. (4th) 449</auto_label>, <auto_label labelname=\"reference\">133 N.R. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 159,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Belnavis (1996)</auto_label>, <auto_label labelname=\"reference\">29 O.R. (3d)\n321</auto_label>, <auto_label labelname=\"reference\">36 C.R.R. (2d) 32</auto_label>, <auto_label labelname=\"reference\">107 C.C.C. (3d) 195</auto_label>, <auto_label labelname=\"reference\">48 C.R. (4th) 320 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 161,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nBureau (1931)</auto_label>, <auto_label labelname=\"reference\">51 Que. K.B. 207</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 163,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Burnett</auto_label>, <auto_label labelname=\"reference\">[1985] 2 C.T.C. 227 (Ont.\nH.C.J.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 165,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. CIP Inc.</auto_label>, <auto_label labelname=\"reference\">[1992] 1 S.C.R. 843</auto_label>, <auto_label labelname=\"reference\">9 C.R.R. (2d) 62</auto_label>, <auto_label labelname=\"reference\">71 C.C.C. (3d)\n129</auto_label>, <auto_label labelname=\"reference\">12 C.R. (4th) 237</auto_label>, <auto_label labelname=\"reference\">135 N.R. 90</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 167,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Chaplin</auto_label>, <auto_label labelname=\"reference\">[1995] 1 S.C.R. 727</auto_label>, <auto_label labelname=\"reference\">26\nC.R.R. (2d) 189</auto_label>, <auto_label labelname=\"reference\">27 Alta. L.R. (3d</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 169,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. E. (A.W.)</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 155</auto_label>, <auto_label labelname=\"reference\">12 Alta. L.R. (3d) 1</auto_label>, <auto_label labelname=\"reference\">83\nC.C.C. (3d) 462</auto_label>, <auto_label labelname=\"reference\">23 C.R. (4th) 357</auto_label>, <auto_label labelname=\"reference\">156 N.R. 321</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 171,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Généreux</auto_label>, <auto_label labelname=\"reference\">[1992] 1\nS.C.R. 259</auto_label>, <auto_label labelname=\"reference\">8 C.R.R. (2d) 89</auto_label>, <auto_label labelname=\"reference\">70 C.C.C. (3d) 1</auto_label>, <auto_label labelname=\"reference\">88 D.L.R. (4th) 110</auto_label>, <auto_label labelname=\"reference\">133 N.R.\n241</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 173,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Goncalves</auto_label>, <auto_label labelname=\"reference\">[1993] 2 S.C.R. 3</auto_label>, <auto_label labelname=\"reference\">81 C.C.C. (3d) 240</auto_label>, <auto_label labelname=\"reference\">150 N.R. 384</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 175,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R.\nv. Grant</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 223</auto_label>, <auto_label labelname=\"reference\">17 C.R.R. (2d) 269</auto_label>, <auto_label labelname=\"reference\">84 C.C.C. (3d) 173</auto_label>, <auto_label labelname=\"reference\">24 C.R.\n(4th) 1</auto_label>, <auto_label labelname=\"reference\">159 N.R. 161</auto_label>, <auto_label labelname=\"reference\">[1993] 8 W.W.R. 257</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 177,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Greffe</auto_label>, <auto_label labelname=\"reference\">[1990] 1 S.C.R. 755</auto_label>,\n<auto_label labelname=\"reference\">46 C.R.R. 1</auto_label>, <auto_label labelname=\"reference\">73 Alta. L.R. (2d) 97</auto_label>, <auto_label labelname=\"reference\">55 C.C.C. (3d) 161</auto_label>, <auto_label labelname=\"reference\">75 C.R. (3d) 257</auto_label>, <auto_label labelname=\"reference\">107\nN.R. 1</auto_label>, <auto_label labelname=\"reference\">[1990] 3 W.W.R. 577</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 179,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Laws (1994)</auto_label>, <auto_label labelname=\"reference\">19 C.R.R. (2d</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 181,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. M. (C.) (1995)</auto_label>, <auto_label labelname=\"reference\">23 O.R. (3d) 629</auto_label>, <auto_label labelname=\"reference\">30 C.R.R. (2d) 112</auto_label>, <auto_label labelname=\"reference\">98 C.C.C. (3d) 481</auto_label>,\n<auto_label labelname=\"reference\">41 C.R. (4th) 134 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 183,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Plant</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 281</auto_label>, <auto_label labelname=\"reference\">17 C.R.R. (2d) 297</auto_label>,\n<auto_label labelname=\"reference\">12 Alta. L.R. (3d) 305</auto_label>, <auto_label labelname=\"reference\">84 C.C.C. (3d) 203</auto_label>, <auto_label labelname=\"reference\">24 C.R. (4th) 47</auto_label>, <auto_label labelname=\"reference\">157 N.R. 321</auto_label>,\n<auto_label labelname=\"reference\">[1993] 8 W.W.R. 287</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 185,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Rose (1996)</auto_label>, <auto_label labelname=\"reference\">28 O.R. (3d) 602</auto_label>, <auto_label labelname=\"reference\">35 C.R.R. (2d) 229</auto_label>,\n<auto_label labelname=\"reference\">106 C.C.C. (3d) 402</auto_label>, <auto_label labelname=\"reference\">47 C.R. (4th) 323</auto_label>, <auto_label labelname=\"reference\">134 D.L.R (4th) 628 (C.A.)</auto_label>, leave to\nappeal to S.C.C. granted <auto_label labelname=\"reference\">(1997), 40 C.R.R. (2d) 376n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 187,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Rowbotham (1988)</auto_label>,\n<auto_label labelname=\"reference\">35 C.R.R. 207 (abridged)</auto_label>, <auto_label labelname=\"reference\">25 O.A.C. 321</auto_label>, <auto_label labelname=\"reference\">41 C.C.C. (3d) 1</auto_label>, <auto_label labelname=\"reference\">63 C.C.C. (3d) 113\n(C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 189,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Sansregret</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R. 570</auto_label>, <auto_label labelname=\"reference\">18 C.C.C. (3d) 223</auto_label>, <auto_label labelname=\"reference\">45 C.R. (3d)\n193</auto_label>, <auto_label labelname=\"reference\">17 D.L.R. (4th) 577</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 191,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">Man. R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">58 N.R. 123</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 193,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Stillman\n(1997)</auto_label>, <auto_label labelname=\"reference\">42 C.R.R. (2d) 189 (S.C.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 195,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Strachan</auto_label>, <auto_label labelname=\"reference\">[1988] 2 S.C.R. 980</auto_label>, <auto_label labelname=\"reference\">37\nC.R.R. 335</auto_label>, <auto_label labelname=\"reference\">46 C.C.C. (3d) 479</auto_label>, <auto_label labelname=\"reference\">67 C.R. (3d) 87</auto_label>, <auto_label labelname=\"reference\">56 D.L.R. (4th) 673</auto_label>, <auto_label labelname=\"reference\">90 N.R.\n273</auto_label>, <auto_label labelname=\"reference\">[1989] 1 W.W.R. 385</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 197,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Swain</auto_label>, <auto_label labelname=\"reference\">[1991] 1 S.C.R. 933</auto_label>, <auto_label labelname=\"reference\">3 C.R.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">63\nC.C.C. (3d) 481</auto_label>, <auto_label labelname=\"reference\">5 C.R. (4th) 253</auto_label>, <auto_label labelname=\"reference\">125 N.R. 1</auto_label>, <auto_label labelname=\"reference\">47 O.A.C. 81</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 199,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Turpin</auto_label>,\n<auto_label labelname=\"reference\">[1989] 1 S.C.R. 1296</auto_label>, <auto_label labelname=\"reference\">39 C.R.R. 306</auto_label>, <auto_label labelname=\"reference\">48 C.C.C. (3d) 8</auto_label>, <auto_label labelname=\"reference\">69 C.R. (3d) 97</auto_label>, <auto_label labelname=\"reference\">96 N.R.\n115</auto_label>, <auto_label labelname=\"reference\">34 O.A.C. 115</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 201,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Vaillancourt</auto_label>, <auto_label labelname=\"reference\">[1987] 2 S.C.R. 636</auto_label>, <auto_label labelname=\"reference\">32 C.R.R. 18</auto_label>, <auto_label labelname=\"reference\">39\nC.C.C. (3d) 118</auto_label>, <auto_label labelname=\"reference\">60 C.R. (3d) 289</auto_label>, <auto_label labelname=\"reference\">47 D.L.R. (4th) 399</auto_label>, <auto_label labelname=\"reference\">68 Nfld. &amp; P.E.I.R.\n281</auto_label>, <auto_label labelname=\"reference\">209 A.P.R. 281</auto_label>, <auto_label labelname=\"reference\">81 N.R. 115</auto_label>, <auto_label labelname=\"reference\">10 Q.A.C. 161</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 203,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Vetrovec</auto_label>, <auto_label labelname=\"reference\">[1982</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 204,
+        "raw_output": "<auto_label labelname=\"decision\">]<auto_label labelname=\"reference\"> 1\nS.C.R. 811</auto_label> sub nom. <auto_label labelname=\"title\">R. v. Vetrovec, R. v. Gaja</auto_label>, <auto_label labelname=\"reference\">67 C.C.C. (2d) 1</auto_label>, <auto_label labelname=\"reference\">27 C.R. (3d)\n304</auto_label>, <auto_label labelname=\"reference\">136 D.L.R. (3d) 89</auto_label>, <auto_label labelname=\"reference\">41 N.R. 606</auto_label>, <auto_label labelname=\"reference\">[1983] 1 W.W.R. 193</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 206,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Wholesale\nTravel Group Inc.</auto_label>, <auto_label labelname=\"reference\">[1991] 3 S.C.R. 154</auto_label>, <auto_label labelname=\"reference\">7 C.R.R. (2d) 36</auto_label>, <auto_label labelname=\"reference\">67 C.C.C. (3d) 193</auto_label>, <auto_label labelname=\"reference\">8\nC.R. (4th) 145</auto_label>, <auto_label labelname=\"reference\">38 C.P.R. (3d) 451</auto_label>, <auto_label labelname=\"reference\">84 D.L.R. (4th) 161</auto_label>, <auto_label labelname=\"reference\">130 N.R. 1</auto_label>, <auto_label labelname=\"reference\">49 O.A.C.\n161</auto_label>, <auto_label labelname=\"reference\">4 O.R. (3d) 799n</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 208,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Silagy v. Peters</auto_label>, <auto_label labelname=\"reference\">905 F.2d 986 (7th Cir. 1990)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 210,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Taylor\nv. Louisiana</auto_label>, <auto_label labelname=\"reference\">95 S.Ct. 692 (1975)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 212,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights\nand Freedoms</auto_label>, <auto_label labelname=\"fragment\">ss. 7</auto_label>, <auto_label labelname=\"fragment\">8</auto_label>, <auto_label labelname=\"fragment\">11</auto_label>, <auto_label labelname=\"fragment\">15</auto_label>, <auto_label labelname=\"fragment\">24(2)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 214,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Constitution Act, 1982</auto_label>, <auto_label labelname=\"fragment\">s. 52</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 216,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Corporations Act</auto_label>, <auto_label labelname=\"reference\">R.S.O. 1960, c. 71</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 218,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1970, c. C-34</auto_label>, <auto_label labelname=\"fragment\">s.\n111</auto_label> -- now <auto_label labelname=\"reference\">R.S.C. 1985, c. C-46</auto_label>, <auto_label labelname=\"fragment\">s. 122</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 220,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985, c. C-46</auto_label>,\n<auto_label labelname=\"fragment\">ss. 509</auto_label>, <auto_label labelname=\"fragment\">626</auto_label>, <auto_label labelname=\"fragment\">629</auto_label>, <auto_label labelname=\"fragment\">632</auto_label>, <auto_label labelname=\"fragment\">633</auto_label>, <auto_label labelname=\"fragment\">634</auto_label>, <auto_label labelname=\"fragment\">638</auto_label>, <auto_label labelname=\"fragment\">651</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 222,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Extradition Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985, c.\nE-21</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 224,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Offenders Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985, c. F-32</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 226,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Immigration Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985,\nc. I-2</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 228,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label>, <auto_label labelname=\"reference\">R.S.O. 1990, c. J.3</auto_label>, <auto_label labelname=\"fragment\">ss. 2</auto_label>, <auto_label labelname=\"fragment\">3</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 230,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Lord's Day Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1970,\nc. L-13</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 232,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Marriage Act</auto_label>, <auto_label labelname=\"reference\">R.S.O. 1970, c. 261</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 234,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Statute Law Amendment Act (Government\nManagement and Services), 1994</auto_label>, <auto_label labelname=\"reference\">S.O. 1994, c. 27</auto_label>, <auto_label labelname=\"fragment\">s. 48(1)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 236,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 238,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 240,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 242,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Verification Failed",
+        "chunk_idx": 244,
+        "raw_output": "<auto_label labelname=\"legislation\" parent=\"\" style=\"background-color: rgb(118, 206, 222); color: black;\">Criminal <br/>\nCode</auto_label>",
+        "error_details": "Unclosed tags: <auto_label labelname=\"legislation\"> at position 0"
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 246,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 248,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Sections 7</auto_label> and <auto_label labelname=\"fragment\">11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 250,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 252,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 1</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 254,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 2(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 256,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 258,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 111</auto_label> of the\n<auto_label labelname=\"title\">Criminal Code</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1970, c. C-34</auto_label> (now <auto_label labelname=\"reference\">R.S.C. 1985, c. C-46</auto_label>, <auto_label labelname=\"fragment\">s. 122</auto_label>)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 260,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian Charter of Rights and\nFreedoms</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 262,
+        "raw_output": "<auto_label labelname=\"legislation\">Ontario\nProvincial Police</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 264,
+        "raw_output": "<auto_label labelname=\"legislation\">Ministry of the Attorney General of Ontario</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 266,
+        "raw_output": "<auto_label labelname=\"legislation\">Ontario Provincial\nPolice</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 268,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Metropolitan Toronto Police</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 270,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Royal\nCanadian Mounted Police</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 272,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Canadian\nMental Health Association</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 274,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock Co. v. R.</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R.\n662</auto_label>, <auto_label labelname=\"reference\">19 C.C.C. (3d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 276,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ontario Corporations Act</auto_label>,\n<auto_label labelname=\"reference\">R.S.O. 1960, c. 71</auto_label> (now <auto_label labelname=\"reference\">R.S.O. 1990, c. C.38</auto_label>)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 278,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Corporations Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 280,
+        "raw_output": "<auto_label labelname=\"legislation\">Ontario Ministry of the\nAttorney General</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 282,
+        "raw_output": "<auto_label labelname=\"legislation\">Ontario Ministry of the Attorney General</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 284,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ministry of the Attorney General</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 286,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 288,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 651</auto_label> of\n<auto_label labelname=\"title\">the Criminal Code, R.S.C. 1985</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 290,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">C-46</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 292,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label> and <auto_label labelname=\"fragment\">11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 294,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Rose (1996)</auto_label>, <auto_label labelname=\"reference\">28 O.R. (3d) 602</auto_label>, <auto_label labelname=\"reference\">35 C.R.R. (2d)\n229</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 296,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock Co. v. R., (1981)</auto_label>,\n<auto_label labelname=\"reference\">56 C.C.C. (2d) 193</auto_label> at <auto_label labelname=\"fragment\">p. 293</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 298,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. E. (A.W.)</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 155</auto_label>, <auto_label labelname=\"reference\">83 C.C.C. (3d) 462</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 300,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Vetrovec</auto_label>, <auto_label labelname=\"reference\">[1982] 1 S.C.R. 811</auto_label>, <auto_label labelname=\"reference\">67 C.C.C. (2d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 302,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Vetrovec</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 304,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Vetrovec</auto_label> itself, Dickson J.\nstated at <auto_label labelname=\"fragment\">p. 832 S.C.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 306,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Metropolitan Toronto Police</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 308,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Church of Scientology</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 310,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Marriage Act</auto_label>, <auto_label labelname=\"reference\">R.S.O. 1970, c. 261</auto_label> (now <auto_label labelname=\"reference\">R.S.O. 1990, c. M.3</auto_label>)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 312,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Vetrovec</auto_label> at <auto_label labelname=\"fragment\">pp. 826-28</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 314,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 316,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Chaplin</auto_label>,\n<auto_label labelname=\"reference\">[1995] 1 S.C.R. 727</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 318,
+        "raw_output": "<auto_label labelname=\"decision\">[<auto_label labelname=\"title\">R. v.</auto_label>] <auto_label labelname=\"title\">Stinchcombe</auto_label> [(1991), <auto_label labelname=\"reference\">18 C.R.R</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 320,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">1991] 3 S.C.R. 326</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 322,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R.\nv.] Egger [(1993)</auto_label>, <auto_label labelname=\"reference\">15 C.R.R. (2d) 193</auto_label>, <auto_label labelname=\"reference\">[1993] 2 S.C.R. 451</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 324,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Stinchcombe</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 326,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Chaplin</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 328,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Chaplin</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 330,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Carosella</auto_label>, a judgment of the Supreme Court of Canada, released February\n6, 1997 [now reported <auto_label labelname=\"reference\">41 C.R.R. (2d) 189</auto_label>, <auto_label labelname=\"reference\">112 C.C.C. (3d) 289</auto_label>]</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 332,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Carosella</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 334,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Chaplin</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 336,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 8</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 338,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church\nof Scientology; R. v. Zaharia (1987)</auto_label>, <auto_label labelname=\"reference\">30 C.R.R. 238</auto_label>, <auto_label labelname=\"reference\">31 C.C.C. (3d) 449</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 340,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">(1992), 9 C.R.R. (2d) 196</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 342,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 8</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 344,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 8</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 346,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Collins</auto_label>, <auto_label labelname=\"reference\">[1987] 1 S.C.R. 265</auto_label>, <auto_label labelname=\"reference\">28 C.R.R. 122</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 348,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Collins</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 350,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">(1992), 9 C.R.R. (2d) 220</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 352,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 354,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 356,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 24(2)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 358,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Collins</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 360,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 362,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 364,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Grant</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 223</auto_label>, <auto_label labelname=\"reference\">17 C.R.R. (2d) 269</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 366,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 368,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Goldhart</auto_label>, <auto_label labelname=\"reference\">[1996] 2\nS.C.R. 463</auto_label>, <auto_label labelname=\"reference\">37 C.R.R</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 370,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Goldhart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 372,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 24(2)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 374,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Goldhart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 376,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 378,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 380,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Strachan</auto_label>, <auto_label labelname=\"reference\">[1988] 2 S.C.R. 980</auto_label> at <auto_label labelname=\"fragment\">p. 1006</auto_label>, <auto_label labelname=\"reference\">37 C.R.R. 335</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 382,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Goldhart</auto_label> at <auto_label labelname=\"fragment\">p. 485 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">pp. 16-17\nC.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 384,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Belnavis (1996)</auto_label>, <auto_label labelname=\"reference\">36 C.R.R. (2d) 32</auto_label> at\n<auto_label labelname=\"fragment\">p. 58</auto_label>, <auto_label labelname=\"reference\">107 C.C.C. (3d) 195</auto_label> at <auto_label labelname=\"fragment\">pp. 222-23</auto_label> (Ont. C.A.)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 386,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nStillman</auto_label>, a judgment of the Supreme Court of Canada, released March 20, 1997\n[now reported <auto_label labelname=\"reference\">42 C.R.R. (2d</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 388,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 390,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Baron v. Canada</auto_label>, <auto_label labelname=\"reference\">[1993] 1 S.C.R. 416</auto_label> at <auto_label labelname=\"fragment\">p. 451</auto_label>, <auto_label labelname=\"reference\">13 C.R.R. (2d) 65</auto_label> at <auto_label labelname=\"fragment\">p.\n89</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 392,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Burnett</auto_label>, <auto_label labelname=\"reference\">[1985] 2 C.T.C. 227</auto_label> at <auto_label labelname=\"fragment\">pp. 238-39</auto_label> (Ont. H.C.J.)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 394,
+        "raw_output": "<auto_label labelname=\"legislation\">legislation</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 396,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nStrachan</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 398,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Goncalves</auto_label>, <auto_label labelname=\"reference\">[1993] 2 S.C.R. 3</auto_label>, <auto_label labelname=\"reference\">81 C.C.C. (3d) 240</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 400,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v.\nPlant</auto_label>, <auto_label labelname=\"reference\">[1993] 3 S.C.R. 281</auto_label> at <auto_label labelname=\"fragment\">p. 300</auto_label>, <auto_label labelname=\"reference\">17 C.R.R. (2d) 297</auto_label> at <auto_label labelname=\"fragment\">p. 311</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 402,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Greffe</auto_label>,\n<auto_label labelname=\"reference\">[1990] 1 S.C.R. 755</auto_label> at <auto_label labelname=\"fragment\">p. 797</auto_label>, <auto_label labelname=\"reference\">46 C.R.R. 1</auto_label> at <auto_label labelname=\"fragment\">pp. 26-27</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 404,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Collins factors</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 406,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Collins</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 408,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries\nAct</auto_label>, <auto_label labelname=\"reference\">R.S.O. 1990, c. J.3</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 410,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">(1992), 9 C.R.R.\n(2d) 232</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 412,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 626</auto_label> of the\n<auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 414,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">The Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 416,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 626(2)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 418,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 638(1)(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 420,
+        "raw_output": "<auto_label labelname=\"legislation\">legislation</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 422,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Part XX</auto_label> of the\n<auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 424,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 629</auto_label> of the <auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 426,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 629</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 428,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">statute</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 430,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 632</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 432,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 633</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 434,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 638</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 436,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 634</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 438,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 638(1)(b)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 440,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 442,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label>,\n<auto_label labelname=\"fragment\">11</auto_label>, and <auto_label labelname=\"fragment\">15</auto_label> <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 444,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(b)</auto_label> of the\n<auto_label labelname=\"title\">Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 446,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 3</auto_label> of the Act</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 448,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 2</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 450,
+        "raw_output": "<auto_label labelname=\"legislation\">2. Subject to <auto_label labelname=\"fragment\">sections 3</auto_label> and <auto_label labelname=\"fragment\">4</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 452,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ontario Court (General Division)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 454,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">3(1)</auto_label> The following persons are ineligible to\nserve as jurors:</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 456,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Privy Council of Canada</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 458,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Executive Council of Ontario</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 460,
+        "raw_output": "<auto_label labelname=\"legislation\">Senate</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 462,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">House of\nCommons of Canada</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 464,
+        "raw_output": "<auto_label labelname=\"legislation\">Assembly</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 466,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 3(1)</auto_label>, <auto_label labelname=\"fragment\">para. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 468,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Statute Law Amendment Act (Government Management and Services), 1994</auto_label>, <auto_label labelname=\"reference\">S.O.\n1994, c. 27</auto_label>, <auto_label labelname=\"fragment\">s. 48(1)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 470,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 27</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 472,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews v. Law Society\nof British Columbia</auto_label>, <auto_label labelname=\"reference\">[1989] 1 S.C.R. 143</auto_label>, <auto_label labelname=\"reference\">36 C.R.R. 193</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 474,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 476,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 478,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 3</auto_label> of the <auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 480,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2</auto_label> of the <auto_label labelname=\"title\">Juries\nAct</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 482,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 3</auto_label> of the Act</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 484,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 15</auto_label>, <auto_label labelname=\"fragment\">7</auto_label>, <auto_label labelname=\"fragment\">11(d)</auto_label> and <auto_label labelname=\"fragment\">11(f)</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 486,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label> and <auto_label labelname=\"fragment\">11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 488,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 490,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 492,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 494,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 496,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 498,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 500,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 502,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Immigration Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985, c.\nI-2</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 504,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries\nAct</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 506,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Laws (1994)</auto_label>, <auto_label labelname=\"reference\">19 C.R.R. (2d) 269 (Ont. Gen. Div.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 508,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 510,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology of Toronto (1996)</auto_label>, <auto_label labelname=\"reference\">92 O.A.C. 313</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 512,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 514,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 516,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label>, <auto_label labelname=\"fragment\">11(d)</auto_label> and <auto_label labelname=\"fragment\">11(f)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 518,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Scientology case</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 520,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Laws appeal</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 522,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> <auto_label labelname=\"title\">Charter</auto_label> rights</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 524,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 526,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> claim</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 528,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 530,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 532,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label>\nof the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 534,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 536,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 538,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Big M Drug Mart Ltd.</auto_label>,\n<auto_label labelname=\"reference\">[1985] 1 S.C.R. 295</auto_label>, <auto_label labelname=\"reference\">13 C.R.R. 64</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 540,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 542,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 544,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 546,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 548,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 550,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 552,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 554,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 556,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 3</auto_label> of the <auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 558,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 560,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 562,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 564,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 24</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 566,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 52</auto_label> of the <auto_label labelname=\"title\">Constitution Act, 1982</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 568,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 24</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 570,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Belnavis, supra</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 572,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 24</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 574,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 52</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 576,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 52</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 578,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Ontario Home Builders' Assn. v. York Region Board of\nEducation</auto_label>, <auto_label labelname=\"reference\">[1996] 2 S.C.R. 929</auto_label> at <auto_label labelname=\"fragment\">pp. 967-68</auto_label>, <auto_label labelname=\"reference\">137 D.L.R. (4th) 449</auto_label> at <auto_label labelname=\"fragment\">pp.\n471-72</auto_label>, per Iacobucci J.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 580,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Benner v. Canada (Secretary of State)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 582,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Supreme Court of Canada</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 584,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">42 C.R.R. (2d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 586,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 588,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 590,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart Ltd. was charged with violating the Lord's Day Act</auto_label>,<auto_label labelname=\"legislation\">\n<auto_label labelname=\"reference\">R.S.C. 1970, c. L-13</auto_label></auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 592,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 594,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"fragment\">pp. 313-14 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 80 C.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 596,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 598,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 600,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Constitution Act, 1982</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 602,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 604,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 606,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 608,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug\nMart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 610,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Morgentaler</auto_label>, <auto_label labelname=\"reference\">[1988] 1 S.C.R 30</auto_label>, <auto_label labelname=\"reference\">31 C.R.R. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 612,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 251</auto_label> (the abortion provision) of the <auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 614,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 616,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 251</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 618,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 620,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 622,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Morgentaler</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 624,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Wholesale Travel Group Inc.</auto_label>, <auto_label labelname=\"reference\">[1991] 3 S.C.R. 154</auto_label>, <auto_label labelname=\"reference\">7\nC.R.R. (2d) 36</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 626,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. M. (C.) (1995)</auto_label>, <auto_label labelname=\"reference\">23 O.R. (3d) 629</auto_label>, <auto_label labelname=\"reference\">30 C.R.R. (2d) 112</auto_label>,\n<auto_label labelname=\"reference\">98 C.C.C. (3d) 481 (C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 628,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 630,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews\nv. Law Society of British</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 632,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15(1)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 634,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Swain</auto_label>, <auto_label labelname=\"reference\">[1991] 1 S.C.R. 933</auto_label> at <auto_label labelname=\"fragment\">p. 992</auto_label>,\n<auto_label labelname=\"reference\">3 C.R.R. (2d) 1</auto_label> at <auto_label labelname=\"fragment\">p. 38</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 636,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 638,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 640,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Bain</auto_label>, <auto_label labelname=\"reference\">[1992] 1 S.C.R.\n91</auto_label>, <auto_label labelname=\"reference\">7 C.R.R. (2d) 193</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 642,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 644,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 646,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 648,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Bain</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 650,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 652,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 654,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 656,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 658,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 660,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 662,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 664,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 666,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 668,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 670,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 672,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 15(1)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 674,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">15(1)</auto_label> Every individual is equal before and under\nthe law and has the right to the equal protection</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 676,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Eaton v. Brant County Board of Education (1997)</auto_label>, <auto_label labelname=\"reference\">41 C.R.R. (2d) 240</auto_label>, <auto_label labelname=\"reference\">142\nD.L.R. (4th) 385 (S.C.C.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 678,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Miron v.\nTrudel</auto_label>, <auto_label labelname=\"reference\">[1995] 2 S.C.R. 418</auto_label>, <auto_label labelname=\"reference\">29 C.R.R. (2d) 189</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 680,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Egan v. Canada</auto_label>, <auto_label labelname=\"reference\">[1995] 2\nS.C.R. 513</auto_label>, <auto_label labelname=\"reference\">29 C.R.R. (2d) 79</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 682,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 684,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 686,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 688,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 690,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 692,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 694,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 696,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 698,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy Ltd. v. Quebec\n(Attorney General)</auto_label>, <auto_label labelname=\"reference\">[1989] 1 S.C.R. 927</auto_label>, 39 C</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 700,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 702,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 704,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 706,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 708,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 11(d)</auto_label> and <auto_label labelname=\"fragment\">11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 710,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Généreux</auto_label>, <auto_label labelname=\"reference\">[1992] 1\nS.C.R. 259</auto_label> at <auto_label labelname=\"fragment\">310</auto_label>, <auto_label labelname=\"reference\">8 C.R.R. (2d) 89</auto_label> at <auto_label labelname=\"fragment\">p. 124</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 712,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 714,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 716,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 718,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 720,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 722,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 724,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 726,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 728,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Philippines (Republic)\nv. Pacificador (1993)</auto_label>, <auto_label labelname=\"reference\">14 O.R. (3d) 321</auto_label>, <auto_label labelname=\"reference\">16 C.R.R. (2d) 299</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 730,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Extradition Act</auto_label>, <auto_label labelname=\"reference\">R.S.C.\n1985, c. E-21</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 732,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 734,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Fugitive Offenders Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1985,\nc. F-32</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 736,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 738,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 740,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 742,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 744,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 746,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 748,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label>\nof the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 750,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 752,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 754,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 756,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 758,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 760,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 762,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 764,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 766,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Rowbotham (1988)</auto_label>, <auto_label labelname=\"reference\">35 C.R.R. 207 (abridged)</auto_label>, <auto_label labelname=\"reference\">41 C.C.C. (3d) 1 (Ont. C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 768,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 571</auto_label> of the <auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 770,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 563</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 772,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 774,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 571</auto_label> of the <auto_label labelname=\"title\">Criminal\nCode</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 776,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 778,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 780,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 11(d)</auto_label> and <auto_label labelname=\"fragment\">11(f)</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Verification Failed",
+        "chunk_idx": 782,
+        "raw_output": "<auto_label labelname=\"legislation\" parent=\"\" style=\"background-color: rgb(118, 206, 222); color: black;\"><auto_label labelname=\"fragment\" parent=\"legislation\" style=\"background-color: rgb(142, 124, 195); color: black;\">11. Any person charged with an offence has the right </p>\n<p align=\"center\" style=\"text-align:center\">. . . . . </p>\n<p style=\"margin-left:48.0pt\">(d) to be presumed innocent until proven guilty\naccording to law in a fair and public heating by an independent and impartial\ntribunal; </p>\n<p align=\"center\" style=\"text-align:center\">. . . . . </p>\n<p style=\"margin-left:48.0pt\">(f) except in the case of an offence under\nmilitary law tried before a military tribunal, to the benefit</auto_label></auto_label>",
+        "error_details": "Invalid label names: 'p' at position 27, 'p' at position 42, 'p' at position 96, 'p' at position 111"
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 784,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 786,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s.\n11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 788,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">PPG Industries\nCanada Ltd. v. Canada (Attorney General) (1983)</auto_label>, <auto_label labelname=\"reference\">4 C.R.R. 193</auto_label>, <auto_label labelname=\"reference\">3 C.C.C. (3d) 97\n(B.C.C.A.)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 790,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 792,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 794,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 796,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Sherratt</auto_label>, <auto_label labelname=\"reference\">[1991] 1 S.C.R. 509</auto_label>, <auto_label labelname=\"reference\">63 C.C.C. (3d) 193</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 798,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 800,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 802,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s.\n11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 804,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 806,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s.\n626</auto_label> of the <auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 808,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Part XX</auto_label> of the <auto_label labelname=\"title\">Criminal\nCode</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 810,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 812,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 814,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 816,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Jury Acts</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 818,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Jury Acts</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 820,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 822,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 824,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label> at <auto_label labelname=\"fragment\">p. 524</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 826,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Taylor v. Louisiana</auto_label>, <auto_label labelname=\"reference\">95 S.Ct. 692 (1975)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 828,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">United States Constitution</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 830,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Silagy v. Peters</auto_label>, <auto_label labelname=\"reference\">905 F.2d 986</auto_label> at <auto_label labelname=\"fragment\">p.\n1010</auto_label> (7th Cir. 1990)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 832,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Lockhart v. McCree</auto_label>, <auto_label labelname=\"reference\">106 S.Ct. 1758 (1986)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 834,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 836,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews v. Law Society of British Columbia</auto_label> at <auto_label labelname=\"fragment\">p.\n196 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 209 C.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 838,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Sherratt</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 840,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Laws case</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 842,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 844,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews v. Law Society of British\nColumbia</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 846,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 848,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 850,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 852,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 854,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Andrews</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 856,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 858,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 860,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 862,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 864,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 11(d)</auto_label> or\n<auto_label labelname=\"fragment\">11(f)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 866,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 868,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Juries Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 870,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Duren v. Missouri</auto_label>, <auto_label labelname=\"reference\">99 S.Ct. 664</auto_label> at <auto_label labelname=\"fragment\">p.\n671</auto_label> (1979)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 872,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Taylor v. Louisiana</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 874,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s.\n3(1)</auto_label>, <auto_label labelname=\"fragment\">para. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 876,
+        "raw_output": "<auto_label labelname=\"legislation\">legislation</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 878,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 880,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Criminal Code</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 882,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock Co. v. R.</auto_label>,\nsupra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 884,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Rhône (The) v. Peter A.B. Widener\n(The)</auto_label>, <auto_label labelname=\"reference\">[1993] 1 S.C.R. 497</auto_label>, <auto_label labelname=\"reference\">101 D.L.R. (4th) 188</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 886,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 888,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The\nRhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 890,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 24(1)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 892,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 894,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 896,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 898,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 900,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ontario Corporations Act</auto_label> (<auto_label labelname=\"reference\">now R.S.O. 1990, c. C.38</auto_label>)</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 902,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Corporations Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 904,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">The Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 906,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Part III</auto_label> of the <auto_label labelname=\"fragment\">Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 908,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology</auto_label>;\n<auto_label labelname=\"title\">R. v. Zaharia, supra</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 910,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 912,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> right to life, liberty or security of the person</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 914,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> presumption of innocence</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 916,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 2(a)</auto_label>, <auto_label labelname=\"fragment\">2(d)</auto_label>, <auto_label labelname=\"fragment\">7</auto_label> and <auto_label labelname=\"fragment\">11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 918,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 920,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 922,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s.\n7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 924,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 926,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 2(a)</auto_label>and <auto_label labelname=\"fragment\">2(d)</auto_label> of the\n<auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 928,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 930,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 932,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 934,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 936,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 938,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp;\nDock</auto_label> at <auto_label labelname=\"fragment\">p. 694</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 940,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 122</auto_label> of the <auto_label labelname=\"title\">Corporations Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 942,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"fragment\">S.C.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 944,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 946,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 948,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Sections 7</auto_label> and <auto_label labelname=\"fragment\">11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 950,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 7</auto_label> and <auto_label labelname=\"fragment\">11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 952,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">the Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 954,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy Ltd. v. Quebec (Attorney General)</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 956,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Big M Drug Mart Ltd.</auto_label> [<auto_label labelname=\"reference\">(1985), 13 C.R.R. 64</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R. 295</auto_label>]</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 958,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 960,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 962,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 964,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 966,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Irwin Toy</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 968,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 970,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 972,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big M Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 974,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Wholesale Travel Group Inc.</auto_label>, supra, at <auto_label labelname=\"fragment\">pp.\n181-82 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">pp. 86-87 C.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 976,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 978,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 980,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 982,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 984,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Vaillancourt</auto_label>, <auto_label labelname=\"reference\">[1987] 2 S.C.R. 636</auto_label> at <auto_label labelname=\"fragment\">pp. 654-55</auto_label>, <auto_label labelname=\"reference\">32\nC.R.R. 18</auto_label> at <auto_label labelname=\"fragment\">p. 32</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 986,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 988,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 990,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 7</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 992,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">11(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 994,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 996,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 998,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1000,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Big\nM Drug Mart</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1002,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Edwards Books &amp; Art Ltd.</auto_label>, <auto_label labelname=\"reference\">[1986] 2 S.C.R. 713</auto_label>, 28</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1004,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1006,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1008,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1010,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Edwards Books</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1012,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 2(a)</auto_label> and <auto_label labelname=\"fragment\">2(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1014,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Edwards Books</auto_label> at <auto_label labelname=\"fragment\">pp. 758-59 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">pp. 33-34 C.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1016,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1018,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1020,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1022,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1024,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Constitution</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1026,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1028,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Jones v. R.</auto_label>, <auto_label labelname=\"reference\">[1986] 2 S.C.R. 284</auto_label> at <auto_label labelname=\"fragment\">p. 314</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1030,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Edwards Books</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1032,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology; R. v. Zaharia</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1034,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">United States v.\nBallard</auto_label> [<auto_label labelname=\"reference\">(1944), 322 U.S. 78</auto_label>]</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1036,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Davis v. Beason</auto_label>, <auto_label labelname=\"reference\">133 U.S. 333 (1890)</auto_label>, at <auto_label labelname=\"fragment\">p. 342</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1038,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Big M\nDrug Mart Ltd.</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1040,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Church of Scientology; R. v. Zaharia</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1042,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1044,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. CIP Inc.</auto_label>, <auto_label labelname=\"reference\">[1992] 1 S.C.R. 843</auto_label>\nat <auto_label labelname=\"fragment\">p. 855</auto_label>, <auto_label labelname=\"reference\">9 C.R.R. (2d) 62</auto_label> at <auto_label labelname=\"fragment\">p. 72</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1046,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian\nDredge &amp; Dock</auto_label> [citation omitted] at <auto_label labelname=\"fragment\">p. 675</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1048,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label>\nguarantees</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1050,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1052,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1 of the Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1054,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 1</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1056,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Swain</auto_label>, supra</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1058,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1060,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1062,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1064,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label> analysis</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1066,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(a)</auto_label> of\n<auto_label labelname=\"title\">the Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1068,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1</auto_label> test</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1070,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Turpin</auto_label>, <auto_label labelname=\"reference\">[1989] 1 S.C.R. 1296</auto_label> at <auto_label labelname=\"fragment\">p. 1329</auto_label>, <auto_label labelname=\"reference\">39 C.R.R.\n306</auto_label> at <auto_label labelname=\"fragment\">p. 333</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1072,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 15</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1074,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian\nDredge &amp; Dock</auto_label> at <auto_label labelname=\"fragment\">p. 719</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1076,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Swain</auto_label> at <auto_label labelname=\"fragment\">p. 984 S.C.R.</auto_label>, <auto_label labelname=\"fragment\">p. 32\nC.R.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1078,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label> at <auto_label labelname=\"fragment\">p. 693</auto_label> S.C.R.</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1080,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label>\nguarantee of freedom of religion</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1082,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter rights</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1084,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter\nrights</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1086,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Dagenais v. Canadian\nBroadcasting Corp.</auto_label>, <auto_label labelname=\"reference\">[1994] 3 S.C.R. 835</auto_label> at <auto_label labelname=\"fragment\">p. 889</auto_label>, <auto_label labelname=\"reference\">25 C.R.R. (2d) 1</auto_label> at <auto_label labelname=\"fragment\">p. 38</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1088,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">Section 2(d)</auto_label> of the <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1090,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(d)</auto_label> of\nthe <auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1092,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1094,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1096,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 1 of the Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1098,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 2(d)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1100,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1102,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Rhône (The) v. Peter A.B Widener (The)</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1104,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1106,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label>\nat <auto_label labelname=\"fragment\">pp. 520-21</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1108,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"reference\">526 S.C.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1110,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp;\nDock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1112,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1114,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1116,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1118,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1120,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"fragment\">S.C.R.</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1122,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1124,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">The Rhône</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1126,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Canadian Dredge &amp; Dock</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1128,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Sansregret</auto_label>, <auto_label labelname=\"reference\">[1985] 1 S.C.R. 570</auto_label>, <auto_label labelname=\"reference\">18\nC.C.C. (3d) 223</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1130,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ministry of\nthe Attorney General</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1132,
+        "raw_output": "<auto_label labelname=\"legislation\">Ministry archives</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1134,
+        "raw_output": "<auto_label labelname=\"legislation\">Attorney General of Ontario</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1136,
+        "raw_output": "<auto_label labelname=\"legislation\">Attorney General of the United States</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1138,
+        "raw_output": "<auto_label labelname=\"legislation\">Church of\nScientology</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1140,
+        "raw_output": "<auto_label labelname=\"legislation\">Church of Scientology of\nToronto</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1142,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Ministry of the Attorney General</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1144,
+        "raw_output": "<auto_label labelname=\"legislation\">Ontario Provincial Police</auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1146,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter rights</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1148,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Immigration Act</auto_label>, <auto_label labelname=\"reference\">R.S.C. 1952, c. 145</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1150,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. Bureau (1931)</auto_label>, <auto_label labelname=\"reference\">51 Que. K.B. 207</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1152,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Immigration Act</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1154,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">R. v. S. (R.J.)</auto_label>, <auto_label labelname=\"reference\">[1995] 1 S.C.R. 451</auto_label>, <auto_label labelname=\"reference\">26 C.R.R. (2d) 1</auto_label>, <auto_label labelname=\"reference\">96 C.C.C. (3d) 1</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1156,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"title\">Charter</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1158,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Supreme Court</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1160,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Supreme Court</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1162,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">ss. 11</auto_label> and <auto_label labelname=\"fragment\">15</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1164,
+        "raw_output": "<auto_label labelname=\"decision\"><auto_label labelname=\"title\">Laws appeal</auto_label></auto_label>",
+        "error_details": null
+    },
+    {
+        "status": "Success",
+        "chunk_idx": 1166,
+        "raw_output": "<auto_label labelname=\"legislation\"><auto_label labelname=\"fragment\">s. 11</auto_label></auto_label>",
+        "error_details": null
+    }
+]

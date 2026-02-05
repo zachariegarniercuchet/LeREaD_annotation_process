@@ -276,7 +276,7 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
     Add parent and style attributes to auto_label tags in HTML content based on label scheme JSON.
     
     The function loads the label scheme from a JSON file to determine:
-    - Parent relationships (top-level labels have parent="", sublabels have parent="<parent_label>")
+    - Parent relationships based on nesting context (parent is the immediately enclosing auto_label)
     - Colors for each label (converted to background-color style)
     
     Args:
@@ -303,8 +303,7 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
         print(f"Warning: Label scheme file not found at {label_scheme_path}. Using auto_label tags without modification.")
         return html_content
     
-    # Build parent and style mappings from label scheme
-    parent_map = {}
+    # Build style mapping from label scheme
     style_map = {}
     
     # Helper function to determine text color based on background brightness
@@ -325,11 +324,8 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
         r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
         return f"rgb({r}, {g}, {b})"
     
-    # Process label scheme to build mappings
+    # Process label scheme to build style mappings
     for parent_label, parent_data in label_scheme.items():
-        # Top-level labels have no parent
-        parent_map[parent_label] = ""
-        
         # Set style for top-level label
         if 'color' in parent_data:
             bg_color = hex_to_rgb(parent_data['color'])
@@ -339,61 +335,66 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
         # Process sublabels
         if 'sublabels' in parent_data:
             for sublabel, sublabel_data in parent_data['sublabels'].items():
-                # Sublabels have the top-level label as parent
-                parent_map[sublabel] = parent_label
-                
                 # Set style for sublabel
                 if 'color' in sublabel_data:
                     bg_color = hex_to_rgb(sublabel_data['color'])
                     text_color = get_text_color(sublabel_data['color'])
                     style_map[sublabel] = f"background-color: {bg_color}; color: {text_color};"
     
-    def process_auto_label(match):
-        """Process each auto_label opening tag match."""
-        full_tag = match.group(0)
+    # Pattern to match auto_label tags (opening and closing)
+    tag_pattern = r'<(/?)auto_label([^>]*)>'
+    
+    # Stack to track currently open auto_labels
+    label_stack = []
+    result_parts = []
+    last_pos = 0
+    
+    for match in re.finditer(tag_pattern, html_content, flags=re.IGNORECASE):
+        # Add text before this tag
+        result_parts.append(html_content[last_pos:match.start()])
         
-        # Extract labelname
-        labelname_match = re.search(r'labelname="([^"]*)"', full_tag)
-        if not labelname_match:
-            return full_tag  # No labelname found, return unchanged
+        is_closing = match.group(1) == '/'
+        tag_content = match.group(2)
         
-        labelname = labelname_match.group(1)
-        
-        # Determine parent attribute from label scheme
-        parent_value = parent_map.get(labelname, "")
-        parent_attr = f'parent="{parent_value}"'
-        
-        # Get style attribute from label scheme
-        style = style_map.get(labelname, '')
-        if style:
-            style_attr = f'style="{style}"'
+        if is_closing:
+            # Closing tag - pop from stack
+            if label_stack:
+                label_stack.pop()
+            result_parts.append(match.group(0))
         else:
-            style_attr = ''
+            # Opening tag - extract labelname and determine parent
+            labelname_match = re.search(r'labelname="([^"]*)"', tag_content)
+            if labelname_match:
+                labelname = labelname_match.group(1)
+                
+                # Parent is the labelname of the tag at the top of the stack (or "" if stack is empty)
+                parent_value = label_stack[-1] if label_stack else ""
+                parent_attr = f'parent="{parent_value}"'
+                
+                # Get style attribute from label scheme
+                style = style_map.get(labelname, '')
+                style_attr = f'style="{style}"' if style else ''
+                
+                # Remove existing parent/style if present
+                tag_content = re.sub(r'\s*parent="[^"]*"', '', tag_content)
+                tag_content = re.sub(r'\s*style="[^"]*"', '', tag_content)
+                
+                # Build new tag
+                new_tag = f'<auto_label{tag_content} {parent_attr} {style_attr}>'
+                result_parts.append(new_tag)
+                
+                # Push this label onto the stack
+                label_stack.append(labelname)
+            else:
+                # No labelname found, keep tag as-is
+                result_parts.append(match.group(0))
         
-        # Check if parent or style already exist
-        has_parent = 'parent=' in full_tag
-        has_style = 'style=' in full_tag
-        
-        # Build new tag
-        # Remove existing parent/style if present
-        if has_parent:
-            full_tag = re.sub(r'\s*parent="[^"]*"', '', full_tag)
-        if has_style:
-            full_tag = re.sub(r'\s*style="[^"]*"', '', full_tag)
-        
-        # Insert new attributes before the closing >
-        new_tag = full_tag[:-1]  # Remove closing >
-        new_tag += f' {parent_attr} {style_attr}>'
-        
-        return new_tag
+        last_pos = match.end()
     
-    # Pattern to match auto_label opening tags
-    pattern = r'<auto_label[^>]*>'
+    # Add remaining text after last tag
+    result_parts.append(html_content[last_pos:])
     
-    # Process all auto_label opening tags
-    modified_html = re.sub(pattern, process_auto_label, html_content, flags=re.IGNORECASE)
-    
-    return modified_html
+    return ''.join(result_parts)
 
 
 
