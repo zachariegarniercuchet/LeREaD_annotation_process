@@ -15,6 +15,7 @@ Do **NOT** annotate:
 * Names of individuals, companies, or organizations **unless they are part of a cited legal authority**
 
 Your task is **strictly limited** to identifying **document sources**, not stakeholders or participants in the case.
+Do not annotate terms related to authority, official titles, or legal terminology unless they are explicitly supported by external references or documented sources.
 
 ---
 
@@ -40,6 +41,8 @@ Each annotated mention must be assigned **exactly one** of the following categor
 * Use the examples provided as your **primary reference** to resolve ambiguity.
 * Do not infer or hallucinate authorities that are not explicitly mentioned in the text.
 * When in doubt, prioritize **precision over coverage**.
+* When annotating legislative references (e.g., s. 8 of the Charter or s. 11(f) of the Charter), always label the full reference as legislation—not just the term 'Charter'—and include any directly adjacent words (within two words) in the same span to maintain context and accuracy.
+* In general, do not forget to annotate fragment that indicates part of a reference document.
 
 ---
 
