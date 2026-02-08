@@ -12,7 +12,7 @@ Legal authorities—citations to prior cases, legislation, and secondary sources
 
 This project aims to:
 1. Create a high-quality annotated dataset for legal authority extraction and resolution
-2. Evaluate LLM-based annotation approaches using state-of-the-art language models (GPT-4)
+2. Evaluate LLM-based annotation approaches using state-of-the-art language models (GPT-5)
 3. Compare human annotation, LLM annotation, and collaborative human-LLM workflows
 4. Establish benchmarks for future research in legal reference processing
 
@@ -153,51 +153,6 @@ Our research investigates four key research questions:
 
 ---
 
-## Repository Structure
-
-```
-LeREaD_annotation_process/
-│
-├── llm_based_annotation/          # Core LLM annotation pipeline
-│   ├── main.py                     # Main entry point
-│   ├── models.py                   # LLM model configurations
-│   ├── process_chunks.py           # Chunk processing orchestration
-│   ├── utils/                      # Utility modules
-│   │   ├── chunker_utils.py        # Document chunking strategies
-│   │   ├── prompt_utils.py         # Prompt construction
-│   │   ├── few_shot_utils.py       # Few-shot example management
-│   │   ├── processing_utils.py     # Token processing & normalization
-│   │   ├── verification_utils.py   # Output validation
-│   │   ├── html_utils.py           # HTML annotation handling
-│   │   └── prompts/                # Prompt templates
-│   ├── main_label_extraction.ipynb             # Extraction workflow
-│   ├── main_sublabel_extraction.ipynb          # Hierarchical annotation
-│   ├── main_label_extraction_full_doc.ipynb    # Full document processing
-│   └── README.md                   # Technical documentation
-│
-├── annotation_utils/               # Annotation quality & analysis tools
-│   ├── cleaner.py                  # HTML cleaning utilities
-│   ├── IAA.py                      # Inter-annotator agreement computation
-│   ├── add_label_tree.ipynb        # Label hierarchy visualization
-│   └── IAA_further.ipynb           # Advanced IAA analysis
-│
-├── data/                           # Annotated legal documents
-│   ├── Documents_Annotés/          # Gold standard annotations
-│   │   ├── EG/                     # Annotator EG's work
-│   │   ├── GL/                     # Annotator GL's work
-│   │   ├── VP/                     # Annotator VP's work
-│   │   ├── llm/                    # LLM-generated annotations
-│   │   └── Comparatifs_annotations/ # IAA comparison sets
-│   └── test/                       # Development test files
-│
-├── ressources/                     # Annotation guidelines
-│   ├── label_scheme.json           # JSON label schema
-│   └── label schemes.html          # Human-readable guidelines
-│
-└── fix_parents.py                  # HTML structure repair utility
-```
-
----
 
 ## Label Scheme
 
@@ -291,7 +246,7 @@ from llm_based_annotation.models import GPTModel
 from llm_based_annotation.process_chunks import process_chunks
 
 # Initialize model
-model = GPTModel(model_name="gpt-4", temperature=0.1)
+model = GPTModel(model_name="gpt-5", temperature=0.1)
 
 # Configure annotation settings
 label_config = {
@@ -377,41 +332,8 @@ This project is part of ongoing master's research at [Mila - Quebec AI Institute
 - ✅ Verification and quality control mechanisms
 - 🔄 Gold standard dataset creation (in progress)
 - 🔄 Human vs. LLM comparative evaluation (in progress)
-- 📅 Collaborative annotation workflow evaluation (planned)
 - 📅 Full benchmark release (planned)
 
-### Preliminary Findings
-
-Early experiments demonstrate:
-- **LLM Capability**: GPT-4 can identify legal authorities with reasonable accuracy (F1 > 0.75 for main labels)
-- **Efficiency**: LLM pre-annotation reduces human review time by 40-60% compared to manual annotation from scratch
-- **Challenges**: Short-form references and fragment extraction remain difficult for both LLMs and humans
-- **Co-reference Resolution**: LLMs show promise but require careful prompt design and post-processing
-
-### Future Directions
-
-The research is currently under development, and findings are subject to refinement as we continue to explore:
-- Additional LLM models (Claude, Llama, specialized legal LMs)
-- Ensemble and fusion strategies for multi-model annotation
-- Active learning approaches for selective human review
-- Generalization to other legal systems and jurisdictions (U.S., U.K., civil law systems)
-- Integration with downstream applications (legal search, citation network analysis)
-
----
-
-## Citation
-
-If you use this work in your research, please cite:
-
-```bibtex
-@misc{leread_annotation_2026,
-  title={Legal Authority Extraction and Resolution: An LLM-Assisted Annotation Framework},
-  author={[Your Name]},
-  year={2026},
-  institution={Mila - Quebec AI Institute},
-  note={Master's thesis research in progress}
-}
-```
 
 ---
 
@@ -435,7 +357,7 @@ This project is currently under research license. Data and code are provided for
 
 - **Mila - Quebec AI Institute** for research support and infrastructure
 - **Legal annotators** (EG, GL, VP) for their expertise and dedication
-- **OpenAI** for GPT-4 API access
+- **OpenAI** for GPT-5 API access
 - **CanLII** for providing open access to Canadian legal decisions
 
 ---
