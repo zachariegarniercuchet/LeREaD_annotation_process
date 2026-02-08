@@ -1,4 +1,4 @@
-# Legal Authority Extraction and Resolution Annotation Framework
+# Legal Reference Extraction and Resolution Annotation Framework
 
 [![Research](https://img.shields.io/badge/Status-Research-orange)](https://mila.quebec/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
@@ -56,14 +56,14 @@ Our annotation pipeline combines LLM capabilities with human expertise in a thre
             │
             ▼
 ┌─────────────────────────┐
-│  2. Co-reference         │
-│     Disambiguation       │
+│  2. Co-reference        │
+│     Disambiguation      │
 │  (LLM-based linking)    │
 └───────────┬─────────────┘
             │
             ▼
 ┌─────────────────────────┐
-│  3. Expert Review        │
+│  3. Expert Review       │
 │  (Legal annotators)     │
 └───────────┬─────────────┘
             │
