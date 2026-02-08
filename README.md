@@ -51,7 +51,7 @@ Our annotation pipeline combines LLM capabilities with human expertise in a thre
 ```
 ┌─────────────────────────┐
 │  1. LLM Pre-Annotation  │
-│  (GPT-4 with prompts)   │
+│  (GPT-5 with prompts)   │
 └───────────┬─────────────┘
             │
             ▼
@@ -73,7 +73,7 @@ Our annotation pipeline combines LLM capabilities with human expertise in a thre
 
 ### Stage 1: LLM-Based Extraction
 
-We use GPT-4 with carefully engineered prompts to identify legal authorities. The extraction process:
+We use GPT-5 with carefully engineered prompts to identify legal authorities. The extraction process:
 - Processes documents in semantically-aware chunks
 - Identifies three main authority types: **legislation**, **decisions** (case law), and **secondary sources**
 - Extracts hierarchical components: titles, references, and document fragments
