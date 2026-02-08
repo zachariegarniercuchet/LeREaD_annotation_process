@@ -1,2 +1,41 @@
+# Data directories
 data/
 old/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+*.log
+output/
+*.pkl
+*.pickle
+
+# API keys and secrets
+.env
+.env.local
+secrets.json
+config.json
