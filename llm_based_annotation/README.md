@@ -1,347 +1,402 @@
-# Refactored Chunk Processing Architecture
+# LLM-Based Legal Authority Annotation Pipeline
 
 ## Overview
 
-The chunk processing pipeline has been reorganized into three distinct concerns:
+This module implements a controlled annotation pipeline using Large Language Models (GPT-5) to extract and label legal authorities in judicial decisions. The core challenge is ensuring that LLMs **copy the input text faithfully while adding annotation labels**, without modifying, hallucinating, or omitting content.
 
-1. **Post-processing** (`utils/post_processing_utils.py`): Transforms raw LLM output into the desired format
-2. **Verification** (`utils/verification_utils.py`): Validates processed chunks without modification
-3. **Processing** (`process_chunks_refactored.py`): Orchestrates the entire pipeline with fallback strategies
+## The Copy-and-Annotate Challenge
 
-## Architecture
+### Task Definition
 
+We prompt LLMs to annotate text by copying the input verbatim and inserting XML-style labels around legal authorities:
+
+**Input:**
 ```
-┌─────────────────┐
-│  Raw LLM Output │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────────┐
-│  POST-PROCESSING    │
-│  - Extract <start>  │
-│  - Convert formats  │
-│  - Normalize tags   │
-└────────┬────────────┘
-         │
-         ▼
-┌─────────────────────┐
-│  ERROR CORRECTION   │
-│  - Token alignment  │
-│  - Operations safe  │
-└────────┬────────────┘
-         │
-         ▼
-┌─────────────────────┐
-│  VERIFICATION       │
-│  1. Hallucination   │
-│  2. Consistency     │
-│  3. Label Scheme    │
-└────────┬────────────┘
-         │
-    Pass │  Fail
-         ▼    │
-    ┌─────────┴─────────┐
-    │                   │
-    ▼                   ▼
- Success          ┌──────────┐
-                  │ FALLBACK │
-                  └──────────┘
+The decision in R. v. Oakes, [1986] 1 SCR 103, is well established.
 ```
 
-## Module Details
+**Expected Output:**
+```
+The decision in <decision>R. v. Oakes, [1986] 1 SCR 103</decision>, is well established.
+```
 
-### 1. Post-Processing (`utils/post_processing_utils.py`)
+### Why Transformers Excel at Copying
 
-**Purpose**: Transform raw LLM output into standard format
+Recent research shows that transformer architectures are exceptionally good at copying tasks. As demonstrated in [*Repeat After Me: Transformers are Better than State Space Models at Copying*](https://arxiv.org/pdf/2402.01032), transformers can reliably reproduce input sequences, making them well-suited for annotation tasks that require faithful text preservation.
 
-**Functions**:
-- `extract_start_end_tokens(tokens)`: Extract content between `<start>` and `<end>` markers
-- `simplified_to_normal_form(tokens, label_type)`: Convert simplified tags to full format
-  - `<decision>` → `<auto_label labelname="decision">`
-- `apply_post_processing_transforms(raw_output, use_simplified, label_type)`: Full pipeline
+However, **"good at copying" ≠ "perfect copying"**. Even with precise prompts, LLMs can:
+- **Drop characters or tokens** (e.g., missing punctuation, spaces)
+- **Add extraneous text** (hallucinated content, extra explanations)
+- **Modify wording** (paraphrasing, "fixing" grammar)
+- **Insert malformed labels** (unclosed tags, incorrect nesting)
 
-**Example**:
+### Our Solution: Multi-Layer Validation Pipeline
+
+To ensure output quality, we implement a three-stage pipeline:
+
+```
+┌─────────────────────────┐
+│   1. RAW LLM OUTPUT     │
+│   (potentially flawed)  │
+└───────────┬─────────────┘
+            │
+            ▼
+┌─────────────────────────┐
+│  2. POST-PROCESSING     │
+│  • Extract markers      │
+│  • Tokenize output      │
+│  • Normalize tags       │
+└───────────┬─────────────┘
+            │
+            ▼
+┌─────────────────────────┐
+│  3. ERROR CORRECTION    │
+│  • Levenshtein-based    │
+│  • Token alignment      │
+│  • Character recovery   │
+└───────────┬─────────────┘
+            │
+            ▼
+┌─────────────────────────┐
+│  4. VERIFICATION        │
+│  ✓ No hallucination     │
+│  ✓ Tag consistency      │
+│  ✓ Schema compliance    │
+└───────────┬─────────────┘
+            │
+       Pass │  Fail
+            ▼    │
+        Success  ▼
+            ┌──────────┐
+            │ FALLBACK │
+            │ (retry)  │
+            └──────────┘
+```
+
+---
+
+## Core Components
+
+### 1. Tokenization Strategy
+
+We use **word-level tokenization with special handling for HTML tags** to enable precise alignment between input and output:
+
 ```python
-from utils import apply_post_processing_transforms
+from utils.tokenizer_utils import tokenize_html
 
-raw_llm_output = "<start><decision>Smith v. Jones</decision><end>"
-tokens = apply_post_processing_transforms(
-    raw_output=raw_llm_output,
-    use_simplified=True,
-    label_type='auto_label'
+# Input text with annotations
+text = "See <decision>R. v. Smith</decision> at para. 15."
+
+# Tokenization preserves tags as single tokens
+tokens = tokenize_html(text)
+# ['See', ' ', '<decision>', 'R', '.', ' ', 'v', '.', ' ', 'Smith', '</decision>', ' ', 'at', ' ', 'para', '.', ' ', '15', '.']
+```
+
+**Key insight**: By treating tags as atomic tokens, we can:
+- Compare input and output token-by-token
+- Detect exactly where the LLM deviated from the source
+- Apply surgical corrections without affecting surrounding text
+
+### 2. Error Correction via Levenshtein Alignment
+
+When the LLM drops or adds characters, we use **Levenshtein distance-based alignment** to recover the original text:
+
+```python
+from utils.processing_utils import apply_operations
+
+# LLM accidentally dropped a space and period
+original = ['R', '.', ' ', 'v', '.', ' ', 'Smith']
+llm_output = ['R', ' ', 'v', '.', ' ', 'Smith']  # Missing '.' after 'R'
+
+# Compute minimal edit operations (insertions, deletions, substitutions)
+corrected = apply_operations(original, llm_output)
+# Result: ['R', '.', ' ', 'v', '.', ' ', 'Smith']
+```
+
+**How it works**:
+1. Compute Levenshtein distance between original and output tokens
+2. Backtrack to find optimal alignment (which tokens correspond)
+3. Apply minimal insertions/deletions to make output match input
+4. Preserve LLM-inserted labels while correcting text errors
+
+This approach catches common LLM mistakes:
+- **Missing punctuation**: `"R. v"` → `"R v"` (corrected to `"R. v"`)
+- **Dropped spaces**: `"Smith v.Jones"` → `"Smith v. Jones"`)
+- **Extra characters**: `"para. 15"` → `"para . 15"` (corrected)
+
+### 3. Three-Level Verification
+
+After correction, we validate the output against three criteria:
+
+#### 3.1 Hallucination Check
+
+**Goal**: Ensure LLM didn't add or modify non-label text
+
+```python
+from utils.verification_utils import check_hallucination
+
+# Extract non-label tokens from both input and output
+original_text = ['The', ' ', 'decision', ' ', 'in', ' ', 'Smith']
+output_text = ['The', ' ', 'decision', ' ', 'in', ' ', 'Smith']  # Must match exactly
+
+result = check_hallucination(original_text, output_text)
+# Returns: VerificationResult(passed=True, error_type=None, details=None)
+```
+
+**What we check**:
+- Token-by-token equality (ignoring label tags)
+- Character-level precision (spaces, punctuation preserved)
+- No insertions, deletions, or modifications
+
+**Common failures**:
+- LLM paraphrases: `"the Court"` → `"the court"` (capitalization changed)
+- LLM adds explanations: `"...<end> Note: This is a citation."`
+- LLM "fixes" grammar: `"ain't"` → `"isn't"`
+
+#### 3.2 Consistency Check
+
+**Goal**: Ensure tags are well-formed and properly nested
+
+```python
+from utils.verification_utils import check_consistency
+
+tokens = ['<decision>', 'R', '.', ' ', 'v', '.', ' ', 'Smith', '</decision>']
+
+result = check_consistency(tokens)
+# Returns: VerificationResult(passed=True, error_type=None, details=None)
+```
+
+**What we check**:
+- Every opening tag has a matching closing tag
+- Tags are properly nested (no overlapping spans)
+- No orphaned or malformed tags
+
+**Common failures**:
+- Unclosed tags: `<decision>R. v. Smith` (missing `</decision>`)
+- Wrong closing tag: `<decision>...</legislation>`
+- Overlapping spans: `<decision>R. v. <legislation>Smith</decision></legislation>`
+
+#### 3.3 Label Scheme Validation
+
+**Goal**: Ensure annotations conform to our predefined schema
+
+```python
+from utils.verification_utils import check_label_scheme
+
+tokens = ['<auto_label labelname="decision">', 'R', '.', ' ', 'v', '.', ' ', 'Smith', '</auto_label>']
+allowed_labels = ["decision", "legislation", "secondary sources"]
+
+result = check_label_scheme(tokens, allowed_labels)
+# Returns: VerificationResult(passed=True, error_type=None, details=None)
+```
+
+**What we check**:
+- Label names are in allowed set
+- Attributes conform to schema (e.g., `titletype`, `fragmentid`)
+- Tag structure matches expected format
+
+**Label hierarchy** (from `ressources/label_scheme.json`):
+- **legislation**: Statutes, regulations, constitutional documents
+  - Sublabels: `title`, `reference`, `fragment`
+  - Attributes: `docid`, `uri`, `titletype`, `fragmentid`
+- **decision**: Case law, judicial decisions
+  - Sublabels: `title`, `reference`, `fragment`
+  - Attributes: `docid`, `uri`, `fragmentid`
+- **secondary sources**: Treatises, articles, dictionaries
+  - Sublabels: `title`, `reference`, `fragment`
+  - Attributes: `docid`, `fragmentid`
+
+### 4. Fallback Strategy
+
+If verification fails, we **retry with an adjusted prompt** that emphasizes the error type:
+
+```python
+from process_chunks import process_single_chunk
+
+result, status, error = process_single_chunk(
+    model=gpt_model,
+    chunk=text_chunk,
+    max_fallback_attempts=2  # Try up to 2 additional times per error type
 )
-# Result: ['<auto_label labelname="decision">', 'Smith', 'v', '.', 'Jones', '</auto_label>']
+
+# If first attempt fails hallucination check:
+# → Retry with prompt: "CRITICAL: Copy text EXACTLY. Do not modify any words."
+
+# If retry fails consistency check:
+# → Retry with prompt: "Ensure every <tag> has a matching </tag>."
 ```
 
-### 2. Verification (`utils/verification_utils.py`)
+**Fallback triggers**:
+- `hallucination_fail` → Emphasize verbatim copying
+- `consistency_fail` → Emphasize balanced tags
+- `label_scheme_fail` → Provide explicit label list
 
-**Purpose**: Validate processed chunks against multiple criteria
 
-**Functions**:
-- `check_hallucination(original, processed)`: Verify text content unchanged
-- `check_consistency(tokens)`: Verify tags properly balanced
-- `check_label_scheme(tokens, allowed_labels)`: Verify labels conform to schema
-- `verify_processed_chunk(original, processed, allowed_labels)`: Run all checks
+---
 
-**Returns**: `VerificationResult` object with:
-- `passed`: Boolean indicating success/failure
-- `error_type`: "hallucination", "consistency", or "label_scheme"
-- `details`: Human-readable error description
-- `tokens`: Problematic tokens for debugging
+## Usage
 
-**Example**:
+### Basic Pipeline
+
 ```python
-from utils import verify_processed_chunk
+from models import GPTModel
+from process_chunks import process_chunks
+
+# 1. Initialize model
+model = GPTModel(model_name="gpt-5", temperature=0.1)
+
+# 2. Prepare text chunks (semantically-aware splitting)
+from utils.chunker_utils import chunk_document
+chunks = chunk_document(document_html, max_tokens=1500)
+
+# 3. Configure annotation settings
+label_config = {
+    "use_simplified": True,  # Use <decision> instead of <auto_label labelname="decision">
+    "keep_attributes": ["labelname", "docid", "fragmentid"],
+    "switch_type": True  # Convert back to full format after processing
+}
+
+# 4. Process chunks
+processed_chunks = process_chunks(
+    model=model,
+    token_chunks=chunks,
+    process_prompt_path="utils/prompts/extraction_prompt.txt",
+    label_config=label_config,
+    few_shot_examples=examples,  # 3-5 representative examples
+    allowed_labels=["legislation", "decision", "secondary sources"],
+    output_dir="./output",
+    filename="document_name",
+    max_fallback_attempts=2
+)
+
+# 5. Reconstruct annotated document
+from utils.html_utils import reconstruct_document
+annotated_html = reconstruct_document(processed_chunks, original_html)
+```
+
+### Monitoring Processing
+
+```python
+# Access detailed processing history
+history = processed_chunks['history']
+
+print(history.summary())
+# Output:
+# {
+#   "total": 25,
+#   "success": 20,
+#   "hallucination_fail": 3,
+#   "consistency_fail": 2,
+#   "label_scheme_fail": 0
+# }
+
+# Inspect failures
+for entry in history.entries:
+    if entry['status'] != 'Success':
+        print(f"Chunk {entry['chunk_idx']}: {entry['error_details']}")
+```
+
+---
+
+## Module Structure
+
+```
+llm_based_annotation/
+├── main.py                          # Entry point
+├── models.py                        # GPT model wrapper
+├── process_chunks.py                # Main orchestration logic
+│
+├── utils/
+│   ├── tokenizer_utils.py           # HTML-aware tokenization
+│   ├── processing_utils.py          # Levenshtein alignment & correction
+│   ├── verification_utils.py        # Three-level verification
+│   ├── post_processing_utils.py     # Output transformation
+│   │
+│   ├── chunker_utils.py             # Document chunking
+│   ├── prompt_utils.py              # Prompt construction
+│   ├── few_shot_utils.py            # Example management
+│   ├── html_utils.py                # HTML manipulation
+│   └── html_cleaner.py              # HTML preprocessing
+│
+├── main_label_extraction.ipynb              # Workflow: Extract main labels
+├── main_sublabel_extraction.ipynb           # Workflow: Extract sublabels
+└── main_label_extraction_full_doc.ipynb     # Workflow: Full document processing
+```
+
+---
+
+## Key Functions
+
+### Tokenization
+
+```python
+from utils.tokenizer_utils import tokenize_html, detokenize
+
+# Tokenize preserving HTML structure
+tokens = tokenize_html("<decision>R. v. Smith</decision>")
+# ['<decision>', 'R', '.', ' ', 'v', '.', ' ', 'Smith', '</decision>']
+
+# Reconstruct from tokens
+text = detokenize(tokens)
+# "<decision>R. v. Smith</decision>"
+```
+
+### Error Correction
+
+```python
+from utils.processing_utils import apply_operations
+
+# Correct LLM mistakes while preserving labels
+corrected = apply_operations(
+    original_tokens=input_tokens,
+    processed_tokens=llm_output_tokens
+)
+```
+
+### Verification
+
+```python
+from utils.verification_utils import verify_processed_chunk
 
 result = verify_processed_chunk(
-    original_tokens=cleaned_chunk,
-    processed_tokens=llm_output_tokens,
+    original_tokens=input_tokens,
+    processed_tokens=corrected_tokens,
     allowed_labels=["decision", "legislation", "secondary sources"]
 )
 
-if result.passed:
-    print("✓ Verification passed")
-else:
-    print(f"✗ {result.error_type}: {result.details}")
+if not result.passed:
+    print(f"Verification failed: {result.error_type}")
+    print(f"Details: {result.details}")
 ```
 
-**Label Scheme Validation**:
-Based on `annotation/label schemes.html`, validates:
-- **legislation**: Can have `titletype`, `fragmentid` attributes
-- **decision**: Can have `titletype`, `fragmentid` attributes  
-- **secondary sources**: Can have `titletype`, `fragmentid` attributes
-- **unclassified**: No specific attributes
+---
 
-### 3. Refactored Processing (`process_chunks_refactored.py`)
+## Prompt Engineering
 
-**Purpose**: Main orchestration with error handling and fallback
+Our prompts emphasize three key instructions:
 
-**Key Features**:
-- Automatic fallback on verification failures
-- Configurable max retry attempts
-- Detailed history tracking
-- Comprehensive error reporting
-
-**Main Functions**:
-- `process_single_chunk(...)`: Process one chunk with full pipeline
-- `process_chunks(...)`: Process multiple chunks with progress tracking
-- `ProcessingHistory`: Track and analyze processing results
-
-**Usage**:
-```python
-from process_chunks_refactored import process_chunks
-
-processed_chunks = process_chunks(
-    model=gpt_model,
-    token_chunks=chunks_to_process,
-    process_prompt_path="path/to/prompt.txt",
-    label_config={
-        "use_simplified": True,
-        "keep_attributes": ["labelname"],
-        "switch_type": True
-    },
-    few_shot_examples=examples,
-    allowed_labels=["decision", "legislation", "secondary sources"],
-    output_dir="./output",
-    filename="document_name",
-    max_fallback_attempts=1  # Number of retries per error type
-)
+### 1. Verbatim Copying
+```
+CRITICAL INSTRUCTION: Copy the input text EXACTLY as provided. 
+Do not modify, paraphrase, or "correct" any content.
+Preserve all punctuation, spacing, and capitalization PRECISELY.
 ```
 
-## Comparison: Old vs New
-
-### Old Architecture (Mixed Concerns)
-
-```python
-def process_chunks(...):
-    for chunk in chunks:
-        # 1. Clean chunk
-        cleaned = clean_tokens(...)
-        
-        # 2. Generate
-        output = model.generate(...)
-        
-        # 3. Post-process (mixed with verification)
-        tokens = tokenize(output)
-        tokens = tokens[start:end]  # Extract
-        tokens = convert_format(...)  # Transform
-        
-        # 4. Error correction
-        corrected = apply_operations(...)
-        
-        # 5. Verify hallucination
-        if not check_hallucination(...):
-            # Fallback inline
-            output = model.generate(fallback_prompt)
-            tokens = tokenize(output)
-            # ... repeat steps
-        
-        # 6. Verify consistency
-        if not check_consistency(...):
-            # Another fallback inline
-            output = model.generate(fallback_prompt)
-            # ... repeat steps
+### 2. Label Insertion Only
+```
+Your ONLY modification should be inserting <label></label> tags around legal authorities.
+DO NOT add explanations, notes, or any other text.
 ```
 
-**Problems**:
-- Mixed transformation and validation logic
-- Repeated code for fallback attempts
-- Hard to add new verification checks
-- Difficult to test individual components
-- No label scheme validation
+### 3. Structured Output Markers
+```
+Begin your output with <start> and end with <end>.
+This allows us to extract your annotations reliably.
 
-### New Architecture (Separation of Concerns)
-
-```python
-def process_single_chunk(...):
-    # 1. Clean chunk
-    cleaned = prepare_input(chunk)
-    
-    # 2. Generate
-    output = model.generate(...)
-    
-    # 3. Post-process (pure transformations)
-    tokens = apply_post_processing_transforms(output, config)
-    
-    # 4. Error correction
-    corrected = apply_operations(tokens)
-    
-    # 5. Verify (all checks in one place)
-    result = verify_processed_chunk(
-        original=cleaned,
-        processed=corrected,
-        allowed_labels=labels
-    )
-    
-    if result.passed:
-        return corrected, "Success"
-    
-    # 6. Fallback (generic retry logic)
-    return attempt_fallback(
-        error_type=result.error_type,
-        max_attempts=max_retries
-    )
+Example:
+<start>
+The court in <decision>R. v. Smith</decision> held that...
+<end>
 ```
 
-**Benefits**:
-- Clear separation: transform → verify → fallback
-- Easy to add new verification types
-- Reusable verification functions
-- Testable components
-- Label scheme validation included
-- Better error messages
-
-## Migration Guide
-
-### Updating Existing Code
-
-Replace old import:
-```python
-from utils import process_chunks
-```
-
-With new import:
-```python
-from process_chunks_refactored import process_chunks
-```
-
-The function signature is similar, but adds:
-- `allowed_labels`: List of valid label names
-- `max_fallback_attempts`: Control retry behavior
-
-### Testing Individual Components
-
-```python
-# Test post-processing
-from utils import apply_post_processing_transforms
-tokens = apply_post_processing_transforms("<start>text<end>", True)
-
-# Test verification
-from utils import check_hallucination, check_consistency, check_label_scheme
-hal_result = check_hallucination(original, processed)
-cons_result = check_consistency(processed)
-scheme_result = check_label_scheme(processed, ["decision", "legislation"])
-
-# Test full pipeline on single chunk
-from process_chunks_refactored import process_single_chunk
-result, status, error = process_single_chunk(
-    model=model,
-    chunk=test_chunk,
-    system_prompt=prompt,
-    user_prompt_template=template,
-    label_config=config,
-    allowed_labels=labels
-)
-```
-
-## History Tracking
-
-The refactored version includes detailed history tracking:
-
-```json
-{
-  "entries": [
-    {
-      "status": "Success",
-      "chunk_idx": 0,
-      "raw_output": "...",
-      "error_details": null
-    },
-    {
-      "status": "Hallucination Fail",
-      "chunk_idx": 1,
-      "raw_output": "...",
-      "error_details": "First difference at position 42..."
-    }
-  ]
-}
-```
-
-Summary statistics:
-```python
-history.summary()
-# {
-#   "total": 10,
-#   "success": 8,
-#   "hallucination_fail": 1,
-#   "consistency_fail": 1,
-#   ...
-# }
-```
-
-## Future Enhancements
-
-1. **Additional Verification Checks**:
-   - Cross-reference validation (citation formats)
-   - Semantic consistency (label hierarchy rules)
-   - Fragment ID validation
-
-2. **Smarter Fallback Strategies**:
-   - Different fallback prompts per error type
-   - Adaptive retry limits based on error severity
-   - Ensemble strategies (multiple model attempts)
-
-3. **Performance Optimizations**:
-   - Batch verification for multiple chunks
-   - Parallel processing with async/await
-   - Caching for repeated patterns
-
-4. **Better Error Reporting**:
-   - Visual diff outputs
-   - Confidence scores for corrections
-   - Suggested manual review points
-
-## Files Modified/Created
-
-### New Files:
-- `utils/verification_utils.py`: Verification functions and VerificationResult class
-- `process_chunks_refactored.py`: Refactored main processing logic
-- `REFACTORING_README.md`: This documentation
-
-### Modified Files:
-- `utils/post_processing_utils.py`: Added transformation functions
-- `utils/__init__.py`: Updated exports
-
-### Unchanged:
-- Original `process_chunks.py` (in `main_test.ipynb`) - kept for reference
-- Core utilities: `tokenizer_utils.py`, `html_utils.py`, `processing_utils.py`
+See [utils/prompts/](utils/prompts/) for full prompt templates.
