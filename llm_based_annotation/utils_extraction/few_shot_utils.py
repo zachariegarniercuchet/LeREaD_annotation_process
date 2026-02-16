@@ -1,6 +1,6 @@
-from utils.html_cleaner import clean_tokens
-from utils.tokenizer_utils import decode
-from utils.htmlLabel import HTMLLabel
+from utils_extraction.html_cleaner import clean_tokens
+from utils_extraction.tokenizer_utils import decode
+from utils_extraction.htmlLabel import HTMLLabel
 
 def prepare_label_tokens(chunk, label_config):
     """

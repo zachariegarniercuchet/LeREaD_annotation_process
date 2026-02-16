@@ -29,12 +29,12 @@ def check_accessibility():
 
 if __name__ == "__main__":
 
-    """
-    assistant = GPTAssistant(model_name="gpt-4.1", temperature=0.5)
+    
+    assistant = GPTAssistant(model_name="gpt-5.2", temperature=1)
     system_prompt = "You are a helpful assistant."
     user_prompt = "Explain the theory of relativity in simple terms."
     response = assistant.generate(system_prompt, user_prompt)
     print(response)
-    """
+    
 
-    check_accessibility()
+    #check_accessibility()

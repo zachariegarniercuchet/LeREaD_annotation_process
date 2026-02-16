@@ -1,7 +1,8 @@
 import re
-from utils.html_utils import is_auto_label_tag, is_manual_label_tag, is_tag_token, strip_auto_labels
-from utils.tokenizer_utils import tokenize
-from utils.htmlLabel import from_simplified
+from utils_extraction.html_utils import is_auto_label_tag, is_manual_label_tag, is_tag_token, strip_auto_labels
+from utils_extraction.tokenizer_utils import tokenize
+from utils_extraction.htmlLabel import from_simplified
+from utils_extraction.html_utils import clean_html_formatting
 
 
 def extract_start_end_tokens(tokens: list) -> list:
@@ -402,15 +403,23 @@ def compare_html_allow_auto_labels(merged_html: str, original_html: str) -> bool
     """
     Compare two HTML strings character-by-character, considering them equivalent
     if the only differences are the presence or placement of <auto_label ...>
-    and </auto_label> tags.
+    and </auto_label> tags, empty formatting tags, or redundant tag pairs.
 
-    Returns True when equal after stripping auto_label tags, else prints
+    Returns True when equal after normalization, else prints
     a concise diff context and returns False.
     """
+    
+    
+    # Strip auto_labels and clean formatting artifacts
     a = strip_auto_labels(merged_html)
     b = strip_auto_labels(original_html)
+    
+    # Clean HTML formatting (removes empty tags and redundant pairs)
+    a = clean_html_formatting(a)
+    b = clean_html_formatting(b)
+    
     if a == b:
-        print("   ✓ HTMLs match when ignoring auto_label tags")
+        print("   ✓ HTMLs match after normalization (ignoring auto_label tags and formatting artifacts)")
         return True
     # Find first index of difference
     min_len = min(len(a), len(b))

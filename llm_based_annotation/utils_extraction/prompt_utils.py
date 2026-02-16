@@ -1,11 +1,4 @@
-try:
-    from ..models import GPTAssistant
-except ImportError:
-    # Running as script, use absolute import
-    import sys
-    from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).parent.parent))
-    from models import GPTAssistant
+
 
 
 
@@ -13,7 +6,7 @@ guidelines = """
         1. **Annotate every occurrence** of an authority, including abbreviated forms.
         2. Use the same `docid` for all mentions of the same authority within the same document.
         3. Apply a general tag first, then apply specific tags inside it.
-        4. Consider fragments as part of the same mention only if they are ≤ 2 stop-words away from the title/reference/source. Otherwise, create a new mention with the same `docid`.
+        4. Consider fragments as part of the same mention only if they are ≤ 2 stop-words away from the title/citation/source. Otherwise, create a new mention with the same `docid`.
 
         ### Global Annotation Structure:
 
@@ -22,7 +15,7 @@ guidelines = """
         ```
         <auto_label labelname=AUTHORITY_TYPE docid="...">
             <auto_label labelname="title" titletype="official|alias">...</auto_label>
-            <auto_label labelname="reference">...</auto_label>        (legislation/decisions only)
+            <auto_label labelname="citation">...</auto_label>        (legislation/decisions only)
             <auto_label labelname="authors">...</auto_label>            (secondary sources only)
             <auto_label labelname="source">...</auto_label>              (secondary sources only)
             <auto_label labelname="fragment" fragmentid="..." non_standard="true|false">...</auto_label>
@@ -51,9 +44,9 @@ guidelines = """
         - `titletype="official"` for full legal title
         - `titletype="alias"` for acronyms, short names, “the Act”
 
-        ##### References:
+        ##### Citations:
 
-        - Tag statute citations as `<auto_label labelname="reference">`.
+        - Tag statute citations as `<auto_label labelname="citation">`.
 
         ##### Fragments:
 
@@ -68,9 +61,9 @@ guidelines = """
 
         - Use `<auto_label labelname="title">` with `titletype="official"` for full citation and `titletype="alias"` for short form.
 
-        ##### References:
+        ##### Citations:
 
-        - Each citation is tagged as its own `<auto_label labelname="reference">`.
+        - Each citation is tagged as its own `<auto_label labelname="citation">`.
         ##### Fragments:
 
         - Use `p` for pages and `para` for paragraphs, including both bounds for intervals.
@@ -270,6 +263,15 @@ def get_prompt_fallback_hallucination():
 
 
 if __name__ == "__main__":
+
+    try:
+        from ..models import GPTAssistant
+    except ImportError:
+        # Running as script, use absolute import
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).parent.parent))
+        from ..models import GPTAssistant
     # Example usage - read annotation guidelines from file
     guidelines_path = r"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\ressources\llm_AG.md"
     

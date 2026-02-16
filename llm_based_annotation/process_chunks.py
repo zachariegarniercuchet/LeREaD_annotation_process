@@ -3,11 +3,11 @@ import json
 from tqdm import tqdm
 from typing import List, Tuple, Optional
 
-from utils import decode, apply_post_processing_transforms
-from utils import get_prompt_processing, get_prompt_fallback_hallucination, get_prompt_fallback_consistency
-from utils import distance_lists_auto_label, apply_operations_safe
-from utils import prepare_label_tokens
-from utils import verify_processed_chunk
+from utils_extraction import decode, apply_post_processing_transforms
+from utils_extraction import get_prompt_processing, get_prompt_fallback_hallucination, get_prompt_fallback_consistency
+from utils_extraction import distance_lists_auto_label, apply_operations_safe
+from utils_extraction import prepare_label_tokens
+from utils_extraction import verify_processed_chunk
 
 class ProcessingHistory:
     """Track processing history for debugging and analysis."""
@@ -103,6 +103,8 @@ def process_single_chunk(
         system_prompt=system_prompt,
         user_prompt=user_prompt
     )
+
+    #print(f"   → Raw LLM output for chunk: {raw_output}...")  
     
     # ------ 3. POST-PROCESS OUTPUT ------
     try:
@@ -114,12 +116,16 @@ def process_single_chunk(
     except Exception as e:
         return chunk, "Post-processing Error", f"Failed to post-process: {str(e)}"
     
+    #print(f"   → Processed tokens before verification: {decode(processed_tokens)}")
+    
     # ------ 4. APPLY ERROR CORRECTION (BEFORE VERIFICATION) ------
     # This aligns tokens to handle minor discrepancies
     _, operations = distance_lists_auto_label(cleaned_chunk, processed_tokens)
     processed_tokens_corrected = apply_operations_safe(processed_tokens, operations)
     
     # ------ 5. VERIFY OUTPUT ------
+
+    #print(f"Processed tokens after correction: {decode(processed_tokens_corrected)}")
     verification = verify_processed_chunk(
         original_tokens=cleaned_chunk,
         processed_tokens=processed_tokens_corrected,
@@ -247,6 +253,7 @@ def process_chunks(
     
     # Process each chunk
     for idx, chunk in enumerate(tqdm(token_chunks, desc="Processing chunks")):
+
         processed_tokens, status, error_details = process_single_chunk(
             model=model,
             chunk=chunk,
@@ -256,7 +263,7 @@ def process_chunks(
             allowed_labels=allowed_labels,
             max_fallback_attempts=max_fallback_attempts
         )
-        
+    
         processed_chunks.append(processed_tokens)
         history.add(status, idx, decode(processed_tokens), error_details)
         

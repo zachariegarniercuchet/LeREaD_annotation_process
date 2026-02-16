@@ -3,8 +3,8 @@ Verification utilities for validating LLM-generated annotated text.
 These functions check the validity of processed chunks without modifying them.
 """
 
-from utils.html_utils import is_auto_label_tag
-from utils.htmlLabel import HTMLLabel
+from utils_extraction.html_utils import is_auto_label_tag
+from utils_extraction.htmlLabel import HTMLLabel
 
 import json
 from typing import Dict, List, Tuple, Optional
@@ -26,10 +26,10 @@ LABEL_SCHEME = {
         "required": False
     },
     "title": {
-        "attributes": ["title_type"], 
+        "attributes": ["titletype"], 
         "required": False
     },
-    "reference": {
+    "citation": {
         "attributes": [],
         "required": False
     },
@@ -177,8 +177,7 @@ def check_label_scheme(tokens: list, allowed_labels: Optional[List[str]] = None)
     Returns:
         VerificationResult with passed=True if all labels conform to scheme
     """
-    
-    
+
     
     # Determine allowed label names
     if allowed_labels is None:
@@ -195,6 +194,7 @@ def check_label_scheme(tokens: list, allowed_labels: Optional[List[str]] = None)
             try:
                 label = HTMLLabel(token)
                 label_name = label.name.lower()
+                
                 
                 # Check if label name is allowed
                 if label_name not in allowed_labels_lower:

@@ -1,4 +1,4 @@
-from utils.html_utils import is_auto_label_tag, is_tag_token
+from utils_extraction.html_utils import is_auto_label_tag, is_tag_token
 
 def distance_lists_auto_label(original, derived):
     """
@@ -21,7 +21,7 @@ def distance_lists_auto_label(original, derived):
     
     Example:
         original = ['Act', ',', '\\n', 'S']
-        derived = ['Act', '</auto_label>', ',', ' ', '<auto_label labelname="reference">', 'S']
+        derived = ['Act', '</auto_label>', ',', ' ', '<auto_label labelname="citation">', 'S']
         -> [('delete', 1), ('modify', 2, '\\n'), ('delete', 3)]
     """
     n = len(original)
