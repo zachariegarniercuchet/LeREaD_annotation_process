@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Label Schema: Document-Level Reference Resolution</title>
+
+<style>
+/* =========================
+   ACL/EMNLP-inspired typography & layout
+   ========================= */
+body {
+    font-family: 'LXGW WenKai', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    background: white;
+    margin: 0;
+    padding: 30px 20px;
+    line-height: 1.5;
+    color: #2c3e50;
+}
+
+.container {
+    max-width: 1200px; /* Increased from 1000px for more space */
+    margin: 0 auto;
+}
+
+/* =========================
+   Figure styling (ACL style)
+   ========================= */
+.figure-title {
+    font-size: 11pt;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1a365d;
+    letter-spacing: 0.5px;
+}
+
+.figure-caption {
+    text-align: center;
+    font-size: 10pt;
+    margin-top: 24px;
+    color: #4a5568;
+    padding: 0 10%;
+    line-height: 1.6;
+}
+
+/* =========================
+   Schema layout (clean, balanced) - UPDATED
+   ========================= */
+.schema-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Changed from auto-fit to explicit 4 columns */
+    gap: 60px; /* Increased from 32px for ~1cm spacing */
+    margin: 30px 0;
+    justify-items: center;
+}
+
+.entity-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* =========================
+   Entity boxes (NLP color palette)
+   ========================= */
+.entity-card {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 6px;
+    border-left: 5px solid;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.legislation-card {
+    border-left-color: #4299e1; /* Blue for legislation */
+}
+
+.decision-card {
+    border-left-color: #38b2ac; /* Teal for decisions */
+}
+
+.secondary-card {
+    border-left-color: #9f7aea; /* Purple for secondary sources */
+}
+
+.unclassified-card {
+    border-left-color: #a0aec0; /* Gray for unclassified */
+    border-style: dashed;
+    border-color: #cbd5e0;
+    background: #f8fafc;
+}
+
+.entity-name {
+    font-size: 11pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1a202c;
+}
+
+.entity-metatype {
+    font-size: 9pt;
+    font-family: 'Courier New', monospace;
+    color: #718096;
+    background: #f7fafc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* =========================
+   Attribute styling
+   ========================= */
+.attribute-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.attribute-item {
+    padding: 8px 12px;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.attribute-label {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #2d3748;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.attribute-type {
+    font-size: 8.5pt;
+    font-family: 'Courier New', monospace;
+    color: #718096;
+    background: #edf2f7;
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+/* =========================
+   Connector (minimal)
+   ========================= */
+.connector-line {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, #e2e8f0, #cbd5e0, #e2e8f0);
+    margin: 6px 0;
+}
+
+/* =========================
+   Responsive adjustments - UPDATED
+   ========================= */
+@media (max-width: 1200px) {
+    .schema-grid {
+        gap: 40px; /* Still good spacing on medium screens */
+    }
+    .container {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .schema-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+        gap: 40px 60px; /* 60px horizontal, 40px vertical */
+    }
+}
+
+@media (max-width: 700px) {
+    .schema-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    body {
+        padding: 15px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="figure-title">Figure 1: Document-level reference schema</div>
+
+<div class="schema-grid">
+
+<!-- LEGISLATION -->
+<div class="entity-group">
+    <div class="entity-card legislation-card">
+        <div class="entity-name">LEGISLATION</div>
+        <div class="entity-metatype">URI entity</div>
+        <div class="connector-line"></div>
+        <div class="attribute-list">
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Title
+                    <span class="attribute-type">titletype</span>
+                </div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">Citation</div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Fragment
+                    <span class="attribute-type">fragmentid</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DECISION -->
+<div class="entity-group">
+    <div class="entity-card decision-card">
+        <div class="entity-name">DECISION</div>
+        <div class="entity-metatype">URI entity</div>
+        <div class="connector-line"></div>
+        <div class="attribute-list">
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Title
+                    <span class="attribute-type">titletype</span>
+                </div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">Citation</div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Fragment
+                    <span class="attribute-type">fragmentid</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECONDARY SOURCE -->
+<div class="entity-group">
+    <div class="entity-card secondary-card">
+        <div class="entity-name">SECONDARY_SRC</div>
+        <div class="entity-metatype">URI entity</div>
+        <div class="connector-line"></div>
+        <div class="attribute-list">
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Title
+                    <span class="attribute-type">titletype</span>
+                </div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">Source</div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">
+                    Fragment
+                    <span class="attribute-type">fragmentid</span>
+                </div>
+            </div>
+            <div class="attribute-item">
+                <div class="attribute-label">Authors</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="figure-caption">
+Schema of document-level reference entities and their resolution attributes. Each entity type (colored border) is associated with specific attributes for disambiguation and linking.
+</div>
+
+<!-- Optional: Add LXGW WenKai font (popular in recent NLP papers) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+</body>
+</html>

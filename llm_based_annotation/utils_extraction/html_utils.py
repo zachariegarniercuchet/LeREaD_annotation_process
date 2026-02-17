@@ -73,6 +73,71 @@ def strip_auto_labels(html: str) -> str:
     return html_no_tags
 
 
+def is_auto_label_tag(tok: str) -> bool:
+    """Return 1 if token is an opening, 2 if it is a closing auto_label tag, 0 otherwise"""
+    if not is_tag_token(tok):
+        return 0
+    # Accept variations with attributes on opening tag
+    if tok.lower().startswith('<auto_label'):
+        return 1
+    if tok.lower().startswith('</auto_label'):
+        return 2
+    return 0
+
+def is_manual_label_tag(tok):
+    """Return 1 if token is an opening, 2 if it is a closing manual_label tag, 0 otherwise"""
+    if not is_tag_token(tok):
+        return 0
+    # Accept variations with attributes on opening tag
+    if tok.lower().startswith('<manual_label'):
+        return 1
+    if tok.lower().startswith('</manual_label'):
+        return 2
+    return 0
+
+
+def is_fmt_tag(tok: str, fmt_tags: set) -> bool:
+    """Check if token is a formatting tag (opening or closing)."""
+    if not is_tag_token(tok):
+        return False
+    
+    tag_name = get_tag_name(tok)
+    return tag_name in fmt_tags
+
+def is_opening_tag(tok: str) -> bool:
+    """Check if token is an opening tag (not closing)."""
+    return is_tag_token(tok) and not tok.startswith('</')
+
+
+def is_closing_tag(tok: str) -> bool:
+    """Check if token is a closing tag."""
+    return is_tag_token(tok) and tok.startswith('</')
+
+def get_tag_name(tok: str) -> str:
+    """
+    Extract the tag name from a token.
+    Examples:
+        '<i>' -> 'i'
+        '</i>' -> 'i'
+        '<span class="test">' -> 'span'
+        '<auto_label labelname="decision">' -> 'auto_label'
+    """
+    if not is_tag_token(tok):
+        return ""
+    
+    # Remove < and >
+    content = tok[1:-1]
+    
+    # Remove leading / for closing tags
+    if content.startswith('/'):
+        content = content[1:]
+    
+    # Split on whitespace to get just the tag name (handles attributes)
+    tag_name = content.split()[0] if content else ""
+    
+    return tag_name
+
+
 def clean_html_formatting(html: str, tags_to_clean: set = None, debug: bool = False) -> str:
     """
     Clean HTML by removing useless formatting artifacts WITHOUT changing any text content.
