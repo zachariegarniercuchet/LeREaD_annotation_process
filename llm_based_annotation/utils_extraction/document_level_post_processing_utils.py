@@ -272,20 +272,28 @@ def merge_tokens_with_auto_labels(tokens: list[str], processed_tokens: list[str]
 
 
 
-def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: str = None) -> str:
+def add_attributes_to_auto_labels(html_content: str, label_scheme_path: str = None) -> str:
     """
-    Add parent and style attributes to auto_label tags in HTML content based on label scheme JSON.
+    Add parent, style, verified, and all label scheme attributes to auto_label tags in HTML content.
     
     The function loads the label scheme from a JSON file to determine:
     - Parent relationships based on nesting context (parent is the immediately enclosing auto_label)
     - Colors for each label (converted to background-color style)
+    - All attributes defined in the label scheme for each label
+    
+    Attributes are initialized as follows:
+    - String type: empty string "" (or default value from scheme)
+    - Checkbox type: "false" (or default value from scheme)
+    - Dropdown type: default value from the label scheme
+    
+    Also adds verified="false" to all auto_label tags.
     
     Args:
         html_content: HTML string with auto_label tags
         label_scheme_path: Path to label_scheme.json file. If None, uses default path.
     
     Returns:
-        Modified HTML string with parent and style attributes added
+        Modified HTML string with all attributes added
     """
     import re
     import json
@@ -304,8 +312,9 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
         print(f"Warning: Label scheme file not found at {label_scheme_path}. Using auto_label tags without modification.")
         return html_content
     
-    # Build style mapping from label scheme
+    # Build style mapping and attributes mapping from label scheme
     style_map = {}
+    attributes_map = {}
     
     # Helper function to determine text color based on background brightness
     def get_text_color(hex_color: str) -> str:
@@ -325,13 +334,31 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
         r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
         return f"rgb({r}, {g}, {b})"
     
-    # Process label scheme to build style mappings
+    # Helper to get attribute value based on type
+    def get_attribute_value(attr_config: dict) -> str:
+        """Get the initial value for an attribute based on its type."""
+        attr_type = attr_config.get('type', 'string')
+        if attr_type == 'string':
+            return attr_config.get('default', '')
+        elif attr_type == 'checkbox':
+            default = attr_config.get('default', False)
+            return 'true' if default else 'false'
+        elif attr_type == 'dropdown':
+            return attr_config.get('default', '')
+        else:
+            return ''
+    
+    # Process label scheme to build style and attributes mappings
     for parent_label, parent_data in label_scheme.items():
         # Set style for top-level label
         if 'color' in parent_data:
             bg_color = hex_to_rgb(parent_data['color'])
             text_color = get_text_color(parent_data['color'])
             style_map[parent_label] = f"background-color: {bg_color}; color: {text_color};"
+        
+        # Set attributes for top-level label
+        if 'attributes' in parent_data:
+            attributes_map[parent_label] = parent_data['attributes']
         
         # Process sublabels
         if 'sublabels' in parent_data:
@@ -341,6 +368,10 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
                     bg_color = hex_to_rgb(sublabel_data['color'])
                     text_color = get_text_color(sublabel_data['color'])
                     style_map[sublabel] = f"background-color: {bg_color}; color: {text_color};"
+                
+                # Set attributes for sublabel
+                if 'attributes' in sublabel_data:
+                    attributes_map[sublabel] = sublabel_data['attributes']
     
     # Pattern to match auto_label tags (opening and closing)
     tag_pattern = r'<(/?)auto_label([^>]*)>'
@@ -376,12 +407,28 @@ def add_style_and_parent_to_auto_labels(html_content: str, label_scheme_path: st
                 style = style_map.get(labelname, '')
                 style_attr = f'style="{style}"' if style else ''
                 
-                # Remove existing parent/style if present
+                # Add verified attribute
+                verified_attr = 'verified="false"'
+                
+                # Get all attributes for this label from label scheme
+                label_attrs = attributes_map.get(labelname, {})
+                scheme_attrs = []
+                for attr_name, attr_config in label_attrs.items():
+                    attr_value = get_attribute_value(attr_config)
+                    scheme_attrs.append(f'{attr_name}="{attr_value}"')
+                
+                # Remove existing parent/style/verified/scheme attributes if present
                 tag_content = re.sub(r'\s*parent="[^"]*"', '', tag_content)
                 tag_content = re.sub(r'\s*style="[^"]*"', '', tag_content)
+                tag_content = re.sub(r'\s*verified="[^"]*"', '', tag_content)
+                # Remove existing scheme attributes
+                for attr_name in label_attrs.keys():
+                    tag_content = re.sub(rf'\s*{re.escape(attr_name)}="[^"]*"', '', tag_content)
                 
-                # Build new tag
-                new_tag = f'<auto_label{tag_content} {parent_attr} {style_attr}>'
+                # Build new tag with all attributes
+                all_attrs = [parent_attr, style_attr, verified_attr] + scheme_attrs
+                attrs_str = ' '.join(filter(None, all_attrs))  # Filter out empty strings
+                new_tag = f'<auto_label{tag_content} {attrs_str}>'
                 result_parts.append(new_tag)
                 
                 # Push this label onto the stack

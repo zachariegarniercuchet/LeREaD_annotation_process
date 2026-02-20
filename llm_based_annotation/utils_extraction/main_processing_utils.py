@@ -9,6 +9,7 @@ from utils_extraction.levenshtein_utils import distance_lists_auto_label, apply_
 from utils_extraction.few_shot_utils import prepare_label_tokens, get_list_of_mention
 from utils_extraction.verification_utils import verify_processed_chunk
 
+
 class ProcessingHistory:
     """Track processing history for debugging and analysis."""
     
@@ -460,7 +461,6 @@ def process_labels(
     print(f"   ✓ Found {len(parent_mentions)} parent mentions to process")
     
     # ------ 3. INITIALIZE TRACKING ------
-    from llm_based_annotation.utils_extraction.main_processing_utils import ProcessingHistory
     history = ProcessingHistory()
     
     # Create a copy of tokens to modify

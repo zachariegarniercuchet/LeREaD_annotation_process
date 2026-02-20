@@ -151,7 +151,7 @@ def extract_spans_from_html(html_file: str, context_chars: int = 200) -> List[Sp
     plain_text = body.get_text()
     
     # Find all manual_label elements
-    labels = body.find_all('manual_label')
+    labels = body.find_all('manual_label') + body.find_all('auto_label')
     
     spans = []
     
@@ -626,11 +626,24 @@ def evaluate_iaa(file1: str, file2: str, match_type: str = 'context', context_ch
 
 if __name__ == "__main__":
     # Configuration
+    #anno1 = "EG"  # Options: "GL", "EG", "VP"
+    #anno2 = "VP"  # Options: "GL", "EG", "VP"
+    #file_name = f"2019SCC65_annotated" #"2016QCCS1184_annotated" #"1999CanLII7320_annotated" #"2001BCSC1342_annotated" 2019SCC65_annotated
+    #file1 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno1}\{file_name}_{anno1}_v1.html"
+    #file2 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno2}\{file_name}_{anno2}_v1.html"
+
     anno1 = "EG"  # Options: "GL", "EG", "VP"
-    anno2 = "VP"  # Options: "GL", "EG", "VP"
-    file_name = f"2019SCC65_annotated" #"2016QCCS1184_annotated" #"1999CanLII7320_annotated" #"2001BCSC1342_annotated" 2019SCC65_annotated
-    file1 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno1}\{file_name}_{anno1}_v1.html"
-    file2 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno2}\{file_name}_{anno2}_v1.html"
+    anno2 = "llm"  # Options: "GL", "EG", "VP"
+
+    # File paths
+    project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
+    filename = "2021QCCA1675"
+    round = "ronde_2"
+    anno = "llm"
+    version = "v1.0"
+    file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_v1.html"
+
+    file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_100_30_gpt5.2\{filename}_llm_v1.3.html"
     
     # Choose evaluation level
     # "level1" = Span matching (context-based)

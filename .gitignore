@@ -1,6 +1,8 @@
 # Data directories
 data/
 old/
+ressources/label schemes_v2.html
+ressources/label schemes.html
 
 # Python
 __pycache__/
