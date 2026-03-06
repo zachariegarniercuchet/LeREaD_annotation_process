@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Few-Shot Example Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="controls">
+            <div class="file-input-wrapper">
+                <button class="btn btn-primary">
+                    Load Examples
+                </button>
+                <input type="file" id="examplesFile" accept=".json" />
+            </div>
+
+            <button class="btn btn-success" id="exportBtn" disabled>
+                Export JSON
+            </button>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span>Total:</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Selected:</span>
+                    <span class="stat-value stat-selected" id="selectedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Rejected:</span>
+                    <span class="stat-value stat-rejected" id="rejectedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Unprocessed:</span>
+                    <span class="stat-value" id="unprocessedCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label>Show:</label>
+                <select id="filterSelect">
+                    <option value="all">All Examples</option>
+                    <option value="selected">Selected Only</option>
+                    <option value="rejected">Rejected Only</option>
+                    <option value="unprocessed">Unprocessed Only</option>
+                    <option value="processed">Processed (Selected or Rejected)</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Rating:</label>
+                <select id="ratingFilter">
+                    <option value="all">All Ratings</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                    <option value="2">2+ Stars</option>
+                    <option value="1">1+ Stars</option>
+                    <option value="0">Not Rated</option>
+                </select>
+            </div>
+
+            <div style="flex: 1;"></div>
+
+            <button class="btn btn-secondary" id="selectAllBtn">
+                Select All Visible
+            </button>
+
+            <button class="btn btn-secondary" id="deselectAllBtn">
+                Deselect All Visible
+            </button>
+
+            <button class="btn btn-secondary" id="rejectAllBtn">
+                Reject All Visible
+            </button>
+
+            <button class="btn btn-secondary toggle-meta-btn" id="toggleMetaBtn" style="display: none;">
+                <span class="arrow-icon">▼</span> Meta Tools
+            </button>
+
+            <button class="btn btn-secondary" id="expandAllMetaBtn" style="display: none; margin-left: 8px;">
+                Expand All Meta
+            </button>
+        </div>
+
+        <div class="meta-sections" id="metaSections" style="display: none;">
+            <div class="meta-filters" id="metaFilters">
+                <h3>Meta Filters</h3>
+                <div id="metaFilterContainer"></div>
+            </div>
+
+            <div class="meta-editor" id="metaEditor">
+                <h3>Bulk Meta Editor</h3>
+            <div class="meta-create">
+                <input type="text" id="newMetaKey" placeholder="Create new meta key..." />
+                <button class="btn btn-secondary" id="addMetaKeyBtn">Add Meta Key</button>
+            </div>
+            <div id="metaEditorContainer"></div>
+            <div class="meta-editor-actions">
+                <button class="btn btn-primary" id="applyToAllBtn">Apply to All</button>
+                <button class="btn btn-primary" id="applyToSelectedBtn">Apply to Selected</button>
+                <button class="btn btn-secondary" id="clearAllMetaBtn">Clear All Meta</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="examples-container" id="examplesContainer">
+            <div class="empty-state">
+                <h2>No Examples Loaded</h2>
+                <p>Load an examples JSON file to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        let examples = [];
+        let availableMetaKeys = [];
+        let activeMetaFilters = {};
+        
+        // Hardcoded color map from label_scheme.json
+        const colorMap = {
+            'legislation': { bg: '#76CEDE', text: 'black' },
+            'title': { bg: '#93c47d', text: 'black' },
+            'citation': { bg: '#ff5733', text: 'white' },
+            'fragment': { bg: '#8e7cc3', text: 'white' },
+            'decision': { bg: '#6aa3ff', text: 'white' },
+            'secondary sources': { bg: '#278FE3', text: 'white' },
+            'authors': { bg: '#ffb84d', text: 'black' },
+            'source': { bg: '#ff5733', text: 'white' },
+            'unable to classify': { bg: '#ffc107', text: 'black' }
+        };
+
+        // DOM elements
+        const examplesFileInput = document.getElementById('examplesFile');
+        const exportBtn = document.getElementById('exportBtn');
+        const examplesContainer = document.getElementById('examplesContainer');
+        const filterSelect = document.getElementById('filterSelect');
+        const ratingFilter = document.getElementById('ratingFilter');
+        const selectAllBtn = document.getElementById('selectAllBtn');
+        const deselectAllBtn = document.getElementById('deselectAllBtn');
+        const rejectAllBtn = document.getElementById('rejectAllBtn');
+        const totalCountEl = document.getElementById('totalCount');
+        const selectedCountEl = document.getElementById('selectedCount');
+        const rejectedCountEl = document.getElementById('rejectedCount');
+        const unprocessedCountEl = document.getElementById('unprocessedCount');
+        const toggleMetaBtn = document.getElementById('toggleMetaBtn');
+        const metaSections = document.getElementById('metaSections');
+        const metaFilters = document.getElementById('metaFilters');
+        const metaFilterContainer = document.getElementById('metaFilterContainer');
+        const metaEditor = document.getElementById('metaEditor');
+        const metaEditorContainer = document.getElementById('metaEditorContainer');
+        const applyToAllBtn = document.getElementById('applyToAllBtn');
+        const applyToSelectedBtn = document.getElementById('applyToSelectedBtn');
+        const clearAllMetaBtn = document.getElementById('clearAllMetaBtn');
+        const addMetaKeyBtn = document.getElementById('addMetaKeyBtn');
+        const newMetaKeyInput = document.getElementById('newMetaKey');
+        const expandAllMetaBtn = document.getElementById('expandAllMetaBtn');
+
+        // Wire up buttons to trigger file inputs
+        document.querySelectorAll('.file-input-wrapper').forEach(wrapper => {
+            const button = wrapper.querySelector('.btn');
+            const fileInput = wrapper.querySelector('input[type="file"]');
+            if (button && fileInput) {
+                button.addEventListener('click', () => fileInput.click());
+            }
+        });
+
+        // File input handlers
+        examplesFileInput.addEventListener('change', handleExamplesFile);
+        exportBtn.addEventListener('click', exportJSON);
+        filterSelect.addEventListener('change', renderExamples);
+        ratingFilter.addEventListener('change', renderExamples);
+        selectAllBtn.addEventListener('click', selectAllVisible);
+        deselectAllBtn.addEventListener('click', deselectAllVisible);
+        rejectAllBtn.addEventListener('click', rejectAllVisible);
+        applyToAllBtn.addEventListener('click', () => applyMetaToItems('all'));
+        applyToSelectedBtn.addEventListener('click', () => applyMetaToItems('selected'));
+        clearAllMetaBtn.addEventListener('click', clearAllMeta);
+        addMetaKeyBtn.addEventListener('click', addNewMetaKey);
+        newMetaKeyInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addNewMetaKey();
+        });
+        toggleMetaBtn.addEventListener('click', toggleMetaSections);
+        expandAllMetaBtn.addEventListener('click', toggleAllExampleMeta);
+
+        async function handleExamplesFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            try {
+                const text = await file.text();
+                examples = JSON.parse(text);
+                
+                // Ensure each example has required fields
+                examples = examples.map((ex, idx) => ({
+                    example: ex.example || ex,
+                    selected: ex.selected !== undefined ? ex.selected : false,
+                    rejected: ex.rejected !== undefined ? ex.rejected : false,
+                    notation: ex.notation !== undefined ? ex.notation : 0,
+                    comments: ex.comments || '',
+                    meta: ex.meta || {}
+                }));
+
+                // Extract all unique meta keys
+                extractMetaKeys();
+                renderMetaFilters();
+                renderMetaEditor();
+                
+                // Show toggle button only if there are meta keys
+                if (availableMetaKeys.length > 0) {
+                    toggleMetaBtn.style.display = 'inline-flex';
+                    expandAllMetaBtn.style.display = 'inline-flex';
+                }
+                
+                exportBtn.disabled = false;
+                
+                renderExamples();
+                showToast(`Loaded ${examples.length} examples`, 'success');
+            } catch (error) {
+                showToast('Error loading examples file: ' + error.message, 'error');
+            }
+        }
+
+        function styleLabels(text) {
+            if (!text) return '';
+            
+            // Replace auto_label tags with styled spans
+            let styledText = text.replace(/<auto_label[^>]*labelname="([^"]*)"[^>]*>/gi, (match, labelName) => {
+                const colors = colorMap[labelName];
+                if (colors) {
+                    return `<span style="background-color: ${colors.bg}; color: ${colors.text}; padding: 2px 6px; border-radius: 3px; font-weight: 500;">`;
+                }
+                return '<span style="background-color: #e0e0e0; padding: 2px 6px; border-radius: 3px;">';
+            });
+
+            // Remove closing auto_label tags
+            styledText = styledText.replace(/<\/auto_label>/gi, '</span>');
+
+            // Handle simple tags like <legislation>, <decision>, etc.
+            for (const [labelName, colors] of Object.entries(colorMap)) {
+                const regex = new RegExp(`<${labelName}>`, 'gi');
+                styledText = styledText.replace(regex, 
+                    `<span style="background-color: ${colors.bg}; color: ${colors.text}; padding: 2px 6px; border-radius: 3px; font-weight: 500;">`
+                );
+                const closeRegex = new RegExp(`</${labelName}>`, 'gi');
+                styledText = styledText.replace(closeRegex, '</span>');
+            }
+
+            return styledText;
+        }
+
+        function renderExamples() {
+            // Reset expand/collapse state
+            allExampleMetaExpanded = false;
+            if (expandAllMetaBtn) {
+                expandAllMetaBtn.textContent = 'Expand All Meta';
+            }
+            
+            if (examples.length === 0) {
+                examplesContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h2>No Examples Loaded</h2>
+                        <p>Load an examples JSON file to get started</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const filterValue = filterSelect.value;
+            const ratingValue = ratingFilter.value;
+
+            let filteredExamples = examples.filter((ex, idx) => {
+                // Selection filter
+                if (filterValue === 'selected' && !ex.selected) return false;
+                if (filterValue === 'rejected' && !ex.rejected) return false;
+                if (filterValue === 'unprocessed' && (ex.selected || ex.rejected)) return false;
+                if (filterValue === 'processed' && !ex.selected && !ex.rejected) return false;
+
+                // Rating filter
+                if (ratingValue !== 'all') {
+                    const minRating = parseInt(ratingValue);
+                    if (minRating === 0 && ex.notation !== 0) return false;
+                    if (minRating > 0 && ex.notation < minRating) return false;
+                }
+
+                // Meta filters
+                for (const [key, filterValue] of Object.entries(activeMetaFilters)) {
+                    if (filterValue === 'ignore') continue;
+                    const metaValue = ex.meta && ex.meta[key] === true;
+                    if (filterValue === 'true' && !metaValue) return false;
+                    if (filterValue === 'false' && metaValue) return false;
+                }
+
+                return true;
+            });
+
+            examplesContainer.innerHTML = filteredExamples.map((ex, idx) => {
+                const actualIndex = examples.indexOf(ex);
+                const input = ex.example?.input || ex.example || '';
+                const output = ex.example?.output || '';
+                
+                // Get meta tags that are true
+                const activeMetas = Object.entries(ex.meta || {})
+                    .filter(([key, value]) => value === true)
+                    .map(([key]) => key);
+                
+                return `
+                    <div class="example-card ${ex.selected ? 'selected' : ''} ${ex.rejected ? 'rejected' : ''}" data-index="${actualIndex}">
+                        <div class="example-header">
+                            <span class="example-number">#${actualIndex + 1}</span>
+                            <div class="selection-controls">
+                                <label class="selection-label" title="Accept this example">
+                                    <input type="checkbox" class="select-checkbox" ${ex.selected ? 'checked' : ''} 
+                                           onchange="toggleSelection(${actualIndex})">
+                                    <span>Accept</span>
+                                </label>
+                                <label class="selection-label reject-label" title="Reject this example">
+                                    <input type="checkbox" class="reject-checkbox" ${ex.rejected ? 'checked' : ''} 
+                                           onchange="toggleRejection(${actualIndex})">
+                                    <span>Reject</span>
+                                </label>
+                            </div>
+                            <div class="rating-container">
+                                <span class="rating-label">Rating:</span>
+                                ${[1, 2, 3, 4, 5].map(star => 
+                                    `<span class="star ${star <= (ex.notation || 0) ? 'active' : ''}" 
+                                           onclick="setRating(${actualIndex}, ${star})">★</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        ${activeMetas.length > 0 ? `
+                        <div class="meta-tags">
+                            ${activeMetas.map(tag => `<span class="meta-tag">${tag}</span>`).join('')}
+                        </div>
+                        ` : ''}
+                        <div class="example-content">
+                            <div class="text-block">
+                                <div class="text-content">${styleLabels(input)}</div>
+                            </div>
+                            ${output ? `
+                            <div class="text-block">
+                                <div class="text-content output">${styleLabels(output)}</div>
+                            </div>
+                            ` : ''}
+                            ${availableMetaKeys.length > 0 ? `
+                            <div class="text-block">
+                                <div class="example-meta-editor">
+                                    <div class="example-meta-header">
+                                        <span>Meta Fields:</span>
+                                        <button class="btn-small" onclick="toggleExampleMetaDisplay(${actualIndex}, event)">
+                                            <span class="meta-toggle-icon">▼</span>
+                                        </button>
+                                    </div>
+                                    <div class="example-meta-checkboxes" style="display: none;">
+                                        ${availableMetaKeys.map(key => {
+                                            const isChecked = ex.meta && ex.meta[key] === true;
+                                            return `
+                                                <label class="example-meta-label">
+                                                    <input type="checkbox" 
+                                                           ${isChecked ? 'checked' : ''} 
+                                                           onchange="toggleExampleMeta(${actualIndex}, '${key}')">
+                                                    ${key}
+                                                </label>
+                                            `;
+                                        }).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                            ` : ''}
+                            <div class="text-block">
+                                <textarea class="comment-input" placeholder="Add comments..." 
+                                          onchange="updateComment(${actualIndex}, this.value)">${ex.comments || ''}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            if (filteredExamples.length === 0) {
+                examplesContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h2>No Examples Match Filter</h2>
+                        <p>Try adjusting your filters</p>
+                    </div>
+                `;
+            }
+            
+            updateStats();
+        }
+
+        function toggleSelection(index) {
+            examples[index].selected = !examples[index].selected;
+            // If selecting, unset rejected
+            if (examples[index].selected) {
+                examples[index].rejected = false;
+            }
+            renderExamples();
+        }
+
+        function toggleRejection(index) {
+            examples[index].rejected = !examples[index].rejected;
+            // If rejecting, unset selected
+            if (examples[index].rejected) {
+                examples[index].selected = false;
+            }
+            renderExamples();
+        }
+
+        function setRating(index, rating) {
+            examples[index].notation = rating;
+            renderExamples();
+        }
+
+        function updateComment(index, comment) {
+            examples[index].comments = comment;
+        }
+
+        function toggleExampleMetaDisplay(index, event) {
+            // Toggle the expansion of the meta editor
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const button = event.currentTarget;
+            const card = button.closest('.example-card');
+            const checkboxContainer = card.querySelector('.example-meta-checkboxes');
+            const icon = button.querySelector('.meta-toggle-icon');
+            
+            if (checkboxContainer.style.display === 'none') {
+                checkboxContainer.style.display = 'flex';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                checkboxContainer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function toggleExampleMeta(index, metaKey) {
+            if (!examples[index].meta) {
+                examples[index].meta = {};
+            }
+            
+            // Toggle the meta value
+            const currentValue = examples[index].meta[metaKey];
+            examples[index].meta[metaKey] = !currentValue;
+            
+            // Re-render to update the meta tags display
+            renderExamples();
+        }
+
+        function selectAllVisible() {
+            const filterValue = filterSelect.value;
+            const ratingValue = ratingFilter.value;
+            
+            examples.forEach((ex) => {
+                if (filterValue === 'all' || 
+                    (filterValue === 'unselected' && !ex.selected)) {
+                    if (ratingValue === 'all' || 
+                        (ratingValue === '0' && ex.notation === 0) ||
+                        (ratingValue !== '0' && ex.notation >= parseInt(ratingValue))) {
+                        ex.selected = true;
+                    }
+                }
+            });
+            
+            renderExamples();
+            showToast('Selected all visible examples', 'success');
+        }
+
+        function deselectAllVisible() {
+            const filterValue = filterSelect.value;
+            const ratingValue = ratingFilter.value;
+            
+            examples.forEach((ex) => {
+                if (filterValue === 'all' || 
+                    (filterValue === 'selected' && ex.selected)) {
+                    if (ratingValue === 'all' || 
+                        (ratingValue === '0' && ex.notation === 0) ||
+                        (ratingValue !== '0' && ex.notation >= parseInt(ratingValue))) {
+                        ex.selected = false;
+                    }
+                }
+            });
+            
+            renderExamples();
+            showToast('Deselected all visible examples', 'success');
+        }
+
+        function rejectAllVisible() {
+            const filterValue = filterSelect.value;
+            const ratingValue = ratingFilter.value;
+            
+            examples.forEach((ex) => {
+                // Apply to appropriate examples based on filter
+                let shouldProcess = false;
+                if (filterValue === 'all') shouldProcess = true;
+                else if (filterValue === 'unprocessed' && !ex.selected && !ex.rejected) shouldProcess = true;
+                else if (filterValue === 'rejected' && ex.rejected) shouldProcess = true;
+                
+                if (shouldProcess) {
+                    if (ratingValue === 'all' || 
+                        (ratingValue === '0' && ex.notation === 0) ||
+                        (ratingValue !== '0' && ex.notation >= parseInt(ratingValue))) {
+                        ex.rejected = true;
+                        ex.selected = false; // Unset selected if setting rejected
+                    }
+                }
+            });
+            
+            renderExamples();
+            showToast('Rejected all visible examples', 'success');
+        }
+
+        function updateStats() {
+            const selectedCount = examples.filter(ex => ex.selected).length;
+            const rejectedCount = examples.filter(ex => ex.rejected).length;
+            const unprocessedCount = examples.filter(ex => !ex.selected && !ex.rejected).length;
+            
+            totalCountEl.textContent = examples.length;
+            selectedCountEl.textContent = selectedCount;
+            rejectedCountEl.textContent = rejectedCount;
+            unprocessedCountEl.textContent = unprocessedCount;
+        }
+
+        function exportJSON() {
+            const dataStr = JSON.stringify(examples, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'examples_updated.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('JSON exported successfully', 'success');
+        }
+
+        function extractMetaKeys() {
+            const metaKeysSet = new Set();
+            examples.forEach(ex => {
+                if (ex.meta) {
+                    Object.keys(ex.meta).forEach(key => metaKeysSet.add(key));
+                }
+            });
+            availableMetaKeys = Array.from(metaKeysSet).sort();
+            // Initialize activeMetaFilters with 'ignore' for all keys
+            activeMetaFilters = {};
+            availableMetaKeys.forEach(key => {
+                activeMetaFilters[key] = 'ignore';
+            });
+        }
+
+        function renderMetaFilters() {
+            if (availableMetaKeys.length === 0) {
+                metaFilterContainer.innerHTML = '<p>No meta fields found</p>';
+                return;
+            }
+
+            metaFilterContainer.innerHTML = availableMetaKeys.map(key => `
+                <div class="meta-filter-item">
+                    <label>${key}:</label>
+                    <select onchange="updateMetaFilter('${key}', this.value)">
+                        <option value="ignore">Ignore</option>
+                        <option value="true">Must be True</option>
+                        <option value="false">Must be False</option>
+                    </select>
+                </div>
+            `).join('');
+        }
+
+        function updateMetaFilter(key, value) {
+            activeMetaFilters[key] = value;
+            renderExamples();
+        }
+
+        function renderMetaEditor() {
+            if (availableMetaKeys.length === 0) {
+                metaEditorContainer.innerHTML = '<p>No meta fields found</p>';
+                return;
+            }
+
+            metaEditorContainer.innerHTML = `
+                <div class="meta-checkboxes">
+                    ${availableMetaKeys.map(key => `
+                        <label class="meta-checkbox-label">
+                            <input type="checkbox" class="meta-checkbox" data-key="${key}">
+                            ${key}
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function applyMetaToItems(mode) {
+            const checkboxes = document.querySelectorAll('.meta-checkbox:checked');
+            const selectedMetaKeys = Array.from(checkboxes).map(cb => cb.dataset.key);
+            
+            if (selectedMetaKeys.length === 0) {
+                showToast('Please select at least one meta field', 'error');
+                return;
+            }
+
+            let count = 0;
+            examples.forEach(ex => {
+                if (mode === 'all' || (mode === 'selected' && ex.selected)) {
+                    if (!ex.meta) ex.meta = {};
+                    selectedMetaKeys.forEach(key => {
+                        ex.meta[key] = true;
+                    });
+                    count++;
+                }
+            });
+
+            renderExamples();
+            showToast(`Applied meta fields to ${count} examples`, 'success');
+        }
+
+        function clearAllMeta() {
+            if (!confirm('This will clear all meta fields from all examples. Continue?')) {
+                return;
+            }
+
+            examples.forEach(ex => {
+                ex.meta = {};
+            });
+
+            renderExamples();
+            showToast('All meta fields cleared', 'success');
+        }
+
+        function addNewMetaKey() {
+            const newKey = newMetaKeyInput.value.trim();
+            
+            if (!newKey) {
+                showToast('Please enter a meta key name', 'error');
+                return;
+            }
+            
+            if (availableMetaKeys.includes(newKey)) {
+                showToast('This meta key already exists', 'error');
+                return;
+            }
+            
+            availableMetaKeys.push(newKey);
+            availableMetaKeys.sort();
+            activeMetaFilters[newKey] = 'ignore';
+            
+            renderMetaFilters();
+            renderMetaEditor();
+            
+            // Show toggle button if this is the first meta key
+            if (availableMetaKeys.length === 1) {
+                toggleMetaBtn.style.display = 'inline-flex';
+                expandAllMetaBtn.style.display = 'inline-flex';
+            }
+            
+            newMetaKeyInput.value = '';
+            showToast(`Meta key "${newKey}" added`, 'success');
+        }
+
+        function toggleMetaSections() {
+            const isVisible = metaSections.style.display === 'block';
+            metaSections.style.display = isVisible ? 'none' : 'block';
+            
+            // Rotate arrow
+            const arrow = toggleMetaBtn.querySelector('.arrow-icon');
+            arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        let allExampleMetaExpanded = false;
+
+        function toggleAllExampleMeta() {
+            const checkboxContainers = document.querySelectorAll('.example-meta-checkboxes');
+            const icons = document.querySelectorAll('.meta-toggle-icon');
+            
+            allExampleMetaExpanded = !allExampleMetaExpanded;
+            
+            checkboxContainers.forEach(container => {
+                container.style.display = allExampleMetaExpanded ? 'flex' : 'none';
+            });
+            
+            icons.forEach(icon => {
+                icon.style.transform = allExampleMetaExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+            
+            expandAllMetaBtn.textContent = allExampleMetaExpanded ? 'Collapse All Meta' : 'Expand All Meta';
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

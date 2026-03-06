@@ -37,4 +37,4 @@ if __name__ == "__main__":
     print(response)
     
 
-    #check_accessibility()
+    check_accessibility()

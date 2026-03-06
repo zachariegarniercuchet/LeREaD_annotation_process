@@ -1,12 +1,13 @@
-from utils_extraction.html_utils import extract_body, is_manual_label_tag, is_auto_label_tag, is_tag_token, is_opening_tag, get_tag_name, is_closing_tag, is_fmt_tag, clean_html_formatting
-from utils_extraction.levenshtein_utils import distance_lists_auto_label, apply_operations_safe
-from utils_extraction.tokenizer_utils import tokenize, decode
-from utils_extraction.html_cleaner import clean_tokens
-from utils_extraction.chunker_utils import chunk_tokens, flatten_token_chunks
-from utils_extraction.few_shot_utils import extract_few_shot_examples, prepare_label_tokens, select_few_shot, extract_few_shot_examples_from_labels
-from utils_extraction.prompt_utils import get_prompt_processing, get_prompt_sublabel_extraction
-from utils_extraction.htmlLabel import HTMLLabel, from_simplified
-from utils_extraction.chunck_level_post_processing import apply_post_processing_transforms
-from utils_extraction.verification_utils import verify_processed_chunk, check_hallucination, check_consistency, check_label_scheme, VerificationResult, LABEL_SCHEME
-from utils_extraction.document_level_post_processing_utils import merge_tokens_with_auto_labels, add_attributes_to_auto_labels, compare_html_allow_auto_labels, check_tokens_brackets, correct_tokens_brackets, extract_start_end_tokens
-from utils_extraction.main_processing_utils import process_chunks, process_labels
+from .html_utils import extract_body, is_manual_label_tag, is_auto_label_tag, is_tag_token, is_opening_tag, get_tag_name, is_closing_tag, is_fmt_tag, clean_html_formatting
+from .levenshtein_utils import distance_lists_auto_label, apply_operations_safe
+from .tokenizer_utils import tokenize, decode
+from .html_cleaner import clean_tokens
+from .chunker_utils import chunk_tokens, flatten_token_chunks
+from .few_shot_utils import extract_few_shot_examples, prepare_label_tokens, select_few_shot, extract_few_shot_examples_from_labels
+from .prompt_utils import get_prompt_processing, get_prompt_sublabel_extraction
+from .htmlLabel import HTMLLabel, from_simplified
+from .chunck_level_post_processing import apply_post_processing_transforms
+from .verification_utils import verify_processed_chunk, check_hallucination, check_consistency, check_label_scheme, VerificationResult, LABEL_SCHEME
+from .document_level_post_processing_utils import merge_tokens_with_auto_labels, add_attributes_to_auto_labels, compare_html_allow_auto_labels, check_tokens_brackets, correct_tokens_brackets, extract_start_end_tokens
+from .main_processing_utils import process_chunks, process_labels
+from .prompts.sublabel_definitions import SUBLABEL_DEFINITIONS_V1, SUBLABEL_DEFINITIONS_V2

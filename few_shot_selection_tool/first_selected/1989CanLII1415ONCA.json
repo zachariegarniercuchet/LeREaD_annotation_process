@@ -1,0 +1,857 @@
+[
+  {
+    "example": {
+      "input": " Ottawa, Tuesday,\nDecember 12, 1989 Appeal\nNo. 2845 IN THE MATTER OF an application heard\nMay 19, 1989, pursuant to section 51.19 of the Excise Tax Act,\nR.S.C. 1970, c. E-13; AND IN THE MATTER OF a",
+      "output": " Ottawa, Tuesday,\nDecember 12, 1989 Appeal\nNo. 2845 IN THE MATTER OF an application heard\nMay 19, 1989, pursuant to<legislation><fragment> section 51.19</fragment> of the <title>Excise Tax Act</title>,\n<citation>R.S.C. 1970, c. E-13</citation></legislation>; AND IN THE MATTER OF a"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " decision of the\nMinister of National Revenue dated July 10, 1987, with respect to a notice of\nobjection filed pursuant to section 51.17 of the Excise Tax Act. BETWEEN CAN\nTRAFFIC SERVICES LTD. Appellant AND THE\nMINISTER OF NATIONAL REVENUE Respondent DECISION\nOF THE",
+      "output": " decision of the\nMinister of National Revenue dated July 10, 1987, with respect to a notice of\nobjection filed pursuant to <legislation><fragment>section 51.17</fragment> of the <title>Excise Tax Act</title></legislation>. BETWEEN CAN\nTRAFFIC SERVICES LTD. Appellant AND THE\nMINISTER OF NATIONAL REVENUE Respondent DECISION\nOF THE"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " TRIBUNAL The appeal\nis dismissed. The Tribunal declares that the sign bridge assemblies installed\nby the appellant at the Crowsnest Trail Corridor for the city of Lethbridge,\nAlberta, are not bridges within the meaning of paragraph 1(h), Part XII,\nSchedule III of the Excise Tax Act. Sidney",
+      "output": " TRIBUNAL The appeal\nis dismissed. The Tribunal declares that the sign bridge assemblies installed\nby the appellant at the Crowsnest Trail Corridor for the city of Lethbridge,\nAlberta, are not bridges within the meaning of <legislation><fragment>paragraph 1(h), Part XII,\nSchedule III</fragment> of the<title> Excise Tax Act</title></legislation>. Sidney"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "\nA. Fraleigh Sidney\nA. Fraleigh\nPresiding\nMember Robert\nJ. Bertrand, Q.C. Robert\nJ. Bertrand, Q.C.\nMember W.\nRoy Hines W. Roy\nHines\nMember\nRobert J. Martin Robert J. Martin\nSecretary UNOFFICIAL\nSUMMARY Appeal\nNo. 2845 CAN\nTRAFFIC SERVICES LTD. Appellant and",
+      "output": "\nA. Fraleigh Sidney\nA. Fraleigh\nPresiding\nMember Robert\nJ. Bertrand, Q.C. Robert\nJ. Bertrand, Q.C.\nMember W.\nRoy Hines W. Roy\nHines\nMember\nRobert J. Martin Robert J. Martin\nSecretary UNOFFICIAL\nSUMMARY Appeal\nNo. 2845 CAN\nTRAFFIC SERVICES LTD. Appellant and"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " THE\nMINISTER OF NATIONAL REVENUE Respondent Excise\nTax Act - Whether sign bridge assemblies are bridges within the meaning of\nparagraph 1(h), Part XII, Schedule III of the Excise Tax Act. DECISION: The appeal is\ndismissed. The word \"bridge\" must",
+      "output": " THE\nMINISTER OF NATIONAL REVENUE Respondent <legislation><title>Excise\nTax Act</title></legislation> - Whether sign bridge assemblies are bridges within the meaning of\n<legislation><fragment>paragraph 1(h), Part XII, Schedule III</fragment> of the <title>Excise Tax Act</title></legislation>. DECISION: The appeal is\ndismissed. The word \"bridge\" must"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " be interpreted according to its\ncommon and ordinary meaning. According to this meaning, a bridge must span an\nobstruction and afford passage to people and/or things. The sign bridge\nassemblies do not afford passage nor conveyance. Place of Hearing: Calgary,\nAlberta\nDate of Hearing: May 19",
+      "output": " be interpreted according to its\ncommon and ordinary meaning. According to this meaning, a bridge must span an\nobstruction and afford passage to people and/or things. The sign bridge\nassemblies do not afford passage nor conveyance. Place of Hearing: Calgary,\nAlberta\nDate of Hearing: May 19"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ", 1989\nDate of Decision: December\n12, 1989 Panel Members: Sidney A. Fraleigh,\nPresiding Member Robert\nJ. Bertrand, Q.C., Member W.\nRoy Hines, Member Counsel for the Tribunal: Clifford Sosnow\nClerk of the Tribunal: Lillian\nPharand Appearances: Douglas\nDensmore, for the appellant",
+      "output": ", 1989\nDate of Decision: December\n12, 1989 Panel Members: Sidney A. Fraleigh,\nPresiding Member Robert\nJ. Bertrand, Q.C., Member W.\nRoy Hines, Member Counsel for the Tribunal: Clifford Sosnow\nClerk of the Tribunal: Lillian\nPharand Appearances: Douglas\nDensmore, for the appellant"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Peter\nC. Engelmann, for the respondent Statutes Cited: Canadian\nInternational Trade Tribunal Act, S.C. 1988, c. 56,subs.54(2) and s. 60; Excise\nTax Act, R.S.C. 1970, c. E-13, paragraph 1(h), Part XII, Schedule\nIII. Cases",
+      "output": " Peter\nC. Engelmann, for the respondent Statutes Cited: <legislation><title> Canadian\nInternational Trade Tribunal Act</title>, <citation>S.C. 1988, c. 56</citation>,<fragment>subs.54(2)</fragment> and <fragment>s. 60</fragment></legislation>; <legislation><title>Excise\nTax Act</title>, <citation>R.S.C. 1970, c. E-13</citation>, <fragment>paragraph 1(h), Part XII, Schedule\nIII</fragment></legislation>. Cases"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Cited: City\nof Chicago v. Pittsburgh, Ft. W. &amp; C. R. Co. (1910), 93 N.E. 307; Hunt\nFoods Export Corp. of Canada Ltd et al. v. The Deputy Minister of National\nRevenue for Customs and Excise (1970), Ex. C.R. 828; Olympia Floor and Wall\nTile Company v. The Deputy Minister of National Revenue for Customs and Excise,\n5 C.E.R. 562; Pfizer Company Limited v. The Deputy Minister of\nNational Revenue for Customs and Excise (1977), 1 S.C.R. 456; Proprietors\nof Passaic &amp; Hackensack River Bridges v. Hoboken Land Imp. Co. (1860),\n13 N.J.Eq. (2 Beasl.) 503; Westeel Products Limited v. The Deputy Minister of\nNational Revenue for Customs and Excise., 2 T.B.R. 106; Wilson v. Town of\nBarnstead (1906), 74 N.H. 78.\nDictionaries",
+      "output": " Cited: <decision><title>City\nof Chicago v. Pittsburgh, Ft. W. &amp; C. R. Co. (1910)</title>, <citation>93 N.E. 307</citation></decision>; <decision><title>Hunt\nFoods Export Corp. of Canada Ltd et al. v. The Deputy Minister of National\nRevenue for Customs and Excise (1970)</title>, <citation>Ex. C.R. 828</citation></decision>; <decision><title>Olympia Floor and Wall\nTile Company v. The Deputy Minister of National Revenue for Customs and Excise</title>,\n<citation>5 C.E.R. 562</citation></decision>; <decision><title>Pfizer Company Limited v. The Deputy Minister of\nNational Revenue for Customs and Excise (1977)</title>,<citation> 1 S.C.R. 456</citation></decision>; <decision><title>Proprietors\nof Passaic &amp; Hackensack River Bridges v. Hoboken Land Imp. Co. (1860)</title>,\n<citation>13 N.J.Eq. (2 Beasl.) 503</citation></decision>; <decision><title>Westeel Products Limited v. The Deputy Minister of\nNational Revenue for Customs and Excise</title>., <citation>2 T.B.R. 106</citation></decision>;<decision> <title>Wilson v. Town of\nBarnstead (1906)</title><citation>, 74 N.H. 78</citation></decision>.\nDictionaries"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "\nCited: Funk\n&amp; Wagnalls New Standard Dictionary of the English Language; The Oxford\nEnglish Dictionary (Second Edition); Black's Law Dictionary (Revised\nFourth Edition); The Houghton Mifflin Canadian Dictionary of the English\nLanguage; Webster's Third New International Dictionary of the English Language\nUnabridged; Webster's New World Dictionary (Second College Edition); Funk\n&amp; Wagnalls Standard College Dictionary. Author",
+      "output": "\nCited: <secondary sources><title>Funk\n&amp; Wagnalls New Standard Dictionary of the English Language</title></secondary sources>; <secondary sources><title>The Oxford\nEnglish Dictionary</title> (<source>Second Edition</source>)</secondary sources>; <secondary sources><title>Black's Law Dictionary </title>(<source>Revised\nFourth Edition</source>)</secondary sources>; <secondary sources><title>The Houghton Mifflin Canadian Dictionary of the English\nLanguage</title></secondary sources>; <secondary sources><title>Webster's Third New International Dictionary of the English Language\nUnabridged</title></secondary sources>; <secondary sources><title>Webster's New World Dictionary</title> (<source>Second College Edition</source>)</secondary sources>; <secondary sources><title>Funk\n&amp; Wagnalls Standard College Dictionary</title></secondary sources>. Author"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Cited: Driedger,\nE.A., Construction of Statutes (Second Edition). Appeal\nNo. 2845 CAN\nTRAFFIC SERVICES LTD. Appellant and THE\nMINISTER OF NATIONAL REVENUE Respondent TRIBUNAL: SIDNEY A.\nFRALEIGH, Presiding Member ROBERT\nJ. BERTRAND, Q.C., Member W.\nROY",
+      "output": " Cited: <secondary sources><authors>Driedger,\nE.A.</authors>, <title>Construction of Statutes</title> (<source>Second Edition</source>)</secondary sources>. Appeal\nNo. 2845 CAN\nTRAFFIC SERVICES LTD. Appellant and THE\nMINISTER OF NATIONAL REVENUE Respondent TRIBUNAL: SIDNEY A.\nFRALEIGH, Presiding Member ROBERT\nJ. BERTRAND, Q.C., Member W.\nROY"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " HINES, Member REASONS\nFOR DECISION SUMMARY The\nappellant installed traffic control structures that span the highway. They are\ncomposed of structural steel supports onto which signs and/or lights are\nmounted. The assembled structures are then anchored into steel reinforced\nconcrete foundations with anchor bolts. The structures, which",
+      "output": " HINES, Member REASONS\nFOR DECISION SUMMARY The\nappellant installed traffic control structures that span the highway. They are\ncomposed of structural steel supports onto which signs and/or lights are\nmounted. The assembled structures are then anchored into steel reinforced\nconcrete foundations with anchor bolts. The structures, which"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " are called sign\nbridge assemblies, serve the function of informing drivers and directing\nvehicular traffic. The issue\nin this appeal is whether the assembled structures are bridges within the\nmeaning of paragraph 1(h), Part XII, Schedule III of the Excise Tax\nAct[1]\n(the Act). If",
+      "output": " are called sign\nbridge assemblies, serve the function of informing drivers and directing\nvehicular traffic. The issue\nin this appeal is whether the assembled structures are bridges within the\nmeaning of <legislation><fragment>paragraph 1(h), Part XII, Schedule III</fragment> of the<title> Excise Tax\nAct</title>[1]\n(<title>the Act</title>)</legislation>. If"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " they are, then the appellant is entitled to claim a sales tax\nrefund. The word\n\"bridge\" is a word of common speech and must not be construed on the\nbasis of technical and scientific testimony. Dictionary definitions are\nhelpful in determining the common meaning of the word \"bridge",
+      "output": " they are, then the appellant is entitled to claim a sales tax\nrefund. The word\n\"bridge\" is a word of common speech and must not be construed on the\nbasis of technical and scientific testimony. Dictionary definitions are\nhelpful in determining the common meaning of the word \"bridge"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ".\" A\ncommon element in the dictionary meaning of the word \"bridge\" is that\nof a structure which spans an obstruction and which affords passage to people\nand/or things. The goods in issue do not afford passage nor transit for\npedestrians and/or things (e.g. vehicles",
+      "output": ".\" A\ncommon element in the dictionary meaning of the word \"bridge\" is that\nof a structure which spans an obstruction and which affords passage to people\nand/or things. The goods in issue do not afford passage nor transit for\npedestrians and/or things (e.g. vehicles"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "). THE LEGISLATION The\nrelevant legislative provisions of the Act as they read during the period in\nissue are as follows: 27(1) There shall be imposed, levied and\ncollected a consumption or sales tax ... on the sale price of all goods (a) produced",
+      "output": "). THE LEGISLATION The\nrelevant legislative provisions of <legislation><title>the Act</title></legislation> as they read during the period in\nissue are as follows: 27(1) There shall be imposed, levied and\ncollected a consumption or sales tax ... on the sale price of all goods (a) produced"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " or manufactured in Canada ... 29(1) The tax imposed by section 27 does\nnot apply to the sale or importation of the goods mentioned in Schedule III ... SCHEDULE\nIII PART\nXII MUNICIPALITIES 1. Certain goods sold to ... municipalities\nfor",
+      "output": " or manufactured in Canada ... 29(1) The tax imposed by <legislation><fragment>section 27</fragment></legislation> does\nnot apply to the sale or importation of the goods mentioned in <legislation><fragment>Schedule III</fragment></legislation> ... SCHEDULE\nIII PART\nXII MUNICIPALITIES 1. Certain goods sold to ... municipalities\nfor"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " their own use and not for resale, as follows: ... (h) structural steel ... for bridges, ... THE FACTS The\nappellant is a Canadian company that installs traffic control structures. The\ncompany was awarded a contract by the city of Lethbridge, Alberta, for",
+      "output": " their own use and not for resale, as follows: ... (h) structural steel ... for bridges, ... THE FACTS The\nappellant is a Canadian company that installs traffic control structures. The\ncompany was awarded a contract by the city of Lethbridge, Alberta, for"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the\nconstruction and installation of 13 such structures on the Crowsnest Trail\nCorridor. When completed, these structures, which are called sign bridge\nassemblies, span the highway. They are composed of structural steel supports\nonto which signs and/or lights are mounted. The assembled structures (the\ngoods in",
+      "output": " the\nconstruction and installation of 13 such structures on the Crowsnest Trail\nCorridor. When completed, these structures, which are called sign bridge\nassemblies, span the highway. They are composed of structural steel supports\nonto which signs and/or lights are mounted. The assembled structures (the\ngoods in"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " issue) are then anchored into steel reinforced concrete foundations\nwith anchor bolts. The structures serve the function of informing drivers and\ndirecting vehicular traffic. Upon\ncompletion of the contract, the appellant filed a refund claim for $20 394.72\nwith the Edmonton Office of Revenue Canada. It",
+      "output": " issue) are then anchored into steel reinforced concrete foundations\nwith anchor bolts. The structures serve the function of informing drivers and\ndirecting vehicular traffic. Upon\ncompletion of the contract, the appellant filed a refund claim for $20 394.72\nwith the Edmonton Office of Revenue Canada. It"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " based its claim on the grounds\nthat the assembled structures were bridges and therefore were sales tax exempt\npursuant to paragraph 1(h), Part XII, Schedule III of the Act\n(hereinafter the exemption clause). The refund claim was\ndisallowed by Revenue Canada officials by",
+      "output": " based its claim on the grounds\nthat the assembled structures were bridges and therefore were sales tax exempt\npursuant to <legislation><fragment>paragraph 1(h), Part XII, Schedule III</fragment> of<title> the Act</title>\n(hereinafter the exemption clause)</legislation>. The refund claim was\ndisallowed by Revenue Canada officials by"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Notice of Determination\nCAL 13860 on July 31, 1986. The claim was refused because the assembled\nstructures \"[did] not form a component part of a bridge whether it be\nsubstructure, superstructure or abutments.\" The appellant filed a notice\nof objection, but the Minister disallowed the appellant",
+      "output": " Notice of Determination\nCAL 13860 on July 31, 1986. The claim was refused because the assembled\nstructures \"[did] not form a component part of a bridge whether it be\nsubstructure, superstructure or abutments.\" The appellant filed a notice\nof objection, but the Minister disallowed the appellant"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "'s claim on July 10,\n1987, because \"the ordinary and common meaning of the word 'bridge' as\nused within the context of paragraph 1(h), Part XII, Schedule III of the\nExcise Tax Act does not extend to the ... [goods] in",
+      "output": "'s claim on July 10,\n1987, because \"the ordinary and common meaning of the word 'bridge' as\nused within the context of <legislation><fragment>paragraph 1(h), Part XII, Schedule III</fragment> of the\n<title>Excise Tax Act</title></legislation> does not extend to the ... [goods] in"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " issue.\" The\nappellant then filed an appeal to the Tariff Board on August 25, 1987, pursuant\nto section 51.19 of the Act. Although the appeal was originally commenced\nbefore the Tariff Board, it was taken up and is continued by the Canadian\nInternational",
+      "output": " issue.\" The\nappellant then filed an appeal to the Tariff Board on August 25, 1987, pursuant\nto <legislation><fragment>section 51.19</fragment> of <title>the Act</title></legislation>. Although the appeal was originally commenced\nbefore the Tariff Board, it was taken up and is continued by the Canadian\nInternational"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Trade Tribunal (the Tribunal) in accordance with subsection 54(2)\nand section 60 of the Canadian International Trade Tribunal Act.[2] Three\nwitnesses were called to testify in support of the appellant's position: Mr. Michael Kelly, an engineer and the President",
+      "output": " Trade Tribunal (the Tribunal) in accordance with <legislation><fragment>subsection 54(2)</fragment>\nand<fragment> section 60</fragment> of the <title>Canadian International Trade Tribunal Act</title></legislation>.[2] Three\nwitnesses were called to testify in support of the appellant's position: Mr. Michael Kelly, an engineer and the President"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " of Can Traffic Services\nLtd.; Mr. Gordon Milne, a structural design engineer with Polesystems\nInc., a company that sold to the appellant structural steel members used in the\nassembly of the goods in issue; and Mr. Michael Strong, a structural design\nengineer who has designed vehicular",
+      "output": " of Can Traffic Services\nLtd.; Mr. Gordon Milne, a structural design engineer with Polesystems\nInc., a company that sold to the appellant structural steel members used in the\nassembly of the goods in issue; and Mr. Michael Strong, a structural design\nengineer who has designed vehicular"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " bridges and structures like those on\nappeal. He is the Vice-President of Reid Crowther, consulting engineers for\nthe city of Lethbridge, Alberta. According\nto the testimony of the appellant's witnesses, in order for a structure to be\nconsidered a bridge, the structure must span across",
+      "output": " bridges and structures like those on\nappeal. He is the Vice-President of Reid Crowther, consulting engineers for\nthe city of Lethbridge, Alberta. According\nto the testimony of the appellant's witnesses, in order for a structure to be\nconsidered a bridge, the structure must span across"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " some distance (i.e. it must\nhave supports at either end) and must have the ability to support or\n\"carry\" loads (weights) imposed on the structure. The loads can\neither be stationary, as in the case of signs affixed to the structure, or\nmoving, as",
+      "output": " some distance (i.e. it must\nhave supports at either end) and must have the ability to support or\n\"carry\" loads (weights) imposed on the structure. The loads can\neither be stationary, as in the case of signs affixed to the structure, or\nmoving, as"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " in the case of vehicles or pedestrians. The\nstructure in issue is built solely for the purpose of supporting signs and/or\nlights. It does not provide any form of passage or transit for pedestrians,\netc. However, the witnesses said that it was not necessary for the structure",
+      "output": " in the case of vehicles or pedestrians. The\nstructure in issue is built solely for the purpose of supporting signs and/or\nlights. It does not provide any form of passage or transit for pedestrians,\netc. However, the witnesses said that it was not necessary for the structure"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "\nto afford passage in order to be considered a bridge. The\nwitnesses said that the goods in issue were called \"sign bridges\" by\nthe people who design the structures, the suppliers of the components used to\nbuild the structures and contractors. Several documents were provided by the\nappellant",
+      "output": "\nto afford passage in order to be considered a bridge. The\nwitnesses said that the goods in issue were called \"sign bridges\" by\nthe people who design the structures, the suppliers of the components used to\nbuild the structures and contractors. Several documents were provided by the\nappellant"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " to support the testimony of the witnesses. They include blue prints\nlabelled \"sign bridges\" of structures like the goods in issue;\ninvoices from the supplier of the steel members used in the assembly of the\ngoods in issue, which refer to the goods as \"sign bridge\" or",
+      "output": " to support the testimony of the witnesses. They include blue prints\nlabelled \"sign bridges\" of structures like the goods in issue;\ninvoices from the supplier of the steel members used in the assembly of the\ngoods in issue, which refer to the goods as \"sign bridge\" or"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "\n\"sign bridge assembly;\" and letters from consulting engineering\nfirms, including Reid Crowther, that state that the goods in issue are a\nspecific type of bridge because their design and construction follow the same\ngeneral principles as vehicular and pedestrian bridges. However, Mr. Strong\nsaid that an",
+      "output": "\n\"sign bridge assembly;\" and letters from consulting engineering\nfirms, including Reid Crowther, that state that the goods in issue are a\nspecific type of bridge because their design and construction follow the same\ngeneral principles as vehicular and pedestrian bridges. However, Mr. Strong\nsaid that an"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " engineer who exclusively designed goods such as those in issue\nwould not be considered a bridge designer. The engineer would be considered a\nsign bridge designer. In addition, Mr. Kelly acknowledged that the City of\nLethbridge Tender Call variously refers to the goods in issue as \"overhead\nsign",
+      "output": " engineer who exclusively designed goods such as those in issue\nwould not be considered a bridge designer. The engineer would be considered a\nsign bridge designer. In addition, Mr. Kelly acknowledged that the City of\nLethbridge Tender Call variously refers to the goods in issue as \"overhead\nsign"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " bridges,\" \"sign bridge structures\" or \"overhead sign\nsupports.\" The\nTender Call requires the goods in issue to be built in accordance with a code\nentitled Standard Specifications for Structural Supports for Highway Signs,\nLuminaires and Traffic Signals (structural support code). This code",
+      "output": " bridges,\" \"sign bridge structures\" or \"overhead sign\nsupports.\" The\nTender Call requires the goods in issue to be built in accordance with a code\nentitled <secondary sources><title>Standard Specifications for Structural Supports for Highway Signs,\nLuminaires and Traffic Signals</title> (<title>structural support code</title></secondary sources>). This code"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " is the\none that is adopted by most Canadian jurisdictions, including the city of\nLethbridge, as the basis for the design of structures like the goods in issue. It is produced by the American Association of State Highway and Transportation\nOfficials (AASHTO), an organization, located",
+      "output": " is the\none that is adopted by most Canadian jurisdictions, including the city of\nLethbridge, as the basis for the design of structures like the goods in issue. It is produced by the <secondary sources><authors>American Association of State Highway and Transportation\nOfficials (AASHTO)</authors></secondary sources>, an organization, located"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " in the United States of America,\nthat produces various codes of practice in respect of transportation\nfacilities. Its purpose is to ensure that there is uniformity amongst various\njurisdictions in design and safety features. Mr. Strong\ntestified that the goods in issue were called sign bridges in the",
+      "output": " in the United States of America,\nthat produces various codes of practice in respect of transportation\nfacilities. Its purpose is to ensure that there is uniformity amongst various\njurisdictions in design and safety features. Mr. Strong\ntestified that the goods in issue were called sign bridges in the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " AASHTO\nstructural support code. He said that the code grouped the goods with several\nother structures under the category \"sign support structures.\" Both\nMr. Strong and Mr. Milne agreed with the AASHTO structural support code\ncategorization of the goods in issue",
+      "output": " <secondary sources><authors>AASHTO</authors>\n<title>structural support code</title></secondary sources>. He said that the code grouped the goods with several\nother structures under the category \"sign support structures.\" Both\nMr. Strong and Mr. Milne agreed with the<secondary sources> <authors>AASHTO</authors><title> structural support code</title></secondary sources>\ncategorization of the goods in issue"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ". In\naddition to the AASHTO structural support code, the AASHTO also has produced a\ncode entitled Standard Specifications for Highway Bridges (the highway\ncode). The witnesses said that the goods in issue were located in the\nstructural support code. Dr",
+      "output": ". In\naddition to the <secondary sources><authors>AASHTO</authors><title> structural support code</title></secondary sources>, the <secondary sources><authors>AASHTO</authors></secondary sources> also has produced a\ncode entitled <secondary sources><title>Standard Specifications for Highway Bridges</title> (<title>the highway\ncode</title>)</secondary sources>. The witnesses said that the goods in issue were located in the\n<secondary sources><title>structural support code</title></secondary sources>. Dr"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ". Gamil\nS. Tadros testified in support of the respondent's position. He is a\nstructural engineer with extensive experience in the design of vehicular\nbridges. He defined a bridge as a structure which allowed for the transit,\nover an obstacle, of people and/or things (e.g",
+      "output": ". Gamil\nS. Tadros testified in support of the respondent's position. He is a\nstructural engineer with extensive experience in the design of vehicular\nbridges. He defined a bridge as a structure which allowed for the transit,\nover an obstacle, of people and/or things (e.g"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ". automobiles, utilities) from\none point to another. The obstacle could be a road, a river, etc. According\nto Dr. Tadros, the goods in issue are a type of sign support structure. In his\nopinion, the Ontario Highway Bridge Design Code produced by the",
+      "output": ". automobiles, utilities) from\none point to another. The obstacle could be a road, a river, etc. According\nto Dr. Tadros, the goods in issue are a type of sign support structure. In his\nopinion, the <secondary sources><title>Ontario Highway Bridge Design Code</title></secondary sources> produced by the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Ontario\nMinistry of Transportation and Communications (the Ontario code) provides the\nmost accurate definition of the structures being considered in this appeal. The Ontario code places goods like those in issue under the chapter entitled\n\"accessories\" and describes the structures as \"overhead",
+      "output": "<secondary sources> <authors>Ontario\nMinistry of Transportation and Communications </authors>(the <title>Ontario code</title>)</secondary sources> provides the\nmost accurate definition of the structures being considered in this appeal. The <secondary sources><title>Ontario code</title></secondary sources> places goods like those in issue under the chapter entitled\n\"accessories\" and describes the structures as \"overhead"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " sign\nsupports.\" The\nwitness said that he would not consider himself to be a bridge engineer if he\nexclusively designed the structures in issue. THE ISSUE The issue\nin this appeal is whether the goods in issue are bridges within the meaning of\nthe exemption clause. If",
+      "output": " sign\nsupports.\" The\nwitness said that he would not consider himself to be a bridge engineer if he\nexclusively designed the structures in issue. THE ISSUE The issue\nin this appeal is whether the goods in issue are bridges within the meaning of\nthe <legislation><fragment>exemption clause</fragment></legislation>. If"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " they are, then the appellant is entitled to claim a\nsales tax refund. The\nappellant submitted that the goods were exempt from sales tax. Counsel for the\ncompany said that the ordinary and common meaning of the word\n\"bridge\" had to be applied to the present dispute in",
+      "output": " they are, then the appellant is entitled to claim a\nsales tax refund. The\nappellant submitted that the goods were exempt from sales tax. Counsel for the\ncompany said that the ordinary and common meaning of the word\n\"bridge\" had to be applied to the present dispute in"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " order to\ndetermine whether the goods in issue fell within the exemption clause. The appellant argued\nthat the goods in issue fell within the ordinary and common meaning of the word\n\"bridge\" for three reasons. Initially, the goods in issue span\nacross a highway, have",
+      "output": " order to\ndetermine whether the goods in issue fell within the<legislation> <fragment>exemption clause</fragment></legislation>. The appellant argued\nthat the goods in issue fell within the ordinary and common meaning of the word\n\"bridge\" for three reasons. Initially, the goods in issue span\nacross a highway, have"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " supports at either end of the structure and carry a load. Secondly,\ngoods like those in issue are called \"sign bridges\" by the people who\ndesigned these structures, the suppliers of components used to build the\nstructures and contractors. Finally,\nthe appellant argued that the primary and",
+      "output": " supports at either end of the structure and carry a load. Secondly,\ngoods like those in issue are called \"sign bridges\" by the people who\ndesigned these structures, the suppliers of components used to build the\nstructures and contractors. Finally,\nthe appellant argued that the primary and"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " tertiary dictionary definitions of\nthe word \"bridge\" encompassed the goods in issue. The appellant\ncited several dictionaries in support of this contention. These definitions\nare as follows: Funk &amp; Wagnalls New Standard Dictionary\nof the English Language (1963) 1. A structure erected",
+      "output": " tertiary dictionary definitions of\nthe word \"bridge\" encompassed the goods in issue. The appellant\ncited several dictionaries in support of this contention. These definitions\nare as follows: <secondary sources><title>Funk &amp; Wagnalls New Standard Dictionary\nof the English Language</title> (<source>1963</source>)</secondary sources> 1. A structure erected"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " across a waterway,\nravine, road, or the like,serving for the passage of persons, animals, or\nvehicles, or as a means of support and transit, as for a water-main. The Oxford English Dictionary (1989, 2nd. edition) 1. a. A",
+      "output": " across a waterway,\nravine, road, or the like,serving for the passage of persons, animals, or\nvehicles, or as a means of support and transit, as for a water-main. <secondary sources><title>The Oxford English Dictionary</title> (<source>1989, 2nd. edition</source>)</secondary sources> 1. a. A"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " structure forming or carrying a road\nover a river, a ravine, etc., or affording passage between two points at a\nheight above the ground. Black's Law Dictionary (1968, rev. 4th ed.) A structure erected over a river, creek,\nstream, ditch",
+      "output": " structure forming or carrying a road\nover a river, a ravine, etc., or affording passage between two points at a\nheight above the ground. <secondary sources><title>Black's Law Dictionary</title> (<source>1968, rev. 4th ed.</source>)</secondary sources> A structure erected over a river, creek,\nstream, ditch"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ", ravine, obstruction in highway or other place to facilitate the\npassage and for benefit of travelers. The Houghton Mifflin Canadian Dictionary of\nthe English Language (1982) 1. A structure spanning and providing passage\nover a waterway, railroad, or other obstacle. 2. Anything",
+      "output": ", ravine, obstruction in highway or other place to facilitate the\npassage and for benefit of travelers. <secondary sources><title>The Houghton Mifflin Canadian Dictionary of\nthe English Language</title> (<source>1982</source>)</secondary sources> 1. A structure spanning and providing passage\nover a waterway, railroad, or other obstacle. 2. Anything"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " resembling\nor analogous to such a structure in form or function. Webster's Third New International Dictionary\nof the English Language Unabridged (1979) 3: something resembling a bridge (as in\nserving as a support for or a way over something else) as ... 1",
+      "output": " resembling\nor analogous to such a structure in form or function. <secondary sources><title>Webster's Third New International Dictionary\nof the English Language Unabridged</title> (<source>1979</source>)</secondary sources> 3: something resembling a bridge (as in\nserving as a support for or a way over something else) as ... 1"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ": a framework\nthat spans railroad tracks and support signals. The\nrespondent argued that the goods in issue were not bridges within the exemption\nprovision and, therefore, that the structures were not sales tax exempt. Like the\nappellant, the respondent argued that the meaning of the",
+      "output": ": a framework\nthat spans railroad tracks and support signals. The\nrespondent argued that the goods in issue were not bridges within the<legislation> <fragment>exemption\nprovision</fragment> </legislation>and, therefore, that the structures were not sales tax exempt. Like the\nappellant, the respondent argued that the meaning of the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " word\n\"bridge\" as set out in the exemption clause had to be interpreted\naccording to common and ordinary language. The respondent relied on the\nSupreme Court of Canada decision in Pfizer Company Limited v. The Deputy\nMinister of National Revenue for Customs and Excise;[3",
+      "output": " word\n\"bridge\" as set out in the <legislation><fragment>exemption clause</fragment></legislation> had to be interpreted\naccording to common and ordinary language. The respondent relied on the\nSupreme Court of Canada decision in <decision><title>Pfizer Company Limited v. The Deputy\nMinister of National Revenue for Customs and Excise</title></decision>;[3"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "] the Tariff\nBoard case of Westeel Products Limited v. The Deputy Minister of National\nRevenue for Customs and Excise;[4]\nand excerpts from the text Construction of Statutes[5] in support\nof this contention. In arguing that the\ngoods in issue did not",
+      "output": "] the Tariff\nBoard case of <decision><title>Westeel Products Limited v. The Deputy Minister of National\nRevenue for Customs and Excise</title></decision>;[4]\nand excerpts from the text <secondary sources><title>Construction of Statutes</title></secondary sources>[5] in support\nof this contention. In arguing that the\ngoods in issue did not"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " come within the ordinary and common meaning of the word\n\"bridge,\" the respondent cited dictionary definitions in addition to\nthe ones relied on by the appellant, excerpts from encyclopedias and several\ndecisions from the United States of America. The\nrespondent said that a common thread ran through all",
+      "output": " come within the ordinary and common meaning of the word\n\"bridge,\" the respondent cited dictionary definitions in addition to\nthe ones relied on by the appellant, excerpts from encyclopedias and several\ndecisions from the United States of America. The\nrespondent said that a common thread ran through all"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " of these definitions and\nexcerpts: bridges facilitated and provided passage and transit. The\nadditional dictionary definitions cited by the respondent are as follows: Webster's Third New International Dictionary\nof the English Language Unabridged 1. a: a structure erected over a depression\nor an obstacle to",
+      "output": " of these definitions and\nexcerpts: bridges facilitated and provided passage and transit. The\nadditional dictionary definitions cited by the respondent are as follows: <secondary sources><title>Webster's Third New International Dictionary\nof the English Language Unabridged</title></secondary sources> 1. a: a structure erected over a depression\nor an obstacle to"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " travel (as a river, chasm, roadway, or railroad) carrying a\ncontinuous pathway or roadway (as for pedestrians, automobiles, or trains). Webster's New World Dictionary (1970, Second College\nEdition) 1. a structure built over a river, railroad,\nhighway, etc",
+      "output": " travel (as a river, chasm, roadway, or railroad) carrying a\ncontinuous pathway or roadway (as for pedestrians, automobiles, or trains). <secondary sources><title>Webster's New World Dictionary</title> (<source>1970, Second College\nEdition</source>)</secondary sources> 1. a structure built over a river, railroad,\nhighway, etc"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ". to provide a way across for vehicles or pedestrians. Funk &amp; Wagnalls Standard College\nDictionary (1976) 1. A structure erected across a waterway,\nravine, road, etc., to afford passage. The\nencyclopedia excerpts relied on by the respondent provide the following\ndefinitions",
+      "output": ". to provide a way across for vehicles or pedestrians. <secondary sources><title>Funk &amp; Wagnalls Standard College\nDictionary</title> (<source>1976</source>)</secondary sources> 1. A structure erected across a waterway,\nravine, road, etc., to afford passage. The\nencyclopedia excerpts relied on by the respondent provide the following\ndefinitions"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " of the word \"bridge:\" McGraw-Hill Encyclopedia of Science and\nTechnology A structure erected to span natural or\nartificial obstacles, such as rivers, highways, or railroads, and supporting a\nfootpath or roadway for pedestrian, highway, or railroad traffic. The New Encyclopaedia Britannica A",
+      "output": " of the word \"bridge:\" <secondary sources><title>McGraw-Hill Encyclopedia of Science and\nTechnology</title></secondary sources> A structure erected to span natural or\nartificial obstacles, such as rivers, highways, or railroads, and supporting a\nfootpath or roadway for pedestrian, highway, or railroad traffic. <secondary sources><title>The New Encyclopaedia Britannica</title></secondary sources> A"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " bridge is a structure surmounting an\nobstacle such as a river, declivity, road, or railway and used as a passageway\nfor pedestrian, motor, or rail traffic. The\nrespondent relied on a publication entitled Words and Phrases. Permanent\nEdition for statements from several United States decisions",
+      "output": " bridge is a structure surmounting an\nobstacle such as a river, declivity, road, or railway and used as a passageway\nfor pedestrian, motor, or rail traffic. The\nrespondent relied on a publication entitled <secondary sources><title>Words and Phrases. Permanent\nEdition</title></secondary sources> for statements from several United States decisions"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " on the meaning\nof the word \"bridge.\" The statements selected by the respondent are\nas follows: A \"bridge\" is defined\nto be \"any structure which spans a body of water, or a valley, road, or\nthe like, and affords passage or conveyance.\"[6] ... Under",
+      "output": " on the meaning\nof the word \"bridge.\" The statements selected by the respondent are\nas follows: A \"bridge\" is defined\nto be \"any structure which spans a body of water, or a valley, road, or\nthe like, and affords passage or conveyance.\"[6] ... Under"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the common law, and\ngenerally under the statutes in this country, a \"bridge\" includes the\nabutments and such approaches as will make it accessible and convenient to\npublic travel.[7] ... The term \"bridge\" has\nnever \"represented any structure or material thing which had not",
+      "output": " the common law, and\ngenerally under the statutes in this country, a \"bridge\" includes the\nabutments and such approaches as will make it accessible and convenient to\npublic travel.[7] ... The term \"bridge\" has\nnever \"represented any structure or material thing which had not"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " a footway\nacross the stream. Not for the last thousand years has the term 'bridge,'\neither in England or this country, represented any structure which had not a\nfootway, a horseway, and a wagonway. The footway for man and beast is of the\nvery essence of",
+      "output": " a footway\nacross the stream. Not for the last thousand years has the term 'bridge,'\neither in England or this country, represented any structure which had not a\nfootway, a horseway, and a wagonway. The footway for man and beast is of the\nvery essence of"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the bridge.... The very nature and essence of the thing forbid\nthat there should be a bridge without a pathway. The bridge, for all time and\nin all countries, has been but the continuation of the ordinary roadway. The\nonly difference between a bridge and the",
+      "output": " the bridge.... The very nature and essence of the thing forbid\nthat there should be a bridge without a pathway. The bridge, for all time and\nin all countries, has been but the continuation of the ordinary roadway. The\nonly difference between a bridge and the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " rest of the road is that in the road\nthe pathway rests immediately on the earth, while in the bridge it does not....[8] Finally,\nthe respondent noted that the definition of bridge provided by Dr. Tadros - a\nstructure which allows for the transit, over",
+      "output": " rest of the road is that in the road\nthe pathway rests immediately on the earth, while in the bridge it does not....[8] Finally,\nthe respondent noted that the definition of bridge provided by Dr. Tadros - a\nstructure which allows for the transit, over"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " an obstacle, of people and/or\nthings - provided the Tribunal with another basis for denying the appellant's\nclaim that the goods in issue fell under the exemption clause. DECISION In order\nfor the goods in issue to qualify under the exemption clause, the",
+      "output": " an obstacle, of people and/or\nthings - provided the Tribunal with another basis for denying the appellant's\nclaim that the goods in issue fell under the <legislation><fragment>exemption clause</fragment></legislation>. DECISION In order\nfor the goods in issue to qualify under the <legislation><fragment>exemption clause</fragment></legislation>, the"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " goods must be\n\"bridges\" within that clause. In the\nTribunal's view, the Pfizer case (supra) and the Federal Court of Appeal\ndecision in Olympia Floor and Wall Tile Company v. The Deputy Minister of\nNational Revenue for Customs and Excise[9] provide",
+      "output": " goods must be\n\"bridges\" within that clause. In the\nTribunal's view, the <decision><title>Pfizer case</title> (supra)</decision> and the Federal Court of Appeal\ndecision in <decision><title>Olympia Floor and Wall Tile Company v. The Deputy Minister of\nNational Revenue for Customs and Excise</title></decision>[9] provide"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": "supra ???"
+  },
+  {
+    "example": {
+      "input": " a useful guide regarding\nthe principles to be applied in defining the meaning and scope of the word\n\"bridge.\" Both cases are appeals from Tariff Board decisions. The Pfizer\ncase (supra) involved the meaning of the word \"derivatives\" in the\nexpression \"Tetracycline and its",
+      "output": " a useful guide regarding\nthe principles to be applied in defining the meaning and scope of the word\n\"bridge.\" Both cases are appeals from Tariff Board decisions. The<decision> <title>Pfizer\ncase</title> (supra)</decision> involved the meaning of the word \"derivatives\" in the\nexpression \"Tetracycline and its"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " derivatives\" found in the Customs\nTariff. The issue in the case was whether salts of the antibiotic\noxytetracycline were derivatives of the compound tetracycline. The Tariff\nBoard relied on technical and scientific definitions and publications to define\nthe meaning of the word \"derivatives.\" Mr.\nJustice",
+      "output": " derivatives\" found in the <legislation><title>Customs\nTariff</title></legislation>. The issue in the case was whether salts of the antibiotic\noxytetracycline were derivatives of the compound tetracycline. The Tariff\nBoard relied on technical and scientific definitions and publications to define\nthe meaning of the word \"derivatives.\" Mr.\nJustice"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " Pigeon, speaking for the Supreme Court of Canada, said that the Tariff\nBoard erred in using this approach. He noted the following: The rule that statutes are\nto be construed according to the meaning of the words in common language is\nquite firmly established and it is applicable",
+      "output": " Pigeon, speaking for the Supreme Court of Canada, said that the Tariff\nBoard erred in using this approach. He noted the following: The rule that statutes are\nto be construed according to the meaning of the words in common language is\nquite firmly established and it is applicable"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " to statutes dealing with\ntechnical or scientific matters, ... Of course, because \"tetracycline\"\ndesignates a specific substance the composition of which has been determined in\nterms of a chemical formula, resort may be had to the appropriate sources for\nascertaining its meaning. In my view, this",
+      "output": " to statutes dealing with\ntechnical or scientific matters, ... Of course, because \"tetracycline\"\ndesignates a specific substance the composition of which has been determined in\nterms of a chemical formula, resort may be had to the appropriate sources for\nascertaining its meaning. In my view, this"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " does not imply that\n\"derivative\" is to be construed as it might be in a scientific\npublication. The question concerns the meaning of \"derivative\" not\nof \"tetracycline.\"[10] The\nOlympia Floor and Wall Tile Company case (supra) dealt with the tariff\nclassification of",
+      "output": " does not imply that\n\"derivative\" is to be construed as it might be in a scientific\npublication. The question concerns the meaning of \"derivative\" not\nof \"tetracycline.\"[10] <decision><title>The\nOlympia Floor and Wall Tile Company case</title> (supra)</decision> dealt with the tariff\nclassification of"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " clay bodied ceramic building products. The issue in the case\nwas whether the meaning of the phrase \"Earthenware tiles\" found in\nthe Customs Tariff should be interpreted according to the ordinary sense\nof the term, as the Tariff Board had done, or according to its trade",
+      "output": " clay bodied ceramic building products. The issue in the case\nwas whether the meaning of the phrase \"Earthenware tiles\" found in\nthe <legislation><title>Customs Tariff</title></legislation> should be interpreted according to the ordinary sense\nof the term, as the Tariff Board had done, or according to its trade"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " meaning. The Federal Court of Appeal ruled that the phrase had to construed by its trade\nmeaning. In so ruling, the Court quoted with approval the following comments\nmade by Mr. Justice Kerr when he interpreted the phrase \"lard compound and\nsimilar substances\" in the Customs Tariff in",
+      "output": " meaning. The Federal Court of Appeal ruled that the phrase had to construed by its trade\nmeaning. In so ruling, the Court quoted with approval the following comments\nmade by Mr. Justice Kerr when he interpreted the phrase \"lard compound and\nsimilar substances\" in the <legislation><title>Customs Tariff</title></legislation> in"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the Exchequer Court\ndecision of Hunt Foods Export Corp. of Canada Ltd et al. v. The Deputy\nMinister of National Revenue for Customs and Excise:[11] The words \"similar\nsubstances\" are indefinite except in relation to the words \"lard\ncompound\". We must, therefore",
+      "output": " the Exchequer Court\ndecision of <decision><title>Hunt Foods Export Corp. of Canada Ltd et al. v. The Deputy\nMinister of National Revenue for Customs and Excise</title></decision>:[11] The words \"similar\nsubstances\" are indefinite except in relation to the words \"lard\ncompound\". We must, therefore"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ", first look to the meaning of \"lard\ncompound\" ... This expression ... describes an article of commerce and is\nnot, I think, an expression in common speech, except by persons who\nmanufacture, sell or deal in the article. I think that it was open",
+      "output": ", first look to the meaning of \"lard\ncompound\" ... This expression ... describes an article of commerce and is\nnot, I think, an expression in common speech, except by persons who\nmanufacture, sell or deal in the article. I think that it was open"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " to the\nTariff Board to determine the sense in which the expression is used in the\nmouths of those persons and to construe it ... in that sense.... The Tariff Board properly sought\nto ascertain from the experts to what extent and in what way the products",
+      "output": " to the\nTariff Board to determine the sense in which the expression is used in the\nmouths of those persons and to construe it ... in that sense.... The Tariff Board properly sought\nto ascertain from the experts to what extent and in what way the products"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " in\nissue are similar to or dissimilar from lard compounds, as the latter are known\nin the trade. The experts were competent to give evidence in that respect. But the words \"similar substances\" ... are ordinary words that have\nno technical or special meaning, and it",
+      "output": " in\nissue are similar to or dissimilar from lard compounds, as the latter are known\nin the trade. The experts were competent to give evidence in that respect. But the words \"similar substances\" ... are ordinary words that have\nno technical or special meaning, and it"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " was for the Tariff Board to construe\nthem in their ordinary and popular sense. It was not for the witnesses to\ndefine them or give a meaning to them.[12] ... There are\nmany words in the Act which are quite ordinary words, words used in ordinary",
+      "output": " was for the Tariff Board to construe\nthem in their ordinary and popular sense. It was not for the witnesses to\ndefine them or give a meaning to them.[12] ... There are\nmany words in the Act which are quite ordinary words, words used in ordinary"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "\nconversation in an everyday way. The Tribunal considers that the word\n\"bridge,\" as set out in the exemption clause, is a word of common\nspeech. Such words are not to be construed on the basis of technical and\nscientific testimony. Both\nparties have argued that",
+      "output": "\nconversation in an everyday way. The Tribunal considers that the word\n\"bridge,\" as set out in the <legislation><fragment>exemption clause</fragment></legislation>, is a word of common\nspeech. Such words are not to be construed on the basis of technical and\nscientific testimony. Both\nparties have argued that"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the common and ordinary meaning of the word\n\"bridge\" in the exemption clause should govern the Tribunal's\ndetermination of whether the word \"bridge\" includes the goods in\nissue, but they have asked the Tribunal to make that determination partly on\nthe basis of several technical",
+      "output": " the common and ordinary meaning of the word\n\"bridge\" in the <legislation><fragment>exemption clause</fragment></legislation> should govern the Tribunal's\ndetermination of whether the word \"bridge\" includes the goods in\nissue, but they have asked the Tribunal to make that determination partly on\nthe basis of several technical"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " documents (blue prints, highway codes, etc.)\npertaining to the goods in issue and the opinions of expert witnesses on the\nmeaning of the word \"bridge.\" The Tribunal does not consider this\ntestimony helpful in defining the meaning of the word \"bridge\" in the\nexemption clause given",
+      "output": " documents (blue prints, highway codes, etc.)\npertaining to the goods in issue and the opinions of expert witnesses on the\nmeaning of the word \"bridge.\" The Tribunal does not consider this\ntestimony helpful in defining the meaning of the word \"bridge\" in the\n<legislation><fragment>exemption clause </fragment></legislation>given"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the foregoing principles of statutory construction. The\ndocuments and expert evidence apply a technical and scientific standard to\ndefine a common and ordinary word. However,\nthe Tribunal considers the various dictionary definitions submitted by the\nparties helpful in determining the common meaning of the word\n\"bridge\" in the",
+      "output": " the foregoing principles of statutory construction. The\ndocuments and expert evidence apply a technical and scientific standard to\ndefine a common and ordinary word. However,\nthe Tribunal considers the various dictionary definitions submitted by the\nparties helpful in determining the common meaning of the word\n\"bridge\" in the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " exemption clause. In the Tribunal's view, Driedger,\nin his text entitled Construction of Statutes, has succinctly commented\non the usefulness of dictionaries in determining the ordinary meaning of a\nword. He states: ... What is the\ngrammatical and ordinary",
+      "output": " <legislation><fragment>exemption clause</fragment></legislation>. In the Tribunal's view, <secondary sources><authors>Driedger</authors></secondary sources>,\nin his text entitled <secondary sources><title>Construction of Statutes</title></secondary sources>, has succinctly commented\non the usefulness of dictionaries in determining the ordinary meaning of a\nword. He states: ... What is the\ngrammatical and ordinary"
+    },
+    "selected": true,
+    "notation": 4,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " or the natural and ordinary sense of words? The two expressions obviously mean the same thing, namely, the sense obtained\nby the application of the rules of grammar, giving the words their ordinary\nmeaning. A meaning may be said to be ordinary if it is to be found",
+      "output": " or the natural and ordinary sense of words? The two expressions obviously mean the same thing, namely, the sense obtained\nby the application of the rules of grammar, giving the words their ordinary\nmeaning. A meaning may be said to be ordinary if it is to be found"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " in the\ndictionary. But there may be many meanings. Compilers of dictionaries usually\nplace first in the list of meanings of a word the meaning most commonly used. This meaning is variously called the ordinary, common, popular or primary\nmeaning....[13] The\nTribunal notes that",
+      "output": " in the\ndictionary. But there may be many meanings. Compilers of dictionaries usually\nplace first in the list of meanings of a word the meaning most commonly used. This meaning is variously called the ordinary, common, popular or primary\nmeaning....[13] The\nTribunal notes that"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " a common element in the primary meaning of the word\n\"bridge\" in all of the dictionaries submitted to the Tribunal is the\nconcept of a structure which spans an obstruction and which affords passage to\npeople and/or things. The Tribunal notes that the goods in issue do not",
+      "output": " a common element in the primary meaning of the word\n\"bridge\" in all of the dictionaries submitted to the Tribunal is the\nconcept of a structure which spans an obstruction and which affords passage to\npeople and/or things. The Tribunal notes that the goods in issue do not"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " afford\npassage nor transit for pedestrians and/or things (e.g. vehicles). The goods\nin issue are built solely for the purpose of supporting signs and/or lights to\ninform drivers and direct vehicular traffic. However,\nthe appellant has also argued that the tertiary definition of the",
+      "output": " afford\npassage nor transit for pedestrians and/or things (e.g. vehicles). The goods\nin issue are built solely for the purpose of supporting signs and/or lights to\ninform drivers and direct vehicular traffic. However,\nthe appellant has also argued that the tertiary definition of the"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " word\n\"bridge:\" \"something resembling a bridge (as in serving as a\nsupport for or a way over something else) as ... a framework that spans\nrailroad tracks and supports signals\" provides support for its contention\nthat the goods in issue fall within the ordinary meaning of",
+      "output": " word\n\"bridge:\" \"something resembling a bridge (as in serving as a\nsupport for or a way over something else) as ... a framework that spans\nrailroad tracks and supports signals\" provides support for its contention\nthat the goods in issue fall within the ordinary meaning of"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " the word\n\"bridge\" in the exemption clause. The\nTribunal does not consider that the word \"bridge\" in the exemption\nclause can be construed to encompass this phrase. No extensive reference to\ndictionaries is required to determine that the word \"resembling\"\nmeans \"similar",
+      "output": " the word\n\"bridge\" in the <legislation><fragment>exemption clause</fragment></legislation>. The\nTribunal does not consider that the word \"bridge\" in the <legislation><fragment>exemption\nclause</fragment></legislation> can be construed to encompass this phrase. No extensive reference to\ndictionaries is required to determine that the word \"resembling\"\nmeans \"similar"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " to but not the same as.\" If Parliament had intended\nthe word \"bridge\" in the exemption clause to include things which are\nsimilar to but not the same as bridges, as that word is most commonly used, it\ncould have written the exemption clause to",
+      "output": " to but not the same as.\" If Parliament had intended\nthe word \"bridge\" in the<legislation> <fragment>exemption clause</fragment></legislation> to include things which are\nsimilar to but not the same as bridges, as that word is most commonly used, it\ncould have written the<legislation> <fragment>exemption clause</fragment></legislation> to"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " that effect. CONCLUSION After\nhaving examined the facts, the statutory language of the exemption clause and\nthe relevant jurisprudence, the Tribunal concludes that the goods in issue do\nnot come within the meaning of the word \"bridge\" in paragraph 1(h),\nPart XII, Schedule",
+      "output": " that effect. CONCLUSION After\nhaving examined the facts, the statutory language of the<legislation> <fragment>exemption clause</fragment> </legislation>and\nthe relevant jurisprudence, the Tribunal concludes that the goods in issue do\nnot come within the meaning of the word \"bridge\" in paragraph 1(h),\nPart XII, Schedule"
+    },
+    "selected": false,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": " III of the Act. Accordingly,\nthe appeal is dismissed. Sidney\nA. Fraleigh Sidney\nA. Fraleigh\nPresiding\nMember Robert\nJ. Bertrand, Q.C. Robert\nJ. Bertrand, Q.C.\nMember W.\nRoy Hines W. Roy\nHines\nMember [1]. R.S.C. 1970, c. E-13; now\nR.S.C. 1985, c. E-15. 2",
+      "output": " III of the Act. Accordingly,\nthe appeal is dismissed. Sidney\nA. Fraleigh Sidney\nA. Fraleigh\nPresiding\nMember Robert\nJ. Bertrand, Q.C. Robert\nJ. Bertrand, Q.C.\nMember W.\nRoy Hines W. Roy\nHines\nMember [1]. <legislation><citation>R.S.C. 1970, c. E-13</citation>; now\n<citation>R.S.C. 1985, c. E-15</citation></legislation>. 2"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": ". S.C. 1988, c. 56. [3]. [1977] 1 S.C.R. 456. [4]. 2 T.B.R. 106. [5]. Driedger, E. A., Construction\nof Statutes (2nd ed.). [6",
+      "output": ". <legislation><citation>S.C. 1988, c. 56</citation></legislation>. [3]. <decision><citation>[1977] 1 S.C.R. 456</citation></decision>. [4]. <decision><citation>2 T.B.R. 106</citation></decision>. [5]. <secondary sources><authors>Driedger, E. A.</authors>, <title>Construction\nof Statutes</title> (<source>2nd ed.</source>)</secondary sources>. [6"
+    },
+    "selected": true,
+    "notation": 5,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "]. Wilson v. Town of Barnstead\n(1906), 74 N.H. 78. [7]. City of Chicago v.\nPittsburgh, Ft. W. &amp; C. R. Co., (1910) 93 N.E. 307, 308. [8]. Proprietors of Passaic &amp;\nHackensack River Bridges v. Hoboken Land Imp. Co., (1860) 13 N.J.Eq.\n(2 Beasl.) 503, 511. [9",
+      "output": "]. <decision><title>Wilson v. Town of Barnstead\n(1906)</title>, <citation>74 N.H. 78</citation></decision>. [7]. <decision><title>City of Chicago v.\nPittsburgh, Ft. W. &amp; C. R. Co., (1910)</title><citation> 93 N.E. 307</citation>, <fragment>308</fragment></decision>. [8]. <decision><title>Proprietors of Passaic &amp;\nHackensack River Bridges v. Hoboken Land Imp. Co.</title>, <citation>(1860) 13 N.J.Eq.\n(2 Beasl.) 503</citation>, <fragment>511</fragment></decision>. [9"
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  },
+  {
+    "example": {
+      "input": "]. 5 C.E.R. 562. [10]. Ibid, at p. 460. [11]. [1970] Ex. C.R. 828. [12]. Ibid. at p. 838. [13]. Ibid., at p. 5. ",
+      "output": "]. <decision><citation>5 C.E.R. 562</citation></decision>. [10]. <decision>Ibid, at <fragment>p. 460</fragment></decision>. [11]. <decision><citation>[1970] Ex. C.R. 828</citation></decision>. [12]. <decision>Ibid. at <fragment>p. 838</fragment></decision>. [13]. <decision>Ibid., at <fragment>p. 5</fragment></decision>. "
+    },
+    "selected": true,
+    "notation": 0,
+    "comments": ""
+  }
+]

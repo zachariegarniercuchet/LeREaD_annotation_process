@@ -1,4 +1,4 @@
-from .prompts.sublabel_definitions import SUBLABEL_DEFINITIONS
+from .prompts.sublabel_definitions import SUBLABEL_DEFINITIONS_V1, SUBLABEL_DEFINITIONS_V2
 from .prompts.guidelines import ANNOTATION_GUIDELINES   
 
 
@@ -90,17 +90,17 @@ def get_prompt_processing(prompt_path,few_shot_examples=None):
 
 
 
-def build_sublabel_definitions(keep_labels):
-    missing = [lbl for lbl in keep_labels if lbl not in SUBLABEL_DEFINITIONS]
+def build_sublabel_definitions(keep_labels, sublabel_definitions=SUBLABEL_DEFINITIONS_V1):
+    missing = [lbl for lbl in keep_labels if lbl not in sublabel_definitions]
     if missing:
         raise ValueError(f"Unknown sublabels: {missing}")
 
     return "\n".join(
-        f"- {SUBLABEL_DEFINITIONS[label]}"
+        f"- {sublabel_definitions[label]}"
         for label in keep_labels
     )
 
-def get_prompt_sublabel_extraction(prompt_path, keep_labels, few_shot_examples=None):
+def get_prompt_sublabel_extraction(prompt_path, keep_labels, few_shot_examples=None, sublabel_definitions=SUBLABEL_DEFINITIONS_V1):
     """
     Generate dynamic prompt for sublabel extraction using a TXT template.
 
@@ -116,7 +116,7 @@ def get_prompt_sublabel_extraction(prompt_path, keep_labels, few_shot_examples=N
 
     # --- Build dynamic fields ---
     sublabels_str = ", ".join(keep_labels)
-    sublabels_definition = build_sublabel_definitions(keep_labels)
+    sublabels_definition = build_sublabel_definitions(keep_labels, sublabel_definitions=sublabel_definitions)
 
     # --- Fill template ---
     system_prompt = template.format(

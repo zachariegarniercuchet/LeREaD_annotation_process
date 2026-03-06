@@ -210,15 +210,33 @@ def add_verified_attribute(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     
     for label in soup.find_all('manual_label'):
-        label.attrs['verified'] = 'False'
+        label.attrs['verified'] = 'false'
 
     for label in soup.find_all('auto_label'):
-        label.attrs['verified'] = 'False'
+        label.attrs['verified'] = 'false'
     
     return str(soup)
 
 if __name__ == "__main__":
-    import os
+    filename = "1989CanLII1415CITT_annotated_GL.html"
+
+    input_file = rf"data\Documents_Annotés\GL\{filename}"
+    output_file = rf"data\Documents_Annotés\GL\{filename}_v1.html"
+    
+    # Read the HTML file
+    with open(input_file, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+            
+        
+    cleaned_html = add_verified_attribute(html_content)
+            
+    # Save the result
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(cleaned_html)
+            
+    print(f"Cleaned HTML saved to: {output_file}")
+
+    raise "Stop"
     
     # File paths
     annotated_dict = {

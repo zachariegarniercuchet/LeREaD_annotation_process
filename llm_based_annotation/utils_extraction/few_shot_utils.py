@@ -1,8 +1,8 @@
-from utils_extraction.html_cleaner import clean_tokens
-from utils_extraction.tokenizer_utils import decode
-from utils_extraction.htmlLabel import HTMLLabel, from_simplified
-from utils_extraction.html_utils import is_manual_label_tag, is_auto_label_tag
-from utils_extraction.tokenizer_utils import tokenize
+from .html_cleaner import clean_tokens
+from .tokenizer_utils import decode
+from .htmlLabel import HTMLLabel, from_simplified
+from .html_utils import is_manual_label_tag, is_auto_label_tag
+from .tokenizer_utils import tokenize
 import random
 
 def prepare_label_tokens(chunk, label_config):

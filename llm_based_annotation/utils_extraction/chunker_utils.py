@@ -114,11 +114,23 @@ def _chunk_token_list(tokens: list, min_tokens: int) -> list:
 
 
 
-def flatten_token_chunks(token_chunks: list[list[str]]) -> list[str]:
+def flatten_token_chunks(token_chunks: list[list[str]], separator: str = None) -> list[str]:
     """
     Flatten a list of token chunks (list of lists) back into a single token list.
     Preserves token order exactly.
+    
+    Args:
+        token_chunks: List of token chunks to flatten
+        separator: Optional separator token to insert between chunks (e.g., '<sep>')
     """
-    flat = list(itertools.chain.from_iterable(token_chunks))
+    if separator:
+        flat = []
+        for i, chunk in enumerate(token_chunks):
+            flat.extend(chunk)
+            if i < len(token_chunks) - 1:  # Don't add separator after last chunk
+                flat.append(separator)
+    else:
+        flat = list(itertools.chain.from_iterable(token_chunks))
+    
     print(f"   ✓ Flattened {len(token_chunks)} chunks into {len(flat)} tokens")
     return flat

@@ -1,8 +1,8 @@
 import re
-from utils_extraction.html_utils import is_auto_label_tag, is_manual_label_tag, is_tag_token, strip_auto_labels
-from utils_extraction.tokenizer_utils import tokenize
-from utils_extraction.htmlLabel import from_simplified
-from utils_extraction.html_utils import clean_html_formatting, is_opening_tag, get_tag_name, is_closing_tag, is_fmt_tag
+from .html_utils import is_auto_label_tag, is_manual_label_tag, is_tag_token, strip_auto_labels
+from .tokenizer_utils import tokenize
+from .htmlLabel import from_simplified
+from .html_utils import clean_html_formatting, is_opening_tag, get_tag_name, is_closing_tag, is_fmt_tag
 
 
 def extract_start_end_tokens(tokens: list) -> list:

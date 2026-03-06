@@ -3,8 +3,8 @@ Verification utilities for validating LLM-generated annotated text.
 These functions check the validity of processed chunks without modifying them.
 """
 
-from utils_extraction.html_utils import is_auto_label_tag
-from utils_extraction.htmlLabel import HTMLLabel
+from .html_utils import is_auto_label_tag
+from .htmlLabel import HTMLLabel
 
 import json
 from typing import Dict, List, Tuple, Optional
@@ -21,7 +21,7 @@ LABEL_SCHEME = {
         "attributes": ["docid", "uri"],  
         "required": False
     },
-    "secondary sources": {  # SECONDARY_SRC in HTML
+    "secondary sources": {
         "attributes": ["docid", "uri"],
         "required": False
     },

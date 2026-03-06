@@ -6,8 +6,8 @@ import re
 import json
 import os
 from typing import Optional, Set
-from utils_extraction.htmlLabel import from_simplified
-from utils_extraction.tokenizer_utils import tokenize
+from .htmlLabel import from_simplified
+from .tokenizer_utils import tokenize
 
 def load_label_scheme_names(scheme_path: Optional[str] = None) -> Set[str]:
     """
@@ -155,7 +155,7 @@ def simplified_to_normal_form(tokens: list, label_type: str = 'auto_label',
     return normalized_tokens
 
 
-def apply_post_processing_transforms(raw_output: str, use_simplified: bool = False, label_type: str = 'auto_label') -> list:
+def apply_post_processing_transforms(raw_output: str, use_simplified: bool = False, label_type: str = 'auto_label', cot: bool = False) -> list:
     """
     Apply all post-processing transformations to raw LLM output.
     
@@ -168,7 +168,7 @@ def apply_post_processing_transforms(raw_output: str, use_simplified: bool = Fal
         raw_output: Raw text output from LLM
         use_simplified: Whether the LLM output uses simplified format
         label_type: Target label type ('auto_label' or 'manual_label')
-    
+        cot: Whether the LLM output includes chain-of-thought reasoning
     Returns:
         List of processed tokens ready for verification
     """
@@ -177,11 +177,12 @@ def apply_post_processing_transforms(raw_output: str, use_simplified: bool = Fal
     #print(f"   → Step 1: Tokenized into {len(tokens)} tokens")
     
     # Step 2: Extract between <start> and <end>
-    try:
-        tokens = extract_start_end_tokens(tokens)
-        #print(f"   → Step 2: Extracted {len(tokens)} tokens between markers")
-    except ValueError as e:
-        print(f"   ⚠ Warning: {str(e)}")
+    if cot:
+        try:
+            tokens = extract_start_end_tokens(tokens)
+            #print(f"   → Step 2: Extracted {len(tokens)} tokens between markers")
+        except ValueError as e:
+            print(f"   ⚠ Warning: {str(e)}")
     
     # Step 3: Convert simplified to normal form if needed
     if use_simplified:

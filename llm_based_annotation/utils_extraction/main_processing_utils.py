@@ -3,11 +3,12 @@ import json
 from tqdm import tqdm
 from typing import List, Tuple, Optional
 
-from utils_extraction import decode, apply_post_processing_transforms
-from utils_extraction.prompt_utils import get_prompt_processing, get_prompt_sublabel_extraction
-from utils_extraction.levenshtein_utils import distance_lists_auto_label, apply_operations_safe
-from utils_extraction.few_shot_utils import prepare_label_tokens, get_list_of_mention
-from utils_extraction.verification_utils import verify_processed_chunk
+from .tokenizer_utils import decode
+from .chunck_level_post_processing import apply_post_processing_transforms
+from .prompt_utils import get_prompt_processing, get_prompt_sublabel_extraction
+from .levenshtein_utils import distance_lists_auto_label, apply_operations_safe
+from .few_shot_utils import prepare_label_tokens, get_list_of_mention
+from .verification_utils import verify_processed_chunk
 
 
 class ProcessingHistory:
@@ -65,6 +66,7 @@ def process_single_chunk(
     user_prompt_template: str,
     label_config: dict,
     allowed_labels: Optional[List[str]] = None,
+    cot: bool = False,
 ) -> Tuple[list, str, str]:
     """
     Process a single chunk with post-processing, verification, and fallback.
@@ -82,6 +84,7 @@ def process_single_chunk(
         user_prompt_template: User prompt template with {text} placeholder
         label_config: Configuration for label transformations
         allowed_labels: List of allowed label names for scheme validation
+        cot: Whether to use chain-of-thought prompting
         max_fallback_attempts: Maximum number of fallback attempts per error type
     
     Returns:
@@ -115,7 +118,8 @@ def process_single_chunk(
         processed_tokens = apply_post_processing_transforms(
             raw_output=raw_output,
             use_simplified=label_config.get("use_simplified", False),
-            label_type='auto_label'
+            label_type='auto_label',
+            cot=cot
         )
     except Exception as e:
         return chunk, "Post-processing Error", f"Failed to post-process: {str(e)}"
@@ -135,7 +139,7 @@ def process_single_chunk(
         processed_tokens=processed_tokens_corrected,
         allowed_labels=allowed_labels,
         check_scheme=True
-    )
+        )
     
     if verification.passed:
         return processed_tokens_corrected, "Success", None
@@ -171,6 +175,7 @@ def process_chunks(
     allowed_labels: Optional[List[str]] = None,
     output_dir: Optional[str] = None,
     filename: Optional[str] = None,
+    cot: bool = False,
 ) -> list:
     """
     Process multiple chunks using AI model with verification and fallback.
@@ -221,6 +226,7 @@ def process_chunks(
             user_prompt_template=user_prompt_template,
             label_config=label_config,
             allowed_labels=allowed_labels,
+            cot=cot
         )
     
         processed_chunks.append(processed_tokens)
@@ -418,6 +424,7 @@ def process_labels(
     sublabel_config: dict,
     few_shot_examples: list = None,
     prompt_path: str = None,
+    sublabel_definitions=None,
     output_dir: str = None,
     filename: str = None,
 ):
@@ -447,7 +454,8 @@ def process_labels(
     system_prompt, user_prompt_template = get_prompt_sublabel_extraction(
         prompt_path=prompt_path,
         keep_labels=sublabel_config["new_labels"],
-        few_shot_examples=few_shot_examples
+        few_shot_examples=few_shot_examples,
+        sublabel_definitions=sublabel_definitions
     )
     
     # ------ 2. GET LIST OF AUTO_LABEL MENTIONS TO PROCESS ------

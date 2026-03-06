@@ -369,11 +369,11 @@ def calculate_attribute_iaa(spans1: List[Span], spans2: List[Span],
             else:
                 category = 'other'
         
-        # Get attributes excluding style parent, labelname
+        # Get attributes excluding style parent, labelname, verified
         attrs1 = {k: v for k, v in s1.attributes.items() 
-                 if k not in ['style', 'parent', 'labelname']}
+                 if k not in ['style', 'parent', 'labelname', 'verified']}
         attrs2 = {k: v for k, v in s2.attributes.items() 
-                 if k not in ['style', 'parent', 'labelname']}
+                 if k not in ['style', 'parent', 'labelname', 'verified']}
         
         # Get all unique attribute keys
         all_keys = set(attrs1.keys()) | set(attrs2.keys())
@@ -637,13 +637,12 @@ if __name__ == "__main__":
 
     # File paths
     project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
-    filename = "2021QCCA1675"
+    filename = '1997CanLII16226_ONCA' #"1989CanLII1415ONCA" #"2021QCCA1675" #"1997CanLII16226_ONCA"
     round = "ronde_2"
     anno = "llm"
-    version = "v1.0"
-    file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_v1.html"
+    file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_tech.html"
 
-    file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_100_30_gpt5.2\{filename}_llm_v1.3.html"
+    file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_selected_30_gpt5.2_chunk2_subdef2\{filename}_llm_v1.0.htmL"
     
     # Choose evaluation level
     # "level1" = Span matching (context-based)
