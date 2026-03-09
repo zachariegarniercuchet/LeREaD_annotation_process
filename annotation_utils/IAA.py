@@ -12,6 +12,9 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from typing import Dict, List, Tuple
 import os
+from pathlib import Path
+import re
+from datetime import datetime
 
 
 class Span:
@@ -624,72 +627,467 @@ def evaluate_iaa(file1: str, file2: str, match_type: str = 'context', context_ch
     return overall, per_label
 
 
+def longest_common_substring(s1: str, s2: str) -> str:
+    """
+    Find the longest common substring between two strings.
+    Used for matching filenames.
+    """
+    m = [[0] * (1 + len(s2)) for _ in range(1 + len(s1))]
+    longest, x_longest = 0, 0
+    for x in range(1, 1 + len(s1)):
+        for y in range(1, 1 + len(s2)):
+            if s1[x - 1] == s2[y - 1]:
+                m[x][y] = m[x - 1][y - 1] + 1
+                if m[x][y] > longest:
+                    longest = m[x][y]
+                    x_longest = x
+            else:
+                m[x][y] = 0
+    return s1[x_longest - longest: x_longest]
+
+
+def find_matching_llm_file(human_file: str, llm_folder: str) -> str:
+    """
+    Find the best matching LLM file for a given human annotated file.
+    Uses longest common substring matching on filenames.
+    
+    Args:
+        human_file: Path to human annotated HTML file
+        llm_folder: Path to folder containing LLM annotated files
+        
+    Returns:
+        Path to best matching LLM file, or None if no good match found
+    """
+    human_basename = Path(human_file).stem.lower()
+    
+    best_match = None
+    best_match_length = 0
+    
+    # Search recursively in llm_folder for HTML files
+    llm_path = Path(llm_folder)
+    if not llm_path.exists():
+        return None
+    
+    for llm_file in llm_path.rglob("*.html"):
+        llm_basename = llm_file.stem.lower()
+        
+        # Find longest common substring
+        common = longest_common_substring(human_basename, llm_basename)
+        
+        if len(common) > best_match_length:
+            best_match_length = len(common)
+            best_match = str(llm_file)
+    
+    # Only return match if it's substantial (at least 10 characters)
+    if best_match_length >= 10:
+        return best_match
+    return None
+
+
+def batch_evaluate_folder(human_folder: str, llm_folder: str, 
+                          evaluation_level: str = "both", 
+                          match_type: str = "context",
+                          context_chars: int = 200):
+    """
+    Perform batch evaluation of all files in a folder, comparing human annotations with LLM annotations.
+    
+    Args:
+        human_folder: Path to folder containing human annotated files
+        llm_folder: Path to folder containing LLM annotated files
+        evaluation_level: "level1", "level2", or "both"
+        match_type: "context" or "context_overlap"
+        context_chars: Context characters for matching
+    """
+    # Create output folder for results
+    output_folder = Path(llm_folder)
+    output_file = output_folder / "evaluation_results.txt"
+    
+    # Get all human annotated HTML files
+    human_path = Path(human_folder)
+    human_files = sorted(list(human_path.glob("*.html")))
+    
+    if not human_files:
+        print(f"❌ No HTML files found in {human_folder}")
+        return
+    
+    print("\n" + "╔" + "═" * 98 + "╗")
+    print("║" + " " * 30 + "BATCH EVALUATION MODE" + " " * 47 + "║")
+    print("╚" + "═" * 98 + "╝")
+    print(f"\n📁 Human Annotations: {human_folder}")
+    print(f"📁 LLM Annotations:   {llm_folder}")
+    print(f"📄 Output Log:        {output_file}")
+    print(f"\n🔍 Found {len(human_files)} human annotated files")
+    
+    # Open log file
+    with open(output_file, 'w', encoding='utf-8') as log:
+        log.write("=" * 100 + "\n")
+        log.write(f"BATCH EVALUATION RESULTS - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        log.write("=" * 100 + "\n")
+        log.write(f"Human Annotations Folder: {human_folder}\n")
+        log.write(f"LLM Annotations Folder:   {llm_folder}\n")
+        log.write(f"Evaluation Level:         {evaluation_level}\n")
+        log.write(f"Match Type:               {match_type}\n")
+        log.write(f"Context Characters:       {context_chars}\n")
+        log.write("=" * 100 + "\n\n")
+        
+        # Store results for summary
+        all_results = []
+        
+        # Process each human file
+        for i, human_file in enumerate(human_files, 1):
+            human_file_str = str(human_file)
+            human_basename = human_file.name
+            
+            print(f"\n{'─' * 100}")
+            print(f"[{i}/{len(human_files)}] Processing: {human_basename}")
+            print(f"{'─' * 100}")
+            
+            log.write(f"\n{'=' * 100}\n")
+            log.write(f"FILE {i}/{len(human_files)}: {human_basename}\n")
+            log.write(f"{'=' * 100}\n")
+            
+            # Find matching LLM file
+            llm_file = find_matching_llm_file(human_file_str, llm_folder)
+            
+            if not llm_file:
+                msg = f"❌ No matching LLM file found for {human_basename}"
+                print(msg)
+                log.write(msg + "\n")
+                continue
+            
+            llm_basename = Path(llm_file).name
+            print(f"✓ Matched with: {llm_basename}")
+            log.write(f"Matched LLM file: {llm_file}\n\n")
+            
+            try:
+                # Extract spans
+                spans1 = extract_spans_from_html(human_file_str, context_chars)
+                spans2 = extract_spans_from_html(llm_file, context_chars)
+                
+                print(f"  Human spans: {len(spans1)}, LLM spans: {len(spans2)}")
+                log.write(f"Human spans: {len(spans1)}, LLM spans: {len(spans2)}\n\n")
+                
+                # Evaluate based on level
+                result = {
+                    'human_file': human_basename,
+                    'llm_file': llm_basename,
+                    'human_spans': len(spans1),
+                    'llm_spans': len(spans2)
+                }
+                
+                # Level 1: Span matching
+                if evaluation_level in ["level1", "both"]:
+                    overall_l1 = calculate_iaa_metrics(spans1, spans2, match_type)
+                    per_label_l1 = calculate_per_label_iaa(spans1, spans2, match_type)
+                    
+                    result['l1_precision'] = overall_l1['precision']
+                    result['l1_recall'] = overall_l1['recall']
+                    result['l1_f1'] = overall_l1['f1']
+                    result['per_label_l1'] = per_label_l1  # Store per-label results
+                    
+                    log.write("LEVEL 1: SPAN MATCHING\n")
+                    log.write(f"  Precision: {overall_l1['precision']*100:.2f}%\n")
+                    log.write(f"  Recall:    {overall_l1['recall']*100:.2f}%\n")
+                    log.write(f"  F1 Score:  {overall_l1['f1']*100:.2f}%\n\n")
+                    
+                    # Add per-label breakdown table
+                    log.write("─" * 80 + "\n")
+                    log.write("📋 PER-LABEL BREAKDOWN\n")
+                    log.write("─" * 80 + "\n\n")
+                    log.write(f"{'Label':<30} {'A1':>6} {'A2':>6} {'Match':>8} {'F1 Score':>10}\n")
+                    log.write("─" * 80 + "\n")
+                    
+                    for label in sorted(per_label_l1.keys()):
+                        metrics = per_label_l1[label]
+                        if match_type == 'context':
+                            match_str = f"{metrics['matched']}"
+                        else:
+                            match_str = f"{metrics['matched_annotator1']}/{metrics['matched_annotator2']}"
+                        
+                        display_label = label if len(label) <= 30 else label[:27] + "..."
+                        log.write(f"{display_label:<30} {metrics['annotator1_count']:>6} {metrics['annotator2_count']:>6} "
+                                 f"{match_str:>8} {metrics['f1']*100:>9.2f}%\n")
+                    
+                    log.write("\n")
+                    print(f"  L1 F1: {overall_l1['f1']*100:.2f}%", end="")
+                
+                # Level 2: Attribute matching
+                if evaluation_level in ["level2", "both"]:
+                    overall_l2, per_label_l2, _, _ = calculate_attribute_iaa(spans1, spans2, match_type)
+                    result['l2_agreement'] = overall_l2['agreement']
+                    result['l2_f1'] = overall_l2['f1']
+                    result['l2_matched_spans'] = overall_l2['total_matched_spans']
+                    result['per_label_l2'] = per_label_l2  # Store per-label results
+                    
+                    log.write("LEVEL 2: ATTRIBUTE MATCHING\n")
+                    log.write(f"  Matched Spans:     {overall_l2['total_matched_spans']}\n")
+                    log.write(f"  Total Attributes:  {overall_l2['total_attributes']}\n")
+                    log.write(f"  Matching Attrs:    {overall_l2['matching_attributes']}\n")
+                    log.write(f"  Agreement:         {overall_l2['agreement']*100:.2f}%\n")
+                    log.write(f"  F1 Score:          {overall_l2['f1']*100:.2f}%\n")
+                    
+                    if evaluation_level == "both":
+                        print(f", L2 F1: {overall_l2['f1']*100:.2f}%")
+                    else:
+                        print(f"  L2 F1: {overall_l2['f1']*100:.2f}%")
+                
+                if evaluation_level == "level1":
+                    print()  # Newline
+                
+                all_results.append(result)
+                log.write("\n")
+                
+            except Exception as e:
+                error_msg = f"❌ Error processing {human_basename}: {str(e)}"
+                print(error_msg)
+                log.write(error_msg + "\n\n")
+                continue
+        
+        # Generate summary table
+        if all_results:
+            print("\n\n" + "╔" + "═" * 98 + "╗")
+            print("║" + " " * 40 + "SUMMARY TABLE" + " " * 45 + "║")
+            print("╚" + "═" * 98 + "╝\n")
+            
+            log.write("\n" + "=" * 100 + "\n")
+            log.write("SUMMARY TABLE\n")
+            log.write("=" * 100 + "\n\n")
+            
+            # Table header
+            if evaluation_level == "both":
+                header = f"{'File':<40} {'Human':>8} {'LLM':>8} {'L1 F1':>10} {'L2 F1':>10}"
+                print(header)
+                print("─" * 100)
+                log.write(header + "\n")
+                log.write("─" * 100 + "\n")
+                
+                for result in all_results:
+                    row = f"{result['human_file'][:40]:<40} {result['human_spans']:>8} {result['llm_spans']:>8} {result.get('l1_f1', 0)*100:>9.2f}% {result.get('l2_f1', 0)*100:>9.2f}%"
+                    print(row)
+                    log.write(row + "\n")
+                
+                # Calculate means
+                mean_l1_f1 = sum(r.get('l1_f1', 0) for r in all_results) / len(all_results)
+                mean_l2_f1 = sum(r.get('l2_f1', 0) for r in all_results) / len(all_results)
+                
+                print("─" * 100)
+                mean_row = f"{'MEAN':<40} {'':>8} {'':>8} {mean_l1_f1*100:>9.2f}% {mean_l2_f1*100:>9.2f}%"
+                print(mean_row)
+                
+                log.write("─" * 100 + "\n")
+                log.write(mean_row + "\n")
+                
+            elif evaluation_level == "level1":
+                header = f"{'File':<50} {'Human':>8} {'LLM':>8} {'Precision':>12} {'Recall':>12} {'F1':>10}"
+                print(header)
+                print("─" * 100)
+                log.write(header + "\n")
+                log.write("─" * 100 + "\n")
+                
+                for result in all_results:
+                    row = f"{result['human_file'][:50]:<50} {result['human_spans']:>8} {result['llm_spans']:>8} {result.get('l1_precision', 0)*100:>11.2f}% {result.get('l1_recall', 0)*100:>11.2f}% {result.get('l1_f1', 0)*100:>9.2f}%"
+                    print(row)
+                    log.write(row + "\n")
+                
+                # Calculate means
+                mean_precision = sum(r.get('l1_precision', 0) for r in all_results) / len(all_results)
+                mean_recall = sum(r.get('l1_recall', 0) for r in all_results) / len(all_results)
+                mean_f1 = sum(r.get('l1_f1', 0) for r in all_results) / len(all_results)
+                
+                print("─" * 100)
+                mean_row = f"{'MEAN':<50} {'':>8} {'':>8} {mean_precision*100:>11.2f}% {mean_recall*100:>11.2f}% {mean_f1*100:>9.2f}%"
+                print(mean_row)
+                
+                log.write("─" * 100 + "\n")
+                log.write(mean_row + "\n")
+                
+            else:  # level2
+                header = f"{'File':<50} {'Matched':>10} {'Agreement':>12} {'F1':>10}"
+                print(header)
+                print("─" * 100)
+                log.write(header + "\n")
+                log.write("─" * 100 + "\n")
+                
+                for result in all_results:
+                    row = f"{result['human_file'][:50]:<50} {result.get('l2_matched_spans', 0):>10} {result.get('l2_agreement', 0)*100:>11.2f}% {result.get('l2_f1', 0)*100:>9.2f}%"
+                    print(row)
+                    log.write(row + "\n")
+                
+                # Calculate means
+                mean_agreement = sum(r.get('l2_agreement', 0) for r in all_results) / len(all_results)
+                mean_f1 = sum(r.get('l2_f1', 0) for r in all_results) / len(all_results)
+                
+                print("─" * 100)
+                mean_row = f"{'MEAN':<50} {'':>10} {mean_agreement*100:>11.2f}% {mean_f1*100:>9.2f}%"
+                print(mean_row)
+                
+                log.write("─" * 100 + "\n")
+                log.write(mean_row + "\n")
+            
+            # Add mean per-label breakdown for Level 1
+            if evaluation_level in ["level1", "both"]:
+                # Collect all unique labels
+                all_labels = set()
+                for result in all_results:
+                    if 'per_label_l1' in result:
+                        all_labels.update(result['per_label_l1'].keys())
+                
+                if all_labels:
+                    print("\n" + "─" * 100)
+                    print("📊 MEAN PER-LABEL BREAKDOWN (LEVEL 1)")
+                    print("─" * 100)
+                    
+                    log.write("\n" + "=" * 100 + "\n")
+                    log.write("MEAN PER-LABEL BREAKDOWN (LEVEL 1)\n")
+                    log.write("=" * 100 + "\n\n")
+                    
+                    # Calculate mean for each label
+                    label_stats = {}
+                    for label in sorted(all_labels):
+                        total_a1 = 0
+                        total_a2 = 0
+                        total_matched = 0
+                        total_f1 = 0
+                        count = 0
+                        
+                        for result in all_results:
+                            if 'per_label_l1' in result and label in result['per_label_l1']:
+                                metrics = result['per_label_l1'][label]
+                                total_a1 += metrics['annotator1_count']
+                                total_a2 += metrics['annotator2_count']
+                                if match_type == 'context':
+                                    total_matched += metrics['matched']
+                                else:
+                                    total_matched += metrics['matched_annotator1']
+                                total_f1 += metrics['f1']
+                                count += 1
+                        
+                        if count > 0:
+                            label_stats[label] = {
+                                'a1': total_a1,
+                                'a2': total_a2,
+                                'matched': total_matched,
+                                'mean_f1': total_f1 / count,
+                                'count': count
+                            }
+                    
+                    # Print table
+                    header = f"{'Label':<30} {'Total A1':>10} {'Total A2':>10} {'Matched':>10} {'Mean F1':>12}"
+                    print(header)
+                    print("─" * 100)
+                    log.write(header + "\n")
+                    log.write("─" * 100 + "\n")
+                    
+                    for label in sorted(label_stats.keys()):
+                        stats = label_stats[label]
+                        display_label = label if len(label) <= 30 else label[:27] + "..."
+                        row = f"{display_label:<30} {stats['a1']:>10} {stats['a2']:>10} {stats['matched']:>10} {stats['mean_f1']*100:>11.2f}%"
+                        print(row)
+                        log.write(row + "\n")
+                    
+                    print("─" * 100)
+                    log.write("─" * 100 + "\n")
+            
+            print("\n" + "═" * 100)
+            print(f"✓ Results saved to: {output_file}")
+            print("═" * 100 + "\n")
+            
+            log.write("\n" + "=" * 100 + "\n")
+            log.write(f"Evaluation completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            log.write("=" * 100 + "\n")
+
+
 if __name__ == "__main__":
-    # Configuration
-    #anno1 = "EG"  # Options: "GL", "EG", "VP"
-    #anno2 = "VP"  # Options: "GL", "EG", "VP"
-    #file_name = f"2019SCC65_annotated" #"2016QCCS1184_annotated" #"1999CanLII7320_annotated" #"2001BCSC1342_annotated" 2019SCC65_annotated
-    #file1 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno1}\{file_name}_{anno1}_v1.html"
-    #file2 = rf"C:\Users\zakga\OneDrive\Documents\code\labelstudio\annotation\data\Documents_Annotés\{anno2}\{file_name}_{anno2}_v1.html"
+    # ============================================================================
+    # CONFIGURATION: Choose evaluation mode
+    # ============================================================================
+    
+    # MODE SELECTION
+    # "single" = Evaluate a single pair of files
+    # "batch"  = Evaluate all files in folders (human vs LLM)
+    MODE = "batch"  # Options: "single", "batch"
+    
+    # ============================================================================
+    # BATCH MODE CONFIGURATION
+    # ============================================================================
+    if MODE == "batch":
+        # Folder paths
+        project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
+        human_folder = fr"{project_root}\data\final\Annotated"
+        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-0_mgpt-5.2"
+        
+        # Evaluation settings
+        evaluation_level = "both"  # Options: "level1", "level2", "both"
+        match_type = "context"     # Options: "context", "context_overlap"
+        context_chars = 200
+        
+        # Run batch evaluation
+        batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars)
+    
+    # ============================================================================
+    # SINGLE MODE CONFIGURATION
+    # ============================================================================
+    elif MODE == "single":
+        # Configuration
+        anno1 = "EG"  # Options: "GL", "EG", "VP"
+        anno2 = "llm"  # Options: "GL", "EG", "VP", "llm"
 
-    anno1 = "EG"  # Options: "GL", "EG", "VP"
-    anno2 = "llm"  # Options: "GL", "EG", "VP"
-
-    # File paths
-    project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
-    filename = '1997CanLII16226_ONCA' #"1989CanLII1415ONCA" #"2021QCCA1675" #"1997CanLII16226_ONCA"
-    round = "ronde_2"
-    anno = "llm"
-    file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_tech.html"
-
-    file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_selected_30_gpt5.2_chunk2_subdef2\{filename}_llm_v1.0.htmL"
-    
-    # Choose evaluation level
-    # "level1" = Span matching (context-based)
-    # "level2" = Attribute matching (for matched spans)
-    # "both" = Both levels
-    evaluation_level = "both"  # Options: "level1", "level2", "both"
-    
-    # Choose matching type for Level 1
-    # "context" = Strict (exact context match, RECOMMENDED)
-    # "context_overlap" = Lenient (70% context similarity)
-    match_type = "context"  # Options: "context", "context_overlap"
-    
-    # Extract spans
-    print("\n" + "═" * 80)
-    print("🔄 EXTRACTING ANNOTATIONS...")
-    print("═" * 80)
-    spans1 = extract_spans_from_html(file1, context_chars=200)
-    spans2 = extract_spans_from_html(file2, context_chars=200)
-    print(f"\n✓ Annotator 1 ({anno1}): {len(spans1)} spans")
-    print(f"✓ Annotator 2 ({anno2}): {len(spans2)} spans")
-    
-    # LEVEL 1: SPAN MATCHING
-    if evaluation_level in ["level1", "both"]:
-        print("\n\n" + "🎯 " + "=" * 76)
-        print(f"LEVEL 1: SPAN MATCHING ({match_type.upper()})")
-        print("=" * 78)
+        # File paths
+        project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
+        filename = '1997CanLII16226_ONCA' #"1989CanLII1415ONCA" #"2021QCCA1675" #"1997CanLII16226_ONCA"
         
-        overall_l1 = calculate_iaa_metrics(spans1, spans2, match_type)
-        per_label_l1 = calculate_per_label_iaa(spans1, spans2, match_type)
+        file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_tech.html"
+        file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_selected_30_gpt5.2_chunk2_subdef2\{filename}_llm_v1.0.htmL"
         
-        print_iaa_results(overall_l1, per_label_l1, match_type, file1, file2, 200)
+        # Choose evaluation level
+        # "level1" = Span matching (context-based)
+        # "level2" = Attribute matching (for matched spans)
+        # "both" = Both levels
+        evaluation_level = "both"  # Options: "level1", "level2", "both"
+        
+        # Choose matching type for Level 1
+        # "context" = Strict (exact context match, RECOMMENDED)
+        # "context_overlap" = Lenient (70% context similarity)
+        match_type = "context"  # Options: "context", "context_overlap"
+        
+        # Extract spans
+        print("\n" + "═" * 80)
+        print("🔄 EXTRACTING ANNOTATIONS...")
+        print("═" * 80)
+        spans1 = extract_spans_from_html(file1, context_chars=200)
+        spans2 = extract_spans_from_html(file2, context_chars=200)
+        print(f"\n✓ Annotator 1 ({anno1}): {len(spans1)} spans")
+        print(f"✓ Annotator 2 ({anno2}): {len(spans2)} spans")
+        
+        # LEVEL 1: SPAN MATCHING
+        if evaluation_level in ["level1", "both"]:
+            print("\n\n" + "🎯 " + "=" * 76)
+            print(f"LEVEL 1: SPAN MATCHING ({match_type.upper()})")
+            print("=" * 78)
+            
+            overall_l1 = calculate_iaa_metrics(spans1, spans2, match_type)
+            per_label_l1 = calculate_per_label_iaa(spans1, spans2, match_type)
+            
+            print_iaa_results(overall_l1, per_label_l1, match_type, file1, file2, 200)
+        
+        # LEVEL 2: ATTRIBUTE MATCHING
+        if evaluation_level in ["level2", "both"]:
+            print("\n\n" + "🎯 " + "=" * 76)
+            print(f"LEVEL 2: ATTRIBUTE MATCHING (for Level 1 matches)")
+            print("=" * 78)
+            
+            overall_l2, per_label_l2, overall_attrs_l2, category_attrs_l2 = calculate_attribute_iaa(spans1, spans2, match_type)
+            
+            print_attribute_iaa_results(overall_l2, per_label_l2, overall_attrs_l2, category_attrs_l2, match_type, file1, file2)
+        
+        # Summary
+        if evaluation_level == "both":
+            print("\n" + "╔" + "═" * 78 + "╗")
+            print("║" + " " * 30 + "SUMMARY" + " " * 41 + "║")
+            print("╚" + "═" * 78 + "╝")
+            print(f"\n  Level 1 (Span Matching):       F1 = {overall_l1['f1']*100:>6.2f}%")
+            print(f"  Level 2 (Attribute Agreement): F1 = {overall_l2['f1']*100:>6.2f}%")
+            print("\n" + "═" * 80 + "\n")
     
-    # LEVEL 2: ATTRIBUTE MATCHING
-    if evaluation_level in ["level2", "both"]:
-        print("\n\n" + "🎯 " + "=" * 76)
-        print(f"LEVEL 2: ATTRIBUTE MATCHING (for Level 1 matches)")
-        print("=" * 78)
-        
-        overall_l2, per_label_l2, overall_attrs_l2, category_attrs_l2 = calculate_attribute_iaa(spans1, spans2, match_type)
-        
-        print_attribute_iaa_results(overall_l2, per_label_l2, overall_attrs_l2, category_attrs_l2, match_type, file1, file2)
-    
-    # Summary
-    if evaluation_level == "both":
-        print("\n" + "╔" + "═" * 78 + "╗")
-        print("║" + " " * 30 + "SUMMARY" + " " * 41 + "║")
-        print("╚" + "═" * 78 + "╝")
-        print(f"\n  Level 1 (Span Matching):       F1 = {overall_l1['f1']*100:>6.2f}%")
-        print(f"  Level 2 (Attribute Agreement): F1 = {overall_l2['f1']*100:>6.2f}%")
-        print("\n" + "═" * 80 + "\n")
+    else:
+        print(f"❌ Unknown MODE: {MODE}. Use 'single' or 'batch'")

@@ -270,6 +270,135 @@ def merge_tokens_with_auto_labels(tokens: list[str], processed_tokens: list[str]
     return result
 
 
+def merge_tokens_general(original_tokens: list[str], 
+                        derived_tokens: list[str], 
+                        is_protected_func,
+                        log: bool = False) -> list[str]:
+    """
+    GENERALIZED VERSION: Merge original tokens with derived tokens.
+    
+    Goal: Produce the original text with protected tokens (e.g., <sep>, <auto_label>) 
+    inserted from the derived version.
+    
+    Algorithm:
+    - If tokens are equivalent (same or both whitespace): take original token, advance both indices
+    - If tokens differ:
+      - If derived token is protected: it's an insertion, take it and advance idx2 only
+      - Otherwise: try to merge consecutive original tokens to match derived token
+      - If no merge possible: take original token and advance idx1 only
+    
+    This assumes derived is mostly a superset of original (original + protected tokens).
+    
+    Args:
+        original_tokens: Original token list (without protected tokens)
+        derived_tokens: Derived token list (with protected tokens inserted)
+        is_protected_func: Function that takes a token and returns True if it's protected
+        log: Print debug information
+    
+    Returns:
+        Merged token list with original tokens + protected tokens from derived
+    
+    Example:
+        original = ['Act', ',', 'section', '5']
+        derived = ['Act', '<sep>', ',', 'section', '<sep>', '5']
+        is_protected = lambda t: t == '<sep>'
+        -> ['Act', '<sep>', ',', 'section', '<sep>', '5']
+    """
+    n1 = len(original_tokens)
+    n2 = len(derived_tokens)
+    result = []
+    idx1 = 0
+    idx2 = 0
+    
+    def tokens_equivalent(tok1: str, tok2: str) -> bool:
+        """Check if two tokens are equivalent (exact match or both whitespace)."""
+        if tok1 == tok2:
+            return True
+        # Both are pure whitespace
+        if not tok1.strip() and not tok2.strip():
+            return True
+        return False
+    
+    def try_merge_original_to_match_derived(start_idx: int, target: str) -> int:
+        """
+        Try to merge consecutive original tokens to match the derived token.
+        
+        Example: If original=['générale', '"'] and derived='généraleˮ',
+        this will detect that original[0] + original[1] matches derived.
+        
+        Args:
+            start_idx: Starting index in original_tokens
+            target: The derived token to match
+            
+        Returns:
+            Number of original tokens that combine to match target (0 if no match)
+        """
+        if start_idx >= n1:
+            return 0
+        
+        accumulated = ""
+        # Look ahead up to 10 tokens to find a match
+        for i in range(start_idx, min(start_idx + 10, n1)):
+            accumulated += original_tokens[i]
+            if accumulated == target:
+                return i - start_idx + 1
+        return 0
+    
+    while idx1 < n1 and idx2 < n2:
+        t1 = original_tokens[idx1]
+        t2 = derived_tokens[idx2]
+        
+        if tokens_equivalent(t1, t2):
+            # Tokens match: keep original and advance both
+            result.append(t1)
+            if log:
+                print(f"Match: '{t1}' == '{t2}' -> '{t1}'")
+            idx1 += 1
+            idx2 += 1
+        else:
+            # Tokens differ
+            if is_protected_func(t2):
+                # t2 is a protected token (insertion in derived version)
+                result.append(t2)
+                if log:
+                    print(f"Protected: '{t1}' vs '{t2}' -> '{t2}'")
+                idx2 += 1
+            else:
+                # Neither matches nor is protected
+                # Try to merge original tokens to match derived token
+                merge_count = try_merge_original_to_match_derived(idx1, t2)
+                
+                if merge_count > 0:
+                    # Found a match by merging multiple original tokens
+                    for i in range(merge_count):
+                        result.append(original_tokens[idx1 + i])
+                    if log:
+                        merged_tokens = original_tokens[idx1:idx1+merge_count]
+                        print(f"Merged {merge_count} tokens: {merged_tokens} -> '{t2}'")
+                    idx1 += merge_count
+                    idx2 += 1
+                else:
+                    # No merge possible: keep original token
+                    result.append(t1)
+                    if log:
+                        print(f"Diff: '{t1}' vs '{t2}' -> '{t1}'")
+                    idx1 += 1
+    
+    # Append remaining tokens from original (if any)
+    if idx1 < n1:
+        result.extend(original_tokens[idx1:])
+    
+    # Append remaining tokens from derived (if any, likely protected tokens)
+    if idx2 < n2:
+        result.extend(derived_tokens[idx2:])
+    
+    if log:
+        print(f"   ✓ Merged {n1} original + {n2} derived → {len(result)} tokens")
+        print(f"   ✓ Added {len(result) - n1} protected tokens")
+    
+    return result
+
+
 
 
 def add_attributes_to_auto_labels(html_content: str, label_scheme_path: str = None) -> str:
