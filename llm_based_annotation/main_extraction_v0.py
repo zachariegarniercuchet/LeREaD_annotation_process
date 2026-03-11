@@ -269,7 +269,7 @@ def get_hyperparameters():
     fs_mode = "selected"  # "random" or "selected"
     model_name = "gpt-5.2"
 
-    n_few_shot = 0  # Number of few-shot examples to use
+    n_few_shot = 30  # Number of few-shot examples to use
 
     prompt_version = "2"
     cot = False

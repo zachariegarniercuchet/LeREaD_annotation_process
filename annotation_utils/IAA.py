@@ -646,7 +646,7 @@ def longest_common_substring(s1: str, s2: str) -> str:
     return s1[x_longest - longest: x_longest]
 
 
-def find_matching_llm_file(human_file: str, llm_folder: str) -> str:
+def find_matching_llm_file(human_file: str, llm_folder: str, version: str = "v1.0") -> str:
     """
     Find the best matching LLM file for a given human annotated file.
     Uses longest common substring matching on filenames.
@@ -654,11 +654,13 @@ def find_matching_llm_file(human_file: str, llm_folder: str) -> str:
     Args:
         human_file: Path to human annotated HTML file
         llm_folder: Path to folder containing LLM annotated files
+        version: Version string that the filename must end with (default: "v1.0")
         
     Returns:
         Path to best matching LLM file, or None if no good match found
     """
     human_basename = Path(human_file).stem.lower()
+    version_lower = version.lower()
     
     best_match = None
     best_match_length = 0
@@ -670,6 +672,10 @@ def find_matching_llm_file(human_file: str, llm_folder: str) -> str:
     
     for llm_file in llm_path.rglob("*.html"):
         llm_basename = llm_file.stem.lower()
+        
+        # Only consider files that end with the specified version
+        if not llm_basename.endswith(version_lower):
+            continue
         
         # Find longest common substring
         common = longest_common_substring(human_basename, llm_basename)
@@ -687,7 +693,8 @@ def find_matching_llm_file(human_file: str, llm_folder: str) -> str:
 def batch_evaluate_folder(human_folder: str, llm_folder: str, 
                           evaluation_level: str = "both", 
                           match_type: str = "context",
-                          context_chars: int = 200):
+                          context_chars: int = 200,
+                          version: str = "v1.0"):
     """
     Perform batch evaluation of all files in a folder, comparing human annotations with LLM annotations.
     
@@ -697,6 +704,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
         evaluation_level: "level1", "level2", or "both"
         match_type: "context" or "context_overlap"
         context_chars: Context characters for matching
+        version: Version string that the LLM filenames must end with (default: "v1.0")
     """
     # Create output folder for results
     output_folder = Path(llm_folder)
@@ -728,6 +736,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
         log.write(f"Evaluation Level:         {evaluation_level}\n")
         log.write(f"Match Type:               {match_type}\n")
         log.write(f"Context Characters:       {context_chars}\n")
+        log.write(f"Version Filter:           {version}\n")
         log.write("=" * 100 + "\n\n")
         
         # Store results for summary
@@ -747,7 +756,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
             log.write(f"{'=' * 100}\n")
             
             # Find matching LLM file
-            llm_file = find_matching_llm_file(human_file_str, llm_folder)
+            llm_file = find_matching_llm_file(human_file_str, llm_folder, version)
             
             if not llm_file:
                 msg = f"❌ No matching LLM file found for {human_basename}"
@@ -771,8 +780,10 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                 result = {
                     'human_file': human_basename,
                     'llm_file': llm_basename,
-                    'human_spans': len(spans1),
-                    'llm_spans': len(spans2)
+                    'human_spans': spans1,
+                    'llm_spans': spans2,
+                    'len_human_spans': len(spans1),
+                    'len_llm_spans': len(spans2)
                 }
                 
                 # Level 1: Span matching
@@ -862,7 +873,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                 log.write("─" * 100 + "\n")
                 
                 for result in all_results:
-                    row = f"{result['human_file'][:40]:<40} {result['human_spans']:>8} {result['llm_spans']:>8} {result.get('l1_f1', 0)*100:>9.2f}% {result.get('l2_f1', 0)*100:>9.2f}%"
+                    row = f"{result['human_file'][:40]:<40} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} {result.get('l1_f1', 0)*100:>9.2f}% {result.get('l2_f1', 0)*100:>9.2f}%"
                     print(row)
                     log.write(row + "\n")
                 
@@ -885,7 +896,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                 log.write("─" * 100 + "\n")
                 
                 for result in all_results:
-                    row = f"{result['human_file'][:50]:<50} {result['human_spans']:>8} {result['llm_spans']:>8} {result.get('l1_precision', 0)*100:>11.2f}% {result.get('l1_recall', 0)*100:>11.2f}% {result.get('l1_f1', 0)*100:>9.2f}%"
+                    row = f"{result['human_file'][:50]:<50} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} {result.get('l1_precision', 0)*100:>11.2f}% {result.get('l1_recall', 0)*100:>11.2f}% {result.get('l1_f1', 0)*100:>9.2f}%"
                     print(row)
                     log.write(row + "\n")
                 
@@ -996,7 +1007,10 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
             log.write(f"Evaluation completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             log.write("=" * 100 + "\n")
 
+        return all_results
 
+
+    
 if __name__ == "__main__":
     # ============================================================================
     # CONFIGURATION: Choose evaluation mode
@@ -1014,15 +1028,16 @@ if __name__ == "__main__":
         # Folder paths
         project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
         human_folder = fr"{project_root}\data\final\Annotated"
-        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-0_mgpt-5.2"
+        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-30_mgpt-5.2"
         
         # Evaluation settings
         evaluation_level = "both"  # Options: "level1", "level2", "both"
         match_type = "context"     # Options: "context", "context_overlap"
         context_chars = 200
+        version = "v1.4"           # Version string that LLM filenames must end with
         
         # Run batch evaluation
-        batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars)
+        batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)
     
     # ============================================================================
     # SINGLE MODE CONFIGURATION

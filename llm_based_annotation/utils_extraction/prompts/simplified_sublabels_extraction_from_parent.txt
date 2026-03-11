@@ -38,24 +38,4 @@ You must NOT annotate anything else.
 
 • Output valid XML  
 • The outer label (e.g., <decision>) must remain unchanged  
-• Sublabels must be nested inside the parent label  
-
----
-
-## Reasoning Instructions
-
-Before producing the final annotated output:
-
-1. Carefully analyze the mention.
-2. Determine which spans correspond exactly to the allowed sublabels.
-3. Ignore all other information.
-
-When you begin labeling, output the token:
-
-<start>
-
-When you have completed your labeling and produced the final annotated text, output the token:
-
-<end>
-
-⚠️ These tokens must appear exactly once and only at the beginning and end of your response.
+• Sublabels must be nested inside the parent label
