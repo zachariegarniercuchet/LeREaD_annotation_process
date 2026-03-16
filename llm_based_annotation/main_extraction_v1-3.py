@@ -254,7 +254,7 @@ def get_hyperparameters():
     fs_mode = "selected"  # "random" or "selected"
     model_name = "gpt-5.2"
 
-    n_few_shot = 0  # Number of few-shot examples to use
+    n_few_shot = 30  # Number of few-shot examples to use
 
     prompt_version = "2"
 
@@ -309,7 +309,7 @@ def main():
     versions = ["v1.1", "v1.2", "v1.3"]
     min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, sublabel_definitions = get_hyperparameters()
 
-    base_dir = fr"{project_root}\data\Documents_Annotés\llm\p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+    base_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
     output_dir = base_dir
 
     # Mapping: version -> input_suffix (what to load)
@@ -383,11 +383,12 @@ def main():
 
         # Process each file
         for filename, html_content in input_files.items():
-            if filename.lower() in existing_processed:
+            clean_filename = re.sub(r'_v\d+(\.\d+)*$', '', filename, flags=re.IGNORECASE)
+            if clean_filename.lower() in existing_processed:
                 print(f"   ✓ Skipping {filename} (output {version} already exists)")
                 continue
 
-            print(f"\n   → Processing: {filename}.html → {filename}_{version}.html")
+            print(f"\n   → Processing: {filename}.html → {clean_filename}_{version}.html")
             #======================= MAIN STEPS ==========================#
 
             
@@ -417,7 +418,7 @@ def main():
 
             processed_html_content = main_post_processing(processed_label=processed_label, html_content=html_content, original_tokens=tokens)
             # ---------- Save processed HTML to file ----------
-            with open(fr"{output_dir}\{filename}_{version}.html", 'w', encoding='utf-8') as f:
+            with open(fr"{output_dir}\{clean_filename}_{version}.html", 'w', encoding='utf-8') as f:
                 f.write(processed_html_content)
             print(f"   ✓ Processed HTML saved to: {output_dir}")
 

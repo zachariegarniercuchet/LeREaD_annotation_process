@@ -199,21 +199,12 @@ def main_post_processing(processed_chunks, html_content):
         is_protected_func=lambda tok: is_auto_label_tag(tok) != 0,
         log=False
         )
-    #processed_html_content_tokens = merge_tokens_with_auto_labels(original_tokens, processed_tokens_flat)
 
-    processed_html = decode(processed_html_content_tokens)
+    # check of the final processed_html_content with the original HTML, ignoring the auto_label tags which are not present in the original HTML but only in the processed one.
+    comparison_result = compare_html_allow_auto_labels(decode(processed_html_content_tokens), html_content)
+    assert comparison_result, "The processed HTML content does not match the original HTML content when ignoring auto_label tags. Please check the merging and post-processing steps for errors."
 
-    # This step is just to ensure a good visualisation of HTMLLabelizer and to add the necessary attribute to stay consistent with the label scheme
-    processed_html_content = add_attributes_to_auto_labels(processed_html)
 
-    # Last check of the final processed_html_content with the original HTML, ignoring the auto_label tags which are not present in the original HTML but only in the processed one.
-    comparison_result = compare_html_allow_auto_labels(processed_html_content, html_content)
-    if comparison_result:
-        print("✓ The processed HTML content matches the original HTML content when ignoring auto_label tags.")
-        return processed_html_content
-
-    
-    
     
     # This merging process can sometimes create some formatting issues with brackets, we need to correct them to get a valid HTML structure.
     processed_html_content_tokens_corrected = correct_tokens_brackets(processed_html_content_tokens)
@@ -228,10 +219,6 @@ def main_post_processing(processed_chunks, html_content):
     
     # This step is just to ensure a good visualisation of HTMLLabelizer and to add the necessary attribute to stay consistent with the label scheme
     processed_html_content = add_attributes_to_auto_labels(processed_html_cleaned)
-
-
-    comparison_result = compare_html_allow_auto_labels(processed_html_content, html_content)
-    assert comparison_result, "The processed HTML content does not match the original HTML content when ignoring auto_label tags. Please check the merging and post-processing steps for errors."
 
     return processed_html_content
 
