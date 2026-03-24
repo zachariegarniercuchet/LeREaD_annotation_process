@@ -1028,13 +1028,13 @@ if __name__ == "__main__":
         # Folder paths
         project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
         human_folder = fr"{project_root}\data\final\Annotated"
-        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-30_mgpt-5.2"
+        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\TEST_PARACHUNKER_p2_c500_fsselected-30_mgpt-5.2"
         
         # Evaluation settings
         evaluation_level = "both"  # Options: "level1", "level2", "both"
         match_type = "context"     # Options: "context", "context_overlap"
         context_chars = 200
-        version = "v1.4"           # Version string that LLM filenames must end with
+        version = "v1.0"           # Version string that LLM filenames must end with
         
         # Run batch evaluation
         batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)

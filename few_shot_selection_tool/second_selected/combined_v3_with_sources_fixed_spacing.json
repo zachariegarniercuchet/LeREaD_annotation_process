@@ -6320,7 +6320,7 @@
   {
     "example": {
       "input": " D. J. Mullan, “Establishing the Standard of Review: The Struggle for Complexity?” (2004), 17 C.J.A.L.P. 59, at p. 93; see also Dunsmuir, at para. 68. However, this Court’s",
-      "output": " <secondary sources><authors>D. J. Mullan</authors>, “<title>Establishing the Standard of Review: The Struggle for Complexity?</title>” <source>(2004), 17 C.J.A.L.P. 59,</source> at <fragment>p. 93</fragment></secondary sources>; see also <decision><title>Dunsmuir</title>, at <fragment>para. 68</fragment></decision>. However, this Court’s"
+      "output": " <secondary sources><authors>D. J. Mullan</authors>, “<title>Establishing the Standard of Review: The Struggle for Complexity?</title>” <source>(2004), 17 C.J.A.L.P. 59</source>, at <fragment>p. 93</fragment></secondary sources>; see also <decision><title>Dunsmuir</title>, at <fragment>para. 68</fragment></decision>. However, this Court’s"
     },
     "selected": true,
     "rejected": false,

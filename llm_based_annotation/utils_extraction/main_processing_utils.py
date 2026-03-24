@@ -3,6 +3,7 @@ import json
 from tqdm import tqdm
 from typing import List, Tuple, Optional
 
+from .html_cleaner import clean_tokens
 from .tokenizer_utils import decode
 from .chunck_level_post_processing import apply_post_processing_transforms
 from .prompt_utils import get_prompt_processing, get_prompt_sublabel_extraction
@@ -323,6 +324,7 @@ def process_single_mention(
     user_prompt_template: str,
     sublabel_config: dict,
     allowed_labels: list = None,
+    context: str = None,
 ):
     """
     Process a single parent mention to extract sublabels.
@@ -344,7 +346,7 @@ def process_single_mention(
         sublabel_config: Configuration for sublabel transformations
         allowed_labels: List of allowed sublabel names
         max_fallback_attempts: Maximum number of fallback attempts
-    
+        context: Contextual information for the LLM
     Returns:
         Tuple of (processed_tokens, status, error_details)
     """
@@ -365,7 +367,10 @@ def process_single_mention(
     text = decode(prepared_mention)
     
     # ------ 3. GENERATE LLM OUTPUT ------
-    user_prompt = user_prompt_template.format(text=text)
+    if context:
+        user_prompt = user_prompt_template.format(text=text, context=context)
+    else:
+        user_prompt = user_prompt_template.format(text=text)
     raw_output = model.generate(
         system_prompt=system_prompt,
         user_prompt=user_prompt
@@ -427,6 +432,7 @@ def process_labels(
     sublabel_definitions=None,
     output_dir: str = None,
     filename: str = None,
+    with_context: int = None,
 ):
     """
     Process tokens to extract sublabels from parent mentions.
@@ -455,7 +461,8 @@ def process_labels(
         prompt_path=prompt_path,
         keep_labels=sublabel_config["new_labels"],
         few_shot_examples=few_shot_examples,
-        sublabel_definitions=sublabel_definitions
+        sublabel_definitions=sublabel_definitions,
+        with_context_bool= True if with_context else False
     )
     
     # ------ 2. GET LIST OF AUTO_LABEL MENTIONS TO PROCESS ------
@@ -490,13 +497,18 @@ def process_labels(
 
 
 
+        context = None
+        if with_context:
+            context = decode(clean_tokens(tokens[max(0, segment["meta"]["start"] - with_context): segment["meta"]["start"]]))
 
+        #print(context) # for debugging
 
         processed_mention, status, error_details = process_single_mention(
             model=model,
             mention=mention,
             system_prompt=system_prompt,
             user_prompt_template=user_prompt_template,
+            context=context,
             sublabel_config=sublabel_config,
             allowed_labels=sublabel_config["new_labels"] + sublabel_config["already_labeled"] + sublabel_config["parent"],
         )

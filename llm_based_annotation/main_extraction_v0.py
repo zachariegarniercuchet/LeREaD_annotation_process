@@ -16,8 +16,18 @@ import re
 project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
 
 
-def main_chunk_html(html_content, min_tokens=500):
+def main_chunk_html(html_content, min_tokens=500, method="sentence"):
 
+    if method == "sentence":
+        return chunk_html_by_sentence(html_content, min_tokens=min_tokens)
+    elif method == "paragraph":
+        return chunk_html_by_paragraph(html_content, min_tokens=min_tokens)
+    else:
+        raise ValueError(f"Invalid method: {method}. Choose 'sentence' or 'paragraph'.")
+    
+
+
+def chunk_html_by_sentence(html_content, min_tokens=500):
     body_content = extract_body(html_content)
 
 
@@ -91,6 +101,159 @@ def main_chunk_html(html_content, min_tokens=500):
                 print(f"  First diff at index {i}: merged='{m}' vs derived='{d}'")
                 break
         assert "Difference detected"
+
+    return token_chunks
+
+
+def chunk_html_by_paragraph(html_content, min_tokens=500):
+    """
+    Paragraph-based chunker. Uses BeautifulSoup to extract leaf block elements,
+    preserving their HTML, then tokenizes + cleans each paragraph, and merges
+    consecutive paragraphs until min_tokens is reached.
+
+    Returns: List[List[token]] — same format as the sentence method.
+    """
+    from bs4 import BeautifulSoup
+
+    body_content = extract_body(html_content)
+
+    # ------------------------------------------------------------------ #
+    # 1. Extract leaf block elements (same logic as batch_paragraphs)     #
+    # ------------------------------------------------------------------ #
+    soup = BeautifulSoup(body_content, "html.parser")
+
+    def get_leaf_blocks(tag):
+        leaf_blocks = []
+        for child in tag.find_all(
+            ["p", "li", "blockquote", "pre", "h1", "h2", "h3", "h4", "h5", "h6"]
+        ):
+            # Only keep blocks that don't contain other block-level elements
+            if not child.find(["p", "li", "blockquote", "pre"]):
+                leaf_blocks.append(child)
+        return leaf_blocks
+
+    leaf_blocks = get_leaf_blocks(soup)
+
+    # ------------------------------------------------------------------ #
+    # 2. Tokenize + clean each paragraph, keeping original HTML           #
+    # ------------------------------------------------------------------ #
+    paragraph_token_lists = []  # List[List[token]]
+
+    for block in leaf_blocks:
+        # str(block) preserves the full HTML of the element (tags included)
+        block_html = str(block)
+
+        raw_tokens = tokenize(block_html)
+        cleaned_tokens = clean_tokens(
+            html_tokens=raw_tokens,
+            normalize=True,
+            keep_manual_label=True,
+            keep_bookmarks=True,
+        )
+
+        if cleaned_tokens:
+            paragraph_token_lists.append(cleaned_tokens)
+
+    # ------------------------------------------------------------------ #
+    # 3. Merge consecutive paragraphs until min_tokens is reached         #
+    # ------------------------------------------------------------------ #
+    token_chunks = []
+    current_chunk = []
+
+    for para_tokens in paragraph_token_lists:
+        if not current_chunk:
+            # Always start a new chunk with the current paragraph
+            current_chunk = list(para_tokens)
+        elif len(current_chunk) >= min_tokens:
+            # Current chunk is already big enough — flush and start fresh
+            token_chunks.append(current_chunk)
+            current_chunk = list(para_tokens)
+        else:
+            # Current chunk is still too small — keep accumulating
+            current_chunk.extend(para_tokens)
+
+    # Flush the last chunk
+    if current_chunk:
+        token_chunks.append(current_chunk)
+
+    print(f"Paragraph chunks: {len(token_chunks)}")
+    print(f"Chunk sizes (tokens): {[len(c) for c in token_chunks]}")
+
+    return token_chunks
+
+def chunk_html_by_paragraph(html_content, min_tokens=500):
+    """
+    Paragraph-based chunker. Uses BeautifulSoup to extract leaf block elements,
+    preserving their HTML, then tokenizes + cleans each paragraph, and merges
+    consecutive paragraphs until min_tokens is reached.
+
+    Returns: List[List[token]] — same format as the sentence method.
+    """
+    from bs4 import BeautifulSoup
+
+    body_content = extract_body(html_content)
+
+    # ------------------------------------------------------------------ #
+    # 1. Extract leaf block elements (same logic as batch_paragraphs)     #
+    # ------------------------------------------------------------------ #
+    soup = BeautifulSoup(body_content, "html.parser")
+
+    def get_leaf_blocks(tag):
+        leaf_blocks = []
+        for child in tag.find_all(
+            ["p", "li", "blockquote", "pre", "h1", "h2", "h3", "h4", "h5", "h6"]
+        ):
+            # Only keep blocks that don't contain other block-level elements
+            if not child.find(["p", "li", "blockquote", "pre"]):
+                leaf_blocks.append(child)
+        return leaf_blocks
+
+    leaf_blocks = get_leaf_blocks(soup)
+
+    # ------------------------------------------------------------------ #
+    # 2. Tokenize + clean each paragraph, keeping original HTML           #
+    # ------------------------------------------------------------------ #
+    paragraph_token_lists = []  # List[List[token]]
+
+    for block in leaf_blocks:
+        # str(block) preserves the full HTML of the element (tags included)
+        block_html = str(block)
+
+        raw_tokens = tokenize(block_html)
+        cleaned_tokens = clean_tokens(
+            html_tokens=raw_tokens,
+            normalize=True,
+            keep_manual_label=True,
+            keep_bookmarks=True,
+        )
+
+        if cleaned_tokens:
+            paragraph_token_lists.append(cleaned_tokens)
+
+    # ------------------------------------------------------------------ #
+    # 3. Merge consecutive paragraphs until min_tokens is reached         #
+    # ------------------------------------------------------------------ #
+    token_chunks = []
+    current_chunk = []
+
+    for para_tokens in paragraph_token_lists:
+        if not current_chunk:
+            # Always start a new chunk with the current paragraph
+            current_chunk = list(para_tokens)
+        elif len(current_chunk) >= min_tokens:
+            # Current chunk is already big enough — flush and start fresh
+            token_chunks.append(current_chunk)
+            current_chunk = list(para_tokens)
+        else:
+            # Current chunk is still too small — keep accumulating
+            current_chunk.extend(para_tokens)
+
+    # Flush the last chunk
+    if current_chunk:
+        token_chunks.append(current_chunk)
+
+    print(f"Paragraph chunks: {len(token_chunks)}")
+    print(f"Chunk sizes (tokens): {[len(c) for c in token_chunks]}")
 
     return token_chunks
 
@@ -265,6 +428,7 @@ def get_hyperparameters():
     else :
         prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\simplified_parent_extraction v{prompt_version}.txt"
 
+    chunking_method = "paragraph"  # "sentence" or "paragraph"
 
     # Define label_config 
     label_config = {
@@ -274,16 +438,17 @@ def get_hyperparameters():
         "keep_labels": ["decision", "legislation", "secondary sources"]
     }
 
-    return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config
+    return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method
 
 def main():
 
-    min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config = get_hyperparameters()
+    min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method = get_hyperparameters()
 
     source_dir = fr"{project_root}\data\final\Original"
+    #source_dir = fr"{project_root}\data\Document_Échantillon_Initial\ronde_3\plain_html_arbre_balise"
     files = get_all_html_files_in(source_dir)
     print(f"✓ Loaded {len(files)} files from: {source_dir}")
-    output_dir = fr"{project_root}\data\Documents_Annotés\llm\p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+    output_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_PARACHUNKER_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -303,7 +468,7 @@ def main():
             continue
 
         
-        token_chunks = main_chunk_html(html_content, min_tokens=min_tokens)
+        token_chunks = main_chunk_html(html_content, min_tokens=min_tokens, method=chunking_method)
 
         selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=n_few_shot)
 

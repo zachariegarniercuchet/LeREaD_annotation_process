@@ -6320,7 +6320,7 @@
   {
     "example": {
       "input": " D. J. Mullan, “Establishing the Standard of Review: The Struggle for Complexity?” (2004), 17 C.J.A.L.P. 59, at p. 93; see also Dunsmuir, at para. 68. However, this Court’s",
-      "output": " <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">D. J. Mullan</manual_label>, “<manual_label labelname=\"title\">Establishing the Standard of Review: The Struggle for Complexity?</manual_label>” <manual_label labelname=\"source\">(2004), 17 C.J.A.L.P. 59,</manual_label> at <manual_label labelname=\"fragment\">p. 93</manual_label></manual_label>; see also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label>, at <manual_label labelname=\"fragment\">para. 68</manual_label></manual_label>. However, this Court’s"
+      "output": " <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">D. J. Mullan</manual_label>, “<manual_label labelname=\"title\">Establishing the Standard of Review: The Struggle for Complexity?</manual_label>” <manual_label labelname=\"source\">(2004), 17 C.J.A.L.P. 59</manual_label>, at <manual_label labelname=\"fragment\">p. 93</manual_label></manual_label>; see also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label>, at <manual_label labelname=\"fragment\">para. 68</manual_label></manual_label>. However, this Court’s"
     },
     "selected": true,
     "rejected": false,
