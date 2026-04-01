@@ -1019,7 +1019,7 @@ if __name__ == "__main__":
     # MODE SELECTION
     # "single" = Evaluate a single pair of files
     # "batch"  = Evaluate all files in folders (human vs LLM)
-    MODE = "batch"  # Options: "single", "batch"
+    MODE = "single"  # Options: "single", "batch"
     
     # ============================================================================
     # BATCH MODE CONFIGURATION
@@ -1028,13 +1028,13 @@ if __name__ == "__main__":
         # Folder paths
         project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
         human_folder = fr"{project_root}\data\final\Annotated"
-        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\TEST_PARACHUNKER_p2_c500_fsselected-30_mgpt-5.2"
+        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-30_mgpt-5.2"
         
         # Evaluation settings
         evaluation_level = "both"  # Options: "level1", "level2", "both"
         match_type = "context"     # Options: "context", "context_overlap"
         context_chars = 200
-        version = "v1.0"           # Version string that LLM filenames must end with
+        version = "v1.3"           # Version string that LLM filenames must end with
         
         # Run batch evaluation
         batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)
@@ -1054,6 +1054,15 @@ if __name__ == "__main__":
         file1 = fr"{project_root}\data\Documents_Annotés\{anno1}\{filename}_annotated_{anno1}_tech.html"
         file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_selected_30_gpt5.2_chunk2_subdef2\{filename}_llm_v1.0.htmL"
         
+        # Between the gold and the verif + LLM
+        file1 = fr"{project_root}\data\final\Annotated\2024NBKB203_annotated_VP.html"
+        file2 = fr"{project_root}\data\Documents_Annotés\2024 NBKB 203_LLMv1.3_Verified_EG.htmL"
+
+        # Between the verif + LLM and the LLM
+        file1 = fr"{project_root}\data\Documents_Annotés\llm\TEST_p2_c500_fsselected-30_mgpt-5.2\2024 NBKB 203_v1.3.html"
+        file2 = fr"{project_root}\data\Documents_Annotés\2024 NBKB 203_LLMv1.3_Verified_EG.htmL"
+        
+
         # Choose evaluation level
         # "level1" = Span matching (context-based)
         # "level2" = Attribute matching (for matched spans)

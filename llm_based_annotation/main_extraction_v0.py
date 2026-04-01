@@ -1,9 +1,8 @@
 import os
-from utils_extraction import extract_body, tokenize, clean_tokens, decode, is_auto_label_tag
-from utils_extraction import chunk_tokens, flatten_token_chunks, merge_sentences_with_heuristics_tokens
-from utils_extraction import extract_few_shot_examples
-from utils_extraction import select_few_shot, prepare_label_tokens
-from utils_extraction import merge_tokens_with_auto_labels, merge_tokens_general, add_attributes_to_auto_labels, compare_html_allow_auto_labels, correct_tokens_brackets, check_tokens_brackets
+from utils_extraction import extract_body, tokenize, clean_tokens, decode, is_auto_label_tag, is_tag_token
+from utils_extraction import flatten_token_chunks, merge_sentences_with_heuristics_tokens
+from utils_extraction import prepare_label_tokens
+from utils_extraction import merge_tokens_general, add_attributes_to_auto_labels, compare_html_allow_auto_labels, correct_tokens_brackets, check_tokens_brackets
 from models import GPTAssistant
 from utils_extraction import process_chunks
 from utils_extraction import clean_html_formatting
@@ -360,6 +359,8 @@ def main_post_processing(processed_chunks, html_content):
         original_tokens=original_tokens,
         derived_tokens=processed_tokens_flat,
         is_protected_func=lambda tok: is_auto_label_tag(tok) != 0,
+        is_opening_protected_func=lambda tok: is_auto_label_tag(tok) == 1,
+        is_tag_token_func=lambda tok: is_tag_token(tok),
         log=False
         )
 

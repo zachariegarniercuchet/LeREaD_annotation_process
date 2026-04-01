@@ -234,7 +234,7 @@ def main():
     min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, sublabel_definitions, with_context = get_hyperparameters()
 
     # Modified output directory to distinguish context version
-    base_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_CONTEXT_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+    base_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_PARACHUNKER_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
     output_dir = base_dir
 
     # Mapping: version -> input_suffix (what to load)
