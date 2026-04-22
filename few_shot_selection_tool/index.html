@@ -894,6 +894,18 @@ auto_label, legislation, decision, [class*="secondary"] {
             // Remove closing auto_label tags
             styledText = styledText.replace(/<\/auto_label>/gi, '</span>');
 
+            // Replace manual_label tags with styled spans
+            styledText = styledText.replace(/<manual_label[^>]*labelname="([^"]*)"[^>]*>/gi, (match, labelName) => {
+                const colors = colorMap[labelName];
+                if (colors) {
+                    return `<span style="background-color: ${colors.bg}; color: ${colors.text}; padding: 2px 6px; border-radius: 3px; font-weight: 500;">`;
+                }
+                return '<span style="background-color: #e0e0e0; padding: 2px 6px; border-radius: 3px;">';
+            });
+
+            // Remove closing manual_label tags
+            styledText = styledText.replace(/<\/manual_label>/gi, '</span>');
+
             // Handle simple tags like <legislation>, <decision>, etc.
             for (const [labelName, colors] of Object.entries(colorMap)) {
                 const regex = new RegExp(`<${labelName}>`, 'gi');

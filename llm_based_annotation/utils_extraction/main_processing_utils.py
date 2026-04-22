@@ -60,6 +60,39 @@ class ProcessingHistory:
 # ============ BELOW ARE MAIN INTERNAL HELPER FUNCTIONS FOR CHUNCK PROCESSING (STAGE 1 OF THE EXTRACTION PROCESS)  =============
 # ==============================================================================================================================
 
+def direct_post_processing(chunk, cleaned_chunk, llm_output, label_config, allowed_labels, cot):
+    # ------ 3. POST-PROCESS OUTPUT ------
+        #try:
+        processed_tokens = apply_post_processing_transforms(
+            raw_output=llm_output,
+            use_simplified=label_config.get("use_simplified", False),
+            label_type='auto_label',
+            cot=cot
+        )
+        #except Exception as e:
+        #    return chunk, "Post-processing Error", f"Failed to post-process: {str(e)}"
+        
+        #print(f"   → Processed tokens before verification: {decode(processed_tokens)}")
+        
+        # ------ 4. APPLY ERROR CORRECTION (BEFORE VERIFICATION) ------
+        # This aligns tokens to handle minor discrepancies
+        _, operations = distance_lists_auto_label(cleaned_chunk, processed_tokens)
+        processed_tokens_corrected = apply_operations_safe(processed_tokens, operations)
+        
+        # ------ 5. VERIFY OUTPUT ------
+
+        #print(f"Processed tokens after correction: {decode(processed_tokens_corrected)}")
+        verification = verify_processed_chunk(
+            original_tokens=cleaned_chunk,
+            processed_tokens=processed_tokens_corrected,
+            allowed_labels=allowed_labels,
+            check_scheme=True
+            )
+        
+        return processed_tokens_corrected, verification
+        
+
+
 def process_single_chunk(
     model,
     chunk: list,
@@ -68,6 +101,7 @@ def process_single_chunk(
     label_config: dict,
     allowed_labels: Optional[List[str]] = None,
     cot: bool = False,
+    fall_back: bool = False
 ) -> Tuple[list, str, str]:
     """
     Process a single chunk with post-processing, verification, and fallback.
@@ -86,6 +120,7 @@ def process_single_chunk(
         label_config: Configuration for label transformations
         allowed_labels: List of allowed label names for scheme validation
         cot: Whether to use chain-of-thought prompting
+        fall_back: Whether to implement a fall-back mechanism in case of verification failure
         max_fallback_attempts: Maximum number of fallback attempts per error type
     
     Returns:
@@ -113,51 +148,71 @@ def process_single_chunk(
     )
 
     #print(f"   → Raw LLM output for chunk: {raw_output}...")  
-    
-    # ------ 3. POST-PROCESS OUTPUT ------
-    try:
-        processed_tokens = apply_post_processing_transforms(
-            raw_output=raw_output,
-            use_simplified=label_config.get("use_simplified", False),
-            label_type='auto_label',
-            cot=cot
-        )
-    except Exception as e:
-        return chunk, "Post-processing Error", f"Failed to post-process: {str(e)}"
-    
-    #print(f"   → Processed tokens before verification: {decode(processed_tokens)}")
-    
-    # ------ 4. APPLY ERROR CORRECTION (BEFORE VERIFICATION) ------
-    # This aligns tokens to handle minor discrepancies
-    _, operations = distance_lists_auto_label(cleaned_chunk, processed_tokens)
-    processed_tokens_corrected = apply_operations_safe(processed_tokens, operations)
-    
-    # ------ 5. VERIFY OUTPUT ------
+    processed_tokens_corrected, verification = direct_post_processing(chunk=chunk, cleaned_chunk=cleaned_chunk, llm_output=raw_output, label_config=label_config, allowed_labels=allowed_labels, cot=cot)
 
-    #print(f"Processed tokens after correction: {decode(processed_tokens_corrected)}")
-    verification = verify_processed_chunk(
-        original_tokens=cleaned_chunk,
-        processed_tokens=processed_tokens_corrected,
-        allowed_labels=allowed_labels,
-        check_scheme=True
-        )
-    
     if verification.passed:
-        return processed_tokens_corrected, "Success", None
+            return processed_tokens_corrected, "Success", None
     
-    # ------ 6. HANDLE VERIFICATION FAILURES ------
-    print(f"   ⚠ Verification failed: {verification.error_type}")
-    print(f"   Details: {verification.details}")
+    returned_chunk = chunk # by default, we return the original chunk if verification fails. But in case of nesting failure, we can try to correct it and return the corrected version even if the verification fails, as it is a minor structural issue that does not affect the content of the labels.
+    if verification.error_type == "nesting": # meaning no other error was detected but the nesting check failed. We can try to correct it, but as a minor structural issue, we will return it in case of a second failure
+        returned_chunk = processed_tokens_corrected
+
+    # FALL BACK IF ERROR OCCURS
+    if fall_back:
+        with open("C:\\Users\\zakga\\OneDrive\\Documents\\code\\LeREaD_annotation_process\\llm_based_annotation\\utils_extraction\\prompts\\fall_back_prompt.txt", 
+                "r", 
+                encoding="utf-8") as f:
+            
+            fall_back_system_prompt = f.read()
+
+        llm_output_corrected = decode(prepare_label_tokens(chunk=processed_tokens_corrected, 
+                                                        label_config=label_config))
+        fall_back_user_prompt = f"""
+                    ## Input Example
+
+                    [ORIGINAL PARAGRAPH]
+                    {text}
+                    ...
+
+                    [ANNOTATED PARAGRAPH]
+                    {llm_output_corrected}
+                    ...
+
+                    [VERIFICATION]
+                    error_type: {verification.error_type}
+                    details: {verification.details}
+
+                    ---
+
+                    ## Output
+
+                    (Return only the corrected annotated paragraph)
+        """
+
+        verified_output = model.generate(
+            system_prompt=fall_back_system_prompt,
+            user_prompt=fall_back_user_prompt
+        )
+
+        processed_tokens_corrected, verification = direct_post_processing(chunk=chunk, cleaned_chunk=cleaned_chunk, llm_output=verified_output, label_config=label_config, allowed_labels=allowed_labels, cot=cot) 
+        
+        if verification.passed:
+            return processed_tokens_corrected, "Success", None
+        
+        if verification.error_type == "nesting":
+            returned_chunk = processed_tokens_corrected
+        
+
+        
+        # ------ 6. HANDLE VERIFICATION FAILURES ------
+        print(f"   ⚠ Verification failed again: {verification.error_type}")
+        print(f"   Details: {verification.details}")
+
+
+
     
-    if verification.error_type == "hallucination":
-        failure_type = "Hallucination Fail"
-    elif verification.error_type == "consistency":
-        failure_type = "Consistency Fail"
-    elif verification.error_type == "label_scheme":
-        failure_type = "Label Scheme Fail"
     
-    
-    return chunk, failure_type, verification.details
+    return returned_chunk, verification.error_type, verification.details
 
 
 
@@ -177,6 +232,8 @@ def process_chunks(
     output_dir: Optional[str] = None,
     filename: Optional[str] = None,
     cot: bool = False,
+    dynamic_few_shot_selection: bool = False,
+    fall_back = False
 ) -> list:
     """
     Process multiple chunks using AI model with verification and fallback.
@@ -203,11 +260,15 @@ def process_chunks(
         List of processed token chunks
     """
     # Load prompts
+
     system_prompt, user_prompt_template = get_prompt_processing(
-        prompt_path=process_prompt_path,
-        few_shot_examples=few_shot_examples
+        prompt_path=process_prompt_path, 
+        few_shot_examples=few_shot_examples, 
+        chunks=token_chunks, 
+        dynamic_few_shot_selection=dynamic_few_shot_selection
     )
-    
+
+
     # Initialize tracking
     processed_chunks = []
     history = ProcessingHistory()
@@ -223,11 +284,12 @@ def process_chunks(
         processed_tokens, status, error_details = process_single_chunk(
             model=model,
             chunk=chunk,
-            system_prompt=system_prompt,
-            user_prompt_template=user_prompt_template,
+            system_prompt=system_prompt[idx] if dynamic_few_shot_selection else system_prompt,
+            user_prompt_template=user_prompt_template[idx] if dynamic_few_shot_selection else user_prompt_template,
             label_config=label_config,
             allowed_labels=allowed_labels,
-            cot=cot
+            cot=cot,
+            fall_back = fall_back
         )
     
         processed_chunks.append(processed_tokens)

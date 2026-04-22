@@ -235,16 +235,76 @@ def check_label_scheme(tokens: list, allowed_labels: Optional[List[str]] = None)
     return VerificationResult(passed=True)
 
 
+def check_nesting(tokens: list) -> VerificationResult:
+    """
+    Verify that structural auto_label tags are properly nested inside a valid
+    parent auto_label tag.
+
+    Checks:
+    - 'title', 'citation', 'source', 'authors' must have at least one
+      auto_label ancestor (i.e. must not appear at the top level)
+    - 'legislation', 'decision', 'secondary sources' are always valid
+      regardless of nesting
+
+    Args:
+        tokens: List of tokens to check
+
+    Returns:
+        VerificationResult with passed=True if all nesting rules are respected
+    """
+    STRUCTURAL_LABELS = {"title", "citation", "source", "authors"}
+
+    # Stack holds the labelname of every currently-open auto_label tag
+    stack: list[str] = []
+    nesting_errors: list[str] = []
+
+    for i, token in enumerate(tokens):
+        tag_type = is_auto_label_tag(token)
+
+        if tag_type == 1:  # Opening tag
+            try:
+                label = HTMLLabel(token)
+                label_name = label.name.lower()
+            except ValueError as e:
+                # Unparseable tags are the concern of check_label_scheme, skip here
+                stack.append("__unknown__")
+                continue
+
+            # Check nesting rule for structural labels
+            if label_name in STRUCTURAL_LABELS and not stack:
+                nesting_errors.append(
+                    f"'{label.name}' at position {i} appears at top level "
+                    f"(must be nested inside a parent auto_label)"
+                )
+
+            stack.append(label_name)
+
+        elif tag_type == 2:  # Closing tag
+            if stack:
+                stack.pop()
+
+    if nesting_errors:
+        return VerificationResult(
+            passed=False,
+            error_type="nesting",
+            details=f"Nesting violations: {' | '.join(nesting_errors)}",
+            tokens=tokens,
+        )
+
+    return VerificationResult(passed=True)
+
+
 def verify_processed_chunk(original_tokens: list, processed_tokens: list,
                           allowed_labels: Optional[List[str]] = None,
                           check_scheme: bool = True) -> VerificationResult:
     """
     Run all verification checks on a processed chunk.
     
-    Performs three checks in order:
+    Performs four checks in order:
     1. Hallucination check (text content unchanged)
     2. Consistency check (tags properly balanced)
     3. Label scheme check (labels and attributes valid)
+    4. Nesting check (structural labels properly nested)
     
     Returns first failure encountered, or success if all pass.
     
@@ -272,6 +332,10 @@ def verify_processed_chunk(original_tokens: list, processed_tokens: list,
         result = check_label_scheme(processed_tokens, allowed_labels)
         if not result:
             return result
+        
+    result = check_nesting(processed_tokens)
+    if not result:
+        return result
     
     return VerificationResult(passed=True)
 

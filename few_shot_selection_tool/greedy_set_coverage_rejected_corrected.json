@@ -1,0 +1,2755 @@
+[
+  {
+    "example": {
+      "input": " even Housen, which, as this Court acknowledged, was initially applied by appeal courts with “varying degrees of enthusiasm” (H.L. v. Canada (Attorney General), [2005] 1 S.C.R. 401, at para. 76; see also Paul M. Perell, “The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen” (2004), 28 Adv. Q. 40, at p. 53; Mike Madden, “Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review” (2010), 36 Adv. Q. 269, at pp. 278-79 and 293; Paul J. Pape and John J. Adair, “Unreasonable review: The losing party and the palpable and overriding error standard” (2008), 27 Adv. J. 6, at p. 8; Geoff R. Hall, “Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada” (2011), 50 Can. Bus. L.J. 434, at p. 436). [276",
+      "output": " even <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Housen</manual_label></manual_label>, which, as this Court acknowledged, was initially applied by appeal courts with “varying degrees of enthusiasm” (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">H.L. v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">[2005] 1 S.C.R. 401</manual_label>, at <manual_label labelname=\"fragment\">para. 76</manual_label></manual_label>; see also <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Paul M. Perell</manual_label>, “<manual_label labelname=\"title\">The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen</manual_label>” <manual_label labelname=\"source\">(2004), 28 Adv. Q. 40</manual_label>, at <manual_label labelname=\"fragment\">p. 53</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Mike Madden</manual_label>, “<manual_label labelname=\"title\">Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review</manual_label>” <manual_label labelname=\"source\">(2010), 36 Adv. Q. 269</manual_label>, at <manual_label labelname=\"fragment\">pp. 278-79</manual_label> and <manual_label labelname=\"fragment\">293</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Paul J. Pape and John J. Adair</manual_label>, “<manual_label labelname=\"title\">Unreasonable review: The losing party and the palpable and overriding error standard</manual_label>” <manual_label labelname=\"source\">(2008), 27 Adv. J. 6</manual_label>, at <manual_label labelname=\"fragment\">p. 8</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Geoff R. Hall</manual_label>, “<manual_label labelname=\"title\">Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada</manual_label>” <manual_label labelname=\"source\">(2011), 50 Can. Bus. L.J. 434</manual_label>, at <manual_label labelname=\"fragment\">p. 436</manual_label>)</manual_label>. [276"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "PP",
+          "NUM-NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "decision_citation": [
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "(NUM)",
+          ",",
+          "NUM",
+          "adv.",
+          "q.",
+          "NUM"
+        ],
+        [
+          "(NUM)",
+          ",",
+          "NUM",
+          "adv.",
+          "q.",
+          "NUM"
+        ],
+        [
+          "(NUM)",
+          ",",
+          "NUM",
+          "adv.",
+          "j.",
+          "NUM"
+        ],
+        [
+          "(NUM)",
+          ",",
+          "NUM",
+          "can.",
+          "buSECTION",
+          "l.j.",
+          "NUM"
+        ]
+      ],
+      "decision_title": [
+        [
+          "housen"
+        ],
+        [
+          "h.l.",
+          "ROMAN.",
+          "canada",
+          "(attorney",
+          "general)"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " context of this case, s. 7 does not offer greater protection than\nthe specific guarantee under ss. 11(d) and 11(f): see R. v. Généreux, [1992] 1\nS.C.R. 259 at 310, 8 C.R.R. (2d) 89 at p. 124, per",
+      "output": " context of this case, <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 7</manual_label></manual_label> does not offer greater protection than\nthe specific guarantee under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 11(d)</manual_label> and <manual_label labelname=\"fragment\">11(f)</manual_label></manual_label>: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Généreux</manual_label>, <manual_label labelname=\"citation\">[1992] 1\nS.C.R. 259</manual_label> at <manual_label labelname=\"fragment\">310</manual_label>, <manual_label labelname=\"citation\">8 C.R.R. (2d) 89</manual_label> at <manual_label labelname=\"fragment\">p. 124</manual_label></manual_label>, per"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM(ALPHA)"
+        ],
+        [
+          "NUM(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "c.r.r.",
+          "(NUMd)",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "r.",
+          "ROMAN.",
+          "généreux"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " also: Droit de la famille — 172312, 2017 QCCA 1554 (judge alone),\npara. 23; Droit de la famille — 21903, 2021 QCCA 837 (judge alone),\npara. 6. [6] See Société Nationale d’assurance inc./Les Clairvoyants,\ncompagnie d’assurance générale c. Gaz Métropolitain inc., [2001] R.R.A. 757\n(C.S.), p. 764, 2001 CanLII 25493, para. 50 (“[l]e préjudice sérieux doit\nêtre autre chose que d’avoir à subir un appel, sans quoi l’exécution provisoire\nne serait pas une mesure exceptionnelle, mais bien la règle généraleˮ),\ncited with approval in Imperial Tobacco Canada Ltd. v. Conseil québécois sur\nle tabac et la santé, 2015 QCCA 1224, para. 31. [7] Lebeuf c. Groupe SNC-Lavalin inc., 1995 CanLII 5310\n(judge alone), para. 8. [8] Ibid. [9] Harper v. Canada (Attorney General), [2000] 2 S.C.R. 764,\n2000 SCC 57, para. 9. [10] Ibid. [11] Ibid. See also Procureur général du Québec c. Quebec\nEnglish School Board Association, 2020 QCCA 1171, para. 11. [12] See e.g.: Procureure générale du Québec c. Solski, J.E.\n2001-400 (C.A.), 2001 CanLII 5956 (judge alone); Québec (Procureur général) c.\nH.N., 2007 QCCA 1136 (judge alone), para. 7; Canada\nv. Canadian Council for Refugees, 2008 FCA 40 (judge alone), para. 34; Bedford\nv. Canada (Attorney General), 2010 ONCA 814 (judge alone), paras. 67 and 68. [13] Who accept that the framework set out in the leading case of Lebeuf\nc. Groupe SNC-Lavalin inc., 1995 CanLII 5310 (judge alone) is applicable in\nthe present case. [14] Hak c. Procureure générale du Québec, 2019 QCCA 2145. [15] Id., para. 67. Duval Hesler, C.J. cited, in support of that\nproposition, Fédération des coopératives funéraires du Québec c. Bureau de\nnormalisation du Québec, J.E. 2010-153 (C.A.), 2009 QCCA 2445 (judge\nalone), para. 17, and Montréal (Ville de) c. Lours, J.E. 2016-2133\n(C.A.), 2016 QCCA 1931, para. 20. [16] British Columbia (Attorney General) v. Alberta (Attorney\nGeneral), 2019 FC 1195 (reversed in appeal, albeit on other grounds: 2021\nFCA 84). [17] A concept that the Supreme Court recently revisited in Conseil\nscolaire francophone de la Colombie‑Britannique\nv. British Columbia, 2020 SCC 13. See, in\nparticular, the discussion at paras. 21 et seq. [18] Mahe v. Alberta, [1990] 1 S.C.R. 342, p. 377. [19] Id., p. 350. [20] Id., pp. 375-376. [21] Conseil scolaire francophone de la Colombie‑Britannique v. British Columbia, 2020\nSCC 13. [22] Hak c. Procureur général du Québec, 2021 QCCS 1466, paras.\n983 et seq. [23] Id., paras. 989 et seq. [24] Id., para. 993. [25] Id., para. 1003. [26] Id., para. 994. [27] See also paras. 998-1002. [28] Id., paras. 1004 et seq. [29] Section 31(5) of the Laicity Act. [30] Application for provisional execution of judgment, para. 17. [31] Id., para. 18. [32] Id., para. 19. [33] Exhibits P-11 and P-22. [34] 347 U.S. 483 (1954), p. 493: “Today, education is perhaps the most\nimportant function of state and local governments. […] It is the very\nfoundation of good citizenship. Today it is a principal instrument in awakening\nthe child to cultural values, in preparing him for later professional training,\nand in helping him to adjust normally to his environment.” [35",
+      "output": " also: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Droit de la famille — 172312</manual_label>, <manual_label labelname=\"citation\">2017 QCCA 1554</manual_label> (judge alone),\n<manual_label labelname=\"fragment\">para. 23</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Droit de la famille — 21903</manual_label>, <manual_label labelname=\"citation\">2021 QCCA 837 </manual_label>(judge alone),\n<manual_label labelname=\"fragment\">para. 6</manual_label></manual_label>. [6] See <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Société Nationale d’assurance inc./Les Clairvoyants,\ncompagnie d’assurance générale c. Gaz Métropolitain inc.</manual_label>, <manual_label labelname=\"citation\">[2001] R.R.A. 757\n(C.S.)</manual_label>, <manual_label labelname=\"fragment\">p. 764</manual_label>, <manual_label labelname=\"citation\">2001 CanLII 25493</manual_label>, <manual_label labelname=\"fragment\">para. 50</manual_label></manual_label> (“[l]e préjudice sérieux doit\nêtre autre chose que d’avoir à subir un appel, sans quoi l’exécution provisoire\nne serait pas une mesure exceptionnelle, mais bien la règle généraleˮ),\ncited with approval in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Imperial Tobacco Canada Ltd. v. Conseil québécois sur\nle tabac et la santé</manual_label>, <manual_label labelname=\"citation\">2015 QCCA 1224</manual_label>, <manual_label labelname=\"fragment\">para. 31</manual_label></manual_label>. [7]  <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Lebeuf c. Groupe SNC-Lavalin inc.</manual_label>, <manual_label labelname=\"citation\">1995 CanLII 5310</manual_label>\n(judge alone), <manual_label labelname=\"fragment\">para. 8</manual_label></manual_label>. [8]  <manual_label labelname=\"decision\">Ibid</manual_label>. [9]  <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Harper v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">[2000] 2 S.C.R. 764</manual_label>,\n<manual_label labelname=\"citation\">2000 SCC 57</manual_label>, <manual_label labelname=\"fragment\">para. 9</manual_label></manual_label>. [10] <manual_label labelname=\"decision\">Ibid</manual_label>. [11]  <manual_label labelname=\"decision\">Ibid</manual_label>. See also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Procureur général du Québec c. Quebec\nEnglish School Board Association</manual_label>, <manual_label labelname=\"citation\">2020 QCCA 1171</manual_label>, <manual_label labelname=\"fragment\">para. 11</manual_label></manual_label>. [12] See e.g.: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Procureure générale du Québec c. Solski</manual_label>, <manual_label labelname=\"citation\">J.E.\n2001-400 (C.A.)</manual_label>, <manual_label labelname=\"citation\">2001 CanLII 5956</manual_label> </manual_label>(judge alone); <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Québec (Procureur général) c.\nH.N.</manual_label>, <manual_label labelname=\"citation\">2007 QCCA 1136</manual_label> (judge alone), <manual_label labelname=\"fragment\">para. 7</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canada\nv. Canadian Council for Refugees</manual_label>, <manual_label labelname=\"citation\">2008 FCA 40</manual_label> (judge alone), <manual_label labelname=\"fragment\">para. 34</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Bedford\nv. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">2010 ONCA 814</manual_label> (judge alone), <manual_label labelname=\"fragment\">paras. 67</manual_label> and <manual_label labelname=\"fragment\">68</manual_label></manual_label>. [13] Who accept that the framework set out in the leading case of <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Lebeuf\nc. Groupe SNC-Lavalin inc.</manual_label>, <manual_label labelname=\"citation\">1995 CanLII 5310</manual_label></manual_label> (judge alone) is applicable in\nthe present case. [14] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Hak c. Procureure générale du Québec</manual_label>, <manual_label labelname=\"citation\">2019 QCCA 2145</manual_label></manual_label>. [15] <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">para. 67</manual_label></manual_label>. Duval Hesler, C.J. cited, in support of that\nproposition, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Fédération des coopératives funéraires du Québec c. Bureau de\nnormalisation du Québec</manual_label>, <manual_label labelname=\"citation\">J.E. 2010-153 (C.A.)</manual_label>, <manual_label labelname=\"citation\">2009 QCCA 2445</manual_label> (judge\nalone), <manual_label labelname=\"fragment\">para. 17</manual_label></manual_label>, and <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Montréal (Ville de) c. Lours</manual_label>, <manual_label labelname=\"citation\">J.E. 2016-2133\n(C.A.)</manual_label>, <manual_label labelname=\"citation\">2016 QCCA 1931</manual_label>, <manual_label labelname=\"fragment\">para. 20</manual_label></manual_label>. [16]  <manual_label labelname=\"decision\"><manual_label labelname=\"title\">British Columbia (Attorney General) v. Alberta (Attorney\nGeneral)</manual_label>, <manual_label labelname=\"citation\">2019 FC 1195</manual_label> </manual_label>(reversed in appeal, albeit on other grounds: <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">2021\nFCA 84</manual_label></manual_label>). [17] A concept that the Supreme Court recently revisited in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Conseil\nscolaire francophone de la Colombie‑Britannique\nv. British Columbia</manual_label>, <manual_label labelname=\"citation\">2020 SCC 13</manual_label></manual_label>. See, in\nparticular, the discussion at <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 21 et seq.</manual_label></manual_label> [18]  <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Mahe v. Alberta</manual_label>, <manual_label labelname=\"citation\">[1990] 1 S.C.R. 342</manual_label>, <manual_label labelname=\"fragment\">p. 377</manual_label></manual_label>. [19]  <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">p. 350</manual_label></manual_label>. [20]  <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">pp. 375-376</manual_label></manual_label>. [21] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Conseil scolaire francophone de la Colombie‑Britannique v. British Columbia</manual_label>, <manual_label labelname=\"citation\">2020\nSCC 13</manual_label></manual_label>. [22] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Hak c. Procureur général du Québec</manual_label>, <manual_label labelname=\"citation\">2021 QCCS 1466</manual_label>, <manual_label labelname=\"fragment\">paras.\n983 et seq.</manual_label></manual_label> [23] <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">paras. 989 et seq.</manual_label></manual_label> [24] <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">para. 993</manual_label></manual_label>. [25] <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">para. 1003</manual_label></manual_label>. [26] <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">para. 994</manual_label></manual_label>. [27] See also <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 998-1002</manual_label></manual_label>. [28]  <manual_label labelname=\"decision\">Id., <manual_label labelname=\"fragment\">paras. 1004 et seq.</manual_label></manual_label> [29] <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Section 31(5)</manual_label> of the <manual_label labelname=\"title\">Laicity Act</manual_label></manual_label>. [30] Application for provisional execution of judgment, para. 17. [31] Id., para. 18. [32] Id., para. 19. [33] Exhibits P-11 and P-22. [34] <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">347 U.S. 483 (1954)</manual_label>, <manual_label labelname=\"fragment\">p. 493</manual_label></manual_label>: “Today, education is perhaps the most\nimportant function of state and local governments. […] It is the very\nfoundation of good citizenship. Today it is a principal instrument in awakening\nthe child to cultural values, in preparing him for later professional training,\nand in helping him to adjust normally to his environment.” [35"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2021QCCA1675_annotated_EG_tech.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision"
+      ],
+      [
+        "decision"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "decision",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM",
+          "ETSEQ"
+        ],
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "PP",
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM",
+          "ETSEQ"
+        ],
+        [
+          "paraSECTION",
+          "NUM",
+          "ETSEQ"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM",
+          "ETSEQ"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "[NUM]",
+          "r.r.a.",
+          "NUM",
+          "(c.SECTION)"
+        ],
+        [
+          "NUM",
+          "canlii",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "canlii",
+          "NUM"
+        ],
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "scc",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "j.e.",
+          "NUM-NUM",
+          "(c.a.)"
+        ],
+        [
+          "NUM",
+          "canlii",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "fca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "onca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "canlii",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "j.e.",
+          "NUM-NUM",
+          "(c.a.)"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "j.e.",
+          "NUM-NUM",
+          "(c.a.)"
+        ],
+        [
+          "NUM",
+          "qcca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "fc",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "fca",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "scc",
+          "NUM"
+        ],
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "scc",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "qccs",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "u.SECTION",
+          "NUM",
+          "(NUM)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "droit",
+          "de",
+          "la",
+          "famille",
+          "—",
+          "NUM"
+        ],
+        [
+          "droit",
+          "de",
+          "la",
+          "famille",
+          "—",
+          "NUM"
+        ],
+        [
+          "société",
+          "nationale",
+          "d’assurance",
+          "inc./les",
+          "clairvoyants",
+          ",",
+          "compagnie",
+          "d’assurance",
+          "générale",
+          "c.",
+          "gaz",
+          "métropolitain",
+          "inc."
+        ],
+        [
+          "imperial",
+          "tobacco",
+          "canada",
+          "ltd.",
+          "ROMAN.",
+          "conseil",
+          "québécois",
+          "sur",
+          "le",
+          "tabac",
+          "et",
+          "la",
+          "santé"
+        ],
+        [
+          "lebeuf",
+          "c.",
+          "groupe",
+          "snc-lavalin",
+          "inc."
+        ],
+        [
+          "harper",
+          "ROMAN.",
+          "canada",
+          "(attorney",
+          "general)"
+        ],
+        [
+          "procureur",
+          "général",
+          "du",
+          "québec",
+          "c.",
+          "quebec",
+          "english",
+          "school",
+          "board",
+          "association"
+        ],
+        [
+          "procureure",
+          "générale",
+          "du",
+          "québec",
+          "c.",
+          "solski"
+        ],
+        [
+          "québec",
+          "(procureur",
+          "général)",
+          "c.",
+          "h.n."
+        ],
+        [
+          "canada",
+          "ROMAN.",
+          "canadian",
+          "council",
+          "for",
+          "refugees"
+        ],
+        [
+          "bedford",
+          "ROMAN.",
+          "canada",
+          "(attorney",
+          "general)"
+        ],
+        [
+          "lebeuf",
+          "c.",
+          "groupe",
+          "snc-lavalin",
+          "inc."
+        ],
+        [
+          "hak",
+          "c.",
+          "procureure",
+          "générale",
+          "du",
+          "québec"
+        ],
+        [
+          "fédération",
+          "des",
+          "coopératives",
+          "funéraires",
+          "du",
+          "québec",
+          "c.",
+          "bureau",
+          "de",
+          "normalisation",
+          "du",
+          "québec"
+        ],
+        [
+          "montréal",
+          "(ville",
+          "de)",
+          "c.",
+          "lours"
+        ],
+        [
+          "british",
+          "columbia",
+          "(attorney",
+          "general)",
+          "ROMAN.",
+          "alberta",
+          "(attorney",
+          "general)"
+        ],
+        [
+          "conseil",
+          "scolaire",
+          "francophone",
+          "de",
+          "la",
+          "colombie‑britannique",
+          "ROMAN.",
+          "british",
+          "columbia"
+        ],
+        [
+          "mahe",
+          "ROMAN.",
+          "alberta"
+        ],
+        [
+          "conseil",
+          "scolaire",
+          "francophone",
+          "de",
+          "la",
+          "colombie‑britannique",
+          "ROMAN.",
+          "british",
+          "columbia"
+        ],
+        [
+          "hak",
+          "c.",
+          "procureur",
+          "général",
+          "du",
+          "québec"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " Act of Parliament, diplomatic privileges and immunities certified by the Minister of Foreign Affairs to be equivalent to those granted to a person or persons referred to in paragraph (a).\nThe general rule embodied in s. 3(1)(a) of the Act is",
+      "output": " Act of Parliament, diplomatic privileges and immunities certified by the Minister of Foreign Affairs to be equivalent to those granted to a person or persons referred to in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph (a)</manual_label></manual_label>.\nThe general rule embodied in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(1)(a)</manual_label> of the <manual_label labelname=\"title\">Act</manual_label></manual_label> is"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "(ALPHA)"
+        ],
+        [
+          "SECTION",
+          "NUM(PAREN)(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " out, such individuals do in fact exist: paras. 53-55, citing FMIOA, at ss. 3 and 4 and Sched. II, Articles 1, 41, 43, 49, and 53. In light of Mr. Vavilov",
+      "output": " out, such individuals do in fact exist: <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 53-55</manual_label></manual_label>, citing <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">FMIOA</manual_label>, at <manual_label labelname=\"fragment\">ss. 3</manual_label> and <manual_label labelname=\"fragment\">4</manual_label> and <manual_label labelname=\"fragment\">Sched. II</manual_label>, <manual_label labelname=\"fragment\">Articles 1</manual_label>, <manual_label labelname=\"fragment\">41</manual_label>, <manual_label labelname=\"fragment\">43</manual_label>, <manual_label labelname=\"fragment\">49</manual_label>, and <manual_label labelname=\"fragment\">53</manual_label></manual_label>. In light of Mr. Vavilov"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 3,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "SCHEDULE",
+          "ROMAN"
+        ],
+        [
+          "ARTICLE",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " enforcement or execution. (at page 305, citing\nLazar Sarna, The Law of Declaratory Judgments, 4th ed. (Totonto:\nThomson Reuters, 2016) at 13-17) 176. Both Shot Both Sides and Restoule\ndiscuss the significance",
+      "output": " enforcement or execution. (<manual_label labelname=\"secondary sources\">at <manual_label labelname=\"fragment\">page 305</manual_label></manual_label>, citing\n<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Lazar Sarna</manual_label>, <manual_label labelname=\"title\">The Law of Declaratory Judgments</manual_label>, <manual_label labelname=\"source\">4th ed. (Totonto:\nThomson Reuters, 2016</manual_label>) at <manual_label labelname=\"fragment\">13-17</manual_label></manual_label>) 176. Both <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Shot Both Sides</manual_label></manual_label> and <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Restoule</manual_label></manual_label>\ndiscuss the significance"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2024NBKB203_annotated_VP.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "secondary sources",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "PAGE",
+          "NUM"
+        ],
+        [
+          "NUM-NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "NUMth",
+          "ed.",
+          "(totonto:",
+          "thomson",
+          "reuters",
+          ",",
+          "NUM"
+        ]
+      ],
+      "decision_title": [
+        [
+          "shot",
+          "both",
+          "sides"
+        ],
+        [
+          "restoule"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " contested\nhere under the Charter. The problem posed is that of a discriminatory effect,\nwithin the meaning of section 18.2, resulting from the hiring process carried\nout in application of paragraph (b) of section 2 of Regulation 14, since",
+      "output": " contested\nhere under the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label>. The problem posed is that of a discriminatory effect,\nwithin the meaning of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">section 18.2</manual_label></manual_label>, resulting from the hiring process carried\nout in application of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph (b) of section 2 </manual_label>of <manual_label labelname=\"title\">Regulation 14</manual_label></manual_label>, since"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM.NUM"
+        ],
+        [
+          "PARA",
+          "(ALPHA)",
+          "of",
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": ". I will say at the outset that\nall motions will be determined in accordance with Rule 23.01(1)(a) and\n(b) and not Rule 27. I find nothing vexatious, frivolous and/or\nabusive about the pleadings here despite the vehement arguments",
+      "output": ". I will say at the outset that\nall motions will be determined in accordance with <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Rule 23.01(1)(a)</manual_label> and\n<manual_label labelname=\"fragment\">(b)</manual_label></manual_label> and not <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Rule 27</manual_label></manual_label>. I find nothing vexatious, frivolous and/or\nabusive about the pleadings here despite the vehement arguments"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2024NBKB203_annotated_VP.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "RULE",
+          "NUM.NUM(PAREN)(PAREN)"
+        ],
+        [
+          "(ALPHA)"
+        ],
+        [
+          "RULE",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " referred\nto Dicey, Introduction to the Study of the Law of the Constitution, 10th ed.\n(1959), p. 193 Head, I., \"The Stranger in our Midst: A Sketch of the Legal\nStatus of the Alien in Canada\" (1964), Can. Y.B. Int'l Law 107 Petersen,\nC., Institutionalized Racism: The Need for Reform of the Criminal Jury\nSelection Process) (1993), 38 McGill L.J. 147, pp. 163-35 Russell, D.,\n\"Paedophilia: The Criminal Responsibility of Canada's Churches\"\n(1992), 15 Dalhousie L.J. 380, p. 394\nClayton",
+      "output": " referred\nto <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Dicey</manual_label>, <manual_label labelname=\"title\">Introduction to the Study of the Law of the Constitution</manual_label>, <manual_label labelname=\"source\">10th ed.\n(1959)</manual_label>, <manual_label labelname=\"fragment\">p. 193</manual_label></manual_label> <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Head, I.</manual_label>, \"<manual_label labelname=\"title\">The Stranger in our Midst: A Sketch of the Legal\nStatus of the Alien in Canada</manual_label>\" <manual_label labelname=\"source\">(1964), Can. Y.B. Int'l Law 107</manual_label></manual_label> <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Petersen,\nC.</manual_label>, <manual_label labelname=\"title\">Institutionalized Racism: The Need for Reform of the Criminal Jury\nSelection Process)</manual_label> <manual_label labelname=\"source\">(1993), 38 McGill L.J. 147</manual_label>, <manual_label labelname=\"fragment\">pp. 163-35</manual_label></manual_label> <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Russell, D.</manual_label>,\n\"<manual_label labelname=\"title\">Paedophilia: The Criminal Responsibility of Canada's Churches</manual_label>\"\n<manual_label labelname=\"source\">(1992), 15 Dalhousie L.J. 380</manual_label>, <manual_label labelname=\"fragment\">p. 394</manual_label></manual_label>\nClayton"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 2,
+    "comments": "ERREUR FRAGMENT, ERREUR SOURCE, CORRECTED",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "PP",
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "NUMth",
+          "ed.",
+          "(NUM)"
+        ],
+        [
+          "(NUM)",
+          ",",
+          "can.",
+          "y.b.",
+          "int'l",
+          "law",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "mcgill",
+          "l.j.",
+          "NUM"
+        ],
+        [
+          "(NUM)",
+          ",",
+          "NUM",
+          "dalhousie",
+          "l.j.",
+          "NUM"
+        ]
+      ],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " courts, particularly when, as in C.U.P.E., the decision was protected by a privative clause (pp. 230 and 234-36). [211] By championing “curial deference” to administrative bodies, C.U.P.E. embraced “a more sophisticated understanding of the role of administrative tribunals in the modern Canadian state” (National Corn Growers, at p. 1336, per",
+      "output": " courts, particularly when, as in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">C.U.P.E.</manual_label></manual_label>, the decision was protected by a privative clause (<manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">pp. 230</manual_label> and <manual_label labelname=\"fragment\">234-36</manual_label></manual_label>). [211] By championing “curial deference” to administrative bodies, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">C.U.P.E.</manual_label></manual_label> embraced “a more sophisticated understanding of the role of administrative tribunals in the modern Canadian state” (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">National Corn Growers</manual_label>, at <manual_label labelname=\"fragment\">p. 1336</manual_label></manual_label>, per"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PP",
+          "NUM"
+        ],
+        [
+          "NUM-NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "c.u.Pe."
+        ],
+        [
+          "c.u.Pe."
+        ],
+        [
+          "national",
+          "corn",
+          "growers"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " the assistance of D. Fairlie, Judicial Review of Administrative Action in Canada (loose-leaf), vol. 3, at p. 12-54.\n[78] In the case at bar and in its companion cases, reasons for the administrative decisions at issue were",
+      "output": " the assistance of <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">D. Fairlie</manual_label>, <manual_label labelname=\"title\">Judicial Review of Administrative Action in Canada</manual_label> <manual_label labelname=\"source\">(loose-leaf), vol. 3</manual_label>, at <manual_label labelname=\"fragment\">p. 12-54</manual_label></manual_label>.\n[78] In the case at bar and in its companion cases, reasons for the administrative decisions at issue were"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "P",
+          "NUM-NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "(loose-leaf)",
+          ",",
+          "vol.",
+          "NUM"
+        ]
+      ],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " sign\nsupports.\" The\nwitness said that he would not consider himself to be a bridge engineer if he\nexclusively designed the structures in issue. THE ISSUE The issue\nin this appeal is whether the goods in issue are bridges within the meaning of\nthe exemption clause. If",
+      "output": " sign\nsupports.\" The\nwitness said that he would not consider himself to be a bridge engineer if he\nexclusively designed the structures in issue. THE ISSUE The issue\nin this appeal is whether the goods in issue are bridges within the meaning of\nthe <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">exemption clause</manual_label></manual_label>. If"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "exemption",
+          "clause"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " standards. Some examples of such provisions are ss. 18 to 18.2, 18.4 and 28 of the Federal Courts Act, which confer jurisdiction on the Federal Court and the Federal Court of Appeal to hear and determine applications for judicial review of",
+      "output": " standards. Some examples of such provisions are <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 18 to 18.2</manual_label>, <manual_label labelname=\"fragment\">18.4</manual_label> and <manual_label labelname=\"fragment\">28</manual_label> of the <manual_label labelname=\"title\">Federal Courts Act</manual_label></manual_label>, which confer jurisdiction on the Federal Court and the Federal Court of Appeal to hear and determine applications for judicial review of"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM",
+          "TO",
+          "NUM.NUM"
+        ],
+        [
+          "NUM.NUM"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Assistant Guardian Toronto was shown\non the corporate filings as a director of the corporation. A corporation under\nPart III of the Act is to be carried on without the purpose of gain for its\nmembers and any profits are to be used in promoting the objects",
+      "output": " Assistant Guardian Toronto was shown\non the corporate filings as a director of the corporation. A corporation under\n<manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Part III</manual_label> of the <manual_label labelname=\"title\">Act</manual_label></manual_label> is to be carried on without the purpose of gain for its\nmembers and any profits are to be used in promoting the objects"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PART",
+          "ROMAN"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "] Péloquin v. Syndicat des agents de la paix en\nservices correctionnels du Québec, [2001] R.J.Q. 2215. [33] Ibid. at\npara. 68-73. [34] Ibid. at\npara. 80. [35] Ibid. at\nparas. 81 and 82. [36",
+      "output": "] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Péloquin v. Syndicat des agents de la paix en\nservices correctionnels du Québec</manual_label>, <manual_label labelname=\"citation\">[2001] R.J.Q. 2215</manual_label></manual_label>. [33] <manual_label labelname=\"decision\">Ibid. at\n<manual_label labelname=\"fragment\">para. 68-73</manual_label></manual_label>. [34] <manual_label labelname=\"decision\">Ibid. at\n<manual_label labelname=\"fragment\">para. 80</manual_label></manual_label>. [35] <manual_label labelname=\"decision\">Ibid. at\n<manual_label labelname=\"fragment\">paras. 81 and 82</manual_label></manual_label>. [36"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM-NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM",
+          "AND",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "[NUM]",
+          "r.j.q.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "péloquin",
+          "ROMAN.",
+          "syndicat",
+          "des",
+          "agents",
+          "de",
+          "la",
+          "paix",
+          "en",
+          "services",
+          "correctionnels",
+          "du",
+          "québec"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " years, direct that the offender\ncomply with the conditions prescribed in a probation order. (2) A court may also make a probation order where it\ndischarges an accused under subsection 730(1). [67] Sections\n5, 6, 6(1) and 7 of the Criminal Records Act [7",
+      "output": " years, direct that the offender\ncomply with the conditions prescribed in a probation order. (2) A court may also make a probation order where it\ndischarges an accused under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">subsection 730(1)</manual_label></manual_label>. [67] <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Sections\n5</manual_label>, <manual_label labelname=\"fragment\">6</manual_label>, <manual_label labelname=\"fragment\">6(1)</manual_label> and <manual_label labelname=\"fragment\">7</manual_label> of the <manual_label labelname=\"title\">Criminal Records Act</manual_label></manual_label> [7"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SUBSECTION",
+          "NUM(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM(PAREN)"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Peter\nC. Engelmann, for the respondent Statutes Cited: Canadian\nInternational Trade Tribunal Act, S.C. 1988, c. 56,subs.54(2) and s. 60; Excise\nTax Act, R.S.C. 1970, c. E-13, paragraph 1(h), Part XII, Schedule\nIII. Cases",
+      "output": " Peter\nC. Engelmann, for the respondent Statutes Cited:  <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Canadian\nInternational Trade Tribunal Act</manual_label>, <manual_label labelname=\"citation\">S.C. 1988, c. 56</manual_label>,<manual_label labelname=\"fragment\">subs.54(2)</manual_label> and <manual_label labelname=\"fragment\">s. 60</manual_label></manual_label>; <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Excise\nTax Act</manual_label>, <manual_label labelname=\"citation\">R.S.C. 1970, c. E-13</manual_label>, <manual_label labelname=\"fragment\">paragraph 1(h), Part XII, Schedule\nIII</manual_label></manual_label>. Cases"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": true,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "subSECTIONNUM(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM(ALPHA)",
+          ",",
+          "PART",
+          "ROMAN",
+          ",",
+          "SCHEDULE",
+          "ROMAN"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [
+        [
+          "SECTIONc.",
+          "NUM",
+          ",",
+          "c.",
+          "NUM"
+        ],
+        [
+          "r.SECTIONc.",
+          "NUM",
+          ",",
+          "c.",
+          "e-NUM"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " that such legal uncertainty will generate for those who rely on settled interpretations of administrative statutes to structure their affairs, despite the fact that protecting these reliance interests is a well-recognized and especially powerful reason for respecting precedent (Garner et al., at pp. 404-11; Neil Duxbury, The Nature and Authority of Precedent (2008), at pp. 118‑19; Kimble, at pp. 2410-11). By",
+      "output": " that such legal uncertainty will generate for those who rely on settled interpretations of administrative statutes to structure their affairs, despite the fact that protecting these reliance interests is a well-recognized and especially powerful reason for respecting precedent (<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Garner et al.</manual_label>, at <manual_label labelname=\"fragment\">pp. 404-11</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Neil Duxbury</manual_label>, <manual_label labelname=\"title\">The Nature and Authority of Precedent (2008)</manual_label>, at <manual_label labelname=\"fragment\">pp. 118‑19</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Kimble</manual_label>, at <manual_label labelname=\"fragment\">pp. 2410-11</manual_label></manual_label>). By"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": false,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PP",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "PP",
+          "NUM-NUM"
+        ],
+        [
+          "PP",
+          "NUM‑NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "kimble"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ". Malcolm Lavoie writes\non this in his article, Aboriginal Title Claims to Private Land and the\nLegal Relevance of Disruptive Effects, (2018) 83 S.C.L.R. (2d), pages\n129-166, at pages 142-143, as follows: That\nsaid",
+      "output": ". \n<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Malcolm Lavoie</manual_label> writes\non this in his article, <manual_label labelname=\"title\">Aboriginal Title Claims to Private Land and the\nLegal Relevance of Disruptive Effects</manual_label>, <manual_label labelname=\"citation\">(2018) 83 S.C.L.R. (2d), pages\n129-166</manual_label>, at <manual_label labelname=\"fragment\">pages 142-143</manual_label>,</manual_label> as follows: That\nsaid"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": false,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2024NBKB203_annotated_VP.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "PAGES",
+          "NUM-NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " in article 661 para. 1 C.C.P., which\nstates that an order to that effect can be made upon a showing that the filing\nof an appeal “is likely to cause serious or irreparable\nprejudice to one of the parties/risque de causer un préjudice sérieux ou\nirréparable à une partie”. Because",
+      "output": " in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">article 661 para. 1</manual_label> <manual_label labelname=\"title\">C.C.P.</manual_label></manual_label>, which\nstates that an order to that effect can be made upon a showing that the filing\nof an appeal “is likely to cause serious or irreparable\nprejudice to one of the parties/risque de causer un préjudice sérieux ou\nirréparable à une partie”. Because"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2021QCCA1675_annotated_EG_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "ARTICLE",
+          "NUM",
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " a matter of procedural fairness, reasons are not required for all administrative decisions. The duty of procedural fairness in administrative law is “eminently variable”, inherently flexible and context-specific: Knight v. Indian Head School Division No. 19, [1990] 1 S.C.R. 653, at p. 682; Baker v. Canada (Minister of Citizenship and Immigration), [1999] 2 S.C.R. 817, at paras. 22-23; Moreau-Bérubé, at paras. 74‑75; Dunsmuir, at para. 79. Where",
+      "output": " a matter of procedural fairness, reasons are not required for all administrative decisions. The duty of procedural fairness in administrative law is “eminently variable”, inherently flexible and context-specific: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Knight v. Indian Head School Division No. 19</manual_label>, <manual_label labelname=\"citation\">[1990] 1 S.C.R. 653</manual_label>, at <manual_label labelname=\"fragment\">p. 682</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Baker v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">[1999] 2 S.C.R. 817</manual_label>, at <manual_label labelname=\"fragment\">paras. 22-23</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Moreau-Bérubé</manual_label>, at <manual_label labelname=\"fragment\">paras. 74‑75</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label>, at <manual_label labelname=\"fragment\">para. 79</manual_label></manual_label>. Where"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM‑NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ],
+        [
+          "[NUM]",
+          "NUM",
+          "SECTIONc.r.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "knight",
+          "ROMAN.",
+          "indian",
+          "head",
+          "school",
+          "division",
+          "no.",
+          "NUM"
+        ],
+        [
+          "baker",
+          "ROMAN.",
+          "canada",
+          "(minister",
+          "of",
+          "citizenship",
+          "AND",
+          "immigration)"
+        ],
+        [
+          "moreau-bérubé"
+        ],
+        [
+          "dunsmuir"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " under subsection (1) unless, at the time the\naccused pleads guilty or is found guilty, the court, judge or justice orders\nthat the accused be taken into custody pending such a disposition. (3) Where a court directs under subsection (1) that an\noffender",
+      "output": " under subsection (1) unless, at the time the\naccused pleads guilty or is found guilty, the court, judge or justice orders\nthat the accused be taken into custody pending such a disposition. (3) Where a court directs under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">subsection (1)</manual_label></manual_label> that an\noffender"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SUBSECTION",
+          "(NUM)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " disclose a reasonable cause of action 2. to strike the pleadings\nagainst them pursuant to Rule 27.09(b) and (c) on the basis that they\nare scandalous, frivolous or vexatious and/or are an abuse of the Court 3. on a finding by",
+      "output": " disclose a reasonable cause of action 2. to strike the pleadings\nagainst them pursuant to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Rule 27.09(b)</manual_label> and <manual_label labelname=\"fragment\">(c)</manual_label></manual_label> on the basis that they\nare scandalous, frivolous or vexatious and/or are an abuse of the Court 3. on a finding by"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2024NBKB203_annotated_VP.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "RULE",
+          "NUM.NUM(PAREN)"
+        ],
+        [
+          "(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "] Ibid. at\nparas. 33, 34, 35, 39, 40 and 41. [15] R.S.Q. c.\nC-12. [16] R.S.B.C., 1996, c. 210. [17] McLaughlin v. Fletcher Challenge Canada Ltd., [2000] B.C.J. No 2162, 2000 BCCA\n584 at para. 10. [18",
+      "output": "] <manual_label labelname=\"decision\">Ibid. at\n<manual_label labelname=\"fragment\">paras. 33, 34, 35</manual_label>, <manual_label labelname=\"fragment\">39</manual_label>, <manual_label labelname=\"fragment\">40 and 41</manual_label></manual_label>. [15] <manual_label labelname=\"legislation\"><manual_label labelname=\"citation\">R.S.Q. c.\nC-12</manual_label></manual_label>. [16]  <manual_label labelname=\"legislation\"><manual_label labelname=\"citation\">R.S.B.C., 1996, c. 210</manual_label></manual_label>. [17] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">McLaughlin v. Fletcher Challenge Canada Ltd.</manual_label>, <manual_label labelname=\"citation\">[2000] B.C.J. No 2162, 2000 BCCA\n584</manual_label> at <manual_label labelname=\"fragment\">para. 10</manual_label></manual_label>. [18"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 3,
+    "comments": "corrected",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": true,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "fuzzy",
+    "match_score": 1.0,
+    "pattern": [
+      [
+        "decision",
+        "fragment",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "citation"
+      ],
+      [
+        "legislation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM",
+          ",",
+          "NUM",
+          ",",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM",
+          "AND",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "[NUM]",
+          "b.c.j.",
+          "no",
+          "NUM",
+          ",",
+          "NUM",
+          "bcca",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [
+        [
+          "r.SECTIONq.",
+          "c.",
+          "c-NUM"
+        ],
+        [
+          "r.SECTIONb.c.",
+          ",",
+          "NUM",
+          ",",
+          "c.",
+          "NUM"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "mclaughlin",
+          "ROMAN.",
+          "fletcher",
+          "challenge",
+          "canada",
+          "ltd"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ". Any person of the opposite sex to whom a\nperson mentioned in paragraph 3, 4 or 6 is married or with whom that person is\nliving in a conjugal relationship outside marriage. (Emphasis added) Following the trial in this matter, s. 3(1), para. 7 was",
+      "output": ". Any person of the opposite sex to whom a\nperson mentioned in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph 3</manual_label>, <manual_label labelname=\"fragment\">4</manual_label> or <manual_label labelname=\"fragment\">6</manual_label></manual_label> is married or with whom that person is\nliving in a conjugal relationship outside marriage. (Emphasis added) Following the trial in this matter, <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(1), para. 7</manual_label></manual_label> was"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM(PAREN)",
+          ",",
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " the\nwell-being of an ethnic group, is deemed non-discriminatory. 52. No provision of any Act, even subsequent to the\nCharter, may derogate from sections 1 to 38, except so far as provided by those\nsections, unless such Act expressly states that",
+      "output": " the\nwell-being of an ethnic group, is deemed non-discriminatory. 52. No provision of any Act, even subsequent to the\n<manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label>, may derogate from <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">sections 1 to 38</manual_label></manual_label>, except so far as provided by those\nsections, unless such Act expressly states that"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM",
+          "TO",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " in the Criminal Code down into the following categories:\n(1) the ordinary and partial pardon provided in ss. 748(1) and 748.1(1) of the\nCode, which consists of the remission, in whole or in part, of a sentence",
+      "output": " in the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Criminal Code</manual_label></manual_label> down into the following categories:\n(1) the ordinary and partial pardon provided in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 748(1)</manual_label> and <manual_label labelname=\"fragment\">748.1(1)</manual_label> of the\n<manual_label labelname=\"title\">Code</manual_label></manual_label>, which consists of the remission, in whole or in part, of a sentence"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ],
+        [
+          "NUM.NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " convicted of a criminal offence prosecuted by way of indictment\nand who has been granted a pardon for that offence cannot be considered to fail\nto meet the hiring conditions provided for in paragraph (3) of section 3 of the\nPolice Act or in paragraph (c) of section 2 of Regulation 14,\nwhich",
+      "output": " convicted of a criminal offence prosecuted by way of indictment\nand who has been granted a pardon for that offence cannot be considered to fail\nto meet the hiring conditions provided for in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph (3) of section 3</manual_label> of the\n<manual_label labelname=\"title\">Police Act</manual_label></manual_label> or in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph (c) of section 2</manual_label> of <manual_label labelname=\"title\">Regulation 14</manual_label></manual_label>,\nwhich"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "(NUM)",
+          "of",
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "(ALPHA)",
+          "of",
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " that “[a]s such, Mr. Vavilov was not entitled to receive a citizenship certificate pursuant to paragraph 3(2)(a) of the Citizenship Act”: A.R., vol. I, at p. 3. The report was dated June 24, 2014.\n[155",
+      "output": " that “[a]s such, Mr. Vavilov was not entitled to receive a citizenship certificate pursuant to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph 3(2)(a)</manual_label> of the <manual_label labelname=\"title\">Citizenship Act</manual_label></manual_label>”: A.R., vol. I, at p. 3. The report was dated June 24, 2014.\n[155"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "NUM(PAREN)(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " the VCDR, as well as Article II of the Optional Protocol to the Vienna Convention on Diplomatic Relations, concerning Acquisition of Nationality, 500 U.N.T.S. 223, which provides that “[m]embers of the mission not being nationals of the receiving State, and members of their families forming part of their household, shall not, solely by the operation of the law of the receiving State, acquire the nationality of that State”. Mr",
+      "output": " the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">VCDR</manual_label></manual_label>, as well as <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Article II</manual_label> of the <manual_label labelname=\"title\">Optional Protocol to the Vienna Convention on Diplomatic Relations, concerning Acquisition of Nationality</manual_label>, <manual_label labelname=\"citation\">500 U.N.T.S. 223</manual_label></manual_label>, which provides that “[m]embers of the mission not being nationals of the receiving State, and members of their families forming part of their household, shall not, solely by the operation of the law of the receiving State, acquire the nationality of that State”. Mr"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": true,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "match_type": "exact",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "ARTICLE",
+          "ROMAN"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [
+        [
+          "NUM",
+          "u.n.t.SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  }
+]

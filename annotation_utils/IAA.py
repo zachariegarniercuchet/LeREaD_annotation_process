@@ -576,21 +576,20 @@ def print_iaa_results(overall: Dict, per_label: Dict[str, Dict],
     print("📋 PER-LABEL BREAKDOWN")
     print("─" * 80)
     
-    print(f"\n{'Label':<30} {'A1':>6} {'A2':>6} {'Match':>8} {'F1 Score':>10}")
-    print("─" * 80)
-    
+    print(f"\n{'Label':<30} {'A1':>6} {'A2':>6} {'Match':>8} {'Precision':>10} {'Recall':>10} {'F1':>10}")
+    print("─" * 100)
+
     for label in sorted(per_label.keys()):
         metrics = per_label[label]
         if match_type == 'context':
-            match_str = f"{metrics['matched']}"
+            match_count = metrics['matched']
         else:
-            match_str = f"{metrics['matched_annotator1']}/{metrics['matched_annotator2']}"
+            match_count = metrics['matched_annotator1']
         
-        # Truncate long label names
         display_label = label if len(label) <= 30 else label[:27] + "..."
         
         print(f"{display_label:<30} {metrics['annotator1_count']:>6} {metrics['annotator2_count']:>6} "
-              f"{match_str:>8} {metrics['f1']*100:>9.2f}%")
+            f"{match_count:>8} {metrics['precision']*100:>9.2f}% {metrics['recall']*100:>9.2f}% {metrics['f1']*100:>9.2f}%")
     
     print("\n" + "═" * 80 + "\n")
 
@@ -685,7 +684,7 @@ def find_matching_llm_file(human_file: str, llm_folder: str, version: str = "v1.
             best_match = str(llm_file)
     
     # Only return match if it's substantial (at least 10 characters)
-    if best_match_length >= 10:
+    if best_match_length >= 7:
         return best_match
     return None
 
@@ -783,7 +782,7 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                     'human_spans': spans1,
                     'llm_spans': spans2,
                     'len_human_spans': len(spans1),
-                    'len_llm_spans': len(spans2)
+                    'len_llm_spans': len(spans2),
                 }
                 
                 # Level 1: Span matching
@@ -792,8 +791,9 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                     per_label_l1 = calculate_per_label_iaa(spans1, spans2, match_type)
                     
                     result['l1_precision'] = overall_l1['precision']
-                    result['l1_recall'] = overall_l1['recall']
-                    result['l1_f1'] = overall_l1['f1']
+                    result['l1_recall']    = overall_l1['recall']
+                    result['l1_f1']        = overall_l1['f1']
+                    result['l1_matched']   = overall_l1.get('matched', 0)
                     result['per_label_l1'] = per_label_l1  # Store per-label results
                     
                     log.write("LEVEL 1: SPAN MATCHING\n")
@@ -866,14 +866,19 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
             
             # Table header
             if evaluation_level == "both":
-                header = f"{'File':<40} {'Human':>8} {'LLM':>8} {'L1 F1':>10} {'L2 F1':>10}"
+                header = f"{'File':<40} {'Human':>8} {'LLM':>8} {'Match':>8} {'Precision':>12} {'Recall':>12} {'L1 F1':>10} {'L2 F1':>10}"
+                sep = "─" * 120
                 print(header)
-                print("─" * 100)
+                print(sep)
                 log.write(header + "\n")
-                log.write("─" * 100 + "\n")
+                log.write(sep + "\n")
                 
                 for result in all_results:
-                    row = f"{result['human_file'][:40]:<40} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} {result.get('l1_f1', 0)*100:>9.2f}% {result.get('l2_f1', 0)*100:>9.2f}%"
+                    p = result.get('l1_precision', 0) * 100
+                    r = result.get('l1_recall',    0) * 100
+                    row = (f"{result['human_file'][:40]:<40} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} "
+                        f"{result.get('l1_matched', 0):>8} {p:>11.2f}% {r:>11.2f}% "
+                        f"{result.get('l1_f1', 0)*100:>9.2f}% {result.get('l2_f1', 0)*100:>9.2f}%")
                     print(row)
                     log.write(row + "\n")
                 
@@ -881,22 +886,23 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                 mean_l1_f1 = sum(r.get('l1_f1', 0) for r in all_results) / len(all_results)
                 mean_l2_f1 = sum(r.get('l2_f1', 0) for r in all_results) / len(all_results)
                 
-                print("─" * 100)
-                mean_row = f"{'MEAN':<40} {'':>8} {'':>8} {mean_l1_f1*100:>9.2f}% {mean_l2_f1*100:>9.2f}%"
+                print(sep)
+                mean_row = f"{'MEAN':<40} {'':>8} {'':>8} {'':>8} {'':>12} {'':>12} {mean_l1_f1*100:>9.2f}% {mean_l2_f1*100:>9.2f}%"
                 print(mean_row)
-                
-                log.write("─" * 100 + "\n")
+                log.write(sep + "\n")
                 log.write(mean_row + "\n")
                 
             elif evaluation_level == "level1":
-                header = f"{'File':<50} {'Human':>8} {'LLM':>8} {'Precision':>12} {'Recall':>12} {'F1':>10}"
+                header = f"{'File':<50} {'Human':>8} {'LLM':>8} {'Match':>8} {'Precision':>12} {'Recall':>12} {'F1':>10}"
                 print(header)
-                print("─" * 100)
+                print("─" * 110)
                 log.write(header + "\n")
-                log.write("─" * 100 + "\n")
-                
+                log.write("─" * 110 + "\n")
+
                 for result in all_results:
-                    row = f"{result['human_file'][:50]:<50} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} {result.get('l1_precision', 0)*100:>11.2f}% {result.get('l1_recall', 0)*100:>11.2f}% {result.get('l1_f1', 0)*100:>9.2f}%"
+                    row = (f"{result['human_file'][:50]:<50} {result['len_human_spans']:>8} {result['len_llm_spans']:>8} "
+                        f"{result.get('l1_matched', 0):>8} {result.get('l1_precision', 0)*100:>11.2f}% "
+                        f"{result.get('l1_recall', 0)*100:>11.2f}% {result.get('l1_f1', 0)*100:>9.2f}%")
                     print(row)
                     log.write(row + "\n")
                 
@@ -983,16 +989,19 @@ def batch_evaluate_folder(human_folder: str, llm_folder: str,
                             }
                     
                     # Print table
-                    header = f"{'Label':<30} {'Total A1':>10} {'Total A2':>10} {'Matched':>10} {'Mean F1':>12}"
+                    header = f"{'Label':<30} {'Total A1':>10} {'Total A2':>10} {'Matched':>10} {'Precision':>12} {'Recall':>12} {'Mean F1':>12}"
                     print(header)
-                    print("─" * 100)
+                    print("─" * 110)
                     log.write(header + "\n")
-                    log.write("─" * 100 + "\n")
-                    
+                    log.write("─" * 110 + "\n")
+
                     for label in sorted(label_stats.keys()):
                         stats = label_stats[label]
                         display_label = label if len(label) <= 30 else label[:27] + "..."
-                        row = f"{display_label:<30} {stats['a1']:>10} {stats['a2']:>10} {stats['matched']:>10} {stats['mean_f1']*100:>11.2f}%"
+                        p = stats['matched'] / stats['a2'] if stats['a2'] > 0 else 0
+                        r = stats['matched'] / stats['a1'] if stats['a1'] > 0 else 0
+                        row = (f"{display_label:<30} {stats['a1']:>10} {stats['a2']:>10} {stats['matched']:>10} "
+                            f"{p*100:>11.2f}% {r*100:>11.2f}% {stats['mean_f1']*100:>11.2f}%")
                         print(row)
                         log.write(row + "\n")
                     
@@ -1019,7 +1028,7 @@ if __name__ == "__main__":
     # MODE SELECTION
     # "single" = Evaluate a single pair of files
     # "batch"  = Evaluate all files in folders (human vs LLM)
-    MODE = "single"  # Options: "single", "batch"
+    MODE = "batch"  # Options: "single", "batch"
     
     # ============================================================================
     # BATCH MODE CONFIGURATION
@@ -1028,13 +1037,13 @@ if __name__ == "__main__":
         # Folder paths
         project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
         human_folder = fr"{project_root}\data\final\Annotated"
-        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\p2_c500_fsselected-30_mgpt-5.2"
+        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2"
         
         # Evaluation settings
         evaluation_level = "both"  # Options: "level1", "level2", "both"
         match_type = "context"     # Options: "context", "context_overlap"
         context_chars = 200
-        version = "v1.3"           # Version string that LLM filenames must end with
+        version = "v1.0"           # Version string that LLM filenames must end with
         
         # Run batch evaluation
         batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)
@@ -1055,12 +1064,20 @@ if __name__ == "__main__":
         file2 = fr"{project_root}\data\Documents_Annotés\{anno2}\{filename}\v_prompt_2_500_selected_30_gpt5.2_chunk2_subdef2\{filename}_llm_v1.0.htmL"
         
         # Between the gold and the verif + LLM
-        file1 = fr"{project_root}\data\final\Annotated\2024NBKB203_annotated_VP.html"
+        file1 = fr"{project_root}\data\final\Annotated\2024NBKB203_annotated_VP_rev2RL_tech.html"
         file2 = fr"{project_root}\data\Documents_Annotés\2024 NBKB 203_LLMv1.3_Verified_EG.htmL"
 
         # Between the verif + LLM and the LLM
-        file1 = fr"{project_root}\data\Documents_Annotés\llm\TEST_p2_c500_fsselected-30_mgpt-5.2\2024 NBKB 203_v1.3.html"
-        file2 = fr"{project_root}\data\Documents_Annotés\2024 NBKB 203_LLMv1.3_Verified_EG.htmL"
+        #file1 = fr"{project_root}\data\Documents_Annotés\llm\TEST_p2_c500_fsselected-30_mgpt-5.2\2024 NBKB 203_v1.3.html"
+        #file2 = fr"{project_root}\data\Documents_Annotés\2024 NBKB 203_LLMv1.3_Verified_EG.htmL"
+        
+        # Between the Gold and the LLM
+        file1 = fr"{project_root}\data\final\Annotated\2024NBKB203_annotated_VP_rev2RL_tech.html"
+        file2 = fr"{project_root}\data\Documents_Annotés\llm\TEST_p2_c500_fsselected-30_mgpt-5.2\2024 NBKB 203_v1.3.html"
+        
+        # Between the verif + LLM and the LLM of 205 file this time
+        #file1 = fr"{project_root}\data\Documents_Annotés\llm\TEST_p2_c500_fsselected-30_mgpt-5.2\2005QCCA437_v1.3.html"
+        #file2 = fr"{project_root}\data\final\Annotated\2005QCCA437_LLMv1.3_Verified_GL_revRL_tech.htmL"
         
 
         # Choose evaluation level

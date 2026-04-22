@@ -1,6 +1,6 @@
 from .prompts.sublabel_definitions import SUBLABEL_DEFINITIONS_V1, SUBLABEL_DEFINITIONS_V2
 from .prompts.guidelines import ANNOTATION_GUIDELINES   
-
+from .tokenizer_utils import decode
 
 
 
@@ -57,34 +57,67 @@ def get_meta_prompt(annotation_guidelines, model_name="gpt-4o", temperature=0.7)
     
     return generated_prompt
 
-def get_prompt_processing(prompt_path,few_shot_examples=None):
+def get_prompt_processing(prompt_path, few_shot_examples=None, chunks=None, dynamic_few_shot_selection=False):
     """
     Create system and user prompts for the AI model to process legal text.
-    
+
     Args:
-        few_shot_examples: List of tuples (input, expected_output) for few-shot learning
-    
+        prompt_path              : path to the base system prompt file
+        few_shot_examples        : - static mode : list of (input, output) tuples
+                                   - dynamic mode: list of lists of (input, output) tuples,
+                                     one inner list per chunk
+                                     e.g. few_shot_examples[chunk_i][example_j] = (input, output)
+        chunks                   : list of decoded chunk texts (required in dynamic mode)
+        dynamic_few_shot_selection: if True, returns one prompt pair per chunk
+
     Returns:
-        tuple: (system_prompt, user_prompt_template)
+        - static mode  : (system_prompt: str,       user_prompt_template: str)
+        - dynamic mode : (system_prompts: list[str], user_prompts: list[str])
     """
     with open(prompt_path, 'r', encoding='utf-8') as f:
-        system_prompt = f.read()
-        
-    
-    # Add few-shot examples if provided
-    if few_shot_examples:
-        system_prompt += "\n\nHere are some examples:\n"
-        for i, (input_text, expected_output) in enumerate(few_shot_examples, 1):
-            system_prompt += f"\nExample {i}:\n"
-            system_prompt += f"<ORIGINAL_TEXT>{input_text}<END_ORIGINAL_TEXT>\n"
-            system_prompt += f"<EXPECTED_OUTPUT>{expected_output}<END_EXPECTED_OUTPUT>\n"
-    
-    user_prompt_template = """Please annotate the following legal text with the appropriate auto_label tags:
+        base_system_prompt = f.read()
 
-    <ORIGINAL_TEXT>{text}<END_ORIGINAL_TEXT>
-    
-    OUTPUT:"""
-    
+    def _build_system_prompt(base, examples):
+        prompt = base
+        if examples:
+            prompt += "\n\nHere are some examples:\n"
+            for i, (input_text, expected_output) in enumerate(examples, 1):
+                prompt += f"\nExample {i}:\n"
+                prompt += f"<ORIGINAL_TEXT>{input_text}<END_ORIGINAL_TEXT>\n"
+                prompt += f"<EXPECTED_OUTPUT>{expected_output}<END_EXPECTED_OUTPUT>\n"
+        return prompt
+
+    def _build_user_prompt(text):
+        return (
+            "Please annotate the following legal text with the appropriate auto_label tags:\n\n"
+            f"<ORIGINAL_TEXT>{text}<END_ORIGINAL_TEXT>\n\n"
+            "OUTPUT:"
+        )
+
+    # ── DYNAMIC MODE ──────────────────────────────────────────────────────────
+    if dynamic_few_shot_selection:
+        if chunks is None:
+            raise ValueError("`chunks` must be provided when dynamic_few_shot_selection=True")
+        if few_shot_examples is None or len(few_shot_examples) != len(chunks):
+            raise ValueError("`few_shot_examples` must have one entry per chunk in dynamic mode")
+
+        system_prompts = [
+            _build_system_prompt(base_system_prompt, few_shot_examples[i])
+            for i in range(len(chunks))
+        ]
+        user_prompts = [
+            _build_user_prompt(decode(chunk))
+            for chunk in chunks
+        ]
+        return system_prompts, user_prompts
+
+    # ── STATIC MODE ───────────────────────────────────────────────────────────
+    system_prompt = _build_system_prompt(base_system_prompt, few_shot_examples)
+    user_prompt_template = (
+        "Please annotate the following legal text with the appropriate auto_label tags:\n\n"
+        "<ORIGINAL_TEXT>{text}<END_ORIGINAL_TEXT>\n\n"
+        "OUTPUT:"
+    )
     return system_prompt, user_prompt_template
 
 

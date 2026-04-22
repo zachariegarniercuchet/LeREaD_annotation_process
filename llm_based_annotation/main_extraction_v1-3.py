@@ -254,7 +254,7 @@ def get_hyperparameters():
     fs_mode = "selected"  # "random" or "selected"
     model_name = "gpt-5.2"
 
-    n_few_shot = 30  # Number of few-shot examples to use
+    n_few_shot = 0  # Number of few-shot examples to use
 
     prompt_version = "2"
 
@@ -309,7 +309,7 @@ def main():
     versions = ["v1.1", "v1.2", "v1.3"]
     min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, sublabel_definitions = get_hyperparameters()
 
-    base_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+    base_dir = fr"{project_root}\data\Documents_Annotés\llm\p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
     output_dir = base_dir
 
     # Mapping: version -> input_suffix (what to load)

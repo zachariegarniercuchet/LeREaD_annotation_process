@@ -6,6 +6,7 @@ from utils_extraction import merge_tokens_general, add_attributes_to_auto_labels
 from models import GPTAssistant
 from utils_extraction import process_chunks
 from utils_extraction import clean_html_formatting
+from utils_extraction import select_few_shot_for_all_chunks
 
 
 import json
@@ -103,83 +104,6 @@ def chunk_html_by_sentence(html_content, min_tokens=500):
 
     return token_chunks
 
-
-def chunk_html_by_paragraph(html_content, min_tokens=500):
-    """
-    Paragraph-based chunker. Uses BeautifulSoup to extract leaf block elements,
-    preserving their HTML, then tokenizes + cleans each paragraph, and merges
-    consecutive paragraphs until min_tokens is reached.
-
-    Returns: List[List[token]] — same format as the sentence method.
-    """
-    from bs4 import BeautifulSoup
-
-    body_content = extract_body(html_content)
-
-    # ------------------------------------------------------------------ #
-    # 1. Extract leaf block elements (same logic as batch_paragraphs)     #
-    # ------------------------------------------------------------------ #
-    soup = BeautifulSoup(body_content, "html.parser")
-
-    def get_leaf_blocks(tag):
-        leaf_blocks = []
-        for child in tag.find_all(
-            ["p", "li", "blockquote", "pre", "h1", "h2", "h3", "h4", "h5", "h6"]
-        ):
-            # Only keep blocks that don't contain other block-level elements
-            if not child.find(["p", "li", "blockquote", "pre"]):
-                leaf_blocks.append(child)
-        return leaf_blocks
-
-    leaf_blocks = get_leaf_blocks(soup)
-
-    # ------------------------------------------------------------------ #
-    # 2. Tokenize + clean each paragraph, keeping original HTML           #
-    # ------------------------------------------------------------------ #
-    paragraph_token_lists = []  # List[List[token]]
-
-    for block in leaf_blocks:
-        # str(block) preserves the full HTML of the element (tags included)
-        block_html = str(block)
-
-        raw_tokens = tokenize(block_html)
-        cleaned_tokens = clean_tokens(
-            html_tokens=raw_tokens,
-            normalize=True,
-            keep_manual_label=True,
-            keep_bookmarks=True,
-        )
-
-        if cleaned_tokens:
-            paragraph_token_lists.append(cleaned_tokens)
-
-    # ------------------------------------------------------------------ #
-    # 3. Merge consecutive paragraphs until min_tokens is reached         #
-    # ------------------------------------------------------------------ #
-    token_chunks = []
-    current_chunk = []
-
-    for para_tokens in paragraph_token_lists:
-        if not current_chunk:
-            # Always start a new chunk with the current paragraph
-            current_chunk = list(para_tokens)
-        elif len(current_chunk) >= min_tokens:
-            # Current chunk is already big enough — flush and start fresh
-            token_chunks.append(current_chunk)
-            current_chunk = list(para_tokens)
-        else:
-            # Current chunk is still too small — keep accumulating
-            current_chunk.extend(para_tokens)
-
-    # Flush the last chunk
-    if current_chunk:
-        token_chunks.append(current_chunk)
-
-    print(f"Paragraph chunks: {len(token_chunks)}")
-    print(f"Chunk sizes (tokens): {[len(c) for c in token_chunks]}")
-
-    return token_chunks
-
 def chunk_html_by_paragraph(html_content, min_tokens=500):
     """
     Paragraph-based chunker. Uses BeautifulSoup to extract leaf block elements,
@@ -258,14 +182,24 @@ def chunk_html_by_paragraph(html_content, min_tokens=500):
 
 
 
-def main_few_shot_selection(filename, n_few_shot=30):
+def main_few_shot_selection(filename, label_config, n_few_shot=30, fs_json_path=None, random_seed=None):
     
-
-    # Load the selected few-shot examples JSON
-    fs_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\combined_v3_with_sources_manual_label.json"
+    import random
+    use_random_mode = random_seed is not None
+    
+    if use_random_mode:
+        random.seed(random_seed)
+        if fs_json_path is None:
+            fs_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_with_sources_fixed_spacing_manual_label.json"
+    else:
+        if fs_json_path is None:
+            fs_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\combined_v3_with_sources_manual_label.json"
+    
+    # Load the few-shot examples JSON
     with open(fs_json_path, 'r', encoding='utf-8') as file:
         fs_data = json.load(file)
     print(f"   ✓ Loaded {len(fs_data)} examples from: {fs_json_path}")
+    print(f"   ✓ Selection mode: {'random' if use_random_mode else 'manual'}")
     
     # Get all unique source files and print them
     source_files = sorted(list(set([item.get('source_file', 'unknown') for item in fs_data])))
@@ -276,7 +210,7 @@ def main_few_shot_selection(filename, n_few_shot=30):
     
     # Apply filters:
     # 1. Mask filter: Exclude examples from the same document being annotated (avoid data leakage)
-    # 2. Manual filter: Only keep examples where "selected" == true
+    # 2. Selection filter: Either random selection or manual "selected" flag
     current_doc_base = filename
     
     filtered_examples = []
@@ -290,11 +224,19 @@ def main_few_shot_selection(filename, n_few_shot=30):
         if current_doc_base in source_file:
             excluded_same_doc += 1
             continue
-        
-        # Filter 2: Only keep examples with "selected" == true (MANUAL FILTER)
-        if not item.get('selected', False):
-            excluded_not_selected += 1
-            continue
+
+        # Filter 2: Apply selection filter based on mode
+        if use_random_mode:
+            # In random selection mode, randomly select from the whole pool (after masking)
+            # Keep item if random number is <= probability (n_few_shot / len(fs_data))
+            if random.random() > (n_few_shot / len(fs_data)):
+                excluded_not_selected += 1
+                continue
+        else:
+            # In manual selection mode, only keep examples where "selected" == true
+            if not item.get('selected', False):
+                excluded_not_selected += 1
+                continue
         
         # Extract input/output from the example
         if 'example' in item and 'input' in item['example'] and 'output' in item['example']:
@@ -304,10 +246,10 @@ def main_few_shot_selection(filename, n_few_shot=30):
                 'source_file': source_file
             })
     
-    print(f"\n   ✓ Filtering results:")
-    print(f"      - Excluded (same document): {excluded_same_doc}")
-    print(f"      - Excluded (not selected): {excluded_not_selected}")
-    print(f"      - Retained: {len(filtered_examples)}")
+    #print(f"\n   ✓ Filtering results:")
+    #print(f"      - Excluded (same document): {excluded_same_doc}")
+    #print(f"      - Excluded (not selected): {excluded_not_selected}")
+    #print(f"      - Retained: {len(filtered_examples)}")
     
     # Show source files of retained examples
     retained_sources = {}
@@ -327,21 +269,16 @@ def main_few_shot_selection(filename, n_few_shot=30):
     
     
     
-    print(f"\n   ✓ Simplifying outputs to parent-level extraction...")
+    #print(f"\n   ✓ Simplifying outputs to parent-level extraction...")
     simplified_examples = []
     for ex in selected_examples_dicts:
-        simplified_output = decode(prepare_label_tokens(tokenize(ex['output']), label_config={
-            "keep_attributes": ["labelname"],
-            "switch_type": True,
-            "use_simplified": True,
-            "keep_labels": ["decision", "legislation", "secondary sources"]
-        }))
+        simplified_output = decode(prepare_label_tokens(tokenize(ex['output']), label_config=label_config))
         simplified_examples.append((ex['input'], simplified_output))
     
     # Convert to list of tuples (input, output)
     selected_few_shot_examples = simplified_examples
     
-    print(f"   ✓ Selected {len(selected_few_shot_examples)} few-shot examples for processing.")
+    #print(f"   ✓ Selected {len(selected_few_shot_examples)} few-shot examples for processing.")
     
     return selected_few_shot_examples
 
@@ -417,10 +354,19 @@ def get_hyperparameters():
     # ---------- Define Hyperparameters ----------
     min_tokens = 500
     fs_min_tokens = 100
-    fs_mode = "selected"  # "random" or "selected"
+    fs_mode = "pattern"  # "random" or "selected" or "pattern"
     model_name = "gpt-5.2"
 
-    n_few_shot = 30  # Number of few-shot examples to use
+
+    #if not pattern selected, please set n_dynamic = 0. If pattern selected, we will have n_general fixed examples + n_dynamic chunk-based examples.
+    n_general = 5
+    n_dynamic = 25
+
+    n_few_shot = (n_general, n_dynamic) 
+    
+    all_in_one_go = True  # Whether to run the entire extraction process in one go 
+
+    fall_back = True  # Whether to implement a fall-back mechanism in case of verification failure (e.g., hallucination, consistency, label scheme errors)
 
     prompt_version = "2"
     cot = False
@@ -428,28 +374,50 @@ def get_hyperparameters():
         prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\simplified_parent_extraction_cot v{prompt_version}.txt"
     else :
         prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\simplified_parent_extraction v{prompt_version}.txt"
+    
+    if all_in_one_go:
+        prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\allinone_v{prompt_version}.txt"
 
     chunking_method = "paragraph"  # "sentence" or "paragraph"
 
-    # Define label_config 
-    label_config = {
-        "keep_attributes": ["labelname"],  # extraction only, no disambiguation
-        "switch_type": True,  # manual_label -> auto_label
-        "use_simplified": True,  # <auto_label labelname="title"> -> <title>
-        "keep_labels": ["decision", "legislation", "secondary sources"]
-    }
 
-    return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method
+    if not all_in_one_go:
+        # Define label_config 
+        label_config = {
+            "keep_attributes": ["labelname"],  # extraction only, no disambiguation
+            "switch_type": True,  # manual_label -> auto_label
+            "use_simplified": True,  # <auto_label labelname="title"> -> <title>
+            "keep_labels": ["decision", "legislation", "secondary sources"]
+        }
+    else:
+        label_config = {
+            "keep_attributes": ["labelname"],  # extraction only, no disambiguation
+            "switch_type": True,  # manual_label -> auto_label
+            "use_simplified": True,  # <auto_label labelname="title"> -> <title>
+            "keep_labels": ["decision", "legislation", "secondary sources", "citation", "source", "authors", "title", "fragment"]  # only keep these 4 parent-level labels, remove all sublabels
+        }
+
+    return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method, fall_back
 
 def main():
 
-    min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method = get_hyperparameters()
+    min_tokens, _, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method, fall_back = get_hyperparameters()
+
+    if n_few_shot[1] > 0:
+            dynamic_few_shot = True
+    else:
+        dynamic_few_shot = False
+
 
     source_dir = fr"{project_root}\data\final\Original"
     #source_dir = fr"{project_root}\data\Document_Échantillon_Initial\ronde_3\plain_html_arbre_balise"
     files = get_all_html_files_in(source_dir)
     print(f"✓ Loaded {len(files)} files from: {source_dir}")
-    output_dir = fr"{project_root}\data\Documents_Annotés\llm\TEST_PARACHUNKER_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+
+    if n_few_shot[1] > 0:
+        output_dir = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot[0]}-{n_few_shot[1]}_m{model_name}"
+    else:
+        output_dir = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot[0]}_m{model_name}"
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -471,12 +439,46 @@ def main():
         
         token_chunks = main_chunk_html(html_content, min_tokens=min_tokens, method=chunking_method)
 
-        selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=n_few_shot)
+        if fs_mode == "random":
+            selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=sum(n_few_shot), 
+                                                                 #fs_json_path=fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_clean_with_sources_fixed_spacing_manual_label.json",
+                                                                 random_seed=42,
+                                                                 label_config=label_config)  # Set a random seed for reproducibility if using random selection mode 
+        elif fs_mode == "selected":
+            selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=sum(n_few_shot), 
+                                                                 fs_json_path=fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_clean_with_sources_fixed_spacing_manual_label.json",
+                                                                 random_seed=None,
+                                                                 label_config=label_config)  # Set to None for manual selection mode
+        elif fs_mode == "pattern":
+            
+            if dynamic_few_shot:
+                selected_few_shot_examples = select_few_shot_for_all_chunks(
+                    token_chunks_par = token_chunks,
+                    filename = filename,
+                    label_config = label_config,
+                    n_general = n_few_shot[0],
+                    n_dynamic = n_few_shot[1],
+                    general_json_path = fr"{project_root}\few_shot_selection_tool\greedy_set_coverage_rejected_corrected.json",
+                    dynamic_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_with_sources_fixed_spacing_manual_label_with_patterns2.json",
+                    random_seed = None,
+                ) # multiple examples (input, output) by chunk. selected_few_shot_examples[0][0][0] is the input of the first example of the first chunk.
 
-        
+                with open(f"{output_dir}\\selected_few_shot_examples_{filename}.json", "w", encoding="utf-8") as f:
+                    json.dump(selected_few_shot_examples, f)
+
+            else:
+                selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=sum(n_few_shot), 
+                                                                 fs_json_path=fr"{project_root}\few_shot_selection_tool\greedy_set_coverage_rejected_corrected.json",
+                                                                 random_seed=None,
+                                                                 label_config=label_config)  # Set to None for manual selection mode
+
         model = GPTAssistant(model_name, temperature=1)
 
+        print("------------------ PROMPT FROM FILE ------------------")
+        print(prompt_path)
+        print("------------------------------------------------------")
 
+        
 
         processed_chunks = process_chunks(
             model=model,
@@ -487,6 +489,8 @@ def main():
             output_dir=output_dir,
             filename=filename,
             cot = cot,
+            dynamic_few_shot_selection = dynamic_few_shot,
+            fall_back=fall_back
             )
         
         with open(f"{output_dir}\\processed_chunks.json", "w") as f:

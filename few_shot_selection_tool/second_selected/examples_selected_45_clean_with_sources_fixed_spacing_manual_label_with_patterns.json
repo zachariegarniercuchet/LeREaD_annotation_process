@@ -1,0 +1,1911 @@
+[
+  {
+    "example": {
+      "input": " Peter\nC. Engelmann, for the respondent Statutes Cited: Canadian\nInternational Trade Tribunal Act, S.C. 1988, c. 56,subs.54(2) and s. 60; Excise\nTax Act, R.S.C. 1970, c. E-13, paragraph 1(h), Part XII, Schedule\nIII. Cases",
+      "output": " Peter\nC. Engelmann, for the respondent Statutes Cited:  <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Canadian\nInternational Trade Tribunal Act</manual_label>, <manual_label labelname=\"citation\">S.C. 1988, c. 56</manual_label>,<manual_label labelname=\"fragment\">subs.54(2)</manual_label> and <manual_label labelname=\"fragment\">s. 60</manual_label></manual_label>; <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Excise\nTax Act</manual_label>, <manual_label labelname=\"citation\">R.S.C. 1970, c. E-13</manual_label>, <manual_label labelname=\"fragment\">paragraph 1(h), Part XII, Schedule\nIII</manual_label></manual_label>. Cases"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": true,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "\nCited: Funk\n&amp; Wagnalls New Standard Dictionary of the English Language; The Oxford\nEnglish Dictionary (Second Edition); Black's Law Dictionary (Revised\nFourth Edition); The Houghton Mifflin Canadian Dictionary of the English\nLanguage; Webster's Third New International Dictionary of the English Language\nUnabridged; Webster's New World Dictionary (Second College Edition); Funk\n&amp; Wagnalls Standard College Dictionary. Author",
+      "output": "\nCited: <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Funk\n&amp; Wagnalls New Standard Dictionary of the English Language</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">The Oxford\nEnglish Dictionary</manual_label> (<manual_label labelname=\"source\">Second Edition</manual_label>)</manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Black's Law Dictionary </manual_label>(<manual_label labelname=\"source\">Revised\nFourth Edition</manual_label>)</manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">The Houghton Mifflin Canadian Dictionary of the English\nLanguage</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Webster's Third New International Dictionary of the English Language\nUnabridged</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Webster's New World Dictionary</manual_label> (<manual_label labelname=\"source\">Second College Edition</manual_label>)</manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Funk\n&amp; Wagnalls Standard College Dictionary</manual_label></manual_label>. Author"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": true,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "title"
+      ],
+      [
+        "secondary sources",
+        "title",
+        "source"
+      ],
+      [
+        "secondary sources",
+        "title",
+        "source"
+      ],
+      [
+        "secondary sources",
+        "title"
+      ],
+      [
+        "secondary sources",
+        "title"
+      ],
+      [
+        "secondary sources",
+        "title",
+        "source"
+      ],
+      [
+        "secondary sources",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " Ontario\nMinistry of Transportation and Communications (the Ontario code) provides the\nmost accurate definition of the structures being considered in this appeal. The Ontario code places goods like those in issue under the chapter entitled\n\"accessories\" and describes the structures as \"overhead",
+      "output": " <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Ontario\nMinistry of Transportation and Communications </manual_label>(the <manual_label labelname=\"title\">Ontario code</manual_label>)</manual_label> provides the\nmost accurate definition of the structures being considered in this appeal. The <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Ontario code</manual_label></manual_label> places goods like those in issue under the chapter entitled\n\"accessories\" and describes the structures as \"overhead"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "space",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title"
+      ],
+      [
+        "secondary sources",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " tertiary dictionary definitions of\nthe word \"bridge\" encompassed the goods in issue. The appellant\ncited several dictionaries in support of this contention. These definitions\nare as follows: Funk &amp; Wagnalls New Standard Dictionary\nof the English Language (1963) 1. A structure erected",
+      "output": " tertiary dictionary definitions of\nthe word \"bridge\" encompassed the goods in issue. The appellant\ncited several dictionaries in support of this contention. These definitions\nare as follows: <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Funk &amp; Wagnalls New Standard Dictionary\nof the English Language</manual_label> (<manual_label labelname=\"source\">1963</manual_label>)</manual_label> 1. A structure erected"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": true,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "title",
+        "source"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " an obstacle, of people and/or\nthings - provided the Tribunal with another basis for denying the appellant's\nclaim that the goods in issue fell under the exemption clause. DECISION In order\nfor the goods in issue to qualify under the exemption clause, the",
+      "output": " an obstacle, of people and/or\nthings - provided the Tribunal with another basis for denying the appellant's\nclaim that the goods in issue fell under the <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">exemption clause</manual_label></manual_label>. DECISION In order\nfor the goods in issue to qualify under the <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">exemption clause</manual_label></manual_label>, the"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " goods must be\n\"bridges\" within that clause. In the\nTribunal's view, the Pfizer case (supra) and the Federal Court of Appeal\ndecision in Olympia Floor and Wall Tile Company v. The Deputy Minister of\nNational Revenue for Customs and Excise[9] provide",
+      "output": " goods must be\n\"bridges\" within that clause. In the\nTribunal's view, the <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Pfizer case</manual_label> (supra)</manual_label> and the Federal Court of Appeal\ndecision in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Olympia Floor and Wall Tile Company v. The Deputy Minister of\nNational Revenue for Customs and Excise</manual_label></manual_label>[9] provide"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "supra ???",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": ". S.C. 1988, c. 56. [3]. [1977] 1 S.C.R. 456. [4]. 2 T.B.R. 106. [5]. Driedger, E. A., Construction\nof Statutes (2nd ed.). [6",
+      "output": ". <manual_label labelname=\"legislation\"><manual_label labelname=\"citation\">S.C. 1988, c. 56</manual_label></manual_label>. [3]. <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">[1977] 1 S.C.R. 456</manual_label></manual_label>. [4]. <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">2 T.B.R. 106</manual_label></manual_label>. [5]. <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Driedger, E. A.</manual_label>, <manual_label labelname=\"title\">Construction\nof Statutes</manual_label> (<manual_label labelname=\"source\">2nd ed.</manual_label>)</manual_label>. [6"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 5,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": true,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "citation"
+      ],
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "]. 5 C.E.R. 562. [10]. Ibid, at p. 460. [11]. [1970] Ex. C.R. 828. [12]. Ibid. at p. 838. [13]. Ibid., at p. 5. ",
+      "output": "]. <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">5 C.E.R. 562</manual_label></manual_label>. [10]. <manual_label labelname=\"decision\">Ibid, at <manual_label labelname=\"fragment\">p. 460</manual_label></manual_label>. [11]. <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">[1970] Ex. C.R. 828</manual_label></manual_label>. [12]. <manual_label labelname=\"decision\">Ibid. at <manual_label labelname=\"fragment\">p. 838</manual_label></manual_label>. [13]. <manual_label labelname=\"decision\">Ibid., at <manual_label labelname=\"fragment\">p. 5</manual_label></manual_label>. "
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1989CanLII1415ONCA_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " J. dealt with the procedure\nwhere, as here, the Crown claims that it has discharged its disclosure obligations\nand Crown counsel denies that he or she is aware of the existence of any other\nrelevant material. Sopinka J. held as follows at pp. 743-44 S.C.R., p. 200\nC.R.R.: In",
+      "output": " J. dealt with the procedure\nwhere, as here, the Crown claims that it has discharged its disclosure obligations\nand Crown counsel denies that he or she is aware of the existence of any other\nrelevant material. Sopinka J. held as follows at <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">pp. 743-44</manual_label> S.C.R., <manual_label labelname=\"fragment\">p. 200</manual_label>\nC.R.R.</manual_label>: In"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "S.C.R vs C.R.R",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " of the minds of the witnesses themselves\nand could be known only if and when they chose to disclose it. It was not\nenough that the testimony might not have been obtained but for the illegal\nsearch. As held by Doherty J.A. in R. v. Belnavis (1996), 36 C.R.R. (2d) 32 at\np. 58, 107 C.C.C. (3d) 195 at pp. 222-23 (Ont. C.A.) and",
+      "output": " of the minds of the witnesses themselves\nand could be known only if and when they chose to disclose it. It was not\nenough that the testimony might not have been obtained but for the illegal\nsearch. As held by Doherty J.A. in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Belnavis (1996)</manual_label>, <manual_label labelname=\"citation\">36 C.R.R. (2d) 32</manual_label> at\n<manual_label labelname=\"fragment\">p. 58</manual_label>, <manual_label labelname=\"citation\">107 C.C.C. (3d) 195</manual_label> at <manual_label labelname=\"fragment\">pp. 222-23</manual_label> (Ont. C.A.)</manual_label> and"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " of the black residents of Toronto are non-citizens, while\nonly 14.4 per cent of the non-black residents are non- citizens. The Attorney\nGeneral of Canada argued that the Juries Act meets the standard of\nrepresentativeness required by ss. 7, 11(d) and 11(f) of the Charter. Both",
+      "output": " of the black residents of Toronto are non-citizens, while\nonly 14.4 per cent of the non-black residents are non- citizens. The Attorney\nGeneral of Canada argued that the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Juries Act</manual_label></manual_label> meets the standard of\nrepresentativeness required by <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 7</manual_label>, <manual_label labelname=\"fragment\">11(d)</manual_label> and <manual_label labelname=\"fragment\">11(f)</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. Both"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " of potential jurors. The Supreme Court of\nCanada has repeatedly affirmed the personal nature of s. 15 rights. In Andrews\nv. Law Society of British Columbia at p. 163 S.C.R., p. 219 C.R.R., McIntyre J",
+      "output": " of potential jurors. The Supreme Court of\nCanada has repeatedly affirmed the personal nature of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label></manual_label> rights. In <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Andrews\nv. Law Society of British Columbia</manual_label> at <manual_label labelname=\"fragment\">p. 163</manual_label> S.C.R., <manual_label labelname=\"fragment\">p. 219</manual_label> C.R.R.</manual_label>, McIntyre J"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " not to be deprived thereof except in accordance with the principles of\nfundamental justice. Even though, according to Irwin Toy Ltd. v. Quebec\n(Attorney General), [1989] 1 S.C.R. 927, 39 C.R.R. 193, the appellant\ncorporation cannot",
+      "output": " not to be deprived thereof except in accordance with the principles of\nfundamental justice. Even though, according to <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Irwin Toy Ltd. v. Quebec\n(Attorney General)</manual_label>, <manual_label labelname=\"citation\">[1989] 1 S.C.R. 927</manual_label>, <manual_label labelname=\"citation\">39 C.R.R. 193</manual_label></manual_label>, the appellant\ncorporation cannot"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " with equal force to the argument\nbased upon the common law and the Criminal Code, and only a few additional\ncomments are necessary. The appellants place particular reliance upon the decision of this court in\nR. v. Rowbotham (1988), 35 C.R.R. 207 (abridged), 41 C.C.C. (3d) 1 (Ont. C.A.).\nIn",
+      "output": " with equal force to the argument\nbased upon the common law and the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Criminal Code</manual_label></manual_label>, and only a few additional\ncomments are necessary. The appellants place particular reliance upon the decision of this court in\n<manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Rowbotham (1988)</manual_label>, <manual_label labelname=\"citation\">35 C.R.R. 207 (abridged)</manual_label>, <manual_label labelname=\"citation\">41 C.C.C. (3d) 1 (Ont. C.A.)</manual_label></manual_label>.\nIn"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " is not, the exclusion of a few thousand persons from a pool\nof over one million persons is trivial and in no way undermines the legitimacy\nof the jury array. As White J. said in Duren v. Missouri, 99 S.Ct. 664 at p.\n671 (1979) (quoting",
+      "output": " is not, the exclusion of a few thousand persons from a pool\nof over one million persons is trivial and in no way undermines the legitimacy\nof the jury array. As White J. said in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Duren v. Missouri</manual_label>, <manual_label labelname=\"citation\">99 S.Ct. 664</manual_label> at <manual_label labelname=\"fragment\">p.\n671</manual_label> <manual_label labelname=\"citation\">(1979)</manual_label></manual_label> (quoting"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": ", or the fundamental rights and\nfreedoms of others. Freedom of religion has not prevented Canadian courts in\nthe past from restricting sincerely held religious beliefs or practices in\ncases of compelling public interest. Even in the case of United States v.\nBallard [(1944), 322 U.S. 78], the",
+      "output": ", or the fundamental rights and\nfreedoms of others. Freedom of religion has not prevented Canadian courts in\nthe past from restricting sincerely held religious beliefs or practices in\ncases of compelling public interest. Even in the case of <manual_label labelname=\"decision\"><manual_label labelname=\"title\">United States v.\nBallard</manual_label> [<manual_label labelname=\"citation\">(1944), 322 U.S. 78</manual_label></manual_label>], the"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " religious corporation to a lower standard may simply\naggravate the mistrust that some feel towards religious organizations. Hansmann\nmakes this point in relation to fundraising at pp. 819-20: The usual argument offered to justify a lower\ndegree of accountability for religious organizations, in corporate law",
+      "output": " religious corporation to a lower standard may simply\naggravate the mistrust that some feel towards religious organizations. Hansmann\nmakes this point in relation to fundraising at <manual_label labelname=\"secondary sources\"><manual_label labelname=\"fragment\">pp. 819-20</manual_label></manual_label>: The usual argument offered to justify a lower\ndegree of accountability for religious organizations, in corporate law"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": false,
+      "secondary sources-fragment": true,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_1997CanLII16226_ONCA_annotated_EG_tech.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " that person. According to the\nSupreme Court itself in paragraph 145 of Therrien, in applying section\n18.2 in the case of a pardon, no exception is possible. Therefore, one can in\nno way deviate from the rule prohibiting discrimination in such cases",
+      "output": " that person. According to the\nSupreme Court itself in <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paragraph 145</manual_label> of <manual_label labelname=\"title\">Therrien</manual_label></manual_label>, in applying <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">section\n18.2</manual_label></manual_label> in the case of a pardon, no exception is possible. Therefore, one can in\nno way deviate from the rule prohibiting discrimination in such cases"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " and leaves no room for interpretation. Therefore, the failure to hire a\ncandidate who was convicted of a criminal offence prosecuted by way of\nindictment would inevitably be considered non-discriminatory under the Charter. [109] However, Péloquin[36] shows\nthat the case of",
+      "output": " and leaves no room for interpretation. Therefore, the failure to hire a\ncandidate who was convicted of a criminal offence prosecuted by way of\nindictment would inevitably be considered non-discriminatory under the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label>. [109] However, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Péloquin</manual_label></manual_label>[36] shows\nthat the case of"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " prohibited the disclosure, publication or dissemination\nby any person of S.N.'s name, address or any other elements by which she could\nbe identified.\nOn\nJanuary 15, 1999, the Court of Appeal (500-09-006851-984) upheld the decision\nof the Human Rights",
+      "output": " prohibited the disclosure, publication or dissemination\nby any person of S.N.'s name, address or any other elements by which she could\nbe identified.\nOn\nJanuary 15, 1999, <manual_label labelname=\"decision\">the Court of Appeal (<manual_label labelname=\"citation\">500-09-006851-984</manual_label>)</manual_label> upheld the decision\nof the Human Rights"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 5,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] Aperçu statistique : le système\ncorrectionnel et la mise en liberté sous condition, Solicitor General of Canada, September\n1998, on line: http://www.sgc.gc.ca/fpub/corr/fl199809/f199809.htm, consulted on 25-01-99 (Exhibit D-25) and\nexcerpts",
+      "output": "] <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Aperçu statistique : le système\ncorrectionnel et la mise en liberté sous condition</manual_label>, <manual_label labelname=\"authors\">Solicitor General of Canada</manual_label>, <manual_label labelname=\"source\">September\n1998, on line: http://www.sgc.gc.ca/fpub/corr/fl199809/f199809.htm</manual_label></manual_label>, consulted on 25-01-99 (Exhibit D-25) and\nexcerpts"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "title",
+        "authors",
+        "source"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " to the\nSupreme Court of Canada granted on September 6, 2001, case 28402). [12] Béliveau St-Jacques v. Fédération des employées et employés\nde services publics inc., [1996] 2 S.C.R. 345 at para. 116. [13",
+      "output": " to the\nSupreme Court of Canada granted on September 6, 2001, <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">case 28402</manual_label></manual_label>). [12] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Béliveau St-Jacques v. Fédération des employées et employés\nde services publics inc.</manual_label>, <manual_label labelname=\"citation\">[1996] 2 S.C.R. 345</manual_label> at <manual_label labelname=\"fragment\">para. 116</manual_label></manual_label>. [13"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] Insurance Corp. of British Columbia v. Heerspink, [1982] 2 S.C.R. 145 at 158. [41] Winnipeg School Division No. 1 v. Craton, [1985] 2 S.C.R. 150 at 154. [42] Supra note 38 at 1169. [43",
+      "output": "]  <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Insurance Corp. of British Columbia v. Heerspink</manual_label>, <manual_label labelname=\"citation\">[1982] 2 S.C.R. 145</manual_label> at <manual_label labelname=\"fragment\">158</manual_label></manual_label>. [41] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Winnipeg School Division No. 1 v. Craton</manual_label>, <manual_label labelname=\"citation\">[1985] 2 S.C.R. 150</manual_label> at <manual_label labelname=\"fragment\">154</manual_label></manual_label>. [42] <manual_label labelname=\"decision\">Supra note 38 at <manual_label labelname=\"fragment\">1169</manual_label></manual_label>. [43"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] CDPDJ (Bichet) v. CHUM,\nHRTQ, Montréal, 500-53-000104-982, August 30, 2000, d'Amours J. at para. 115. [48] CDPDJ (Reeves) v. Fondation\nAbbé Charles-Émile Gadbois et al., HRTQ, Montréal, 500-53-000149-003,\nAugust 27, 2001, d'Amours J. at para. 64. ",
+      "output": "] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">CDPDJ (Bichet) v. CHUM,\nHRTQ, Montréal</manual_label>, <manual_label labelname=\"citation\">500-53-000104-982, August 30, 2000, d'Amours J.</manual_label> at <manual_label labelname=\"fragment\">para. 115</manual_label></manual_label>. [48] <manual_label labelname=\"decision\"><manual_label labelname=\"title\">CDPDJ (Reeves) v. Fondation\nAbbé Charles-Émile Gadbois et al.</manual_label>, <manual_label labelname=\"citation\">HRTQ, Montréal, 500-53-000149-003,\nAugust 27, 2001, d'Amours J</manual_label>. at <manual_label labelname=\"fragment\">para. 64</manual_label></manual_label>. "
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2001CanLII21117QCTDP_annotated_GL_tech.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " from a judgment of the Federal Court of Appeal (Stratas, Webb and Gleason JJ.A.), 2017 FCA 132, [2018] 3 F.C.R. 75, 52 Imm. L.R. (4th) 1, 30 Admin. L.R. (6th) 1, [2017] F.C.J. No. 638 (QL), 2017 CarswellNat 2791 (WL Can.), setting",
+      "output": " from a judgment of the Federal Court of Appeal (Stratas, Webb and Gleason JJ.A.), <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">2017 FCA 132</manual_label>, <manual_label labelname=\"citation\">[2018] 3 F.C.R. 75</manual_label>, <manual_label labelname=\"citation\">52 Imm. L.R. (4th) 1</manual_label>, <manual_label labelname=\"citation\">30 Admin. L.R. (6th) 1</manual_label>, <manual_label labelname=\"citation\">[2017] F.C.J. No. 638 (QL)</manual_label>, <manual_label labelname=\"citation\">2017 CarswellNat 2791 (WL Can.)</manual_label></manual_label>, setting"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_tech_corrected.json",
+    "pattern": [
+      [
+        "decision",
+        "citation",
+        "citation",
+        "citation",
+        "citation",
+        "citation",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " may also be rebutted by showing that the context indicates that the legislature intended the standard of review to be correctness: McLean, at para. 22; Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd., 2016 SCC 47, [2016] 2 S.C.R. 293, at para. 32; Canada (Canadian Human Rights Commission) v. Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230 (“CHRC”), at paras. 45-46. However",
+      "output": " may also be rebutted by showing that the context indicates that the legislature intended the standard of review to be correctness: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">McLean</manual_label>, at <manual_label labelname=\"fragment\">para. 22</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Edmonton (City) v. Edmonton East (Capilano) Shopping Centres Ltd.</manual_label>, <manual_label labelname=\"citation\">2016 SCC 47</manual_label>, <manual_label labelname=\"citation\">[2016] 2 S.C.R. 293</manual_label>, at <manual_label labelname=\"fragment\">para. 32</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canada (Canadian Human Rights Commission) v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">2018 SCC 31</manual_label>, <manual_label labelname=\"citation\">[2018] 2 S.C.R. 230</manual_label> (“<manual_label labelname=\"title\">CHRC</manual_label>”), at <manual_label labelname=\"fragment\">paras. 45-46</manual_label></manual_label>. However"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_tech_corrected.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "title",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] It follows that where a legislature has indicated that courts are to apply the standard of correctness in reviewing certain questions, that standard must be applied. In British Columbia, the legislature has established the applicable standard of review for many tribunals by reference to the Administrative Tribunals Act, S.B.C. 2004, c. 45: see ss. 58 and 59. For",
+      "output": "] It follows that where a legislature has indicated that courts are to apply the standard of correctness in reviewing certain questions, that standard must be applied. In British Columbia, the legislature has established the applicable standard of review for many tribunals by reference to the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Administrative Tribunals Act</manual_label>, <manual_label labelname=\"citation\">S.B.C. 2004, c. 45</manual_label>: see <manual_label labelname=\"fragment\">ss. 58</manual_label> and <manual_label labelname=\"fragment\">59</manual_label></manual_label>. For"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": true,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_tech_corrected.json",
+    "pattern": [
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " Hon. J. T. Robertson, Administrative Deference: The Canadian Doctrine that Continues to Disappoint (April 18, 2018) (online), at p. 8; the Hon. D. Stratas, “The Canadian Law of Judicial Review: A Plea for Doctrinal Coherence and Consistency” (2016), 42 Queen’s L.J. 27, at p. 33; Daly, at pp. 541-42; Québec (Procureure générale) v. Montréal (Ville), 2016 QCCA 2108, 17 Admin. L.R. (6th) 328, at paras. 36-46; Bell Canada v. 7262591 Canada Ltd., 2018 FCA 174, 428 D.L.R. (4th) 311, at paras. 190-92, per",
+      "output": " Hon. <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">J. T. Robertson</manual_label>, <manual_label labelname=\"title\">Administrative Deference: The Canadian Doctrine that Continues to Disappoint</manual_label> <manual_label labelname=\"source\">(April 18, 2018) (online)</manual_label>, at <manual_label labelname=\"fragment\">p. 8</manual_label></manual_label>; the Hon. <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">D. Stratas</manual_label>, “<manual_label labelname=\"title\">The Canadian Law of Judicial Review: A Plea for Doctrinal Coherence and Consistency</manual_label>” <manual_label labelname=\"source\">(2016), 42 Queen’s L.J. 27</manual_label>, at <manual_label labelname=\"fragment\">p. 33</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Daly</manual_label>, at <manual_label labelname=\"fragment\">pp. 541-42</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Québec (Procureure générale) v. Montréal (Ville)</manual_label>, <manual_label labelname=\"citation\">2016 QCCA 2108</manual_label>, <manual_label labelname=\"citation\">17 Admin. L.R. (6th) 328</manual_label>, at <manual_label labelname=\"fragment\">paras. 36-46</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Bell Canada v. 7262591 Canada Ltd.</manual_label>, <manual_label labelname=\"citation\">2018 FCA 174</manual_label>, <manual_label labelname=\"citation\">428 D.L.R. (4th) 311</manual_label>, at <manual_label labelname=\"fragment\">paras. 190-92</manual_label></manual_label>, per"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_tech_corrected.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " Nadon J.A., concurring, and at paras. 66 and 69-72, per Rennie J.A., dissenting; Garneau Community League v. Edmonton (City), 2017 ABCA 374, 60 Alta. L.R. (6th) 1, at paras. 91 and 93-95, per",
+      "output": " Nadon J.A., concurring, and at <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 66</manual_label> and <manual_label labelname=\"fragment\">69-72</manual_label></manual_label>, per Rennie J.A., dissenting; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Garneau Community League v. Edmonton (City)</manual_label>, <manual_label labelname=\"citation\">2017 ABCA 374</manual_label>, <manual_label labelname=\"citation\">60 Alta. L.R. (6th) 1</manual_label>, at <manual_label labelname=\"fragment\">paras. 91</manual_label> and <manual_label labelname=\"fragment\">93-95</manual_label></manual_label>, per"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " the assistance of D. Fairlie, Judicial Review of Administrative Action in Canada (loose-leaf), vol. 3, at p. 12-54.\n[78] In the case at bar and in its companion cases, reasons for the administrative decisions at issue were",
+      "output": " the assistance of <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">D. Fairlie</manual_label>, <manual_label labelname=\"title\">Judicial Review of Administrative Action in Canada</manual_label> <manual_label labelname=\"source\">(loose-leaf), vol. 3</manual_label>, at <manual_label labelname=\"fragment\">p. 12-54</manual_label></manual_label>.\n[78] In the case at bar and in its companion cases, reasons for the administrative decisions at issue were"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " be reasonable for a decision maker to adapt a common law or equitable doctrine to its administrative context: see Nor-Man Regional Health Authority, at paras. 5-6, 44-45, 52, 54 and 60. Conversely, a decision maker that",
+      "output": " be reasonable for a decision maker to adapt a common law or equitable doctrine to its administrative context: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Nor-Man Regional Health Authority</manual_label>, at <manual_label labelname=\"fragment\">paras. 5-6</manual_label>, <manual_label labelname=\"fragment\">44-45</manual_label>, <manual_label labelname=\"fragment\">52</manual_label>, <manual_label labelname=\"fragment\">54</manual_label> and <manual_label labelname=\"fragment\">60</manual_label></manual_label>. Conversely, a decision maker that"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " the Vienna Convention on Diplomatic Relations, Can. T.S. 1966 No. 29 (“VCDR”). The VCDR and the Vienna Convention on Consular Relations, Can. T.S. 1974 No. 25, are the two leading treaties that",
+      "output": " the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Vienna Convention on Diplomatic Relations</manual_label>, <manual_label labelname=\"citation\">Can. T.S. 1966 No. 29</manual_label> (“<manual_label labelname=\"title\">VCDR</manual_label>”)</manual_label>. The <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">VCDR</manual_label></manual_label> and the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Vienna Convention on Consular Relations</manual_label>, <manual_label labelname=\"citation\">Can. T.S. 1974 No. 25</manual_label></manual_label>, are the two leading treaties that"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": false,
+      "legislation-citation": true,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "legislation",
+        "title",
+        "citation",
+        "title"
+      ],
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "title",
+        "citation"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " out, such individuals do in fact exist: paras. 53-55, citing FMIOA, at ss. 3 and 4 and Sched. II, Articles 1, 41, 43, 49, and 53. In light of Mr. Vavilov",
+      "output": " out, such individuals do in fact exist: <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 53-55</manual_label></manual_label>, citing <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">FMIOA</manual_label>, at <manual_label labelname=\"fragment\">ss. 3</manual_label> and <manual_label labelname=\"fragment\">4</manual_label> and <manual_label labelname=\"fragment\">Sched. II</manual_label>, <manual_label labelname=\"fragment\">Articles 1</manual_label>, <manual_label labelname=\"fragment\">41</manual_label>, <manual_label labelname=\"fragment\">43</manual_label>, <manual_label labelname=\"fragment\">49</manual_label>, and <manual_label labelname=\"fragment\">53</manual_label></manual_label>. In light of Mr. Vavilov"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 3,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": false,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " that reflects the principles of customary and conventional international law: Appulonappa, at para. 40; see also Pushpanathan, at para. 51; Baker, at para. 70; GreCon Dimter inc. v. J.R. Normand inc., 2005 SCC 46, [2005] 2 S.C.R. 401, at para. 39; Hape, at paras. 53-54; B010 v. Canada (Citizenship and Immigration), 2015 SCC 58, [2015] 3 S.C.R. 704, at para. 48; India v. Badesha, 2017 SCC 44, [2017] 2 S.C.R. 127, at para. 38; Office of the Children’s Lawyer v. Balev, 2018 SCC 16, [2018] 1 S.C.R. 398, at paras. 31-32. Yet",
+      "output": " that reflects the principles of customary and conventional international law: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Appulonappa</manual_label>, at <manual_label labelname=\"fragment\">para. 40</manual_label></manual_label>; see also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Pushpanathan</manual_label>, at <manual_label labelname=\"fragment\">para. 51</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Baker</manual_label>, at <manual_label labelname=\"fragment\">para. 70</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">GreCon Dimter inc. v. J.R. Normand inc.</manual_label>, <manual_label labelname=\"citation\">2005 SCC 46</manual_label>, <manual_label labelname=\"citation\">[2005] 2 S.C.R. 401</manual_label>, at <manual_label labelname=\"fragment\">para. 39</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Hape</manual_label>, at <manual_label labelname=\"fragment\">paras. 53-54</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">B010 v. Canada (Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">2015 SCC 58</manual_label>, <manual_label labelname=\"citation\">[2015] 3 S.C.R. 704</manual_label>, at <manual_label labelname=\"fragment\">para. 48</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">India v. Badesha</manual_label>, <manual_label labelname=\"citation\">2017 SCC 44</manual_label>, <manual_label labelname=\"citation\">[2017] 2 S.C.R. 127</manual_label>, at <manual_label labelname=\"fragment\">para. 38</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Office of the Children’s Lawyer v. Balev</manual_label>, <manual_label labelname=\"citation\">2018 SCC 16</manual_label>, <manual_label labelname=\"citation\">[2018] 1 S.C.R. 398</manual_label>, at <manual_label labelname=\"fragment\">paras. 31-32</manual_label></manual_label>. Yet"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] The modern Canadian state “could not function without the many and varied administrative tribunals that people the legal landscape” (The Rt. Hon. Beverley McLachlin, Administrative Tribunals and the Courts: An Evolutionary Relationship, May 27, 2013 (online)). Parliament and the",
+      "output": "] The modern Canadian state “could not function without the many and varied administrative tribunals that people the legal landscape” (<manual_label labelname=\"secondary sources\">The Rt. Hon. <manual_label labelname=\"authors\">Beverley McLachlin</manual_label>, <manual_label labelname=\"title\">Administrative Tribunals and the Courts: An Evolutionary Relationship</manual_label>, <manual_label labelname=\"source\">May 27, 2013 (online)</manual_label></manual_label>). Parliament and the"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 4,
+    "comments": "The Rt. Hon, Pattern",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": false,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " this reason, access to justice is at the heart of the legislative choice to establish a robust system of administrative law (Grant and Sossin, at pp. 342 and 369-70; Van Harten, et al., at p. 17; Régimbald, at pp. 2-3; McLachlin, Administrative Tribunals and the Courts: An Evolutionary Relationship). As",
+      "output": " this reason, access to justice is at the heart of the legislative choice to establish a robust system of administrative law (<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Grant and Sossin</manual_label>, at <manual_label labelname=\"fragment\">pp. 342</manual_label> and <manual_label labelname=\"fragment\">369-70</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Van Harten, et al.</manual_label>, at <manual_label labelname=\"fragment\">p. 17</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Régimbald</manual_label>, at <manual_label labelname=\"fragment\">pp. 2-3</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">McLachlin</manual_label>, <manual_label labelname=\"title\">Administrative Tribunals and the Courts: An Evolutionary Relationship</manual_label></manual_label>). As"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": false,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " Tipping J., and 209, per McGrath J.). [259] Restraint and respect for precedent also guide the High Court of Australia and South Africa’s Constitutional Court when applying stare decisis (Lee v. New South Wales Crime Commission, [2013] HCA 39, 302 A.L.R. 363, at paras. 62-66 and 70; Camps Bay Ratepayers’ and Residents’ Association v. Harrison, [2010] ZACC 19, 2011 (4) S.A. 42, at pp. 55-56; Buffalo City Metropolitan Municipality v. Asla Construction (Pty) Ltd., [2019] ZACC 15, 2019 (4) S.A. 331, at para. 65).\n[260",
+      "output": " Tipping J., and <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">209</manual_label></manual_label>, per McGrath J.). [259] Restraint and respect for precedent also guide the High Court of Australia and South Africa’s Constitutional Court when applying stare decisis (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Lee v. New South Wales Crime Commission</manual_label>, <manual_label labelname=\"citation\">[2013] HCA 39</manual_label>, <manual_label labelname=\"citation\">302 A.L.R. 363</manual_label>, at <manual_label labelname=\"fragment\">paras. 62-66</manual_label> and <manual_label labelname=\"fragment\">70</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Camps Bay Ratepayers’ and Residents’ Association v. Harrison</manual_label>, <manual_label labelname=\"citation\">[2010] ZACC 19</manual_label>, <manual_label labelname=\"citation\">2011 (4) S.A. 42</manual_label>, at <manual_label labelname=\"fragment\">pp. 55-56</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Buffalo City Metropolitan Municipality v. Asla Construction (Pty) Ltd.</manual_label>, <manual_label labelname=\"citation\">[2019] ZACC 15</manual_label>, <manual_label labelname=\"citation\">2019 (4) S.A. 331</manual_label>, at <manual_label labelname=\"fragment\">para. 65</manual_label></manual_label>).\n[260"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " also Camps Bay, at pp. 55-56; Jeremy Waldron, “Stare Decisis and the Rule of Law: A Layered Approach” (2012), 111 Mich. L. Rev. 1, at p. 28; Lewis F. Powell, Jr., “Stare Decisis and Judicial Restraint” (1990), 47 Wash. &amp; Lee L. Rev. 281, at p. 288).\n[261",
+      "output": " also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Camps Bay</manual_label>, at <manual_label labelname=\"fragment\">pp. 55-56</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Jeremy Waldron</manual_label>, “<manual_label labelname=\"title\">Stare Decisis and the Rule of Law: A Layered Approach</manual_label>” <manual_label labelname=\"source\">(2012), 111 Mich. L. Rev. 1</manual_label>, at <manual_label labelname=\"fragment\">p. 28</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Lewis F. Powell, Jr.</manual_label>, “<manual_label labelname=\"title\">Stare Decisis and Judicial Restraint</manual_label>” <manual_label labelname=\"source\">(1990), 47 Wash. &amp; Lee L. Rev. 281</manual_label>, at <manual_label labelname=\"fragment\">p. 288</manual_label></manual_label>).\n[261"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " even Housen, which, as this Court acknowledged, was initially applied by appeal courts with “varying degrees of enthusiasm” (H.L. v. Canada (Attorney General), [2005] 1 S.C.R. 401, at para. 76; see also Paul M. Perell, “The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen” (2004), 28 Adv. Q. 40, at p. 53; Mike Madden, “Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review” (2010), 36 Adv. Q. 269, at pp. 278-79 and 293; Paul J. Pape and John J. Adair, “Unreasonable review: The losing party and the palpable and overriding error standard” (2008), 27 Adv. J. 6, at p. 8; Geoff R. Hall, “Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada” (2011), 50 Can. Bus. L.J. 434, at p. 436). [276",
+      "output": " even <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Housen</manual_label></manual_label>, which, as this Court acknowledged, was initially applied by appeal courts with “varying degrees of enthusiasm” (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">H.L. v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">[2005] 1 S.C.R. 401</manual_label>, at <manual_label labelname=\"fragment\">para. 76</manual_label></manual_label>; see also <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Paul M. Perell</manual_label>, “<manual_label labelname=\"title\">The Standard of Appellate Review and The Ironies of Housen v. Nikolaisen</manual_label>” <manual_label labelname=\"source\">(2004), 28 Adv. Q. 40</manual_label>, at <manual_label labelname=\"fragment\">p. 53</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Mike Madden</manual_label>, “<manual_label labelname=\"title\">Conquering the Common Law Hydra: A Probably Correct and Reasonable Overview of Current Standards of Appellate and Judicial Review</manual_label>” <manual_label labelname=\"source\">(2010), 36 Adv. Q. 269</manual_label>, at <manual_label labelname=\"fragment\">pp. 278-79</manual_label> and <manual_label labelname=\"fragment\">293</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Paul J. Pape and John J. Adair</manual_label>, “<manual_label labelname=\"title\">Unreasonable review: The losing party and the palpable and overriding error standard</manual_label>” <manual_label labelname=\"source\">(2008), 27 Adv. J. 6</manual_label>, at <manual_label labelname=\"fragment\">p. 8</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Geoff R. Hall</manual_label>, “<manual_label labelname=\"title\">Two Unsettled Questions in the Law of Contractual Interpretation: A Call to the Supreme Court of Canada</manual_label>” <manual_label labelname=\"source\">(2011), 50 Can. Bus. L.J. 434</manual_label>, at <manual_label labelname=\"fragment\">p. 436</manual_label>)</manual_label>. [276"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " also Robert J. Sharpe, Good Judgment: Making Judicial Decisions (2018), at p. 93; Beverley McLachlin, “The Role of the Supreme Court of Canada in Shaping the Common Law”, in Paul Daly, ed., Apex Courts and the Common Law (2019), 25, at p. 35; R. v. Salituro, [1991] 3 S.C.R. 654, at p. 670; Friedmann Equity Developments Inc. v. Final Note Ltd., [2000] 1 S.C.R. 842, at para. 42; R. v. Kang-Brown, [2008] 1 S.C.R. 456, at paras. 14-16, per",
+      "output": " also <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Robert J. Sharpe</manual_label>, <manual_label labelname=\"title\">Good Judgment: Making Judicial Decisions (2018)</manual_label>, at <manual_label labelname=\"fragment\">p. 93</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Beverley McLachlin</manual_label>, “<manual_label labelname=\"title\">The Role of the Supreme Court of Canada in Shaping the Common Law</manual_label>”, in <manual_label labelname=\"source\">Paul Daly, ed., Apex Courts and the Common Law (2019), 25</manual_label>, at <manual_label labelname=\"fragment\">p. 35</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Salituro</manual_label>, <manual_label labelname=\"citation\">[1991] 3 S.C.R. 654</manual_label>, at <manual_label labelname=\"fragment\">p. 670</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Friedmann Equity Developments Inc. v. Final Note Ltd.</manual_label>, <manual_label labelname=\"citation\">[2000] 1 S.C.R. 842</manual_label>, at <manual_label labelname=\"fragment\">para. 42</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Kang-Brown</manual_label>, <manual_label labelname=\"citation\">[2008] 1 S.C.R. 456</manual_label>, at <manual_label labelname=\"fragment\">paras. 14-16</manual_label></manual_label>, per"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " LeBel J., concurring; VIA Rail, at para. 101; Mason v. Minister of Citizenship and Immigration, 2019 FC 1251, at para. 22 (CanLII), per Grammond J.; Régimbald, at p. 539; Sharpe, at pp. 204 and 208; Paul Daly, “The Signal and the Noise in Administrative Law” (2017), 68 U.N.B.L.J. 67, at p. 85; Evans, “Triumph of Reasonableness: But How Much Does It Really Matter?”, at p. 107.)\n[291",
+      "output": " LeBel J., concurring; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">VIA Rail</manual_label>, at <manual_label labelname=\"fragment\">para. 101</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Mason v. Minister of Citizenship and Immigration</manual_label>, <manual_label labelname=\"citation\">2019 FC 1251</manual_label>, at <manual_label labelname=\"fragment\">para. 22</manual_label></manual_label> (CanLII), per Grammond J.; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Régimbald</manual_label>, at <manual_label labelname=\"fragment\">p. 539</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Sharpe</manual_label>, at <manual_label labelname=\"fragment\">pp. 204</manual_label> and <manual_label labelname=\"fragment\">208</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Paul Daly</manual_label>, “<manual_label labelname=\"title\">The Signal and the Noise in Administrative Law</manual_label>” <manual_label labelname=\"source\">(2017), 68 U.N.B.L.J. 67</manual_label>, at <manual_label labelname=\"fragment\">p. 85</manual_label></manual_label>; <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Evans</manual_label>, “<manual_label labelname=\"title\">Triumph of Reasonableness: But How Much Does It Really Matter?</manual_label>”, at <manual_label labelname=\"fragment\">p. 107</manual_label></manual_label>.)\n[291"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": true,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ],
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " considerations make it all the more compelling that reviewing courts avoid imposing judicial norms on administrative decision-makers or maintaining a dogmatic insistence on formalism. Where a decision-maker can explain its decision adequately, that decision should be upheld (Daly, “Unreasonable Interpretations of Law”, at pp. 233-34, 250 and 254-55).\n[310",
+      "output": " considerations make it all the more compelling that reviewing courts avoid imposing judicial norms on administrative decision-makers or maintaining a dogmatic insistence on formalism. Where a decision-maker can explain its decision adequately, that decision should be upheld (<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Daly</manual_label>, “<manual_label labelname=\"title\">Unreasonable Interpretations of Law</manual_label>”, at <manual_label labelname=\"fragment\">pp. 233-34</manual_label>, <manual_label labelname=\"fragment\">250</manual_label> and <manual_label labelname=\"fragment\">254-55</manual_label></manual_label>).\n[310"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": true,
+      "secondary sources-title": true,
+      "secondary sources-fragment": true,
+      "secondary sources-source": false,
+      "secondary sources-authors": true
+    },
+    "source_file": "few_shot_examples_2019SCC65_annotated_EG_revRL.json",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "fragment",
+        "fragment",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " members\nwho wear religious symbols and who benefit from the Act’s grandfather\nclause. Given the legal framework applicable to applications based on article\n661 C.C.P., it cannot be simply assumed that the Act’s partial interference\nwith the school",
+      "output": " members\nwho wear religious symbols and who benefit from the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Act</manual_label></manual_label>’s grandfather\nclause. Given the legal framework applicable to applications based on <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">article\n661</manual_label> <manual_label labelname=\"title\">C.C.P.</manual_label></manual_label>, it cannot be simply assumed that the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Act</manual_label></manual_label>’s partial interference\nwith the school"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "Act space",
+    "meta": {
+      "legislation": true,
+      "legislation-title": true,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": false,
+      "decision-title": false,
+      "decision-fragment": false,
+      "decision-citation": false,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2021QCCA1675_annotated_EG_tech",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "title"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": "] See: CTI Capital valeurs mobilières inc. c. Nassif, 2020\nQCCA 197 (judge alone), para. 11, as well as the cases cited at footnote 7; Aliments\nUltima inc. c. Vergers Leahy inc., 2021 QCCA 239 (judge alone), para. 6. [5",
+      "output": "] See: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">CTI Capital valeurs mobilières inc. c. Nassif</manual_label>, <manual_label labelname=\"citation\">2020\nQCCA 197</manual_label> (judge alone), <manual_label labelname=\"fragment\">para. 11</manual_label></manual_label>, as well as the cases cited at <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">footnote 7</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Aliments\nUltima inc. c. Vergers Leahy inc.</manual_label>, <manual_label labelname=\"citation\">2021 QCCA 239</manual_label> (judge alone), <manual_label labelname=\"fragment\">para. 6</manual_label></manual_label>. [5"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 4,
+    "comments": "footnote",
+    "meta": {
+      "legislation": false,
+      "legislation-title": false,
+      "legislation-fragment": false,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2021QCCA1675_annotated_EG_tech",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ]
+  },
+  {
+    "example": {
+      "input": " New Brunswick Court of Appeal in Tingley, at para 112, as follows:\n“The answer to the objection, quite simply, is that Rule 23.01(1)(a)\npermits the court to determine a preliminary question of law, at any time,\nprovided a pleading brings it into play. The determination of a question\nof law raised by a pleading need not be the pleading of the moving\nparty: Shanks v. Shay et al., 2020 NBCA 62, [2020] N.B.J. No.\n224 (QL). There is no requirement that a question of law be specifically\nraised in a pleading.” 68",
+      "output": " New Brunswick Court of Appeal in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Tingley</manual_label>, at <manual_label labelname=\"fragment\">para 112</manual_label></manual_label>, as follows:\n“The answer to the objection, quite simply, is that <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Rule 23.01(1)(a)</manual_label></manual_label>\npermits the court to determine a preliminary question of law, at any time,\nprovided a pleading brings it into play. The determination of a question\nof law raised by a pleading need not be the pleading of the moving\nparty: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Shanks v. Shay et al.</manual_label>, <manual_label labelname=\"citation\">2020 NBCA 62</manual_label>, <manual_label labelname=\"citation\">[2020] N.B.J. No.\n224 (QL)</manual_label></manual_label>. There is no requirement that a question of law be specifically\nraised in a pleading.” 68"
+    },
+    "selected": true,
+    "rejected": false,
+    "notation": 0,
+    "comments": "",
+    "meta": {
+      "legislation": true,
+      "legislation-title": false,
+      "legislation-fragment": true,
+      "legislation-citation": false,
+      "decision": true,
+      "decision-title": true,
+      "decision-fragment": true,
+      "decision-citation": true,
+      "secondary sources": false,
+      "secondary sources-title": false,
+      "secondary sources-fragment": false,
+      "secondary sources-source": false,
+      "secondary sources-authors": false
+    },
+    "source_file": "few_shot_examples_2024NBKB203_annotated_VP.json",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ]
+  }
+]
