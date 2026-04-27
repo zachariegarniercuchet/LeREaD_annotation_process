@@ -20,27 +20,44 @@ import os
 
 llm_results_folder = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process\data\Documents_Annotés\llm"
 
-FOLDERS = [
-    fr"{llm_results_folder}\p2_c500_fsselected-30_mgpt-5.2",
-    fr"{llm_results_folder}\p2_c500_fsselected-0_mgpt-5.2",
-    fr"{llm_results_folder}\TEST_CONTEXT_p2_c500_fsselected-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_p2_c500_fsselected-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_CONTEXT_p2_c500_fsselected-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsselected-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsrandom-30_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsrandom-15_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-15_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-5_mgpt-5.2",
-    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2",
-    fr"{llm_results_folder}\F_PARACHUNKER_ALLINONE_p2_c500_fspattern-5_mgpt-5.2",
-    fr"{llm_results_folder}\F_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2",
-    fr"{llm_results_folder}\F+_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2"
+#FOLDERS = [
+#    fr"{llm_results_folder}\p2_c500_fsselected-30_mgpt-5.2",
+#    fr"{llm_results_folder}\p2_c500_fsselected-0_mgpt-5.2",
+#    fr"{llm_results_folder}\TEST_CONTEXT_p2_c500_fsselected-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_p2_c500_fsselected-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_CONTEXT_p2_c500_fsselected-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsselected-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsrandom-30_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fsrandom-15_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-15_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-5_mgpt-5.2",
+#    fr"{llm_results_folder}\PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2",
+#    fr"{llm_results_folder}\F_PARACHUNKER_ALLINONE_p2_c500_fspattern-5_mgpt-5.2",
+#    fr"{llm_results_folder}\F_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2",
+#    fr"{llm_results_folder}\F+_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2"
+#]
 
-
-    
-
-]
+FOLDERS =  [
+            fr"{llm_results_folder}\VAL_SentChunker_decomposed_0",
+            fr"{llm_results_folder}\VAL_ParaChunker_decomposed_0_context",
+            fr"{llm_results_folder}\VAL_ParaChunker_decomposed_0",
+            fr"{llm_results_folder}\VAL_SentChunker_decomposed_0_context",
+            fr"{llm_results_folder}\VAL_SentChunker_allInOne_0",
+            fr"{llm_results_folder}\VAL_ParaChunker_allInOne_0",
+            fr"{llm_results_folder}\VAL_ParaChunker_allInOne_5pattern",
+            fr"{llm_results_folder}\VAL_ParaChunker_allInOne_5random",
+            fr"{llm_results_folder}\VAL_SentChunker_allInOne_5pattern",
+            fr"{llm_results_folder}\VAL_SentChunker_allInOne_5random",
+            fr"{llm_results_folder}\TEST_ParaChunker_decomposed_0",
+            fr"{llm_results_folder}\TEST_SentChunker_decomposed_0",
+            fr"{llm_results_folder}\TEST_ParaChunker_allInOne_0",
+            fr"{llm_results_folder}\TEST_SentChunker_allInOne_0",
+            fr"{llm_results_folder}\TEST_ParaChunker_allInOne_5pattern",
+            fr"{llm_results_folder}\TEST_ParaChunker_allInOne_5random",
+            fr"{llm_results_folder}\TEST_SentChunker_allInOne_5pattern",
+            fr"{llm_results_folder}\TEST_SentChunker_allInOne_5random",
+        ]
 
 # Labels classified as "parent" (top-level) vs "sub"
 PARENT_LABELS = {"decision", "legislation", "secondary sources"}

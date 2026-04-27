@@ -1036,18 +1036,52 @@ if __name__ == "__main__":
     if MODE == "batch":
         # Folder paths
         project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
-        human_folder = fr"{project_root}\data\final\Annotated"
-        llm_folder = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p2_c500_fspattern-5-25_mgpt-5.2"
         
-        # Evaluation settings
-        evaluation_level = "both"  # Options: "level1", "level2", "both"
-        match_type = "context"     # Options: "context", "context_overlap"
-        context_chars = 200
-        version = "v1.0"           # Version string that LLM filenames must end with
         
-        # Run batch evaluation
-        batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)
-    
+        
+
+        
+        llm_folders =   [
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_decomposed_0",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_ParaChunker_decomposed_0_context",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_ParaChunker_decomposed_0",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_decomposed_0_context",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_allInOne_0",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_ParaChunker_allInOne_0",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_ParaChunker_allInOne_5pattern",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_ParaChunker_allInOne_5random",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_allInOne_5pattern",
+            #fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_allInOne_5random",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_ParaChunker_decomposed_0",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_SentChunker_decomposed_0",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_ParaChunker_allInOne_0",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_SentChunker_allInOne_0",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_ParaChunker_allInOne_5pattern",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_ParaChunker_allInOne_5random",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_SentChunker_allInOne_5pattern",
+            fr"{project_root}\data\Documents_Annotés\llm\TEST_SentChunker_allInOne_5random",
+
+        ]
+        
+        for llm_folder in llm_folders:
+            # Evaluation settings
+            evaluation_level = "both"  # Options: "level1", "level2", "both"
+            match_type = "context"     # Options: "context", "context_overlap"
+            context_chars = 200
+
+            if "decomposed" in llm_folder:
+                version = "v1.3"
+            else:
+                version = "v1.0"           # Version string that LLM filenames must end with
+
+            if "VAL" in llm_folder:
+                human_folder = fr"{project_root}\data\final\Annotated\val"
+            else:
+                human_folder = fr"{project_root}\data\final\Annotated\test"
+            
+            # Run batch evaluation
+            batch_evaluate_folder(human_folder, llm_folder, evaluation_level, match_type, context_chars, version)
+        
     # ============================================================================
     # SINGLE MODE CONFIGURATION
     # ============================================================================

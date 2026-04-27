@@ -122,6 +122,11 @@ def process_examples_file(input_path, output_path=None):
 if __name__ == '__main__':
     input_file = r'C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process\few_shot_selection_tool\second_selected\examples_selected_45_with_sources_fixed_spacing_manual_label.json'
     output_file = r'C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process\few_shot_selection_tool\second_selected\examples_selected_45_with_sources_fixed_spacing_manual_label_with_patterns.json'
+
+    input_file = r'C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process\few_shot_selection_tool\few_shot_set_train.json'
+    output_file = r'C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process\few_shot_selection_tool\few_shot_set_train.json'
+
+    
     print(f"Processing: {input_file}")
     process_examples_file(input_file, output_file)
     print("Done!")

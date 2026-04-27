@@ -1,4 +1,9 @@
 import os
+import json
+import spacy
+import re
+import argparse
+from dataclasses import dataclass
 from utils_extraction import extract_body, tokenize, clean_tokens, decode, is_auto_label_tag, is_tag_token
 from utils_extraction import flatten_token_chunks, merge_sentences_with_heuristics_tokens
 from utils_extraction import prepare_label_tokens
@@ -9,14 +14,131 @@ from utils_extraction import clean_html_formatting
 from utils_extraction import select_few_shot_for_all_chunks
 
 
-import json
-import spacy
-import re
-
 project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
 
 
+@dataclass
+class ArgumentConfig:
+    """Configuration class for command-line arguments."""
+    
+    chunker: str  # "sentence" or "paragraph"
+    n_general: int  # Number of general few-shot examples
+    n_dynamic: int  # Number of dynamic few-shot examples
+    fs_strategy: str  # "pattern" or "random"
+    annotation: str  # "allInOne" or "decomposed"
+    split: str  # "val" or "test"
+    
+    @staticmethod
+    def from_args(args):
+        """Create ArgumentConfig from parsed arguments."""
+        return ArgumentConfig(
+            chunker=args.chunker,
+            n_general=args.n_general,
+            n_dynamic=args.n_dynamic,
+            fs_strategy=args.fs_strategy,
+            annotation=args.annotation,
+            split=args.split.lower()
+        )
+    
+    def get_chunker_name(self, min_tokens):
+        """Get chunker name for output directory naming."""
+        if min_tokens == -1:
+            return "NoChunker"
+        elif self.chunker == "sentence":
+            return "SentChunker"
+        elif self.chunker == "paragraph":
+            return "ParaChunker"
+        else:
+            return self.chunker
+    
+    def get_fewshot_string(self):
+        """Generate few-shot string for output directory naming.
+        
+        Examples: "5pattern", "0", "10random", "5_3pattern"
+        """
+        if self.n_general == 0 and self.n_dynamic == 0:
+            return "0"
+        elif self.n_dynamic == 0:
+            return f"{self.n_general}{self.fs_strategy}"
+        else:
+            return f"{self.n_general}_{self.n_dynamic}{self.fs_strategy}"
+    
+    def get_output_dir_name(self, min_tokens):
+        """Generate output directory name based on configuration.
+        
+        Format: {SPLIT}_{CHUNKER}_{ANNOTATION}_{FEWSHOT}
+        Example: VAL_SentChunker_allInOne_5pattern
+        """
+        split_name = self.split.upper()
+        chunker_name = self.get_chunker_name(min_tokens)
+        annotation_name = self.annotation
+        fewshot_name = self.get_fewshot_string()
+        
+        return f"{split_name}_{chunker_name}_{annotation_name}_{fewshot_name}"
+
+
+def parse_arguments():
+    """Parse and return command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="LLM-based annotation extraction with configurable parameters."
+    )
+    
+    parser.add_argument(
+        "--chunker",
+        type=str,
+        default="sentence",
+        choices=["sentence", "paragraph"],
+        help="Chunking strategy: 'sentence' or 'paragraph' (default: sentence)"
+    )
+    
+    parser.add_argument(
+        "--n_general",
+        type=int,
+        default=0,
+        help="Number of general few-shot examples (default: 0)"
+    )
+    
+    parser.add_argument(
+        "--n_dynamic",
+        type=int,
+        default=0,
+        help="Number of dynamic few-shot examples (default: 0)"
+    )
+    
+    parser.add_argument(
+        "--fs_strategy",
+        type=str,
+        default="random",
+        choices=["pattern", "random"],
+        help="Few-shot selection strategy: 'pattern' or 'random' (default: random)"
+    )
+    
+    parser.add_argument(
+        "--annotation",
+        type=str,
+        default="allInOne",
+        choices=["allInOne", "decomposed"],
+        help="Annotation methodology: 'allInOne' or 'decomposed' (default: allInOne)"
+    )
+    
+    parser.add_argument(
+        "--split",
+        type=str,
+        default="val",
+        choices=["val", "test"],
+        help="Dataset split to process: 'val' or 'test' (default: val)"
+    )
+    
+    return parser.parse_args()
+
+
 def main_chunk_html(html_content, min_tokens=500, method="sentence"):
+
+    if min_tokens == -1:
+        body_content = extract_body(html_content)
+        tokens = tokenize(body_content)
+        normalized_cleaned_tokens = clean_tokens(html_tokens=tokens, normalize=True, keep_manual_label=True, keep_bookmarks=True)
+        return [normalized_cleaned_tokens]
 
     if method == "sentence":
         return chunk_html_by_sentence(html_content, min_tokens=min_tokens)
@@ -350,21 +472,28 @@ def get_all_html_files_in(folder_path):
 
     return files
 
-def get_hyperparameters():
+def get_hyperparameters(config: ArgumentConfig):
+    """Get hyperparameters based on ArgumentConfig.
+    
+    Args:
+        config: ArgumentConfig instance with parsed arguments
+        
+    Returns:
+        Tuple of (min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, 
+                  prompt_version, prompt_path, cot, label_config, chunking_method, 
+                  fall_back)
+    """
     # ---------- Define Hyperparameters ----------
     min_tokens = 500
     fs_min_tokens = 100
-    fs_mode = "pattern"  # "random" or "selected" or "pattern"
+    fs_mode = config.fs_strategy  # "random" or "pattern"
     model_name = "gpt-5.2"
 
-
-    #if not pattern selected, please set n_dynamic = 0. If pattern selected, we will have n_general fixed examples + n_dynamic chunk-based examples.
-    n_general = 5
-    n_dynamic = 25
-
+    n_general = config.n_general
+    n_dynamic = config.n_dynamic
     n_few_shot = (n_general, n_dynamic) 
     
-    all_in_one_go = True  # Whether to run the entire extraction process in one go 
+    all_in_one_go = config.annotation == "allInOne"
 
     fall_back = True  # Whether to implement a fall-back mechanism in case of verification failure (e.g., hallucination, consistency, label scheme errors)
 
@@ -378,7 +507,7 @@ def get_hyperparameters():
     if all_in_one_go:
         prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\allinone_v{prompt_version}.txt"
 
-    chunking_method = "paragraph"  # "sentence" or "paragraph"
+    chunking_method = config.chunker  # "sentence" or "paragraph"
 
 
     if not all_in_one_go:
@@ -400,24 +529,34 @@ def get_hyperparameters():
     return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method, fall_back
 
 def main():
-
-    min_tokens, _, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method, fall_back = get_hyperparameters()
+    # Parse command-line arguments
+    args = parse_arguments()
+    config = ArgumentConfig.from_args(args)
+    
+    # Get hyperparameters based on configuration
+    min_tokens, _, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, cot, label_config, chunking_method, fall_back = get_hyperparameters(config)
 
     if n_few_shot[1] > 0:
-            dynamic_few_shot = True
+        dynamic_few_shot = True
     else:
         dynamic_few_shot = False
 
-
-    source_dir = fr"{project_root}\data\final\Original"
-    #source_dir = fr"{project_root}\data\Document_Échantillon_Initial\ronde_3\plain_html_arbre_balise"
+    # Determine source directory based on split
+    source_dir = fr"{project_root}\data\final\Original\{config.split}"
     files = get_all_html_files_in(source_dir)
     print(f"✓ Loaded {len(files)} files from: {source_dir}")
 
-    if n_few_shot[1] > 0:
-        output_dir = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot[0]}-{n_few_shot[1]}_m{model_name}"
-    else:
-        output_dir = fr"{project_root}\data\Documents_Annotés\llm\F+_PARACHUNKER_ALLINONE_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot[0]}_m{model_name}"
+    # Generate output directory name
+    output_dir_name = config.get_output_dir_name(min_tokens)
+    output_dir = fr"{project_root}\data\Documents_Annotés\llm\{output_dir_name}"
+    
+    print(f"\n📁 Output directory: {output_dir}")
+    print(f"\n📋 Configuration:")
+    print(f"   • Chunker: {config.chunker}")
+    print(f"   • Few-shot: {n_few_shot[0]} general, {n_few_shot[1]} dynamic ({fs_mode})")
+    print(f"   • Annotation: {config.annotation}")
+    print(f"   • Split: {config.split}")
+    print(f"   • Min tokens: {min_tokens}")
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -439,17 +578,20 @@ def main():
         
         token_chunks = main_chunk_html(html_content, min_tokens=min_tokens, method=chunking_method)
 
-        if fs_mode == "random":
-            selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=sum(n_few_shot), 
-                                                                 #fs_json_path=fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_clean_with_sources_fixed_spacing_manual_label.json",
-                                                                 random_seed=42,
-                                                                 label_config=label_config)  # Set a random seed for reproducibility if using random selection mode 
+        if n_few_shot == (0, 0):
+            selected_few_shot_examples = []
+
         elif fs_mode == "selected":
             selected_few_shot_examples = main_few_shot_selection(filename=filename, n_few_shot=sum(n_few_shot), 
                                                                  fs_json_path=fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_clean_with_sources_fixed_spacing_manual_label.json",
                                                                  random_seed=None,
                                                                  label_config=label_config)  # Set to None for manual selection mode
-        elif fs_mode == "pattern":
+        elif fs_mode == "pattern" or fs_mode == "random":
+
+            if fs_mode == "pattern":
+                general_json_path = fr"{project_root}\few_shot_selection_tool\greedy_set_coverage_train.json"
+            if fs_mode == "random":
+                general_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\random_set_42_train.json"
             
             if dynamic_few_shot:
                 selected_few_shot_examples = select_few_shot_for_all_chunks(
@@ -458,8 +600,8 @@ def main():
                     label_config = label_config,
                     n_general = n_few_shot[0],
                     n_dynamic = n_few_shot[1],
-                    general_json_path = fr"{project_root}\few_shot_selection_tool\greedy_set_coverage_rejected_corrected.json",
-                    dynamic_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\examples_selected_45_with_sources_fixed_spacing_manual_label_with_patterns2.json",
+                    general_json_path = general_json_path,
+                    dynamic_json_path = fr"{project_root}\few_shot_selection_tool\second_selected\few_shot_set_train.json",
                     random_seed = None,
                 ) # multiple examples (input, output) by chunk. selected_few_shot_examples[0][0][0] is the input of the first example of the first chunk.
 

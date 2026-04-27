@@ -288,10 +288,11 @@ def select_few_shot_for_chunk(
     chunk_metadata:   dict,
     filename:         str,
     label_config,
+    general_json_path: str,
+    dynamic_json_path: str,
     n_general:        int                = 20,
     n_dynamic:        int                = 10,
-    general_json_path: Optional[str]    = None,
-    dynamic_json_path: Optional[str]    = None,
+    
     random_seed:      Optional[int]     = None,
 ) -> list[tuple]:
     """
@@ -318,24 +319,6 @@ def select_few_shot_for_chunk(
     use_random = random_seed is not None
     rng        = random.Random(random_seed)
 
-    # ── resolve paths ─────────────────────────────────────────────────────────
-    if general_json_path is None:
-        if use_random:
-            general_json_path = (
-                fr"{project_root}\few_shot_selection_tool\second_selected"
-                r"\examples_selected_45_with_sources_fixed_spacing_manual_label.json"
-            )
-        else:
-            general_json_path = (
-                fr"{project_root}\few_shot_selection_tool\second_selected"
-                r"\combined_v3_with_sources_manual_label.json"
-            )
-
-    if dynamic_json_path is None:
-        dynamic_json_path = (
-            fr"{project_root}\few_shot_selection_tool"
-            r"\greedy_set_coverage_rejected_corrected.json"
-        )
 
     # ── load data ─────────────────────────────────────────────────────────────
     general_data = _load_json(general_json_path)

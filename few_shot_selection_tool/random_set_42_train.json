@@ -1,0 +1,4268 @@
+[
+  {
+    "example": {
+      "input": ". Deference will\nusually result where a tribunal is interpreting its own statute or statutes\nclosely connected to its function, with which it will have particular\nfamiliarity: Canadian Broadcasting Corp. v. Canada (Labour Relations Board),\n[1995] 1 S.C.R. 157, at para. 48; Toronto (City) Board of Education v.\nO.S.S.T.F., District 15, [1997] 1 S.C.R. 487, at para. 39. Deference",
+      "output": ". Deference will\nusually result where a tribunal is interpreting its own statute or statutes\nclosely connected to its function, with which it will have particular\nfamiliarity: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canadian Broadcasting Corp. v. Canada (Labour Relations Board)</manual_label>,\n<manual_label labelname=\"citation\">[1995] 1 S.C.R. 157</manual_label>, at <manual_label labelname=\"fragment\">para. 48</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Toronto (City) Board of Education v.\nO.S.S.T.F., District 15</manual_label>, <manual_label labelname=\"citation\">[1997] 1 S.C.R. 487</manual_label>, at <manual_label labelname=\"fragment\">para. 39</manual_label></manual_label>. Deference"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ". Justice White,\ndelivering the judgment of the court, held that it was fundamental to the jury\ntrial guarantee in the Sixth Amendment to the United States Constitution that\nthe jury be selected from a fair cross-section of society. He saw the jury as a",
+      "output": ". Justice White,\ndelivering the judgment of the court, held that it was fundamental to the jury\ntrial guarantee in the <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Sixth Amendment</manual_label> to the <manual_label labelname=\"title\">United States Constitution</manual_label></manual_label> that\nthe jury be selected from a fair cross-section of society. He saw the jury as a"
+    },
+    "comments": "",
+    "selected": true,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "sixth",
+          "amendment"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " provisions of s. 651 of\nthe Criminal Code, R.S.C. 1985, c. C-46, that dictate the order of closing\naddresses violate her rights under ss. 7 and 11 of the Charter. In view of the\ndecision",
+      "output": " provisions of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 651</manual_label> of\nthe <manual_label labelname=\"title\">Criminal Code</manual_label>, <manual_label labelname=\"citation\">R.S.C. 1985, c. C-46</manual_label></manual_label>, that dictate the order of closing\naddresses violate her rights under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 7</manual_label> and <manual_label labelname=\"fragment\">11</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. In view of the\ndecision"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title",
+        "citation"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [
+        [
+          "ABBREV.",
+          "YEAR",
+          ",",
+          "CHAPTER"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Toronto (City) v. C.U.P.E., Local 79, 2003 SCC 63, [2003] 3 S.C.R. 77, at para. 62, per LeBel J., concurring. We remain of the view that the rule of law requires courts",
+      "output": " <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Toronto (City) v. C.U.P.E., Local 79</manual_label>, <manual_label labelname=\"citation\">2003 SCC 63</manual_label>, <manual_label labelname=\"citation\">[2003] 3 S.C.R. 77</manual_label>, at <manual_label labelname=\"fragment\">para. 62</manual_label></manual_label>, per LeBel J., concurring. We remain of the view that the rule of law requires courts"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " access to justice. The words of Binnie J. in his concurring reasons in Dunsmuir, at para. 133, are still apt:\n. . . judicial review is burdened with undue cost and delay. Litigants understandably hesitate to go to court to seek redress for a",
+      "output": " access to justice. The words of Binnie J. in his concurring reasons in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label>, at <manual_label labelname=\"fragment\">para. 133</manual_label></manual_label>, are still apt:\n. . . judicial review is burdened with undue cost and delay. Litigants understandably hesitate to go to court to seek redress for a"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " of international law and with the leading international treaties that extend diplomatic privileges and immunities to employees and representatives of foreign governments. Third, it was a significant omission to ignore the relevant cases that were before the Registrar which suggest that s. 3(2)(a) was",
+      "output": " of international law and with the leading international treaties that extend diplomatic privileges and immunities to employees and representatives of foreign governments. Third, it was a significant omission to ignore the relevant cases that were before the Registrar which suggest that <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(2)(a)</manual_label></manual_label> was"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " in a manner not in accordance with\nthe principles of fundamental justice. In our opinion, a corporation cannot\navail itself of the protection offered by s. 7 of the Charter. Mr. Ruby also argues that the appellant is entitled to rely on the caveat in",
+      "output": " in a manner not in accordance with\nthe principles of fundamental justice. In our opinion, a corporation cannot\navail itself of the protection offered by <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 7</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. Mr. Ruby also argues that the appellant is entitled to rely on the caveat in"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " to rely upon\ns. 11 of the Charter. It is argued that the right asserted depends upon s.\n11(f) and a corporation has no right to trial by jury: see PPG Industries\nCanada Ltd. v. Canada (Attorney General) (1983), 4 C.R.R. 193, 3 C.C.C. (3d) 97\n(B.C.C.A.). It",
+      "output": " to rely upon\n<manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 11</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. It is argued that the right asserted depends upon <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s.\n11(f)</manual_label></manual_label> and a corporation has no right to trial by jury: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">PPG Industries\nCanada Ltd. v. Canada (Attorney General) (1983)</manual_label>, <manual_label labelname=\"citation\">4 C.R.R. 193</manual_label>, <manual_label labelname=\"citation\">3 C.C.C. (3d) 97\n(B.C.C.A.)</manual_label></manual_label>. It"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "YEAR"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " rights as an employer. [101] A third reason is that, unlike contractual employees, office\nholders did not typically benefit from contractual rights protecting them from\nsummary discharge. This was true of the public office holders in Ridge v.\nBaldwin and Nicholson. Indeed",
+      "output": " rights as an employer. [101] A third reason is that, unlike contractual employees, office\nholders did not typically benefit from contractual rights protecting them from\nsummary discharge. This was true of the public office holders in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Ridge v.\nBaldwin</manual_label></manual_label> and <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Nicholson</manual_label></manual_label>. Indeed"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " an arrested person, who is not released under any other provision of the Criminal\nCode, before a justice without unreasonable delay to be dealt with\naccording to law. It is sometimes thought that the police may detain such a\nperson for 24 hours. The dominant time",
+      "output": " an arrested person, who is not released under any other provision of the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Criminal\nCode</manual_label></manual_label>, before a justice without unreasonable delay to be dealt with\naccording to law. It is sometimes thought that the police may detain such a\nperson for 24 hours. The dominant time"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " law and has the right to the equal protection and equal benefit of the law\nwithout discrimination and, in particular, without discrimination based on\nrace, national or ethnic origin, colour, religion, sex, age or mental or\nphysical disability. (Emphasis added) In Eaton v. Brant County Board of Education (1997), 41 C.R.R. (2d) 240, 142\nD.L.R. (4th) 385 (S.C.C.), Sopinka",
+      "output": " law and has the right to the equal protection and equal benefit of the law\nwithout discrimination and, in particular, without discrimination based on\nrace, national or ethnic origin, colour, religion, sex, age or mental or\nphysical disability. (Emphasis added) In <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Eaton v. Brant County Board of Education (1997)</manual_label>, <manual_label labelname=\"citation\">41 C.R.R. (2d) 240</manual_label>, <manual_label labelname=\"citation\">142\nD.L.R. (4th) 385 (S.C.C.)</manual_label></manual_label>, Sopinka"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "YEAR"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " issue of\nstatutory interpretation arose as to whether, where dismissal was with notice\nor pay in lieu thereof, the adjudicator was authorized to determine the reasons\nunderlying the province’s decision to terminate. The adjudicator held that the\nreferential incorporation of s. 97(2.1) of the PSLRA into\ns. 100.1(5) of that Act meant",
+      "output": " issue of\nstatutory interpretation arose as to whether, where dismissal was with notice\nor pay in lieu thereof, the adjudicator was authorized to determine the reasons\nunderlying the province’s decision to terminate. The adjudicator held that the\nreferential incorporation of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 97(2.1)</manual_label> of the <manual_label labelname=\"title\">PSLRA</manual_label> into\n<manual_label labelname=\"fragment\">s. 100.1(5)</manual_label> of that <manual_label labelname=\"title\">Act</manual_label></manual_label> meant"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(NUM.NUM)"
+        ],
+        [
+          "SECTION",
+          "NUM.NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " through the Court’s administrative law jurisprudence, setting out a presumption of deferential review for certain categories of questions, including those where the decision-maker had expertise or was interpreting its “home” statute (paras. 53-54, per Bastarache and LeBel JJ., and para. 124, per",
+      "output": " through the Court’s administrative law jurisprudence, setting out a presumption of deferential review for certain categories of questions, including those where the decision-maker had expertise or was interpreting its “home” statute (<manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 53-54</manual_label></manual_label>, per Bastarache and LeBel JJ., and <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">para. 124</manual_label></manual_label>, per"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "\nto discharge the burden on the defence as enunciated by Sopinka J. in Chaplin.\nTo the contrary, when the entirety of Crown counsel's submissions before the\ntrial judge are reviewed, it is apparent that counsel believed that he had made\ndisclosure of all relevant documents",
+      "output": "\nto discharge the burden on the defence as enunciated by Sopinka J. in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Chaplin</manual_label></manual_label>.\nTo the contrary, when the entirety of Crown counsel's submissions before the\ntrial judge are reviewed, it is apparent that counsel believed that he had made\ndisclosure of all relevant documents"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " history of the extensive disclosure that had, to date, been provided\nto the defence. This history included reference to the following: (i) The defence had disclosure of the testimony of four former\nScientologists, taken before the justice of the peace pursuant to s. 509 of the\nCriminal Code, prior",
+      "output": " history of the extensive disclosure that had, to date, been provided\nto the defence. This history included reference to the following: (i) The defence had disclosure of the testimony of four former\nScientologists, taken before the justice of the peace pursuant to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 509</manual_label> of the\n<manual_label labelname=\"title\">Criminal Code</manual_label></manual_label>, prior"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " a properly\nconstituted jury. She defines a properly constituted jury as one selected in a\nmanner that does not violate any of the provisions of the Charter, in\nparticular s. 15. The appellant was entitled to a properly constituted jury,\nbut as the Juries Act and",
+      "output": " a properly\nconstituted jury. She defines a properly constituted jury as one selected in a\nmanner that does not violate any of the provisions of the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label>, in\nparticular <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label></manual_label>. The appellant was entitled to a properly constituted jury,\nbut as the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Juries Act</manual_label> </manual_label>and"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " the general rule that individuals born in Canada acquire Canadian citizenship by birth. The Registrar concluded that because V’s parents were employees or representatives of Russia at the time of V’s birth, the exception to the rule of citizenship by birth in s. 3(2)(a), as",
+      "output": " the general rule that individuals born in Canada acquire Canadian citizenship by birth. The Registrar concluded that because V’s parents were employees or representatives of Russia at the time of V’s birth, the exception to the rule of citizenship by birth in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(2)(a)</manual_label></manual_label>, as"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " judgment delivered by\n[1] The Chief Justice and Moldaver, Gascon, Côté, Brown, Rowe and Martin JJ. — This appeal and its companion cases (see Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845), provide",
+      "output": " judgment delivered by\n[1] The Chief Justice and Moldaver, Gascon, Côté, Brown, Rowe and Martin JJ. — This appeal and its companion cases (see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Bell Canada v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">2019 SCC 66</manual_label>, <manual_label labelname=\"citation\">[2019] 4 S.C.R. 845</manual_label></manual_label>), provide"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ", not only are statutory provisions sometimes capable of bearing more than one reasonable interpretation, they are sometimes drafted in general terms or with “purposeful ambiguity” in order to permit adaptation to future, unknown circumstances (see Felix Frankfurter, “Some Reflections on the Reading of Statutes” (1947), 47 Colum. L. Rev. 527, at p. 528). These",
+      "output": ", not only are statutory provisions sometimes capable of bearing more than one reasonable interpretation, they are sometimes drafted in general terms or with “purposeful ambiguity” in order to permit adaptation to future, unknown circumstances (see <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Felix Frankfurter</manual_label>, “<manual_label labelname=\"title\">Some Reflections on the Reading of Statutes</manual_label>” <manual_label labelname=\"source\">(1947), 47 Colum. L. Rev. 527</manual_label>, at <manual_label labelname=\"fragment\">p. 528</manual_label></manual_label>). These"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "YEAR",
+          ",",
+          "NUM",
+          "JOURNAL_ABBREV",
+          ".",
+          "NUM"
+        ]
+      ],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " between the common law\nrules of employment and the statutory rules applicable to a unionized employee\nis essential if s. 97(2.1) of the PSLRA is to be applied mutatis\nmutandis to the case of a non‑unionized employee as required by\ns. 100.1(5) of the PSLRA. The",
+      "output": " between the common law\nrules of employment and the statutory rules applicable to a unionized employee\nis essential if <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 97(2.1)</manual_label> of the <manual_label labelname=\"title\">PSLRA</manual_label></manual_label> is to be applied mutatis\nmutandis to the case of a non‑unionized employee as required by\n<manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 100.1(5)</manual_label> of the <manual_label labelname=\"title\">PSLRA</manual_label></manual_label>. The"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(NUM.NUM)"
+        ],
+        [
+          "SECTION",
+          "NUM.NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " they are\nthe sole judges of the facts and that they are free to reject the trial judge's\nopinion: see R. v. E. (A.W.), [1993] 3 S.C.R. 155, 83 C.C.C. (3d) 462. In",
+      "output": " they are\nthe sole judges of the facts and that they are free to reject the trial judge's\nopinion: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. E. (A.W.)</manual_label>, <manual_label labelname=\"citation\">[1993] 3 S.C.R. 155</manual_label>, <manual_label labelname=\"citation\">83 C.C.C. (3d) 462</manual_label></manual_label>. In"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " against an\naccused person is obviously the ultimate response by the courts to\ninfringements of that person's constitu­tional rights or an abuse of court\nprocess and should only be utilized in the most serious and clearest of cases.\nWhile a judge is given the discretion under s. 24(1) to",
+      "output": " against an\naccused person is obviously the ultimate response by the courts to\ninfringements of that person's constitu­tional rights or an abuse of court\nprocess and should only be utilized in the most serious and clearest of cases.\nWhile a judge is given the discretion under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 24(1)</manual_label></manual_label> to"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "] In\nother provincial access-to-information legislation in Canada, the word “office”\nis not used in English, but rather “institution.\n[62] For\nguidance in French, we looked to the Le Petit Robert dictionary[6], which indicates the\nfollowing • under the word\n“institution”:\no",
+      "output": "] In\nother provincial access-to-information legislation in Canada, the word “office”\nis not used in English, but rather “institution.\n[62] For\nguidance in French, we looked to the <manual_label labelname=\"secondary sources\"><manual_label labelname=\"title\">Le Petit Robert</manual_label></manual_label> dictionary[6], which indicates the\nfollowing • under the word\n“institution”:\no"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2016NBOMB12_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " mutatis mutandis to an adjudicator to whom a\ngrievance has been referred in accordance with subsection (3) and in relation\nto any decision rendered by such adjudicator.\n.\n. . 101(1) Except as provided in\nthis Act, every order, award, direction, decision",
+      "output": " mutatis mutandis to an adjudicator to whom a\ngrievance has been referred in accordance with <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">subsection (3)</manual_label></manual_label> and in relation\nto any decision rendered by such adjudicator.\n.\n. . 101(1) Except as provided in\nthis <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Act</manual_label></manual_label>, every order, award, direction, decision"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SUBSECTION",
+          "(NUM)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " hold\nrelative expertise in the interpretation of the legislation that gives them\ntheir mandate, as well as related legislation that they might often encounter\nin the course of their functions. See Alberta Union of Provincial Employees\nv. Lethbridge Community College. This factor also suggests a\nreasonableness",
+      "output": " hold\nrelative expertise in the interpretation of the legislation that gives them\ntheir mandate, as well as related legislation that they might often encounter\nin the course of their functions. See <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Alberta Union of Provincial Employees\nv. Lethbridge Community College</manual_label></manual_label>. This factor also suggests a\nreasonableness"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": "] Of course, the degree of deference also depends on the nature and\ncontent of the question. An adjudicative tribunal called on to approve\npipelines based on “public convenience and necessity” (Westcoast Energy Inc.\nv. Canada (National Energy Board), [1998] 1 S.C.R. 322) or",
+      "output": "] Of course, the degree of deference also depends on the nature and\ncontent of the question. An adjudicative tribunal called on to approve\npipelines based on “public convenience and necessity” (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Westcoast Energy Inc.\nv. Canada (National Energy Board)</manual_label>, <manual_label labelname=\"citation\">[1998] 1 S.C.R. 322</manual_label></manual_label>) or"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " (4) the nature of the problem, i.e., whether it was a question of law, fact, or mixed law and fact (paras. 29‑37). Instead of using these factors to answer whether a question was jurisdictional, Pushpanathan deployed them to",
+      "output": " (4) the nature of the problem, i.e., whether it was a question of law, fact, or mixed law and fact (<manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 29‑37</manual_label></manual_label>). Instead of using these factors to answer whether a question was jurisdictional, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Pushpanathan</manual_label> </manual_label>deployed them to"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM‑NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " clarification. The first aspect is the analysis for determining the standard of review. The second aspect is the need for better guidance from this Court on the proper application of the reasonableness standard. It has become clear that Dunsmuir’s promise of simplicity and predictability has not",
+      "output": " clarification. The first aspect is the analysis for determining the standard of review. The second aspect is the need for better guidance from this Court on the proper application of the reasonableness standard. It has become clear that <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir’s</manual_label></manual_label> promise of simplicity and predictability has not"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " function. The language in each setting is different; the mandates are different; the policy bases are different. The idea that Housen v. Nikolaisen, [2002] 2 S.C.R. 235, must be inflexibly applied to every right of “appeal” within a statute",
+      "output": " function. The language in each setting is different; the mandates are different; the policy bases are different. The idea that <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Housen v. Nikolaisen</manual_label>, <manual_label labelname=\"citation\">[2002] 2 S.C.R. 235</manual_label></manual_label>, must be inflexibly applied to every right of “appeal” within a statute"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " as conferring jurisdiction to\ndetermine whether discharge was in fact for cause — Adjudicator holding\nemployer breached duty of procedural fairness and ordering reinstatement —\nWhether standard of reasonableness applicable to adjudicator’s decision on\nstatutory interpretation issue — Public Service Labour Relations Act, R.S.N.B.\n1973, c. P‑25, ss. 97(2.1), 100.1(5) — Civil Service Act,\nS.N.B. 1984, c. C‑5.1, s. 20. Administrative",
+      "output": " as conferring jurisdiction to\ndetermine whether discharge was in fact for cause — Adjudicator holding\nemployer breached duty of procedural fairness and ordering reinstatement —\nWhether standard of reasonableness applicable to adjudicator’s decision on\nstatutory interpretation issue — <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Public Service Labour Relations Act</manual_label>, <manual_label labelname=\"citation\">R.S.N.B.\n1973, c. P‑25</manual_label>, <manual_label labelname=\"fragment\">ss. 97(2.1)</manual_label>, <manual_label labelname=\"fragment\">100.1(5)</manual_label></manual_label> — <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Civil Service Act</manual_label>,\n<manual_label labelname=\"citation\">S.N.B. 1984, c. C‑5.1</manual_label>, <manual_label labelname=\"fragment\">s. 20</manual_label></manual_label>. Administrative"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(NUM.NUM)"
+        ],
+        [
+          "NUM.NUM(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [
+        [
+          "ABBREV.",
+          "YEAR",
+          ",",
+          "CHAPTER"
+        ],
+        [
+          "ABBREV.",
+          "YEAR",
+          ",",
+          "CHAPTER"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " be of central importance to the legal system as a whole: when an administrative proceeding will be barred by the doctrines of res judicata and abuse of process (Toronto (City), at para. 15); the scope of the state’s duty of religious neutrality",
+      "output": " be of central importance to the legal system as a whole: when an administrative proceeding will be barred by the doctrines of res judicata and abuse of process (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Toronto (City)</manual_label>, at <manual_label labelname=\"fragment\">para. 15</manual_label></manual_label>); the scope of the state’s duty of religious neutrality"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " $250,000 and M was fined $5,000. The Church and M both appealed the\nconviction and the Church also appealed the sentence. In addition to the\nCharter issues identified above, they argued that the identification doctrine\nof corporate criminal liability does not apply to a",
+      "output": " $250,000 and M was fined $5,000. The Church and M both appealed the\nconviction and the Church also appealed the sentence. In addition to the\n<manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label> issues identified above, they argued that the identification doctrine\nof corporate criminal liability does not apply to a"
+    },
+    "comments": "",
+    "selected": true,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " J., referring to the guarantee of equality before the law\nin s. 15 of the Charter, noted that this value has \"historically been\nassociated with the requirements of the rule of law that all persons be subject\nto the law impartially applied and administered\". Having",
+      "output": " J., referring to the guarantee of equality before the law\nin <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>, noted that this value has \"historically been\nassociated with the requirements of the rule of law that all persons be subject\nto the law impartially applied and administered\". Having"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " “any actual difference between them in terms of their operation\nappears to be illusory” (para. 41). A test which is incoherent when applied to\nadministrative tribunals does not gain in coherence or logic when applied to\nother administrative decision makers such as mid-level bureaucrats",
+      "output": " “any actual difference between them in terms of their operation\nappears to be illusory” (<manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">para. 41</manual_label></manual_label>). A test which is incoherent when applied to\nadministrative tribunals does not gain in coherence or logic when applied to\nother administrative decision makers such as mid-level bureaucrats"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " of expertise, and questions about jurisdictional lines between tribunals (paras. 58-61). Where the standard of review had not been satisfactorily determined in the jurisprudence, four contextual factors — the presence or absence of a privative clause, the purpose of the tribunal, the nature",
+      "output": " of expertise, and questions about jurisdictional lines between tribunals (<manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">paras. 58-61</manual_label></manual_label>). Where the standard of review had not been satisfactorily determined in the jurisprudence, four contextual factors — the presence or absence of a privative clause, the purpose of the tribunal, the nature"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " limited scenarios in which remitting the matter would stymie the timely and effective resolution of matters in a manner that no legislature could have intended: D’Errico v. Canada (Attorney General), 2014 FCA 95, 459 N.R. 167, at paras. 18-19. An",
+      "output": " limited scenarios in which remitting the matter would stymie the timely and effective resolution of matters in a manner that no legislature could have intended: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">D’Errico v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">2014 FCA 95</manual_label>, <manual_label labelname=\"citation\">459 N.R. 167</manual_label>, at <manual_label labelname=\"fragment\">paras. 18-19</manual_label></manual_label>. An"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " a measure of\nprotection to those individuals. (Emphasis added) I am prepared to assume, without deciding, that the common law\nidentification doctrine constitutes a non-trivial burden on the practice of the\nScientology religion and therefore infringes s. 2(a) of the Charter. For",
+      "output": " a measure of\nprotection to those individuals. (Emphasis added) I am prepared to assume, without deciding, that the common law\nidentification doctrine constitutes a non-trivial burden on the practice of the\nScientology religion and therefore infringes <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 2(a)</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. For"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "]\n“About Us” (19 October 2016), online: Kitchener Housing &lt;\nhttps://kitchenerhousinginc.ca/about-us/&gt;. [3]\nCity of Toronto Economic Development Corp. v. Ontario (Information and\nPrivacy Commissioner), [2008] OJ 1799; reversing [2006] OJ 4615, 278 D.L.R.\n(4th) 356. [4",
+      "output": "]\n“About Us” (19 October 2016), online: Kitchener Housing &lt;\nhttps://kitchenerhousinginc.ca/about-us/&gt;. [3]\n<manual_label labelname=\"decision\"><manual_label labelname=\"title\">City of Toronto Economic Development Corp. v. Ontario (Information and\nPrivacy Commissioner)</manual_label>, <manual_label labelname=\"citation\">[2008] OJ 1799</manual_label></manual_label>; reversing <manual_label labelname=\"decision\"><manual_label labelname=\"citation\">[2006] OJ 4615</manual_label>, <manual_label labelname=\"citation\">278 D.L.R.\n(4th) 356</manual_label></manual_label>. [4"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2016NBOMB12_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " the decision will not usually be opaque. It is important to recall that a reviewing court must look to the record as a whole to understand the decision, and that in doing so, the court will often uncover a clear rationale for the decision: Baker, at para. 44. For",
+      "output": " the decision will not usually be opaque. It is important to recall that a reviewing court must look to the record as a whole to understand the decision, and that in doing so, the court will often uncover a clear rationale for the decision: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Baker</manual_label>, at <manual_label labelname=\"fragment\">para. 44</manual_label></manual_label>. For"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " Lamer C.J.C. The potential\nimpairment of the appellant Matz's liberty interest arises from her status as\nan accused, not by reason of her immigration status. Her right to fundamental\njustice must be seen within that context. The claim based on s. 7 of the Charter is",
+      "output": " Lamer C.J.C. The potential\nimpairment of the appellant Matz's liberty interest arises from her status as\nan accused, not by reason of her immigration status. Her right to fundamental\njustice must be seen within that context. The claim based on <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 7</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label> is"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " [t]he only individuals covered in paragraphs 3(2)(a) and (c) of the Citizenship Act are children of individuals with diplomatic status. These are individuals who enter Canada under special circumstances and without undergoing any of the normal procedures. Most importantly, while",
+      "output": " [t]he only individuals covered in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraphs 3(2)(a)</manual_label> and <manual_label labelname=\"fragment\">(c)</manual_label> of the <manual_label labelname=\"title\">Citizenship Act</manual_label></manual_label> are children of individuals with diplomatic status. These are individuals who enter Canada under special circumstances and without undergoing any of the normal procedures. Most importantly, while"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "NUM(PAREN)(PAREN)"
+        ],
+        [
+          "(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "\ndifferent concept of equality\". Since the different tests for committal\nunder the two Acts do not result in discriminatory treatment within the meaning\nof s. 15, \"the appellant's argument that his equality rights as enshrined\nin s. 7 of the Charter are",
+      "output": "\ndifferent concept of equality\". Since the different tests for committal\nunder the two Acts do not result in discriminatory treatment within the meaning\nof <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label></manual_label>, \"the appellant's argument that his equality rights as enshrined\nin <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 7</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label> are"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " the meaning of s. 3(2)(a) of the Citizenship Act.\n[172] In our view, it was not. The Registrar failed to justify her interpretation of s. 3(2)(a) of the Citizenship Act in light of the constraints",
+      "output": " the meaning of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(2)(a)</manual_label> of the <manual_label labelname=\"title\">Citizenship Act</manual_label></manual_label>.\n[172] In our view, it was not. The Registrar failed to justify her interpretation of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(2)(a)</manual_label> of the <manual_label labelname=\"title\">Citizenship Act</manual_label></manual_label> in light of the constraints"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM(PAREN)(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": ", the Registrar formally cancelled Mr. Vavilov’s Canadian citizenship certificate pursuant to s. 26(3) of the Citizenship Regulations. B. Procedural History\n(1) Registrar’s Decision\n[152] In a brief letter sent to Mr. Vavilov on August 15, 2014, the Registrar",
+      "output": ", the Registrar formally cancelled Mr. Vavilov’s Canadian citizenship certificate pursuant to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 26(3)</manual_label> of the <manual_label labelname=\"title\">Citizenship Regulations</manual_label></manual_label>. B. Procedural History\n(1) Registrar’s Decision\n[152] In a brief letter sent to Mr. Vavilov on August 15, 2014, the Registrar"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Deschamps J. Referred to: H.L. v.\nCanada (Attorney General), [2005] 1 S.C.R. 401,\n2005 SCC 25; Toronto (City) v. C.U.P.E., Local 79, [2003] 3 S.C.R. 77,\n2003 SCC 63. Statutes",
+      "output": " Deschamps J. Referred to: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">H.L. v.\nCanada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">[2005] 1 S.C.R. 401</manual_label>,\n<manual_label labelname=\"citation\">2005 SCC 25</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Toronto (City) v. C.U.P.E., Local 79</manual_label>, <manual_label labelname=\"citation\">[2003] 3 S.C.R. 77</manual_label>,\n<manual_label labelname=\"citation\">2003 SCC 63</manual_label></manual_label>. Statutes"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " decision maker’s home statute: see, e.g., Mattel, at paras. 26-33; Barrie Public Utilities, at paras. 9-19; Monsanto, at paras. 6-16.\n[43] Yet as, in Dunsmuir, Alberta Teachers, Edmonton East and",
+      "output": " decision maker’s home statute: see, e.g., <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Mattel</manual_label>, at <manual_label labelname=\"fragment\">paras. 26-33</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Barrie Public Utilities</manual_label>, at <manual_label labelname=\"fragment\">paras. 9-19</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Monsanto</manual_label>, at <manual_label labelname=\"fragment\">paras. 6-16</manual_label></manual_label>.\n[43] Yet as, in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label></manual_label>, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Alberta Teachers</manual_label></manual_label>, <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Edmonton East</manual_label></manual_label> and"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " should be\nexcluded. 2. Fairness of the trial With respect to the first set of Collins factors, we agree with the trial\njudge that the admission of this evidence would not affect the fairness of the\ntrial. This secondary evidence did not have the quality of",
+      "output": " should be\nexcluded. 2. Fairness of the trial With respect to the first set of <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Collins</manual_label></manual_label> factors, we agree with the trial\njudge that the admission of this evidence would not affect the fairness of the\ntrial. This secondary evidence did not have the quality of"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " Tipping J., and 209, per McGrath J.). [259] Restraint and respect for precedent also guide the High Court of Australia and South Africa’s Constitutional Court when applying stare decisis (Lee v. New South Wales Crime Commission, [2013] HCA 39, 302 A.L.R. 363, at paras. 62-66 and 70; Camps Bay Ratepayers’ and Residents’ Association v. Harrison, [2010] ZACC 19, 2011 (4) S.A. 42, at pp. 55-56; Buffalo City Metropolitan Municipality v. Asla Construction (Pty) Ltd., [2019] ZACC 15, 2019 (4) S.A. 331, at para. 65).\n[260",
+      "output": " Tipping J., and <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">209</manual_label></manual_label>, per McGrath J.). [259] Restraint and respect for precedent also guide the High Court of Australia and South Africa’s Constitutional Court when applying stare decisis (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Lee v. New South Wales Crime Commission</manual_label>, <manual_label labelname=\"citation\">[2013] HCA 39</manual_label>, <manual_label labelname=\"citation\">302 A.L.R. 363</manual_label>, at <manual_label labelname=\"fragment\">paras. 62-66</manual_label> and <manual_label labelname=\"fragment\">70</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Camps Bay Ratepayers’ and Residents’ Association v. Harrison</manual_label>, <manual_label labelname=\"citation\">[2010] ZACC 19</manual_label>, <manual_label labelname=\"citation\">2011 (4) S.A. 42</manual_label>, at <manual_label labelname=\"fragment\">pp. 55-56</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Buffalo City Metropolitan Municipality v. Asla Construction (Pty) Ltd.</manual_label>, <manual_label labelname=\"citation\">[2019] ZACC 15</manual_label>, <manual_label labelname=\"citation\">2019 (4) S.A. 331</manual_label>, at <manual_label labelname=\"fragment\">para. 65</manual_label></manual_label>).\n[260"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "PP",
+          "NUM-NUM"
+        ],
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "(NUM)",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "(NUM)",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " peace officer under\nsubsection 494(3) is detained in custody under subsection 503(1) for\n(a) an indictable offence mentioned in\nsection 553,\n(b) an offence for which the person may be\nprosecuted by indictment or for which he is punishable",
+      "output": " peace officer under\n<manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">subsection 494(3)</manual_label></manual_label> is detained in custody under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">subsection 503(1)</manual_label></manual_label> for\n(a) an indictable offence mentioned in<manual_label labelname=\"legislation\">\n<manual_label labelname=\"fragment\">section 553</manual_label></manual_label>,\n(b) an offence for which the person may be\nprosecuted by indictment or for which he is punishable"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SUBSECTION",
+          "NUM(PAREN)"
+        ],
+        [
+          "SUBSECTION",
+          "NUM(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " share capital on September 8, 1967, under Part III of the\nOntario Corporations Act (now R.S.O. 1990, c. C.38). Its objects at the time\nwere as follows: (i) to accept and adopt the aims, purposes",
+      "output": " share capital on September 8, 1967, under <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Part III</manual_label></manual_label> of the\nOntario <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Corporations Act</manual_label></manual_label> (now <manual_label labelname=\"legislation\"><manual_label labelname=\"citation\">R.S.O. 1990, c. C.38</manual_label></manual_label>). Its objects at the time\nwere as follows: (i) to accept and adopt the aims, purposes"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PART",
+          "ROMAN"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [
+        [
+          "ABBREV.",
+          "YEAR",
+          ",",
+          "c.",
+          "C.NUM"
+        ]
+      ],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Hitti v. Canada (Minister of Citizenship and Immigration), 2007 FC 294, 310 F.T.R. 168 — it would have been evident to her that she needed to grapple with and justify her interpretation in light of the persuasive and comprehensive legal reasoning",
+      "output": " <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Hitti v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">2007 FC 294</manual_label>, <manual_label labelname=\"citation\">310 F.T.R. 168</manual_label></manual_label> — it would have been evident to her that she needed to grapple with and justify her interpretation in light of the persuasive and comprehensive legal reasoning"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " my view, the result in Morgentaler does not support the appellants' claim\nto standing, nor does R. v. Wholesale Travel Group Inc., [1991] 3 S.C.R. 154, 7\nC.R.R. (2d) 36, or R. v. M. (C.) (1995), 23 O.R. (3d) 629, 30 C.R.R. (2d) 112,\n98 C.C.C. (3d) 481 (C.A.). The",
+      "output": " my view, the result in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Morgentaler</manual_label></manual_label> does not support the appellants' claim\nto standing, nor does <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Wholesale Travel Group Inc.</manual_label>, <manual_label labelname=\"citation\">[1991] 3 S.C.R. 154</manual_label>, <manual_label labelname=\"citation\">7\nC.R.R. (2d) 36</manual_label></manual_label>, or <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. M. (C.) (1995)</manual_label>, <manual_label labelname=\"citation\">23 O.R. (3d) 629</manual_label>, <manual_label labelname=\"citation\">30 C.R.R. (2d) 112</manual_label>,\n<manual_label labelname=\"citation\">98 C.C.C. (3d) 481 (C.A.)</manual_label></manual_label>. The"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "YEAR"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " court before whom an accused person is\nbeing tried is a court of competent jurisdiction.\nFor the purposes of this case, there is no\ndispute as to the right of the trial judge to consider a s. 24(1) application.\nFor reasons already stated there should",
+      "output": " court before whom an accused person is\nbeing tried is a court of competent jurisdiction.\nFor the purposes of this case, there is no\ndispute as to the right of the trial judge to consider a <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 24(1)</manual_label></manual_label> application.\nFor reasons already stated there should"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " also Congrégation des témoins de Jéhovah de St-Jérôme-Lafontaine v. Lafontaine (Village), 2004 SCC 48, [2004] 2 S.C.R. 650, at para. 5. Cases in which written reasons tend to be required include those in which the decision",
+      "output": " also <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Congrégation des témoins de Jéhovah de St-Jérôme-Lafontaine v. Lafontaine (Village)</manual_label>, <manual_label labelname=\"citation\">2004 SCC 48</manual_label>, <manual_label labelname=\"citation\">[2004] 2 S.C.R. 650</manual_label>, at <manual_label labelname=\"fragment\">para. 5</manual_label></manual_label>. Cases in which written reasons tend to be required include those in which the decision"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ", it will take a\nsearching review to find the defect. [38] The three standards of review have since remained in Canadian\nadministrative law, the approach to determining the appropriate standard of\nreview having been refined in Pushpanathan v. Canada (Minister of\nCitizenship and Immigration), [1998] 1 S.C.R. 982. [39",
+      "output": ", it will take a\nsearching review to find the defect. [38] The three standards of review have since remained in Canadian\nadministrative law, the approach to determining the appropriate standard of\nreview having been refined in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Pushpanathan v. Canada (Minister of\nCitizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">[1998] 1 S.C.R. 982</manual_label></manual_label>. [39"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " will reassess the rule that has found formal expression in Knight. [26] The two types of judicial review, on the merits and on the\nprocess, are therefore engaged in this case. Our review of the system will\ntherefore be comprehensive, which is preferable since a",
+      "output": " will reassess the rule that has found formal expression in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Knight</manual_label></manual_label>. [26] The two types of judicial review, on the merits and on the\nprocess, are therefore engaged in this case. Our review of the system will\ntherefore be comprehensive, which is preferable since a"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " immunities. No purpose would therefore be served by remitting this matter to the Registrar. (a) Section 3(2) of the Citizenship Act\n[174] The analyst justified her conclusion that Mr. Vavilov is not a citizen of Canada by reasoning that his parents were",
+      "output": " immunities. No purpose would therefore be served by remitting this matter to the Registrar. (a) <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Section 3(2)</manual_label> of the <manual_label labelname=\"title\">Citizenship Act</manual_label></manual_label>\n[174] The analyst justified her conclusion that Mr. Vavilov is not a citizen of Canada by reasoning that his parents were"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " be observed. However, in the rural parts of this province, which\nfor the most part are policed by the R.C.M.P., a procedure is in place whereby\njustices are available to permit the police officers serving in these areas to\ncomply with s. 503. What",
+      "output": " be observed. However, in the rural parts of this province, which\nfor the most part are policed by the R.C.M.P., a procedure is in place whereby\njustices are available to permit the police officers serving in these areas to\ncomply with <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 503</manual_label></manual_label>. What"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " establish\ncriteria to guide this statutory analysis.\n[43] For\neveryone’s benefit, the Commissioner of Ontario’s decision was referred to the\nCourt of Appeal to establish broader case law.\n[44] The\nCourt of Appeal in City of Toronto Economic Development Company v.\nOntario (Information and Privacy Commissioner) (“TEDCO”[3]) had",
+      "output": " establish\ncriteria to guide this statutory analysis.\n[43] For\neveryone’s benefit, the Commissioner of Ontario’s decision was referred to the\nCourt of Appeal to establish broader case law.\n[44] The\nCourt of Appeal in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">City of Toronto Economic Development Company v.\nOntario (Information and Privacy Commissioner)</manual_label> (“<manual_label labelname=\"title\">TEDCO</manual_label>”[3])</manual_label> had"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2016NBOMB12_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " decision meeting this description by this Court is C.U.P.E. v. Ontario\n(Minister of Labour), [2003] 1 S.C.R. 539, 2003 SCC 29, where the\nMinister’s appointment of retired judges with little experience in labour\nmatters to",
+      "output": " decision meeting this description by this Court is <manual_label labelname=\"decision\"><manual_label labelname=\"title\">C.U.P.E. v. Ontario\n(Minister of Labour)</manual_label>, <manual_label labelname=\"citation\">[2003] 1 S.C.R. 539</manual_label>, <manual_label labelname=\"citation\">2003 SCC 29</manual_label></manual_label>, where the\nMinister’s appointment of retired judges with little experience in labour\nmatters to"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " a remedy only to a person\nwhose rights have been infringed: see R. v. Belnavis, supra. Section 24 does\nnot give these accused a remedy based on an alleged infringement of the\nequality rights of non-citizens who may have been excluded from the",
+      "output": " a remedy only to a person\nwhose rights have been infringed: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">R. v. Belnavis</manual_label></manual_label>, supra. <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Section 24</manual_label></manual_label> does\nnot give these accused a remedy based on an alleged infringement of the\nequality rights of non-citizens who may have been excluded from the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " p. 230): The loss of the documents in the illegal seizure\ncaused substantial hardship to the Church. On the other hand, the police were\nacting in the execution of a valid search warrant. If the officers had tried to\ncomply with para. 16 of the",
+      "output": " <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">p. 230</manual_label></manual_label>): The loss of the documents in the illegal seizure\ncaused substantial hardship to the Church. On the other hand, the police were\nacting in the execution of a valid search warrant. If the officers had tried to\ncomply with para. 16 of the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Development of the Duty of Fairness in Canadian Public Law [85] In Canada, the modern concept of procedural fairness in\nadministrative law was inspired by the House of Lords’ landmark decision in Ridge\nv. Baldwin, [1963] 2 All E.R. 66, a",
+      "output": " Development of the Duty of Fairness in Canadian Public Law [85] In Canada, the modern concept of procedural fairness in\nadministrative law was inspired by the House of Lords’ landmark decision in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Ridge\nv. Baldwin</manual_label>, <manual_label labelname=\"citation\">[1963] 2 All E.R. 66</manual_label></manual_label>, a"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "All",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " s. 3 as a whole, the Registrar’s decision was unreasonable.\nCases Cited\nBy Wagner C.J. and Moldaver, Gascon, Côté, Brown, Rowe and Martin JJ. Considered: Baker v. Canada (Minister of Citizenship and Immigration), [1999] 2 S.C.R. 817; Delta Air Lines Inc. v. Lukács, 2018 SCC 2, [2018] 1 S.C.R. 6; Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd., 2019 FCA 52; Al‑Ghamdi v. Canada (Minister of Foreign Affairs and International Trade), 2007 FC 559, 64 Imm. L.R. (3d) 67; Lee v. Canada (Minister of Citizenship and Immigration), 2008 FC 614, [2009] 1 F.C.R. 204; Hitti v. Canada (Minister of Citizenship and Immigration), 2007 FC 294, 310 F.T.R. 168; explained",
+      "output": " <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3</manual_label></manual_label> as a whole, the Registrar’s decision was unreasonable.\nCases Cited\nBy Wagner C.J. and Moldaver, Gascon, Côté, Brown, Rowe and Martin JJ. Considered: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Baker v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">[1999] 2 S.C.R. 817</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Delta Air Lines Inc. v. Lukács</manual_label>, <manual_label labelname=\"citation\">2018 SCC 2</manual_label>, <manual_label labelname=\"citation\">[2018] 1 S.C.R. 6</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Nova Tube Inc./Nova Steel Inc. v. Conares Metal Supply Ltd</manual_label>., <manual_label labelname=\"citation\">2019 FCA 52</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Al‑Ghamdi v. Canada (Minister of Foreign Affairs and International Trade)</manual_label>, <manual_label labelname=\"citation\">2007 FC 559</manual_label>, <manual_label labelname=\"citation\">64 Imm. L.R. (3d) 67</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Lee v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">2008 FC 614</manual_label>, <manual_label labelname=\"citation\">[2009] 1 F.C.R. 204</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Hitti v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">2007 FC 294</manual_label>, <manual_label labelname=\"citation\">310 F.T.R. 168</manual_label></manual_label>; explained"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " Dunsmuir, at para. 145, per Binnie J., concurring. [70] However, we would not definitively foreclose the possibility that another category could be recognized as requiring a derogation from the presumption of reasonableness review in a future case. But our reluctance to pronounce",
+      "output": " <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label>, at <manual_label labelname=\"fragment\">para. 145</manual_label></manual_label>, per Binnie J., concurring. [70] However, we would not definitively foreclose the possibility that another category could be recognized as requiring a derogation from the presumption of reasonableness review in a future case. But our reluctance to pronounce"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " of potential jurors. The Supreme Court of\nCanada has repeatedly affirmed the personal nature of s. 15 rights. In Andrews\nv. Law Society of British Columbia at p. 163 S.C.R., p. 219 C.R.R., McIntyre J",
+      "output": " of potential jurors. The Supreme Court of\nCanada has repeatedly affirmed the personal nature of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label></manual_label> rights. In <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Andrews\nv. Law Society of British Columbia</manual_label> at <manual_label labelname=\"fragment\">p. 163</manual_label> S.C.R., <manual_label labelname=\"fragment\">p. 219</manual_label> C.R.R.</manual_label>, McIntyre J"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "fragment",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ],
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " Code. He\nmust follow the (constitutionally valid) statute. . . . . . In the result, because the process actually\nadopted by the trial judge was not authorized by law, and deprived the\nappellants of a statutory right conferred on them by s. 571 of the Criminal\nCode, the",
+      "output": " <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Code</manual_label></manual_label>. He\nmust follow the (constitutionally valid) statute. . . . . . In the result, because the process actually\nadopted by the trial judge was not authorized by law, and deprived the\nappellants of a statutory right conferred on them by <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 571</manual_label> of the <manual_label labelname=\"title\">Criminal\nCode</manual_label></manual_label>, the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "; it erodes confidence in the existence — and desirability — of the “shared enterprises in the administrative state” of “[l]aw-making and legal interpretation” between courts and administrative decision-makers (Stack, at p. 310). [254] But the aspect of the",
+      "output": "; it erodes confidence in the existence — and desirability — of the “shared enterprises in the administrative state” of “[l]aw-making and legal interpretation” between courts and administrative decision-makers (<manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Stack</manual_label>, at <manual_label labelname=\"fragment\">p. 310</manual_label></manual_label>). [254] But the aspect of the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " deference, and in\norder to create a more finely calibrated system of judicial review (see also L.\nSossin and C. M. Flood, “The Contextual Turn: Iacobucci’s Legacy and the\nStandard of Review in Administrative Law” (2007), 57 U.T.L.J. 581). However",
+      "output": " deference, and in\norder to create a more finely calibrated system of judicial review (see also<manual_label labelname=\"secondary sources\"> <manual_label labelname=\"authors\">L.\nSossin and C. M. Flood</manual_label>, “<manual_label labelname=\"title\">The Contextual Turn: Iacobucci’s Legacy and the\nStandard of Review in Administrative Law</manual_label>” <manual_label labelname=\"source\">(2007), 57 U.T.L.J. 581</manual_label></manual_label>). However"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "YEAR",
+          ",",
+          "NUM",
+          "ABBREV",
+          ".",
+          "NUM"
+        ]
+      ],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " employee in Canada of any other international organization to whom there are granted, by or under any Act of Parliament, diplomatic privileges and immunities certified by the Minister of Foreign Affairs to be equivalent to those granted to a person or persons referred to in paragraph (a).\n[176",
+      "output": " employee in Canada of any other international organization to whom there are granted, by or under any Act of Parliament, diplomatic privileges and immunities certified by the Minister of Foreign Affairs to be equivalent to those granted to a person or persons referred to in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">paragraph (a)</manual_label></manual_label>.\n[176"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "PARA",
+          "(ALPHA)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " securing the commitment and support\nof the public. (Italics in original; underlining added) For the above reasons, I am of the view that the application of the\nidentification doctrine to non-profit religious corporations infringes the\nappellant's Charter rights \"as little as possible\". It",
+      "output": " securing the commitment and support\nof the public. (Italics in original; underlining added) For the above reasons, I am of the view that the application of the\nidentification doctrine to non-profit religious corporations infringes the\nappellant's <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label> rights \"as little as possible\". It"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " civil liability in the receiving state. As such, they cannot acquire citizenship in the receiving state and also benefit from these immunities. A citizen has duties and responsibilities to its country. Immunity is inconsistent with this principle and so does not apply to citizens. See Article 37 of the Convention. Section 3(2) legislates",
+      "output": " civil liability in the receiving state. As such, they cannot acquire citizenship in the receiving state and also benefit from these immunities. A citizen has duties and responsibilities to its country. Immunity is inconsistent with this principle and so does not apply to citizens. See <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Article 37</manual_label> of the <manual_label labelname=\"title\">Convention</manual_label></manual_label>. <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">Section 3(2)</manual_label></manual_label> legislates"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "ARTICLE",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " the majority’s view, such a “cursory and incomplete approach to statutory interpretation” in a case such as this was indefensible: para. 44. Moreover, when the provision’s purpose and its context were taken into account, the only reasonable conclusion was that the phrase",
+      "output": " the majority’s view, such a “cursory and incomplete approach to statutory interpretation” in a case such as this was indefensible: <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">para. 44</manual_label></manual_label>. Moreover, when the provision’s purpose and its context were taken into account, the only reasonable conclusion was that the phrase"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " on AcadieNor’s Board of\nDirectors in an ex officio capacity, not just out of personal interest. [107] Consequently,\nwe looked to the New Brunswick Municipalities Act[15] to determine whether a\nmember of Town Council can sit on the board of directors of a",
+      "output": " on AcadieNor’s Board of\nDirectors in an ex officio capacity, not just out of personal interest. [107] Consequently,\nwe looked to the New Brunswick <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Municipalities Act</manual_label></manual_label>[15] to determine whether a\nmember of Town Council can sit on the board of directors of a"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2016NBOMB12_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " to a hearing, or to observation of rules of\nnatural justice, according to the master and servant test, looks illogical and\neven bizarre. (Malloch v. Aberdeen Corp., [1971] 2 All E.R. 1278 (H.L.), at p.\n1294) [94",
+      "output": " to a hearing, or to observation of rules of\nnatural justice, according to the master and servant test, looks illogical and\neven bizarre. (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Malloch v. Aberdeen Corp.</manual_label>, <manual_label labelname=\"citation\">[1971] 2 All E.R. 1278 (H.L.)</manual_label>, at <manual_label labelname=\"fragment\">p.\n1294</manual_label></manual_label>) [94"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "All",
+          "REPORTER.",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " review, the appeal provision would be completely redundant — contrary to the well-established principle that the legislature does not speak in vain: Attorney General of Quebec v. Carrières Ste-Thérèse Ltée, [1985] 1 S.C.R. 831, at p. 838. [46",
+      "output": " review, the appeal provision would be completely redundant — contrary to the well-established principle that the legislature does not speak in vain: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Attorney General of Quebec v. Carrières Ste-Thérèse Ltée</manual_label>, <manual_label labelname=\"citation\">[1985] 1 S.C.R. 831</manual_label>, at <manual_label labelname=\"fragment\">p. 838</manual_label></manual_label>. [46"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " simply to take a\ndecision in the “public interest” is necessarily accorded more room to\nmanoeuvre than is a professional body, given the task of determining an\nappropriate sanction for a member’s misconduct (Law Society of New Brunswick\nv. Ryan, [2003] 1 S.C.R. 247, 2003 SCC 20). [138",
+      "output": " simply to take a\ndecision in the “public interest” is necessarily accorded more room to\nmanoeuvre than is a professional body, given the task of determining an\nappropriate sanction for a member’s misconduct (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Law Society of New Brunswick\nv. Ryan</manual_label>, <manual_label labelname=\"citation\">[2003] 1 S.C.R. 247</manual_label>, <manual_label labelname=\"citation\">2003 SCC 20</manual_label></manual_label>). [138"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " correct procedure and dismiss the office holder again. A\nbreach of the duty of fairness simply requires that the dismissal decision be\nretaken. It therefore is incorrect to equate it to reinstatement (see Malloch,\nat p. 1284). [109] In addition, a public",
+      "output": " correct procedure and dismiss the office holder again. A\nbreach of the duty of fairness simply requires that the dismissal decision be\nretaken. It therefore is incorrect to equate it to reinstatement (see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Malloch</manual_label>,\nat <manual_label labelname=\"fragment\">p. 1284</manual_label></manual_label>). [109] In addition, a public"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " inclusion\nof a full privative clause in the PSLRA gives rise to a strong indication\nthat the reasonableness standard of review will apply. [68] The nature of the regime also favours the standard of\nreasonableness. This Court has often recognized the relative expertise of\nlabour arbitrators",
+      "output": " inclusion\nof a full privative clause in the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">PSLRA</manual_label></manual_label> gives rise to a strong indication\nthat the reasonableness standard of review will apply. [68] The nature of the regime also favours the standard of\nreasonableness. This Court has often recognized the relative expertise of\nlabour arbitrators"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " a party \"cannot\ngenerally rely upon the violation of a third party's Charter rights\". The appellants' principal claim to s. 15 standing to raise the validity of\nthe Juries Act provisions is based on the doctrine from Big M Drug Mart. In",
+      "output": " a party \"cannot\ngenerally rely upon the violation of a third party's <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label> rights\". The appellants' principal claim to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 15</manual_label></manual_label> standing to raise the validity of\nthe <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Juries Act</manual_label></manual_label> provisions is based on the doctrine from <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Big M Drug Mart</manual_label></manual_label>. In"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " to s. 100.1 of the PSLRA, he noted the referential\nincorporation of s. 97 in s. 100.1(5). He stated that such incorporation\n“necessarily means that an adjudicator has jurisdiction to make the determination\ndescribed in s. 97(2.1), i.e. that an employee has been discharged or otherwise\ndisciplined for cause” (p",
+      "output": " to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 100.1</manual_label> of the <manual_label labelname=\"title\">PSLRA</manual_label></manual_label>, he noted the referential\nincorporation of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 97</manual_label> in <manual_label labelname=\"fragment\">s. 100.1(5)</manual_label></manual_label>. He stated that such incorporation\n“necessarily means that an adjudicator has jurisdiction to make the determination\ndescribed in <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 97(2.1)</manual_label></manual_label>, i.e. that an employee has been discharged or otherwise\ndisciplined for cause” (p"
+    },
+    "comments": "",
+    "selected": true,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM.NUM"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM.NUM(PAREN)"
+        ],
+        [
+          "SECTION",
+          "NUM(NUM.NUM)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " unreasonableness standard was\ndeveloped many years prior to the introduction of the reasonableness simpliciter\nstandard in Southam. The intermediate standard was developed to respond\nto what the Court viewed as problems in the operation of judicial review in\nCanada, particularly the perceived all-or-nothing approach to",
+      "output": " unreasonableness standard was\ndeveloped many years prior to the introduction of the reasonableness simpliciter\nstandard in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Southam</manual_label></manual_label>. The intermediate standard was developed to respond\nto what the Court viewed as problems in the operation of judicial review in\nCanada, particularly the perceived all-or-nothing approach to"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " deterrent penalty. She also\nargues that it was wrong in principle to use a religious organization as a\nmeans of deterring the public generally. The point here seems to be that it was\nnot appropriate to impose a fine on an association that exists only to exercise\nprotected Charter rights",
+      "output": " deterrent penalty. She also\nargues that it was wrong in principle to use a religious organization as a\nmeans of deterring the public generally. The point here seems to be that it was\nnot appropriate to impose a fine on an association that exists only to exercise\nprotected <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label> rights"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": "\nhad thereby violated her s. 9 Charter rights, applied for a remedy pursuant to\ns. 24(1) of the Charter. The remedy which she sought was a judicial stay of\nproceedings; she did not request any other remedy. On October 18",
+      "output": "\nhad thereby violated her <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 9 </manual_label><manual_label labelname=\"title\">Charter rights</manual_label></manual_label>, applied for a remedy pursuant to\n<manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 24(1)</manual_label> of the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. The remedy which she sought was a judicial stay of\nproceedings; she did not request any other remedy. On October 18"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " is not\npossible to fashion a different rule of criminal liability for such\ncorporations that will attain the objective and be less intrusive of Charter\nrights. (iv) Proportionality of effects The final step of the proportionality test requires that there be a\n\"proportionality between the deleterious",
+      "output": " is not\npossible to fashion a different rule of criminal liability for such\ncorporations that will attain the objective and be less intrusive of <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Charter</manual_label></manual_label>\nrights. (iv) Proportionality of effects The final step of the proportionality test requires that there be a\n\"proportionality between the deleterious"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " taken as evidence that justifiable reexamination of principle had given way to drives for particular results in the short term. The legitimacy of the Court would fade with the frequency of its vacillation. (Planned Parenthood of Southeastern Pennsylvania v. Casey, Governor of Pennsylvania, 505 U.S. 833 (1992), at p. 866; see",
+      "output": " taken as evidence that justifiable reexamination of principle had given way to drives for particular results in the short term. The legitimacy of the Court would fade with the frequency of its vacillation. (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Planned Parenthood of Southeastern Pennsylvania v. Casey, Governor of Pennsylvania</manual_label>, <manual_label labelname=\"citation\">505 U.S. 833 (1992)</manual_label>, at <manual_label labelname=\"fragment\">p. 866</manual_label></manual_label>; see"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " reviewing a decision in which Passport Canada had refused to issue a passport to a child of a Saudi Arabian diplomat. In its reasons, the court came to a number of conclusions regarding the purpose and scope of s. 3(2), including, at para. 5, that",
+      "output": " reviewing a decision in which Passport Canada had refused to issue a passport to a child of a Saudi Arabian diplomat. In its reasons, the court came to a number of conclusions regarding the purpose and scope of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 3(2)</manual_label></manual_label>, including, at <manual_label labelname=\"decision\"><manual_label labelname=\"fragment\">para. 5</manual_label></manual_label>, that"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment"
+      ],
+      [
+        "decision",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM(PAREN)"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " standards. Some examples of such provisions are ss. 18 to 18.2, 18.4 and 28 of the Federal Courts Act, which confer jurisdiction on the Federal Court and the Federal Court of Appeal to hear and determine applications for judicial review of",
+      "output": " standards. Some examples of such provisions are <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 18 to 18.2</manual_label>, <manual_label labelname=\"fragment\">18.4</manual_label> and <manual_label labelname=\"fragment\">28</manual_label> of the <manual_label labelname=\"title\">Federal Courts Act</manual_label></manual_label>, which confer jurisdiction on the Federal Court and the Federal Court of Appeal to hear and determine applications for judicial review of"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM",
+          "TO",
+          "NUM.NUM"
+        ],
+        [
+          "NUM.NUM"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " may\nalso be warranted where an administrative tribunal has developed particular\nexpertise in the application of a general common law or civil law rule in relation\nto a specific statutory context: Toronto (City) v. C.U.P.E., at para.\n72. Adjudication in",
+      "output": " may\nalso be warranted where an administrative tribunal has developed particular\nexpertise in the application of a general common law or civil law rule in relation\nto a specific statutory context: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Toronto (City) v. C.U.P.E.</manual_label>, at <manual_label labelname=\"fragment\">para.\n72</manual_label></manual_label>. Adjudication in"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": "\nrelationship. In Malloch, the applicable statute provided that dismissal\nof a teacher could only take place if the teacher was given three weeks’ notice\nof the motion to dismiss. The House of Lords found that this necessarily\nimplied a right for the teacher to make representations",
+      "output": "\nrelationship. In <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Malloch</manual_label></manual_label>, the applicable statute provided that dismissal\nof a teacher could only take place if the teacher was given three weeks’ notice\nof the motion to dismiss. The House of Lords found that this necessarily\nimplied a right for the teacher to make representations"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " need really\nonly consider a stay of proceeding, a lesser sentence and monetary\ncompensation.\nWithin the context of a criminal trial a stay of\nproceedings is the ultimate remedy. In R. v. Erickson (1984), 13 C.C.C.\n(3d) 269 at p. 275, 12 C.R.R. 193, [1984] 5 W.W.R. 577 (B.C.C.A.), Esson",
+      "output": " need really\nonly consider a stay of proceeding, a lesser sentence and monetary\ncompensation.\nWithin the context of a criminal trial a stay of\nproceedings is the ultimate remedy. In<manual_label labelname=\"decision\"> <manual_label labelname=\"title\">R. v. Erickson (1984)</manual_label>, <manual_label labelname=\"citation\">13 C.C.C.\n(3d) 269</manual_label> at <manual_label labelname=\"fragment\">p. 275</manual_label>, <manual_label labelname=\"citation\">12 C.R.R. 193</manual_label>, <manual_label labelname=\"citation\">[1984] 5 W.W.R. 577 (B.C.C.A.)</manual_label></manual_label>, Esson"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1994CanLII4528NLCA_annotated_GL_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "fragment",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "P",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "NUM",
+          "REPORTER.",
+          "(ORDINAL)",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "YEAR"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " the time of the children’s birth. More generally, this appeal and its companion cases (Bell Canada v. Canada (Attorney General), 2019 SCC 66, [2019] 4 S.C.R. 845) provide an opportunity to consider and clarify the law applicable",
+      "output": " the time of the children’s birth. More generally, this appeal and its companion cases (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Bell Canada v. Canada (Attorney General)</manual_label>, <manual_label labelname=\"citation\">2019 SCC 66</manual_label>, <manual_label labelname=\"citation\">[2019] 4 S.C.R. 845</manual_label></manual_label>) provide an opportunity to consider and clarify the law applicable"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ".). The notice period may be increased if it is established that\nthe employer acted in bad faith or engaged in unfair dealing when acting to\ndismiss the employee (Wallace, at para. 95). These considerations aim at\nensuring that dismissed employees are afforded some",
+      "output": ".). The notice period may be increased if it is established that\nthe employer acted in bad faith or engaged in unfair dealing when acting to\ndismiss the employee (<manual_label labelname=\"decision\"><manual_label labelname=\"title\">Wallace</manual_label>, at <manual_label labelname=\"fragment\">para. 95</manual_label></manual_label>). These considerations aim at\nensuring that dismissed employees are afforded some"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2008CSC9_annotated_EG_revRL.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "PARA",
+          "NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": " the proper approach to statutory interpretation, because legislative intent can be understood only by reading the language chosen by the legislature in light of the purpose of the provision and the entire relevant context: Sullivan, at pp. 7-8. Those who draft and enact statutes",
+      "output": " the proper approach to statutory interpretation, because legislative intent can be understood only by reading the language chosen by the legislature in light of the purpose of the provision and the entire relevant context: <manual_label labelname=\"secondary sources\"><manual_label labelname=\"authors\">Sullivan</manual_label>, at <manual_label labelname=\"fragment\">pp. 7-8</manual_label></manual_label>. Those who draft and enact statutes"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [
+        [
+          "PP",
+          "NUM-NUM"
+        ]
+      ],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " it excludes medical practitioners, veterinary surgeons and coroners, and\nthe spouses of judges, lawyers, and law enforcement personnel. The relevant\nportions of ss. 2 and 3 that produce these exclusions are as follows: 2. Subject to sections 3 and 4, every",
+      "output": " it excludes medical practitioners, veterinary surgeons and coroners, and\nthe spouses of judges, lawyers, and law enforcement personnel. The relevant\nportions of <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">ss. 2</manual_label> and <manual_label labelname=\"fragment\">3</manual_label></manual_label> that produce these exclusions are as follows: 2. Subject to <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">sections 3</manual_label> and <manual_label labelname=\"fragment\">4</manual_label></manual_label>, every"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " Abella and Karakatsanis JJ. Considered: Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp., [1979] 2 S.C.R. 227; Anisminic Ltd. v. Foreign Compensation Commission, [1969] 2 A.C. 147; Pushpanathan v. Canada (Minister of Citizenship and Immigration), [1998] 1 S.C.R. 982; Canada (Attorney General) v. Igloo Vikski Inc., 2016 SCC 38, [2016] 2 S.C.R. 80; Kisor v. Wilkie, 139 S. Ct. 2400 (2019); discussed",
+      "output": " Abella and Karakatsanis JJ. Considered: <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canadian Union of Public Employees, Local 963 v. New Brunswick Liquor Corp.</manual_label>, <manual_label labelname=\"citation\">[1979] 2 S.C.R. 227</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Anisminic Ltd. v. Foreign Compensation Commission</manual_label>, <manual_label labelname=\"citation\">[1969] 2 A.C. 147</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Pushpanathan v. Canada (Minister of Citizenship and Immigration)</manual_label>, <manual_label labelname=\"citation\">[1998] 1 S.C.R. 982</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canada (Attorney General) v. Igloo Vikski Inc.</manual_label>, <manual_label labelname=\"citation\">2016 SCC 38</manual_label>, <manual_label labelname=\"citation\">[2016] 2 S.C.R. 80</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Kisor v. Wilkie</manual_label>, <manual_label labelname=\"citation\">139 S. Ct. 2400 (2019)</manual_label></manual_label>; discussed"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation"
+      ],
+      [
+        "decision",
+        "title",
+        "citation"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ],
+        [
+          "NUM",
+          "S.",
+          "Ct.",
+          "NUM",
+          "(COURT)"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "V",
+          "PARTY"
+        ],
+        [
+          "PARTY",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ", a decision must comport with any more specific constraints imposed by the governing legislative scheme, such as the statutory definitions, principles or formulas that prescribe the exercise of a discretion: see Montréal (City), at paras. 33 and 40-41; Canada (Attorney General) v. Almon Equipment Limited, 2010 FCA 193, [2011] 4 F.C.R. 203, at paras. 38-40. The",
+      "output": ", a decision must comport with any more specific constraints imposed by the governing legislative scheme, such as the statutory definitions, principles or formulas that prescribe the exercise of a discretion: see <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Montréal (City)</manual_label>, at <manual_label labelname=\"fragment\">paras. 33</manual_label> and <manual_label labelname=\"fragment\">40-41</manual_label></manual_label>; <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Canada (Attorney General) v. Almon Equipment Limited</manual_label>, <manual_label labelname=\"citation\">2010 FCA 193</manual_label>, <manual_label labelname=\"citation\">[2011] 4 F.C.R. 203</manual_label>, at <manual_label labelname=\"fragment\">paras. 38-40</manual_label></manual_label>. The"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title",
+        "fragment",
+        "fragment"
+      ],
+      [
+        "decision",
+        "title",
+        "citation",
+        "citation",
+        "fragment"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [
+        [
+          "paraSECTION",
+          "NUM"
+        ],
+        [
+          "NUM-NUM"
+        ],
+        [
+          "paraSECTION",
+          "NUM-NUM"
+        ]
+      ],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [
+        [
+          "YEAR",
+          "TRIBUNAL",
+          "NUM"
+        ],
+        [
+          "TRIBUNAL",
+          "NUM",
+          "REPORTER.",
+          "NUM"
+        ]
+      ],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")"
+        ],
+        [
+          "PARTY",
+          "(",
+          "PARTY",
+          ")",
+          "V",
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": "] The modern Canadian state “could not function without the many and varied administrative tribunals that people the legal landscape” (The Rt. Hon. Beverley McLachlin, Administrative Tribunals and the Courts: An Evolutionary Relationship, May 27, 2013 (online)). Parliament and the",
+      "output": "] The modern Canadian state “could not function without the many and varied administrative tribunals that people the legal landscape” (<manual_label labelname=\"secondary sources\">The Rt. Hon. <manual_label labelname=\"authors\">Beverley McLachlin</manual_label>, <manual_label labelname=\"title\">Administrative Tribunals and the Courts: An Evolutionary Relationship</manual_label>, <manual_label labelname=\"source\">May 27, 2013 (online)</manual_label></manual_label>). Parliament and the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "secondary sources",
+        "authors",
+        "title",
+        "source"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [
+        [
+          "MONTH",
+          "NUM",
+          ",",
+          "YEAR",
+          "(",
+          "online",
+          ")"
+        ]
+      ],
+      "decision_title": []
+    }
+  },
+  {
+    "example": {
+      "input": " either play no role in administrative law or be accepted as directing a departure from the default position of reasonableness review. The latter must prevail. [48] Our colleagues agree that the time has come to put the contextual approach espoused in Dunsmuir to rest and adopt",
+      "output": " either play no role in administrative law or be accepted as directing a departure from the default position of reasonableness review. The latter must prevail. [48] Our colleagues agree that the time has come to put the contextual approach espoused in <manual_label labelname=\"decision\"><manual_label labelname=\"title\">Dunsmuir</manual_label></manual_label> to rest and adopt"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "2019SCC65_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "decision",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": [
+        [
+          "PARTY"
+        ]
+      ]
+    }
+  },
+  {
+    "example": {
+      "input": ". I will then consider the subordinate arguments based upon s. 7 of the\nCharter, the Criminal Code and the common law. Finally, I will deal with s. 11\nof the Charter. In my view, the appeal raises the",
+      "output": ". I will then consider the subordinate arguments based upon <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 7</manual_label> of the\n<manual_label labelname=\"title\">Charter</manual_label></manual_label>, the <manual_label labelname=\"legislation\"><manual_label labelname=\"title\">Criminal Code</manual_label></manual_label> and the common law. Finally, I will deal with <manual_label labelname=\"legislation\"><manual_label labelname=\"fragment\">s. 11</manual_label>\nof the <manual_label labelname=\"title\">Charter</manual_label></manual_label>. In my view, the appeal raises the"
+    },
+    "comments": "",
+    "selected": false,
+    "notation": 0,
+    "source_file": "1997CanLII16226_ONCA_annotated_EG_revRL_tech.html",
+    "pattern": [
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ],
+      [
+        "legislation",
+        "title"
+      ],
+      [
+        "legislation",
+        "fragment",
+        "title"
+      ]
+    ],
+    "label_pattern": {
+      "decision_fragment": [],
+      "legislation_fragment": [
+        [
+          "SECTION",
+          "NUM"
+        ],
+        [
+          "SECTION",
+          "NUM"
+        ]
+      ],
+      "secondary sources_fragment": [],
+      "decision_citation": [],
+      "legislation_citation": [],
+      "secondary sources_source": [],
+      "decision_title": []
+    }
+  }
+]

@@ -1,5 +1,7 @@
 # Data directories
-data/
+data/Document_Échantillon_Initial
+data/Documents_Annotés
+data/test
 old/
 ressources/private
 

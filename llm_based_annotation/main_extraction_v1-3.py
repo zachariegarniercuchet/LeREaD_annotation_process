@@ -1,4 +1,8 @@
 import os
+import json
+import spacy
+import re
+import argparse
 
 from utils_extraction import extract_few_shot_examples_from_labels
 from utils_extraction import SUBLABEL_DEFINITIONS_V1, SUBLABEL_DEFINITIONS_V2
@@ -11,12 +15,66 @@ from models import GPTAssistant
 from utils_extraction import process_labels
 from utils_extraction import clean_html_formatting
 
+# Import ArgumentConfig from main_extraction_v0
+from main_extraction_v0 import ArgumentConfig
 
-import json
-import spacy
-import re
 
 project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
+
+
+def parse_arguments():
+    """Parse and return command-line arguments matching main_extraction_v0."""
+    parser = argparse.ArgumentParser(
+        description="LLM-based sublabel extraction (decomposed mode - sequential passes)."
+    )
+    
+    parser.add_argument(
+        "--chunker",
+        type=str,
+        default="sentence",
+        choices=["sentence", "paragraph"],
+        help="Chunking strategy: 'sentence' or 'paragraph' (default: sentence)"
+    )
+    
+    parser.add_argument(
+        "--n_general",
+        type=int,
+        default=5,
+        help="Number of general few-shot examples (default: 5)"
+    )
+    
+    parser.add_argument(
+        "--n_dynamic",
+        type=int,
+        default=0,
+        help="Number of dynamic few-shot examples (default: 0)"
+    )
+    
+    parser.add_argument(
+        "--fs_strategy",
+        type=str,
+        default="pattern",
+        choices=["pattern", "random"],
+        help="Few-shot selection strategy: 'pattern' or 'random' (default: pattern)"
+    )
+    
+    parser.add_argument(
+        "--annotation",
+        type=str,
+        default="allInOne",
+        choices=["allInOne", "decomposed"],
+        help="Annotation methodology: 'allInOne' or 'decomposed' (default: allInOne)"
+    )
+    
+    parser.add_argument(
+        "--split",
+        type=str,
+        default="val",
+        choices=["val", "test"],
+        help="Dataset split to process: 'val' or 'test' (default: val)"
+    )
+    
+    return parser.parse_args()
 
 
 def main_chunk_html(html_content, min_tokens=500):
@@ -247,26 +305,6 @@ def get_all_html_files_in(folder_path):
 
     return files
 
-def get_hyperparameters():
-    # ---------- Define Hyperparameters ----------
-    min_tokens = 500
-    fs_min_tokens = 100
-    fs_mode = "selected"  # "random" or "selected"
-    model_name = "gpt-5.2"
-
-    n_few_shot = 0  # Number of few-shot examples to use
-
-    prompt_version = "2"
-
-    prompt_path = fr"{project_root}\llm_based_annotation\utils_extraction\prompts\simplified_sublabels_extraction_from_parent.txt"
-
-    sublabel_definitions = SUBLABEL_DEFINITIONS_V2
-    
-
-
-    return min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, sublabel_definitions
-
-
 def get_label_config(out_version):
 
     if out_version == "v1.1":
@@ -305,12 +343,26 @@ def get_label_config(out_version):
     return sublabel_config, distribution
 
 def main():
+    # Parse command-line arguments
+    args = parse_arguments()
+    config = ArgumentConfig.from_args(args)
+    
+    # Determine input directory name based on config (same as v0's output_dir)
+    min_tokens = 500  # Default min_tokens value
+    base_dir = fr"{project_root}\data\Documents_Annotés\llm\{config.get_output_dir_name(min_tokens)}"
+    output_dir = base_dir
 
     versions = ["v1.1", "v1.2", "v1.3"]
-    min_tokens, fs_min_tokens, fs_mode, model_name, n_few_shot, prompt_version, prompt_path, sublabel_definitions = get_hyperparameters()
-
-    base_dir = fr"{project_root}\data\Documents_Annotés\llm\p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
-    output_dir = base_dir
+    
+    print(f"\n{'='*60}")
+    print(f"📋 Configuration:")
+    print(f"   • Split: {config.split}")
+    print(f"   • Chunker: {config.chunker}")
+    print(f"   • Few-shot: {config.n_general} general, {config.n_dynamic} dynamic")
+    print(f"   • Annotation: {config.annotation}")
+    print(f"{'='*60}")
+    print(f"📁 Input directory: {base_dir}")
+    print(f"{'='*60}\n")
 
     # Mapping: version -> input_suffix (what to load)
     version_input_map = {
@@ -397,10 +449,10 @@ def main():
 
             sublabel_config, distribution = get_label_config(version)
 
-            selected_few_shot_examples = main_few_shot_selection(filename=filename, sublabel_config=sublabel_config, distribution=distribution, n_few_shot=n_few_shot)
+            selected_few_shot_examples = main_few_shot_selection(filename=filename, sublabel_config=sublabel_config, distribution=distribution, n_few_shot=0)
 
             
-            model = GPTAssistant(model_name, temperature=1)
+            model = GPTAssistant("gpt-5.2", temperature=1)
 
 
 
@@ -409,8 +461,8 @@ def main():
                 tokens=tokens,
                 sublabel_config=sublabel_config,
                 few_shot_examples=selected_few_shot_examples,
-                prompt_path=prompt_path,
-                sublabel_definitions=sublabel_definitions,
+                prompt_path=fr"{project_root}\llm_based_annotation\utils_extraction\prompts\simplified_sublabels_extraction_from_parent.txt",
+                sublabel_definitions=SUBLABEL_DEFINITIONS_V2,
                 output_dir=output_dir,
                 filename=filename,
             )

@@ -175,10 +175,10 @@ def get_hyperparameters():
     fs_mode = "selected"  # "random" or "selected"
     model_name = "gpt-5.2"
 
-    n_few_shot = 30  # Number of few-shot examples to use
+    n_few_shot = 0  # Number of few-shot examples to use
 
     prompt_version = "2"
-    with_context = 200  # Number of tokens to include as context
+    with_context = 100  # Number of tokens to include as context
     
 
     # USE CONTEXT VERSION OF PROMPT
@@ -235,6 +235,8 @@ def main():
 
     # Modified output directory to distinguish context version
     base_dir = fr"{project_root}\data\Documents_Annotés\llm\PARACHUNKER_CONTEXT_p{prompt_version}_c{min_tokens}_fs{fs_mode}-{n_few_shot}_m{model_name}"
+    base_dir = fr"{project_root}\data\Documents_Annotés\llm\VAL_SentChunker_decomposed_0_context"
+
     output_dir = base_dir
 
     # Mapping: version -> input_suffix (what to load)

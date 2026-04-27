@@ -12,13 +12,9 @@ from nltk import CFG, PCFG
 from nltk.parse import ChartParser, ViterbiParser
 from sklearn.preprocessing import normalize
 
-# Add utils to path
-sys.path.append(str(Path.cwd() / 'llm_based_annotation'))
-from utils_extraction.html_utils import is_manual_label_tag
-from utils_extraction.htmlLabel import HTMLLabel
 
 sys.path.append(str(Path.cwd() / 'analysis/pattern_analysis'))
-from utils import extract_parent_level_annotations, get_sublabel_strings, get_ngrams
+from utils import extract_parent_level_annotations, get_sublabel_strings
 
 import re
 from typing import List
