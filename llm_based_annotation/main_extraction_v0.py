@@ -8,10 +8,12 @@ from utils_extraction import extract_body, tokenize, clean_tokens, decode, is_au
 from utils_extraction import flatten_token_chunks, merge_sentences_with_heuristics_tokens
 from utils_extraction import prepare_label_tokens
 from utils_extraction import merge_tokens_general, add_attributes_to_auto_labels, compare_html_allow_auto_labels, correct_tokens_brackets, check_tokens_brackets
-from models import GPTAssistant
+from models import GPTAssistant, QwenAssistant
 from utils_extraction import process_chunks
 from utils_extraction import clean_html_formatting
 from utils_extraction import select_few_shot_for_all_chunks
+from precompute_chunks_cache import cache_exists, load_cache, save_cache, compute_sentence_chunks
+
 
 
 project_root = r"C:\Users\zakga\OneDrive\Documents\code\LeREaD_annotation_process"
@@ -132,7 +134,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def main_chunk_html(html_content, min_tokens=500, method="sentence"):
+def main_chunk_html(html_content, min_tokens=500, method="sentence", split=None, filename=None):
 
     if min_tokens == -1:
         body_content = extract_body(html_content)
@@ -141,7 +143,10 @@ def main_chunk_html(html_content, min_tokens=500, method="sentence"):
         return [normalized_cleaned_tokens]
 
     if method == "sentence":
-        return chunk_html_by_sentence(html_content, min_tokens=min_tokens)
+        return chunk_html_by_sentence(                   # ← pass them through
+            html_content, min_tokens=min_tokens,
+            split=split, filename=filename,
+        )
     elif method == "paragraph":
         return chunk_html_by_paragraph(html_content, min_tokens=min_tokens)
     else:
@@ -149,82 +154,32 @@ def main_chunk_html(html_content, min_tokens=500, method="sentence"):
     
 
 
-def chunk_html_by_sentence(html_content, min_tokens=500):
-    body_content = extract_body(html_content)
-
-
-    # ---------- Tokenize body content ----------
-    tokens = tokenize(body_content)
-
-    # ---------- Clean tokens ----------
-    normalized_cleaned_tokens = clean_tokens(html_tokens=tokens, normalize=True, keep_manual_label=True, keep_bookmarks=True)
-
-    
-
+def chunk_html_by_sentence(html_content, min_tokens=500, split=None, filename=None):
+    """Sentence-based chunker with an optional disk cache.
+ 
+    If `split` and `filename` are provided and a cache file exists the
+    expensive spaCy model is never loaded.  The cache is also written
+    automatically the first time a document is processed.
+    """
+ 
+    # ── Cache hit: return immediately without touching spaCy ──────────────
+    if split and filename and cache_exists(split, filename):
+        print(f"   ✓ Loaded chunks from cache ({split}/{filename})")
+        return load_cache(split, filename)
+ 
+    # ── Cache miss: load model and compute ────────────────────────────────
+    import spacy
     nlp = spacy.load("en_core_web_trf")
-
-    doc = nlp(decode(normalized_cleaned_tokens))
-    initial_sentences = [sent.text for sent in doc.sents]
-
-    initial_sentences_token = [tokenize(sent) for sent in initial_sentences]
-    flat_initial_sentences = flatten_token_chunks(initial_sentences_token, separator="<sep>")
-
-
-    is_sep_tag = lambda token: token == '<sep>'
-
-    # Example: merge normalized_cleaned_tokens (original, no <sep>) 
-    # with flat_token_sentence_chunks (derived, with <sep>)
-
-    print(f"Original tokens: {len(normalized_cleaned_tokens)} (no <sep>)")
-    print(f"Derived tokens: {len(flat_initial_sentences)} (with <sep>)")
-
-    # This assumes flat_token_sentence_chunks is normalized_cleaned_tokens + <sep> insertions
-    corrected_initial_sentences = merge_tokens_general(
-        original_tokens=normalized_cleaned_tokens,
-        derived_tokens=flat_initial_sentences,
-        is_protected_func=is_sep_tag,
-        log=False
-    )
-
-    print(f"\nResult: {len(corrected_initial_sentences)} tokens")
-    print(f"Number of <sep> tags: {corrected_initial_sentences.count('<sep>')}")
-
-    # Apply heuristic-based merging with sequential citation detection
-    CITATION_THRESHOLD = 25  # Combined density threshold (%) - adjust based on the graphs above
-
-    flat_token_sentence_chunks = merge_sentences_with_heuristics_tokens(corrected_initial_sentences, citation_threshold=CITATION_THRESHOLD, min_tokens=min_tokens)
-    print(f"Initial sentences: {len(corrected_initial_sentences)}, After merging: {len(flat_token_sentence_chunks)}")
-    print(f"Using citation threshold: {CITATION_THRESHOLD}% (combined period + number density)")
-    print(f"Gap tolerance: 3 consecutive sentences below threshold to end citation section")
-    print(f"Note: Only the FIRST citation section is detected; all subsequent sentences are not citations")
-
-
-    token_chunks =  []
-    current_chunk = []
-
-    for token in flat_token_sentence_chunks:
-
-        if token != "<sep>":
-            current_chunk.append(token)
-        else:
-            token_chunks.append(current_chunk)
-            current_chunk =  []
-    token_chunks.append(current_chunk)
-
-    # Verify: merged should equal normalized_cleaned_tokens if ignoring <sep> tag
-
-    if flatten_token_chunks(token_chunks) == normalized_cleaned_tokens:
-        print("✓ Perfect match! Derived was indeed original + <sep> insertions")
-    else:
-        print("⚠ Some differences exist beyond <sep> insertions")
-        # Show first difference
-        for i, (m, d) in enumerate(zip(flat_token_sentence_chunks, flat_token_sentence_chunks)):
-            if m != d:
-                print(f"  First diff at index {i}: merged='{m}' vs derived='{d}'")
-                break
-        assert "Difference detected"
-
+ 
+    token_chunks = compute_sentence_chunks(html_content, nlp, min_tokens=min_tokens)
+ 
+    # Persist so the next call is a cache hit
+    if split and filename:
+        save_cache(split, filename, token_chunks)
+        print(f"   ✓ Chunks saved to cache ({split}/{filename})")
+ 
     return token_chunks
+
 
 def chunk_html_by_paragraph(html_content, min_tokens=500):
     """
@@ -576,7 +531,13 @@ def main():
             continue
 
         
-        token_chunks = main_chunk_html(html_content, min_tokens=min_tokens, method=chunking_method)
+        token_chunks = main_chunk_html(
+            html_content,
+            min_tokens=min_tokens,
+            method=chunking_method,
+            split=config.split,       
+            filename=filename,        
+        )
 
         if n_few_shot == (0, 0):
             selected_few_shot_examples = []
@@ -615,7 +576,7 @@ def main():
                                                                  label_config=label_config)  # Set to None for manual selection mode
 
         model = GPTAssistant(model_name, temperature=1)
-
+        
         print("------------------ PROMPT FROM FILE ------------------")
         print(prompt_path)
         print("------------------------------------------------------")
